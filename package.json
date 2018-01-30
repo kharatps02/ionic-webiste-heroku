@@ -95,12 +95,12 @@
     "phonegap-plugin-push": "^1.10.5",
     "rxjs": "5.4.3",
     "sw-toolbox": "3.6.0",
-    "zone.js": "0.8.18"
-  },
-  "devDependencies": {
+    "zone.js": "0.8.18",
     "@ionic/app-scripts": "^2.1.4",
     "ionic": "3.19.0",
     "typescript": "2.3.4"
+  },
+  "devDependencies": {   
   },
   "cordova": {
     "platforms": [
