@@ -13,10 +13,10 @@ log.txt
 npm-debug.log*
 
 .idea/
-.sourcemaps/
 .sass-cache/
 .tmp/
 .versions/
+.sourcemaps/
 coverage/
 dist/
 node_modules/
@@ -25,10 +25,31 @@ temp/
 hooks/
 platforms/
 plugins/
-plugins/android.json
-plugins/ios.json
+#plugins/android.json
+#plugins/ios.json
+www/
+beta/
 $RECYCLE.BIN/
 
 .DS_Store
 Thumbs.db
 UserInterfaceState.xcuserstate
+
+
+ldocumentsworkrezilitycoderezilitymobile
+*.ipa
+BeHome.app.dSYM.zip
+# Fastlane temporary profiling data
+/fastlane/report.xml
+# Deliver temporary error output
+/fastlane/Error*.png
+# Deliver temporary preview output
+/fastlane/Preview.html
+# Snapshot generated screenshots
+/fastlane/screenshots/*/*-portrait.png
+/fastlane/screenshots/*/*-landscape.png
+/fastlane/screenshots/screenshots.html
+# Frameit generated screenshots
+/fastlane/screenshots/*/*-portrait_framed.png
+/fastlane/screenshots/*/*-landscape_framed.png
+*.io-config.json

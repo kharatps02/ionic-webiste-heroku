@@ -1,0 +1,521 @@
+{
+    "GET_STARTED": {
+        "TITLE": "ЗАРЕГИСТРИРОВАТЬСЯ В REZILITY",
+        "ONBOARDING": {
+            "SKIP": "ПРОПУСТИТЬ",
+            "FEED_TITLE": "Ваша лента новостей",
+            "CONV_TITLE": "Ваши беседы",
+            "AROUND_TITLE": "Возле вас",
+            "APP_INFO_MESSAGE": "Персонализированные возможности и новости, которые сделают вашу жизнь лучше.",
+            "FEED_IMG": "Подача корма",
+            "CONV_IMG": "Бортовой разговор",
+            "AROUND_IMG": "Бортовой бизнес",
+            "CONV_DESC": "Общайтесь с лицами, которые могут помочь вам выйти на важную для вас информацию.",
+            "AROUND_DESC": "Знакомьтесь с людьми, открывайте для себя места и мероприятия,проходящие рядом с вами, будучи дома, на работе или в вашем сообществе..",
+            "PRIVACY": "Мы серьезно относимся к конфиденциальности ваших данных.",
+            "PRIVACY_DESC": "В процессе использования приложения мы будем просить вас предоставить нам и разрешить использовать некоторые ваши данные, чтобы дать вам возможность управлять получаемой информацией.  Мы обещаем обеспечить безопасность ваших данных и заботиться о них так, как о своих собственных.",
+            "ALREADY_ACC": "У меня уже есть учетная запись."
+        }
+    },
+    "LOGIN": {
+        "SIGN_IN": "Вход",
+        "LOGIN_BTN": "ВОЙТИ В REZILITY",
+        "LOGIN_WITH_FB_BTN": "ВОЙТИ С FACEBOOK.",
+        "FORGOT_PASSWORD_BTN": "Я забыл(а) свой пароль.",
+        "FORGOT_PASSWORD": "Забыл(а) свой пароль",
+        "REQUEST_LOG_IN_LINK": "Запросить новый пароль.",
+        "REQUEST_LOG_IN_LINK_MESSAGE": "Пароли доставляют неудобства.  Особенно на телефоне.  Мы понимаем.  Просто введите адрес своей электронной почты для учетной записи, и мы отправим вам новый пароль.",
+        "EMAIL_ADDRESS": "Адрес эл. почты",
+        "SEND_LOGIN_LINK": "ОТПРАВИТЬ НОВЫЙ ПАРОЛЬ",
+        "FORGOT_PASS_MESSAGE": "Сообщение с новым паролем было отправлено на ваш адрес электронной почты.  Скопируйте пароль, возвратитесь на этот экран, нажмите «Продолжить» и вставьте пароль для входа в Rezility.",
+        "LOGIN_LINK_SENT": "Проверьте электронную почту.",
+        "ACCOUNT_EXIST": "Эта учетная запись уже существует в Rezility.",
+        "CREATE_ACC": "Создать учетную запись.",
+        "VALID_EMAIL": "Введите действительный адрес электронной почты.",
+        "PASSWORD": "Пароль ",
+        "CONTINUE_SAVE": "Продолжить без сохранения изменений ?"
+    },
+    "SIGN_UP": {
+        "TITLE": "Регистрация",
+        "FIRST_NAME": "Имя",
+        "LAST_NAME": "Фамилия",
+        "ENTER_FN": "Введите свое имя.",
+        "ENTER_LN": "Введите свою фамилию.",
+        "EMAIL": "Адрес эл. почты",
+        "ZIP_CODE": "Почтовый индекс",
+        "ENTER_EMAIL": "Введите действительный адрес электронной почты.",
+        "ENTER_ZIP": "Введите действительный почтовый индекс.",
+        "PRIVACY_MSG": "Я прочитал, понял и принял Rezility",
+        "PRIVACY_MSG1": "Заявление о конфиденциальности",
+        "PRIVACY_MSG2": "и",
+        "PRIVACY_MSG3": "Условия использования",
+        "PRIVACY_MSG5": "Устойчивости.",
+        "PRIVACY_MSG4": "Примите уведомление о порядке использования конфиденциальной информации и условия использования.",
+        "GET_STARTED": "ЧЕМ REZILITY МОЖЕТ ВАМ ПОМОЧЬ?",
+        "MESSGAE_1": "Лучшее будущее для нас ",
+        "MESSGAE_2": "и других — в сообществах, где мы работаем и живем.",
+        "WELCOME": "Приветствуем",
+        "WELCOME_1": "в Rezility",
+        "ALREADY_HAVE_ACCOUNT": "У меня уже есть учетная запись.",
+        "CHOOSE_PASSWORD": "ВЫБРАТЬ ПАРОЛЬ",
+        "MESSAGE": "Чтобы завершить регистрацию, выберите пароль или войдите в систему с помощью учетной записи Facebook.",
+        "CREATE_PASSWORD": {
+            "TITLE": "Создать пароль",
+            "LOGIN_INTO_BEHOME": "ВОЙТИ В REZILITY",
+            "PASSWORD_STRENGTH_LEVEL1": "Вам потребуется пароль.",
+            "PASSWORD_STRENGTH_LEVEL2": "Достаточно надежный. Не менее 8 символов с прописными буквами и цифрами.",
+            "PASSWORD_STRENGTH_LEVEL3": "Этот подойдет!",
+            "PASSWORD_STRENGTH_LEVEL4": "Но не стоит беспокоиться, если вы его забудете. Мы можем отправить вам ссылку, чтобы исправить ситуацию."
+        },
+        "SELECT_PASSWORD": {
+            "COMPLETE_SIGN": "Завершить регистрацию."
+        }
+    },
+    "COACH_MARK": {
+        "FEED_MSG_1": "Регулярно проверяйте ленту новостей, ",
+        "FEED_MSG_2": "чтобы узнать новости и получить информацию о новых возможностях.",
+        "GOT_IT": "ПОНЯТНО",
+        "FEED_COACH": "Корм",
+        "CONV_MSG_1": "Эти",
+        "CONV_MSG_2": "Ваши беседы.",
+        "CONV_COACH": "Беседа",
+        "AROUND_PLACE01": "Откройте для себя места и услуги",
+        "AROUND_PLACE02": "Возле вас.",
+        "AROUND_COACH": "Возле вас",
+        "STUFF_COACH": "Личный кабинет",
+        "STUFF_MSG_1": "Управляйте ",
+        "STUFF_MSG_2": "профилем и настройками.",
+        "START_CONVERSATION": "Начните беседу",
+        "MAP_SETTINGS": "Настройки карты",
+        "YOUR_PINNED": "Ваши отмеченные ",
+        "LOCATION": "местоположения",
+        "SAVE_LOCATION": "Сохранить местоположение",
+        "CENTER_MAP": "Центрировать карту ",
+        "YOUR_LOCATION": "по вашему текущему местоположению"
+    },
+    "ACTIVITY": {
+        "TITLE": "Ваша лента новостей",
+        "COMMING_SOON": "В ближайшее время...",
+        "START_CONVERSATION": "Начните беседу",
+        "READ_THIS_ARTICLE": "ПОДРОБНЕЕ",
+        "CONNECT": "УСТАНОВИТЬ КОНТАКТ СЕЙЧАС",
+        "NEW_ADDRESS": "ВВЕСТИ НОВЫЙ АДРЕС",
+        "CALL": "ПОЗВОНИТЬ",
+        "CREATE": "Создать фид",
+        "SUBMIT_CARD": "Отправить карту",
+        "DEFINE_AUDIENCE": "Define Audience",
+        "BUILD_PLACEMENT": "Build Placement",
+        "BUILD_POLL": "Build Poll",
+        "CREATE_FEED": { 
+            "HEADLINE": "Headline...",
+            "SUMMARY": "Summary...",
+            "NOW": "Now",
+            "PLACEMENT_HEADER": "Placement Details",
+            "POLL_HEADER": "Poll Details",
+            "SELECT_IMAGE": "Select a image",
+            "HEADER": "Header",
+            "TOTAL_CHARACTER": "characters remaining",
+            "DESCRIPTION": "Description",
+            "MORE_INFO": "More Info",
+            "ALLOW": "Allow User To Initiate A Private Conversation",
+            "BRANCHES": "Branches",
+            "SELECT_SEGMENT":"Select Segment",
+            "SELECT_TEMPLATE":"Select a Template",
+            "QUESTION": "Question",
+            "RESPOND_TYPE": "Respond Type",
+            "SINGLE_SELECTION": "Single Selection",
+            "MULTI_SELECTION": "Multiple Selection",
+            "OPTIONS": "Options",
+            "ENTER_QUESTION": "Enter a Question",
+            "SUBMIT": "Submit",
+            "SET_DELIVERY": "Set Delivery",
+            "RESET_DELIVERY": "Re-set Delivery",
+            "RUN_PLACEMENT": "Run my placement now",
+            "START_DATE": "Set start date",
+            "START_DELIVERY": "Start Delivery on"
+        }
+    },
+    "CONVERSATIONS": {
+        "TITLE": "Ваши беседы",
+        "IS_TYPING": "набирает сообщение...",
+        "INVITE_CONNECT": "Приглашение установить контакт",
+        "ARCHIVE": "Архивировать",
+        "LEAVE": "Покинуть",
+        "DELETE": "Удалить",
+        "WELCOME": "Добро пожаловать в",
+        "YOUR_CONVERSATION": "Ваши беседы.",
+        "LEAVE_GROUP": "Действительно покинуть эту группу?",
+        "DELETE_GROUP": "Действительно удалить эту беседу?",
+        "OK": "ОК",
+        "CANCEL": "ОТМЕНА",
+        "NEW_MSG": {
+            "TITLE": "Новое сообщение",
+            "TO": "Кому",
+            "YOUR_CONNECTION": "ВАШИ КОНТАКТЫ",
+            "OTHERS": "ДРУГИЕ НА REZILITY",
+            "CREATE_GROUP": "Создать новую группу",
+            "INVITATION": "Приглашение отправлено",
+            "INVITE_CONNECT": "Приглашение установить контакт",
+            "NOT_CONNECT": "Контакт не установлен",
+            "TAKE_PHOTO": "Сделать фото",
+            "ATTACH_PHOTO": "Прикрепить фото",
+            "LIB_PHOTO": "Выберите из библиотеки"
+        },
+        "SHOW_IMG": {
+            "CAPTION": "Сопроводительная надпись"
+        },
+        "SETTING": {
+            "TITLE": "Настройки беседы",
+            "SEND_PUSH_NOTIFICATION": "Игнорировать эту беседу",
+            "PARTICIPANT": "УЧАСТНИКИ",
+            "ARCHIVE": "Архивировать беседу",
+            "ADD_PEOPLE": "ДОБАВИТЬ КОНТАКТЫ",
+            "EDIT_GROUP": "Изменить группу",
+            "ACTIVE_NOW": "Активные"
+        },
+        "GROUP_CHAT": {
+            "TITLE": "ВАШИ КОНТАКТЫ ",
+            "CREATE_TITLE": "Новая групповая беседа",
+            "EDIT_TITLE": "Изменить групповую беседу",
+            "ADDPEOPLE_TITLE": "ДОБАВИТЬ КОНТАКТЫ",
+            "GROUP_NAME": "Название группы",
+            "SEARCH_PEOPLE": "Искать людей",
+            "GROUP_TITLE": "Заголовок группы"
+        },
+        "PUBLIC_PROFILE": {
+            "INVITE": "Пригласить",
+            "CANCEL_INVITE": "Отменить приглашение",
+            "ACCEPT_CONNECT": "Принять и установить контакт",
+            "IGNORE": "Игнорировать",
+            "PRIVATE_MSG": "Личное сообщение",
+            "REMOVE_GRP": "Удалить из группы",
+            "LEAVE_GRP": "Покинуть эту группу",
+            "BLOCK": "Заблокировать",
+            "UNBLOCK": "Разблокировать",
+            "APPROVE_CONNECT": "Принять и установить контакт",
+            "DENY": "Отклонить"
+        }
+    },
+    "AROUND_ME": {
+        "TITLE": "Возле вас",
+        "PINNED_LOCATION": "Отмеченное местоположение",
+        "YOUR_PINNED_LOCATION_BTN": "Ваши отмеченные местоположения",
+        "DROP_PIN_BTN": "Снять отметку",
+        "EDIT_LOCATION_TITLE": "Изменить сохраненное местоположение",
+        "SEARCH_LOCATION": "Поиск местоположения",
+        "YOUR_PINNED_LOCATION": {
+            "TITLE": "Сохраненные местоположения",
+            "EDIT_BUTTON": "Редактировать",
+            "DELETE_BUTTON": "Удалить"
+        },
+        "SET_PIN_LOCATION": {
+            "TITLE": "Снять отметку",
+            "LOCATION": "Название местоположения"
+        },
+        "MAP_OVERLAYS": {
+            "TITLE": "Что вы хотите увидеть?",
+            "CLEAR_BTN": "Очистить",
+            "PROVIDER_SECTION": "УЧРЕЖДЕНИЯ, ПРЕДОСТАВЛЯЮЩИЕ ЖИЛЬЕ",
+            "SERVICE_INTEREST": "ПОСТАВЩИКИ УСЛУГ",
+            "GOOGLE_PLACES": "ИНТЕРЕСУЮЩИЕ МЕСТА"
+        },
+        "LIST_VIEW": {
+            "PROPERTY": "УЧРЕЖДЕНИЯ, ПРЕДОСТАВЛЯЮЩИЕ ЖИЛЬЕ",
+            "SERVICE_PROPVIDER": "ПОСТАВЩИКИ УСЛУГ"
+        },
+        "PROVIDER_DETAILS": {
+            "SERVICES": "УСЛУГИ",
+            "ADDRESS": "Адрес",
+            "HOURS": "ЧАСЫ",
+            "FOLLOW": "ПОДПИСАТЬСЯ",
+            "UNFOLLOW": "ОТМЕНИТЬ ПОДПИСКУ",
+            "DONT_LIVE": "Я ЗДЕСЬ НЕ ЖИВУ",
+            "LIVE": "Я ЗДЕСЬ ЖИВУ ",
+            "TITLE_VERIFIED": "Вы здесь живете",
+            "TITLE_RESIDENT_ADVOCATE": "Адвокат по жилищным вопросам",
+            "TITLE_UNVERIFIED": "Ожидается выполнение проверки адреса",
+            "FOLLOW_BTN": "ПОДПИСАТЬСЯ",
+            "UNFOLLOW_BTN": "ОТМЕНИТЬ ПОДПИСКУ",
+            "RESIDENT_ADVOCATE": "Я УХАЖИВАЮ ЗА КВАРТИРОНАНИМАТЕЛЕМ В ЭТОМ ДОМЕ"
+        },
+        "NO_PINNED_MESSAGE": "Начнем с отметки нескольких местоположений.",
+        "WORKING_STATUS": {
+            "OPEN_NOW": "ОТКРЫТО СЕЙЧАС",
+            "CLOSED": "Закрыто сейчас"
+        },
+        "DISCONTINUED_PROPERTY": {
+            "CONFIRMATION_MSG": "Вы уверены?",
+            "SEND_BUTTON": "ДА. ОТМЕНИТЬ СВЯЗЬ.",
+            "CANCEL_BTN_LINK": "Я не хочу отменять связь.",
+            "MSG": "Если вы укажете, что вы здесь не живете, вы больше не будете получать информацию от организации, предоставляющей вам жилье, в приложении Rezility."
+        },
+        "HOUSING_TYPES": {
+            "TITLE": "Какое здание"
+        },
+        "HOUSING_UNIT": {
+            "TITLE": "В каком блоке?",
+            "VERIFY-BTN": "ВЫПОЛНИТЬ ПРОВЕРКУ ДОМАШНЕГО АДРЕСА",
+            "MSG": "Нам необходима эта информация для проверки вашей личности и ответа на сервисные вызовы. Мы обещаем обеспечить безопасность ваших данных и заботиться о них так, как о своих собственных. ",
+            "Unit": "Номер блока"
+        },
+        "PENDING_CONFIRMATION": {
+            "CONFIRMATION_MSG": "ПОНЯТНО!",
+            "SEND_BUTTON": "ПРОДОЛЖИТЬ",
+            "MSG": "Ваш адрес был отправлен учреждению, предоставляющему вам жилье, для выполнения проверки.  После проверки вы сможете получать информацию, касающуюся этого объекта недвижимости, обновления и новости от организации, предоставляющей вам жилье."
+        },
+        "VERIFY_ADDRESS": {
+            "TITLE": "Выполните проверку домашнего адреса",
+            "VERIFY_BUTTON": "ВЫПОЛНИТЬ ПРОВЕРКУ ДОМАШНЕГО АДРЕСА",
+            "APARTMENT_UNIT": "Номер квартиры или блока",
+            "ADDRESS": "Адрес",
+            "PROVIDER": "Поставщик услуг"
+        },
+        "ADDRESS_TYPE": {
+            "HOME": "Дом",
+            "WORK": "Работа",
+            "OTHER": "Другое"
+        }
+    },
+    "YOUR_STUFF": {
+        "TITLE": "Личный кабинет",
+        "HI": "Здравствуйте",
+        "PROFILE": {
+            "TITLE": "Профиль",
+            "EDIT": {
+                "TITLE": "Изменить профиль",
+                "FIRST_NAME": "Имя",
+                "LAST_NAME": "Фамилия",
+                "MIDDLE_NAME": "Второе имя",
+                "PHONE_NUMBER": "Номер телефон",
+                "ABOUT": "О себе",
+                "DATE_OF_BIRTH": "Дата рождения",
+                "AGE": "Возраст",
+                "GENDER": "Пол",
+                "UNDER": "Меньше ",
+                "OVER": "Больше",
+                "VERIFIED": "ПРОВЕРЕННЫЙ",
+                "UNVERIFIED": "НЕПРОВЕРЕННЫЙ",
+                "HOME_ADDRESS": "Домашний адрес",
+                "ADDRESS": {
+                    "TITLE": "Адрес",
+                    "STREET_ADDRESS_1": "Улица и номер дома, квартиры",
+                    "UNIT_NO": "Номер блока",
+                    "CITY": "Город",
+                    "STATE": "Штат",
+                    "ZIP_CODE": "Почтовый индекс",
+                    "SEARCH_LOCATION": "Поиск местоположения"
+                },
+                "LANGUAGE": "Язык",
+                "EDUCATION_LEVEL": "Уровень образования",
+                "ANNUAL_INCOME": "Годовой доход",
+                "SERVICE_INTERESTS": "Услуги, представляющие интерес",
+                "VERIFICATIONS": {
+                    "TITLE": "Проверки",
+                    "FACEBOOK_CONNECTED": "Вход с Facebook",
+                    "FB_STATUS": "Статус Facebook.",
+                    "FB_NOT": "Не выполнен вход в Facebook"
+                }
+            },
+            "MESSAGES": {
+                "DOB_ERROR": "Дата рождения не может быть датой в будущем."
+            }
+        },
+        "SETTINGS": {
+            "TITLE": "Настройки",
+            "PINNED_LOCATIONS": "Отмеченные местоположения",
+            "SEND_PUSH_NOTIFICATIONS": "Отправлять push-уведомления",
+            "LOW_DATA": "Низкое использование данных",
+            "CHANGE_PASSWORD": {
+                "TITLE": "Изменить пароль",
+                "NEW_PASSWORD": "Новый пароль",
+                "REPEAT_PASSWORD": "Повторить пароль"
+            },
+            "BLOCKED_USERS": "Заблокированные пользователи",
+            "SHOW_COACHMARKS": "Показать подсказки",
+            "ABOUT_APP": "О приложении",
+            "LOG_OUT": "Выйти",
+            "DEACTIVE_YOUR_ACCOUNT": "ДЕАКТИВИРОВАТЬ УЧЕТНУЮ ЗАПИСЬ",
+            "VERSION": "ВЕРСИЯ REZILITY "
+        },
+        "FAQ": {
+            "TITLE": "Часто 3адаваемые Bопросы"
+        },
+        "FEEDBACK": {
+            "TITLE": "Оставьте Cвои Oтзывы"
+        },
+        "TELL_FEEDBACK": {
+            "TITLE": "Оставьте Cвои Oтзывы",
+            "SEND_BTN": "Отправить",
+            "PLACEHOLDER": "Есть вопрос/Хотите оставить отзыв? Отправьте его здесь."
+        },
+        "FAVORITES": {
+            "TITLE": "Избранное"
+        }
+    },
+    "SERVICE_REQUESTS": {
+        "TITLE": "Заявки на оказание услуг",
+        "TYPE": "ТИП",
+        "DESCRIPTION": "ОПИСАНИЕ",
+        "DESCRIPTION_HINT": "Опишите проблему... (Макс. 500 символов)",
+        "PHOTOS": "ФОТОГРАФИИ",
+        "PHOTOS_HINT": "Отправлять фотографии необязательно. ",
+        "NEXT": "ДАЛЕЕ",
+        "ADD_PHOTOS": "ДОБАВИТЬ ФОТОГРАФИИ",
+        "SETTINGS": {
+            "TITLE": "Новая заявка на оказание услуг",
+            "PARTICIPANT": "УЧАСТНИКИ",
+            "NEWSERVICE": "СОЗДАТЬ НОВУЮ ЗАЯВКУ НА ОКАЗАНИЕ УСЛУГ"
+        },
+        "DETAILS": {
+            "METAID": "#123-456-789",
+            "DETAILS": "ПОДРОБНОСТИ",
+            "CONVERSATION": "Беседа",
+            "STATUS": "СТАТУС:",
+            "ACTIVE": "АКТИВНАЯ"
+        },
+        "REQUEST_LIST": {
+            "ACTIVE": "АКТИВНАЯ",
+            "RESOLVED": "ВЫПОЛНЕННАЯ",
+            "CANCELLED":"отменил",            
+            "ACTIVE_MSG": "Вы еще не создали заявку на оказание услуг. После создания заявки на оказание услуг она будет добавлена в список ваших заявок на оказание услуг.",
+            "RESOLVED_MSG": "Отсутствуют выполненные заявки на оказание услуг."
+        },
+        "REFERENCE_NUMBER": "Происшествию назначен справочный номер ",
+        "PROBLEMREPORTED": "Отправлено уведомление о проблеме",
+        "NO_SERVICE_REQUEST": "Это свойство не поддерживает запросы на обслуживание.",
+        "VERIFY_ADDRESS": "Выполните проверку адреса для создания заявок на оказание услуг.",
+        "SERVICE_REQUEST_CREATED": "Заявка на оказание услуг создана."
+    },
+    "BUTTON_LABEL": {
+        "SEND": "Отправить",
+        "SAVE": "Сохранить",
+        "EDIT": "Редактировать",
+        "CANCEL": "ОТМЕНА",
+        "BACK": "Назад",
+        "CLEAR": "Очистить",
+        "CONTINUE": "ПРОДОЛЖИТЬ",
+        "SKIP_THIS": "Пропустить",
+        "FIX_ERROR": "ИСПРАВИТЬ ЭТУ ОШИБКУ",
+        "LOGIN_FACEBOOK": "ВОЙТИ С FACEBOOK."
+    },
+    "PLACEORDER": {
+        "SEARCH": "Ввести имя или адрес эл. почты",
+        "TITLE": "Новая беседа",
+        "MESSAGE": "Написать сообщение"
+    },
+    "ERROR_MESSAGES": {
+        "NO_DATA_FOUND": "Данные не найдены",
+        "LOADING_MORE_DATA_TO_LOAD": "Выполняется загрузка дополнительных данных...",
+        "NO_CONVERSATION": "Нажмите на значок + в верхнем левом углу",
+        "NO_CONVERSATION_1": "затем введите имя в поле поиска, чтобы установить контакты с другими",
+        "NO_CONVERSATION_2": "Пользователи Rezility.",
+        "EMPTY_BLOCKED_LIST": "У вас нет заблокированных пользователей. После блокирования пользователь будет добавлен в список заблокированных лиц.",
+        "SOMETHING_WENT_WRONG": "Произошла ошибка! Попробуйте еще раз позже.",
+        "APP_VERSION_UPDATED": "Вы обновили приложение, выполните вход еще раз.",
+        "NO_MORE_DATA_TO_LOAD": "Больше нет данных для загрузки",
+        "SAVE_DATA_DONE": "Данные успешно сохранены",
+        "PROFILE_SAVE_DONE": "Профиль успешно сохранен",
+        "POLL_SAVE_DONE": "Опрос успешно сохранен",
+        "SETTINGS_UPDATED": "Настройки успешно обновлены",
+        "LOGGED_USER": "Вы уже вошли в Rezility.",
+        "DEVICE_REGISTRATION_FAILED": "Не удалось зарегистрировать устройство. Повторите попытку позже.",
+        "LOCATION_NOT_FOUND": "Не удается найти ваше текущее местоположение. Повторите попытку позже.",
+        "ADDRESS_NOT_FOUND": "Не удалось найти адрес.",
+        "SELECT_LOCATION": "Выберите действительное местоположение на карте.",
+        "LOCATION_NAME_BLANK": "Задайте имя действительного местоположения.",
+        "INVALID_USERNAME_PASSWORD": "Недопустимый адрес эл. почты или пароль.",
+        "ADMIN_BLOCK": "Вы не можете заблокировать администратора rezility.",
+        "UNINVITED_MESSAGE": "Пригласите пользователя установить контакт.",
+        "INVALID_UNIT_MESSAGE": "Выберите действительный номер блока.",
+        "ZIP_CODE_VALID": "Введите действительный почтовый индекс (например, 10461 или 10461–1235)",
+        "NO_NETWORK": "Проверьте подключение к Интернету.",
+        "NO_NETWORK_TITLE": "Отсутствует подключение к Интернету",
+        "NO_NETWORK_MSG": "Проверьте подключение к Интернету.",
+        "INVITATION_ACCEPTED_PREFIX": "Вы установили контакт с ",
+        "SENT_INVITE_NOT_POSTFIX": "пригласил(а) вас установить контакт.",
+        "BLOCK_SUCCESS": "Пользователь успешно заблокирован.",
+        "UNBLOCK_SUCCESS": "Пользователь успешно разблокирован.",
+        "BLOCKED_USER_POSTFIX": "заблокирован.",
+        "GRP_SEND_ERROR_MSG": "Вы не можете отправить сообщения этой группе, так как вы больше не являетесь ее участником.",
+        "GRP_EDIT_ERROR_MSG": "Вы не можете изменить эту группу, так как вы больше не являетесь ее участником.",
+        "GRP_JOINED": "Приветствуем в группе",
+        "GRP_REMOVED": "Вы больше не являетесь участником.",
+        "PLEASE_WAIT": "Подождите...",
+        "REPORTING": "Создание отчета...",
+        "UPLOADING": "Загрузка...",
+        "LOGGING_OUT": "Выход...",
+        "UPDATE_SUCCESSFUL": "Пароль успешно обновлен",
+        "PASSWORD_BLANK": "Пароль не может быть пустым",
+        "PASSWORD_MISMATCH": "Пароли не совпадают",
+        "PASSWORD_FORMAT": "Пароль должен содержать не менее 8 символов с прописными буквами и цифрами.",
+        "NAME_VALIDATION": "Имя и фамилия не могут быть пустыми",
+        "CANCEL_BTN": "СПАСИБО, НЕТ.",
+        "OK_BTN": "ОБНОВИТЬ",
+        "VERIFY_ADDRESS_SUCCESS": "Адрес проживания успешно подтвержден. ",
+        "VERIFY_ADDRESS_DENY": "Отказано в подтверждении адреса проживания.",
+        "ADDED_GROUP": "Вас добавили в группу.",
+        "NO_LONGER_PARTICIPANT": "Вы больше не являетесь участником группы.",
+        "INVITED_YOU": "пригласил(а) вас установить контакт.",
+        "NETWORK": "Сеть: не подключено",
+        "INVITATION_INVITED_POSTFIX": "еще не принял ваше приглашение установить контакт.",
+        "VERIFICATION_PREFIX": "Проверка запрошена: ",
+        "ADVOCATE_VERIFICATION_PREFIX": "Адвокат-резидент запрашивается: ",
+        "ACCEPTED_POSTFIX": "был проверен. Вы установили контакт.",
+        "DENY_PREFIX": "Проверка отклонена:",
+        "VERIFICATION_MESSAGE": "Вы получили запрос на выполнение проверки.",
+        "NO_FAVORITE_FOUND": "После добавления ленты новостей в избранное она будет добавлена в список избранных лент новостей.",
+        "VERIFICATION_CANCEL_MESSAGE": "Резидент отменил свой запрос на подтверждение.",
+        "ERROR_TITLE": "Ошибка",
+        "TWITTER_ERROR": "Приложение Twitter не найдено.",
+        "PHONE_VALIDATION": "Пожалуйста, введите действующий телефонный номер."                
+    },
+    "DAYS_IN_SHORT": {
+        "SUNDAY": "Вс",
+        "MONDAY": "Пн",
+        "TUESDAY": "Вт",
+        "WEDNESDAY": "Ср",
+        "THURSDAY": "Чт",
+        "FRIDAY": "Пт",
+        "SATURDAY": "Сб"
+    },
+    "MONTHS_IN_SHORT": {
+        "JAN": "ЯНВ.",
+        "FEB": "ФЕВР.",
+        "MAR": "МАРТ",
+        "APR": "АПР.",
+        "MAY": "МАЙ",
+        "JUN": "ИЮНЬ",
+        "JUL": "ИЮЛЬ",
+        "AUG": "АВГ.",
+        "SEP": "СЕНТ.",
+        "OCT": "ОКТ.",
+        "NOV": "НОЯБ.",
+        "DEC": "ДЕК."
+    },
+    "MISC": {
+        "Rezility": "Rezility.",
+        "IMAGE": "Загрузите файл с изображением на профиль",
+        "PROFILE_IMAGE": "Изображение профиля",
+        "Oops": "Ой!",
+        "REFRESH": "Выполняется обновление...",
+        "PULL": "Потянуть вниз для обновления",
+        "OK": "OK",
+        "DISMISS": "Закрыть"
+    },
+    "TIMESTAMP": {
+        "DAY_AGO": "1 ДЕНЬ НАЗАД",
+        "AM": "До полудня",
+        "PM": "После полудня"
+    },
+    "WELCOME_FEED": {
+        "YOUR_FEED": "Ваша лента\nновостей",
+        "YOUR_CONV": "Ваши\nбеседы",
+        "AROUND_YOU": "Возле\nвас",
+        "YOUR_STUFF": "Личный\nкабинет"
+    },
+    "CREATE_FEED":{
+        "TITLE":"Please add title to the feed.",
+        "DESCRIPTION":"Please add description to the feed.",
+        "LOGO":"Please add/select a logo."
+    }
+}

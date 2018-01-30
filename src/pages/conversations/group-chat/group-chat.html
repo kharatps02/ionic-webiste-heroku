@@ -1,0 +1,52 @@
+<ion-header labelHeader>
+    <ion-navbar>
+        <ion-title *ngIf="selectedGroup && selectedGroup.type !== conversationType.GROUP">{{'CONVERSATIONS.GROUP_CHAT.ADDPEOPLE_TITLE' | translate}}</ion-title>
+        <ion-title *ngIf="!selectedGroup && !group.isEditAction">{{'CONVERSATIONS.GROUP_CHAT.CREATE_TITLE' | translate}}</ion-title>
+        <ion-title *ngIf="selectedGroup && selectedGroup.type === conversationType.GROUP && group.isEditAction">{{'CONVERSATIONS.GROUP_CHAT.EDIT_TITLE' | translate}}</ion-title>
+        <ion-buttons end>
+            <button ion-button text-outline-btn [disabled]="!((group.name.length > 0) && (group.members.length>1))" (tap)="createGroup()">
+               <!--{{'BUTTON_LABEL.SAVE' | translate}}-->
+               <ion-icon class="icons-correct"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+    <ion-toolbar>
+        <div class="group-title">
+            <ion-icon class="icons-chat01"></ion-icon>
+            <ion-input right class="text-field" [(ngModel)]="group.name" placeholder="{{'CONVERSATIONS.GROUP_CHAT.GROUP_TITLE' | translate}}" maxlength="50"></ion-input>
+        </div>
+        <div search-box [ngClass]="{'only-search':group.members.length===0}">
+            <div class="contact-chip">
+                <ion-icon class="icons-search"></ion-icon>
+                <ion-chip #chip2 *ngIf="group.members.length>0">
+                    <div class="select-contact" *ngFor="let user of group.members let userIndex=index">
+                        <span>{{user.user_name}}</span>
+                        <button ion-button clear color="dark" (click)="unSelectUser(user,userIndex)">
+                        <ion-icon class="icons-close" name="close-circle"></ion-icon>
+                    </button>
+                    </div>
+                    <ion-searchbar class="input-searchbar" [(ngModel)]="group.searchStr" placeholder="" (ionInput)="searchUser(group.searchStr)"></ion-searchbar>
+                </ion-chip>
+                <div *ngIf="group.members.length<=0">
+                    <ion-searchbar class="input-searchbar" [(ngModel)]="group.searchStr" placeholder="{{'CONVERSATIONS.GROUP_CHAT.SEARCH_PEOPLE' | translate}}" (ionInput)="searchUser(group.searchStr)"></ion-searchbar>
+                </div>
+            </div>
+        </div>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content silvergrey-background new-message (pan)="hideKeyboard();" [ngClass]="{'add-contacts':group.members.length>0,'remove-contacts':group.members.length ===0}" class="scroll-content ionic-scroll has-header has-footer">
+    <ion-list>
+        <ion-item-divider *ngIf="{first: first}; let firstUser; let user;">{{'CONVERSATIONS.GROUP_CHAT.TITLE' | translate }}</ion-item-divider>
+    </ion-list>
+    <ion-list *ngFor="let user of connectedUsersList; let firstUser=first;">
+        <button ion-item detail-none class="list-grid-136" *ngIf="user.selected!== true" [ngClass]="{'selected-card':user.selected=== true}" (click)="!user.selected && selectUser(user)">
+            <h2><span class="text14px-black">{{user.user_name}}</span></h2>
+            <!--<p subtitle12px>Last seen 3 hours ago</p>-->
+            <ion-avatar item-end class="profile-img-44" [ngClass]="{'active': user.presence, 'de-active':!user.presence}">
+                <img *ngIf="user.profile_pic" src={{user.profile_pic}} alt="" />
+                <img *ngIf="!user.profile_pic" [src]="placeholderIamges.PROFILE_PIC" alt="" />
+            </ion-avatar>
+        </button>
+    </ion-list>
+</ion-content>

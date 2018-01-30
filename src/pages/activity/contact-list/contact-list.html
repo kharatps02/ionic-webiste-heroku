@@ -1,0 +1,43 @@
+<ion-header labelHeader>
+    <ion-navbar>
+      <ion-title>{{'CONVERSATIONS.NEW_MSG.YOUR_CONNECTION' | translate}}</ion-title>
+        <ion-buttons end>
+            <button *ngIf="contacts.length>0" ion-button text-outline-btn (tap)="shareFeed()">
+               <!--{{'BUTTON_LABEL.SAVE' | translate}}-->
+               <ion-icon class="icons-correct"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+    <ion-toolbar>
+        <div search-box [ngClass]="{'only-search':contacts.length===0}">
+            <div class="contact-chip">
+                <ion-icon class="icons-search"></ion-icon>
+                <ion-chip #chip2 *ngIf="contacts.length>0">
+                    <div class="select-contact" *ngFor="let user of contacts let userIndex=index">
+                        <span>{{user.user_name}}</span>
+                        <button ion-button clear color="dark" (click)="unSelectUser(user,userIndex)">
+                        <ion-icon class="icons-close" name="close-circle"></ion-icon>
+                    </button>
+                    </div>
+                    <ion-searchbar class="input-searchbar" [(ngModel)]="searchStr" placeholder="" (ionInput)="searchUser(searchStr)"></ion-searchbar>
+                </ion-chip>
+                <div *ngIf="contacts.length<=0">
+                    <ion-searchbar class="input-searchbar" [(ngModel)]="searchStr" placeholder="{{'CONVERSATIONS.GROUP_CHAT.SEARCH_PEOPLE' | translate}}" (ionInput)="searchUser(searchStr)"></ion-searchbar>
+                </div>
+            </div>
+        </div>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content silvergrey-background new-message (pan)="hideKeyboard();" [ngClass]="{'add-contacts':contacts.length>0,'remove-contacts':contacts.length ===0}" class="scroll-content ionic-scroll has-header has-footer">
+    <ion-list *ngFor="let user of connectedUsersList; let firstUser=first;">
+        <button ion-item detail-none class="list-grid-136" *ngIf="user.selected!== true" [ngClass]="{'selected-card':user.selected=== true}" (click)="!user.selected && selectUser(user)">
+            <h2><span class="text14px-black">{{user.user_name}}</span></h2>
+            <!--<p subtitle12px>Last seen 3 hours ago</p>-->
+            <ion-avatar item-end class="profile-img-44" [ngClass]="{'active': user.presence, 'de-active':!user.presence}">
+                <img *ngIf="user.profile_pic" src={{user.profile_pic}} alt="" />
+                <img *ngIf="!user.profile_pic" [src]="placeholderIamges.PROFILE_PIC" alt="" />
+            </ion-avatar>
+        </button>
+    </ion-list>
+</ion-content>

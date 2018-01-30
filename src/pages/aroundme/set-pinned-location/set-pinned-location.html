@@ -1,0 +1,26 @@
+<ion-header labelHeader>
+    <ion-navbar>
+        <ion-title>{{'AROUND_ME.SET_PIN_LOCATION.TITLE' | translate }}</ion-title>
+        <ion-buttons end>
+            <button ion-button clear (tap)="saveDropPin()"><ion-icon class="icons-correct"></ion-icon></button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content silvergrey-background>
+    <!-- silver-shade6 -->
+    <ion-list radio-group [(ngModel)]="locationName">
+        <!--  list-items -->
+        <button ion-item detail-none class="list-grid-120 new-radio" *ngFor="let addressType of AddressType">
+            <ion-label><span class="text14px-black">{{addressType.name}}</span></ion-label>
+            <ion-radio value="{{addressType.value}}"></ion-radio>
+        </button>
+        <button ion-item detail-none *ngIf="locationName == 'Other'" class="list-grid-120 drop-location-field">
+            <ion-input name="" type="text" [(ngModel)]="pinedLocation.name" placeholder="{{'AROUND_ME.SET_PIN_LOCATION.LOCATION' | translate }}"></ion-input>
+        </button>
+        <button ion-item detail-none *ngIf="locationName == 'Other'" class="list-grid-120 drop-address-field"> 
+            <ion-label class="text14px-black">
+                {{pinedLocation.address}}
+            </ion-label>
+        </button>
+    </ion-list>
+</ion-content>

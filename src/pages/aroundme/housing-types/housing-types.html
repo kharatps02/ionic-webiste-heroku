@@ -1,0 +1,14 @@
+<ion-header labelHeader>
+    <ion-navbar>
+        <ion-title>{{'AROUND_ME.HOUSING_TYPES.TITLE' | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-list>
+         <button ion-item detail-none class="list-grid-136" *ngFor="let building of buildings" (click)="selectUnit(building)">
+            <h2>
+                <span class="text14px-black">{{building.public_name}}</span>
+            </h2>
+        </button>
+    </ion-list>
+</ion-content>

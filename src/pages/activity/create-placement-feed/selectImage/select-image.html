@@ -1,0 +1,19 @@
+<ion-header labelHeader>
+    <ion-navbar>
+        <ion-title>{{'ACTIVITY.CREATE_FEED.SELECT_IMAGE' | translate}}</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="dismiss()">
+                <ion-icon class="icons-close"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content silvergrey-background>  
+    <ion-grid>
+        <ion-row>
+            <ion-col col-6 *ngFor="let images of libraryImages; let position = index;" [ngClass]="{'images': imageCategory === 'images', 'logos': imageCategory === 'logos'}">
+                <img src={{images}} (click)="selectImage(position)"  />
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

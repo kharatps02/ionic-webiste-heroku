@@ -1,0 +1,13 @@
+page-map-overlays {
+    ion-header ion-navbar ion-buttons[end] ion-icon {
+        font-size: 1.188rem;
+        color: #418731;
+    }
+    [ion-item].item-block{
+        ion-checkbox.checkbox[item-right]{
+            @include zeroPadding(0);
+            @include zeroMargin(0);
+        }
+    }
+    
+}

@@ -1,0 +1,52 @@
+# Customise this file, documentation can be found here:
+# https://github.com/fastlane/fastlane/tree/master/fastlane/docs
+# All available actions: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Actions.md
+# can also be listed using the `fastlane actions` command
+
+# Change the syntax highlighting to Ruby
+# All lines starting with a # are ignored when running `fastlane`
+
+# If you want to automatically update fastlane if a new version is available:
+# update_fastlane
+
+# This is the minimum version number required.
+# Update this, if you use features of a newer version
+fastlane_version "1.105.3"
+
+default_platform :ios
+
+ENV["FASTLANE_XCODE_LIST_TIMEOUT"] = "120"
+platform :ios do
+  before_all do
+    #cocoapods
+    #increment_build_number
+  end
+
+ desc "Responsible for building and signing the app"
+  private_lane :build_app do |options|
+    # Download the provisioning profile for the app
+
+    #increment_build_number # version bump
+    #match(type: "appstore")
+    gym(project: "./platforms/ios/BeHome.xcodeproj",
+      scheme: "BeHome",
+      provisioning_profile_path: "./fastlane/distribution/BeHome_Distribution_Profile.mobileprovision",
+      use_legacy_build_api: false)
+    #gym(project: "./platforms/ios/BeHome.xcodeproj",
+     # scheme: "BeHome")
+  end
+
+  desc "Submit a new Beta Build to Apple TestFlight"
+  desc "This will also make sure the profile is up to date"
+  lane :beta do
+    build_app
+    pilot(skip_waiting_for_build_processing: true)
+  end
+  end
+
+
+# More information about multiple platforms in fastlane: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Platforms.md
+# All available actions: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Actions.md
+
+# fastlane reports which actions are used
+# No personal data is recorded. Learn more at https://github.com/fastlane/enhancer

@@ -1,0 +1,47 @@
+<ion-header labelHeader>
+    <ion-navbar>
+        <ion-title>{{'ACTIVITY.DEFINE_AUDIENCE' | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content silvergrey-background class="">
+    <ion-list>
+        <ion-item class="list-grid-136">
+            <ion-label class="text14px-black">{{'ACTIVITY.CREATE_FEED.BRANCHES' | translate}}</ion-label>
+            <ion-select cancelText="{{'CONVERSATIONS.CANCEL' | translate}}" okText="{{'CONVERSATIONS.OK' | translate}}" class="edit-text"    [(ngModel)]="selectedBranch" (ionChange)=loadUserSegments()>
+                <li *ngFor="let branch of branches">
+                    <ion-option [value]="branch">{{branch.public_name}}</ion-option>
+                </li>
+            </ion-select>
+        </ion-item>
+
+        <ion-item class="list-grid-136">
+            <ion-label class="text14px-black">{{'ACTIVITY.CREATE_FEED.SELECT_SEGMENT' | translate}}</ion-label>
+            <ion-select [(ngModel)]="selectedSegment"   [disabled] = "userSegments === undefined" cancelText="{{'CONVERSATIONS.CANCEL' | translate}}" okText="{{'CONVERSATIONS.OK' | translate}}" class="edit-text">
+                <li *ngFor="let userSegment of userSegments">
+                    <ion-option value="{{userSegment._id}}">{{userSegment.name}}</ion-option>
+                </li>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+    <ion-label class="text14px-black template-label">{{'ACTIVITY.CREATE_FEED.SELECT_TEMPLATE' | translate}} </ion-label>
+    <ion-slides class="templates" [options]="runningSliderConfig" radio-group [(ngModel)]="selectedTemplate" pager>
+        <ion-slide class="placement" (click)="onTemplateSelect('Placement')">
+            <ion-avatar>
+                <ion-radio class="custom-ion-radio" value="Placement" [checked]="selectedTemplate === 'Placement'"></ion-radio>
+                <img src="./assets/img/placement.png" [ngClass]="{'selected': selectedTemplate === 'Placement'}">
+            </ion-avatar>
+        </ion-slide>
+
+        <ion-slide class="poll" (click)="onTemplateSelect('Poll')">
+            <ion-avatar>
+                <ion-radio class="custom-ion-radio" value="Poll" [checked]="selectedTemplate === 'Poll'"></ion-radio>
+                <img src="./assets/img/poll.png" [ngClass]="{'selected': selectedTemplate === 'Poll'}">
+            </ion-avatar>
+        </ion-slide>
+    </ion-slides>
+</ion-content>
+<ion-footer footer-full>
+    <ion-toolbar>
+        <button ion-button block class="button-square-blue" [disabled] = "selectedSegment === undefined || selectedBranch === undefined" (click)="navigateToSetFeed()">{{'BUTTON_LABEL.CONTINUE' | translate }}</button>
+    </ion-toolbar>
+</ion-footer>

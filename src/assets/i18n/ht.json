@@ -1,0 +1,521 @@
+{
+    "GET_STARTED": {
+        "TITLE": "ENSKRI NAN REZILITY",
+        "ONBOARDING": {
+            "SKIP": "SOTE",
+            "FEED_TITLE": "Paj ou",
+            "CONV_TITLE": "Konvèsasyon ou yo",
+            "AROUND_TITLE": "Bò kote ou",
+            "APP_INFO_MESSAGE": "Opòtinite ak enfòmasyon pèsonalize pou ede lavi ou miyò.",
+            "FEED_IMG": "Souboarding Feed",
+            "CONV_IMG": "Konvèsasyon kontrase",
+            "AROUND_IMG": "Souboarding Aroundyou",
+            "CONV_DESC": "Pale ak moun ki ka konekte ou nan opòtinite sou bagay yo ki enpòtan pou ou.",
+            "AROUND_DESC": "Dekouvri moun, kote ak sa k ap pase bò kote ou - kit se lakay ou, nan travay, oswa nan kominote w la.",
+            "PRIVACY": "Nou pran vi prive serye anpil.",
+            "PRIVACY_DESC": "Nan tout pakou a, nou pral mande ou epi itilize kèk nan done ou mete an chaj nan enfòmasyon ou resevwa yo.  Nou pwomèt n ap kenbe tout done ou yo sekirize epi pran swen li tankou se pa nou.",
+            "ALREADY_ACC": "Mwen deja gen yon kont."
+        }
+    },
+    "LOGIN": {
+        "SIGN_IN": "Konekte",
+        "LOGIN_BTN": "KONEKTE SOU REZILITY",
+        "LOGIN_WITH_FB_BTN": "KONEKTE AK FACEBOOK.",
+        "FORGOT_PASSWORD_BTN": "Mwen bliye modpas mwen.",
+        "FORGOT_PASSWORD": "Mwen bliye modpas mwen",
+        "REQUEST_LOG_IN_LINK": "Mande yon nouvo modpas.",
+        "REQUEST_LOG_IN_LINK_MESSAGE": "Modpas yo se yon tèt chaje.  Sitou sou telefòn ou.  Nou konprann.  Jis antre adrès imèl pou kont ou epi nou pral yon nouvo modpas ba ou.",
+        "EMAIL_ADDRESS": "Adrès Imèl",
+        "SEND_LOGIN_LINK": "VOYE NOUVO MODPAS LA",
+        "FORGOT_PASS_MESSAGE": "Nou te voye yon nouvo modpas nan imèl ou.  Kopye modpas la, retounen sou ekran sa a, tape Kontinye epi kole modpas la pou ou konekte nan Rezility.",
+        "LOGIN_LINK_SENT": "Tcheke imèl ou.",
+        "ACCOUNT_EXIST": "Kont sa a deja egziste nan Rezility.",
+        "CREATE_ACC": "Kreye yon nouvo kont.",
+        "VALID_EMAIL": "Tanpri antre yon imèl ki valab.",
+        "PASSWORD": "Modpas",
+        "CONTINUE_SAVE": "Kontinye san nou pa anrejistre chanjman ou yo?"
+    },
+    "SIGN_UP": {
+        "TITLE": "Enskri",
+        "FIRST_NAME": "Prenon",
+        "LAST_NAME": "Siyati",
+        "ENTER_FN": "Tanpri antre prenon ou.",
+        "ENTER_LN": "Tanpri antre siyati ou.",
+        "EMAIL": "Adrès Imèl",
+        "ZIP_CODE": "Kòd postal",
+        "ENTER_EMAIL": "Tanpri antre yon imèl ki valab.",
+        "ENTER_ZIP": "Tanpri antre yon kòd postal ki valab.",
+        "PRIVACY_MSG": "Mwen li, konprann ak aksepte rezistans la",
+        "PRIVACY_MSG1": "Avi sou vi prive",
+        "PRIVACY_MSG2": "ak",
+        "PRIVACY_MSG3": "Tèm itilizasyon",
+        "PRIVACY_MSG5": "de Rezility.",
+        "PRIVACY_MSG4": "Tanpri aksepte Avi sou Konfidansyalite ak Kondisyon pou Itilize a.",
+        "GET_STARTED": "KIJAN REZILITY KAPAB EDE OU?",
+        "MESSGAE_1": "Pi bon avni pou tèt nou",
+        "MESSGAE_2": "ak lòt moun - nan kominote kote n ap travay ak viv.",
+        "WELCOME": "Byenveni",
+        "WELCOME_1": "nan Rezility.",
+        "ALREADY_HAVE_ACCOUNT": "Mwen deja gen yon kont.",
+        "CHOOSE_PASSWORD": "CHWAZI YON MODPAS",
+        "MESSAGE": "Pou w ka fin enskri, swa chwazi yon modpas oswa konekte ak kont Facebook ou a.",
+        "CREATE_PASSWORD": {
+            "TITLE": " Kreye yon modpas",
+            "LOGIN_INTO_BEHOME": "KONEKTE SOU REZILITY",
+            "PASSWORD_STRENGTH_LEVEL1": "Ou pral bezwen yon modpas.",
+            "PASSWORD_STRENGTH_LEVEL2": "Yon bon tou. Omwen 8 karaktè ak lèt ​​kapital ak chif ak tout bagay s yo.",
+            "PASSWORD_STRENGTH_LEVEL3": "Sa a bon!",
+            "PASSWORD_STRENGTH_LEVEL4": "Men, pa enkyete w si w bliye li. Nou ka voye yon lyen ba ou ki pral ede ou rekonekte."
+        },
+        "SELECT_PASSWORD": {
+            "COMPLETE_SIGN": "Fini Enskripsyon"
+        }
+    },
+    "COACH_MARK": {
+        "FEED_MSG_1": "Tcheke paj ou souvan ",
+        "FEED_MSG_2": "pou nouvo opòtinite ak enfòmasyon.",
+        "GOT_IT": "Dakò",
+        "FEED_COACH": "Pran swen.",
+        "CONV_MSG_1": "Sa yo se",
+        "CONV_MSG_2": "konvèsasyon ou yo.",
+        "CONV_COACH": "Konvèsasyon",
+        "AROUND_PLACE01": "Dekouvri kote ak sèvis",
+        "AROUND_PLACE02": "bò kote ou.",
+        "AROUND_COACH": "Bò kote ou",
+        "STUFF_COACH": "Zafè Ou",
+        "STUFF_MSG_1": "Jere",
+        "STUFF_MSG_2": "pwofil ak anviwònman ou.",
+        "START_CONVERSATION": "Kòmanse yon konvèsasyon",
+        "MAP_SETTINGS": "Konfigirasyon kat",
+        "YOUR_PINNED": "Pwen ou",
+        "LOCATION": "Make yo",
+        "SAVE_LOCATION": "Anrejistre adrès la",
+        "CENTER_MAP": "Sant kat la ",
+        "YOUR_LOCATION": "sou kote ou ye kounye a"
+    },
+    "ACTIVITY": {
+        "TITLE": "Paj ou",
+        "COMMING_SOON": "Ap vini talè...",
+        "START_CONVERSATION": "Kòmanse yon konvèsasyon",
+        "READ_THIS_ARTICLE": "PLIS ENFÒMASYON",
+        "CONNECT": "KONEKTE KOUNYE A",
+        "NEW_ADDRESS": "ANTRE YON NOUVO ADRÈS",
+        "CALL": "RELE",
+        "CREATE": "Kreye Feed",
+        "SUBMIT_CARD": "Soumèt Kat",
+        "DEFINE_AUDIENCE": "Define Audience",
+        "BUILD_PLACEMENT": "Build Placement",
+        "BUILD_POLL": "Build Poll",
+        "CREATE_FEED": { 
+            "HEADLINE": "Headline...",
+            "SUMMARY": "Summary...",
+            "NOW": "Now",
+            "PLACEMENT_HEADER": "Placement Details",
+            "POLL_HEADER": "Poll Details",
+            "SELECT_IMAGE": "Select a image",
+            "HEADER": "Header",
+            "TOTAL_CHARACTER": "characters remaining",
+            "DESCRIPTION": "Description",
+            "MORE_INFO": "More Info",
+            "ALLOW": "Allow User To Initiate A Private Conversation",
+            "BRANCHES": "Branches",
+            "SELECT_SEGMENT":"Select Segment",
+            "SELECT_TEMPLATE":"Select a Template",
+            "QUESTION": "Question",
+            "RESPOND_TYPE": "Respond Type",
+            "SINGLE_SELECTION": "Single Selection",
+            "MULTI_SELECTION": "Multiple Selection",
+            "OPTIONS": "Options",
+            "ENTER_QUESTION": "Enter a Question",
+            "SUBMIT": "Submit",
+            "SET_DELIVERY": "Set Delivery",
+            "RESET_DELIVERY": "Re-set Delivery",
+            "RUN_PLACEMENT": "Run my placement now",
+            "START_DATE": "Set start date",
+            "START_DELIVERY": "Start Delivery on"
+        }
+    },
+    "CONVERSATIONS": {
+        "TITLE": "Konvèsasyon ou yo",
+        "IS_TYPING": "ap tape ...",
+        "INVITE_CONNECT": "Envitasyon pou konekte",
+        "ARCHIVE": "Achiv",
+        "LEAVE": "Kite",
+        "DELETE": "Efase",
+        "WELCOME": "Byenveni nan",
+        "YOUR_CONVERSATION": "Konvèsasyon ou yo.",
+        "LEAVE_GROUP": "Èske ou sèten ou vle kite gwoup sa a?",
+        "DELETE_GROUP": "Èske ou sèten ou vle efase konvèsasyon sa a?",
+        "OK": "OK",
+        "CANCEL": "ANILE",
+        "NEW_MSG": {
+            "TITLE": "Nouvo mesaj",
+            "TO": "A",
+            "YOUR_CONNECTION": "KONTAK OU YO ",
+            "OTHERS": "LÒT MOUN KI SOU REZILITY",
+            "CREATE_GROUP": "Kreye nouvo gwoup ",
+            "INVITATION": "Envitasyon an te ale",
+            "INVITE_CONNECT": "Envitasyon pou konekte",
+            "NOT_CONNECT": "Pa konekte",
+            "TAKE_PHOTO": "Pran yon foto",
+            "ATTACH_PHOTO": "Tache yon foto",
+            "LIB_PHOTO": "Chwazi nan Bibliyotèk"
+        },
+        "SHOW_IMG": {
+            "CAPTION": "Mesaj"
+        },
+        "SETTING": {
+            "TITLE": "Konfigirasyon Konvèsasyon",
+            "SEND_PUSH_NOTIFICATION": "Fè konvèsasyon sa a myè",
+            "PARTICIPANT": "PATISIPAN",
+            "ARCHIVE": "Achiv Konvèsasyon",
+            "ADD_PEOPLE": "AJOUTE MOUN",
+            "EDIT_GROUP": "Modifye Gwoup la",
+            "ACTIVE_NOW": "Aktif Koulye a"
+        },
+        "GROUP_CHAT": {
+            "TITLE": "KONTAK OU YO ",
+            "CREATE_TITLE": "Nouvo Konvèsasyon Gwoup ",
+            "EDIT_TITLE": "Modifye Konvèsasyon Gwoup ",
+            "ADDPEOPLE_TITLE": "AJOUTE MOUN",
+            "GROUP_NAME": "Non Gwoup",
+            "SEARCH_PEOPLE": "Chèche Moun",
+            "GROUP_TITLE": "Tit Gwoup"
+        },
+        "PUBLIC_PROFILE": {
+            "INVITE": "Envite",
+            "CANCEL_INVITE": "Anile Envitasyon an",
+            "ACCEPT_CONNECT": "Aksepte & konekte",
+            "IGNORE": "Inyore",
+            "PRIVATE_MSG": "Mesaj prive",
+            "REMOVE_GRP": "Retire nan gwoup la",
+            "LEAVE_GRP": "Kite gwoup sa a",
+            "BLOCK": "Bloke",
+            "UNBLOCK": "Debloke",
+            "APPROVE_CONNECT": "Apwouve e verifye",
+            "DENY": "Refize"
+        }
+    },
+    "AROUND_ME": {
+        "TITLE": "Bò kote ou",
+        "PINNED_LOCATION": "Pwen ou Make",
+        "YOUR_PINNED_LOCATION_BTN": "Pwen ou Make yo",
+        "DROP_PIN_BTN": "Fè yon Pase",
+        "EDIT_LOCATION_TITLE": "Modifye yon Kote ou Anrejistre",
+        "SEARCH_LOCATION": "Chèche Adrès",
+        "YOUR_PINNED_LOCATION": {
+            "TITLE": "Anrejistre Adrès la",
+            "EDIT_BUTTON": "Modifye",
+            "DELETE_BUTTON": "Efase"
+        },
+        "SET_PIN_LOCATION": {
+            "TITLE": "Fè yon Pase",
+            "LOCATION": "Non Kote a"
+        },
+        "MAP_OVERLAYS": {
+            "TITLE": "Ki sa ou vle wè?",
+            "CLEAR_BTN": "Efase",
+            "PROVIDER_SECTION": "AJANS LOJMAN",
+            "SERVICE_INTEREST": "AJAN SÈVIS",
+            "GOOGLE_PLACES": "KOTE KI ENTERESE"
+        },
+        "LIST_VIEW": {
+            "PROPERTY": "AJANS LOJMAN",
+            "SERVICE_PROPVIDER": "AJAN SÈVIS"
+        },
+        "PROVIDER_DETAILS": {
+            "SERVICES": "SÈVIS",
+            "ADDRESS": "Adrès",
+            "HOURS": "ÈDTAN",
+            "FOLLOW": "SWIV",
+            "UNFOLLOW": "PA SWIV",
+            "DONT_LIVE": "MWEN PA VIV LA",
+            "LIVE": "M AP VIV LA ",
+            "TITLE_VERIFIED": "W ap viv la",
+            "TITLE_RESIDENT_ADVOCATE": "Avoka rezidan",
+            "TITLE_UNVERIFIED": "Verifikasyon adrès an atant",
+            "FOLLOW_BTN": "SWIV",
+            "UNFOLLOW_BTN": "PA SWIV",
+            "RESIDENT_ADVOCATE": "MWEN PREMYE KI MOUN KI RETE LA"
+        },
+        "NO_PINNED_MESSAGE": "Ann kòmanse make kèk kote.",
+        "WORKING_STATUS": {
+            "OPEN_NOW": "LOUVRI KOUNYE A",
+            "CLOSED": "FÈMEN KOUNYE A"
+        },
+        "DISCONTINUED_PROPERTY": {
+            "CONFIRMATION_MSG": "Èske se vre?",
+            "SEND_BUTTON": "WI. TANPRI DEKONEKTE MWEN.",
+            "CANCEL_BTN_LINK": "Mwen pa vle dekonekte.",
+            "MSG": "Depi ou di ou pa p viv la, ou p ap resevwa okenn nouvo enfòmasyon sou ajan lojman sa a nan aplikasyon Rezility a."
+        },
+        "HOUSING_TYPES": {
+            "TITLE": "Ki bilding"
+        },
+        "HOUSING_UNIT": {
+            "TITLE": "Nan ki inite?",
+            "VERIFY-BTN": "VERIFYE ADRÈS KAY LA",
+            "MSG": "Nou bezwen konnen sa pou nou ka verifye idantite ou epi reponn a apèl sèvis yo. Nou pwomèt n ap kenbe tout done ou yo sekirize epi pran swen li tankou se pa nou.",
+            "Unit": "Inite #"
+        },
+        "PENDING_CONFIRMATION": {
+            "CONFIRMATION_MSG": "Dakò!",
+            "SEND_BUTTON": "KONTINYE",
+            "MSG": "Nou te voye adrès ou bay ajans lojman la pou verifikasyon.  Yon fwa yo verifye, w ap pare pou resevwa enfòmasyon sou pwopriyete ou a, nouvèl nan men ajan kay la."
+        },
+        "VERIFY_ADDRESS": {
+            "TITLE": "Verifye adrès lakay ou",
+            "VERIFY_BUTTON": "VERIFYE ADRÈS KAY LA",
+            "APARTMENT_UNIT": "Apatman oswa Inite #",
+            "ADDRESS": "Adrès",
+            "PROVIDER": "Founisè"
+        },
+        "ADDRESS_TYPE": {
+            "HOME": "Lakay",
+            "WORK": "Travay",
+            "OTHER": "Lòt"
+        }
+    },
+    "YOUR_STUFF": {
+        "TITLE": "Zafè Ou",
+        "HI": "Alo",
+        "PROFILE": {
+            "TITLE": "Pwofil",
+            "EDIT": {
+                "TITLE": "Modifye Pwofil Ou",
+                "FIRST_NAME": "Prenon",
+                "LAST_NAME": "Siyati",
+                "MIDDLE_NAME": "Dezyèm Prenon",
+                "PHONE_NUMBER": "Nimewo telefòn",
+                "ABOUT": "Kiyès Nou Ye",
+                "DATE_OF_BIRTH": "Dat Nesans",
+                "AGE": "Laj",
+                "GENDER": "Sèks",
+                "UNDER": "Anba",
+                "OVER": "Plis pase",
+                "VERIFIED": "VERIFYE",
+                "UNVERIFIED": "PA VERIFYE",
+                "HOME_ADDRESS": "Adrès Lakay",
+                "ADDRESS": {
+                    "TITLE": "Adrès",
+                    "STREET_ADDRESS_1": "Adrès Ri",
+                    "UNIT_NO": "Inite #",
+                    "CITY": "Vil",
+                    "STATE": "Eta",
+                    "ZIP_CODE": "Kòd postal",
+                    "SEARCH_LOCATION": "Chèche Adrès"
+                },
+                "LANGUAGE": "Lang",
+                "EDUCATION_LEVEL": "Nivo Edikasyon",
+                "ANNUAL_INCOME": "Revni Anyèl",
+                "SERVICE_INTERESTS": "Sèvis Enterè",
+                "VERIFICATIONS": {
+                    "TITLE": "Verifikasyon",
+                    "FACEBOOK_CONNECTED": "Facebook konekte",
+                    "FB_STATUS": "Eta Facebook.",
+                    "FB_NOT": "Facebook pa Konekte"
+                }
+            },
+            "MESSAGES": {
+                "DOB_ERROR": "Dat nesans pa ka yon dat ki poko pase."
+            }
+        },
+        "SETTINGS": {
+            "TITLE": "Konfigirasyon",
+            "PINNED_LOCATIONS": "Pwen ou make",
+            "SEND_PUSH_NOTIFICATIONS": "Voye notifikasyon pouse",
+            "LOW_DATA": "Low Done Itilizasyon",
+            "CHANGE_PASSWORD": {
+                "TITLE": "Chanje Modpas",
+                "NEW_PASSWORD": "Nouvo Modpas",
+                "REPEAT_PASSWORD": "Repete modpas"
+            },
+            "BLOCKED_USERS": "Itilizatè ki Bloke",
+            "SHOW_COACHMARKS": "Montre mak antrenè",
+            "ABOUT_APP": "Konsènan aplikasyon an",
+            "LOG_OUT": "Dekonekte",
+            "DEACTIVE_YOUR_ACCOUNT": " DEZAKTIVE KONT OU",
+            "VERSION": " VÈSYON REZILITY "
+        },
+        "FAQ": {
+            "TITLE": "Kesyon Moun Konn Poze Souvan"
+        },
+        "FEEDBACK": {
+            "TITLE": "Di Nou Sa Ou Panse."
+        },
+        "TELL_FEEDBACK": {
+            "TITLE": "Di Nou Sa Ou Panse.",
+            "SEND_BTN": "Voye",
+            "PLACEHOLDER": "Ou gen yon kesyon / Vle pataje fidbak? Tanpri soumèt li isit la."
+        },
+        "FAVORITES": {
+            "TITLE": "Favori"
+        }
+    },
+    "SERVICE_REQUESTS": {
+        "TITLE": "Demann sèvis yo",
+        "TYPE": "TIP",
+        "DESCRIPTION": "DESKRIPSYON",
+        "DESCRIPTION_HINT": "Dekri pwoblèm nan ... (Max 500 karaktè)",
+        "PHOTOS": "FOTO",
+        "PHOTOS_HINT": "Foto yo fakiltatif. ",
+        "NEXT": "SUIVAN",
+        "ADD_PHOTOS": "AJOUTE FOTO",
+        "SETTINGS": {
+            "TITLE": "Nouvo demann sèvis",
+            "PARTICIPANT": "PATISIPAN",
+            "NEWSERVICE": "KREYE NOUVO DEMANN SÈVIS"
+        },
+        "DETAILS": {
+            "METAID": "#123-456-789",
+            "DETAILS": "DETAY",
+            "CONVERSATION": "KONVÈSYON",
+            "STATUS": "STATI:",
+            "ACTIVE": "AKTIF"
+        },
+        "REQUEST_LIST": {
+            "ACTIVE": "AKTIF",
+            "RESOLVED": "REZOUD",
+            "CANCELLED":"ANILE",            
+            "ACTIVE_MSG": "Ou pa te kreye yon demann sèvis. Yon fwa ou te kreye yon demann sèvis, demann lan sèvis ap parèt sou lis demann sèvis ou an.",
+            "RESOLVED_MSG": "Gen kounye a pa gen okenn demann sèvis rezoud."
+        },
+        "REFERENCE_NUMBER": "Nimewo referans ensidan an se ",
+        "PROBLEMREPORTED": "Pwoblèm nan rapòte",
+        "NO_SERVICE_REQUEST": "Pwopriyete sa a pa sipòte demann sèvis yo.",        
+        "VERIFY_ADDRESS": "Tanpri verifye adrès ou a pou kreye demann sèvis yo.",
+        "SERVICE_REQUEST_CREATED": "Demann sèvis yo te kreye."
+    },
+    "BUTTON_LABEL": {
+        "SEND": "Voye",
+        "SAVE": "Anrejistre",
+        "EDIT": "Modifye",
+        "CANCEL": "ANILE",
+        "BACK": "Retounen",
+        "CLEAR": "Efase",
+        "CONTINUE": "KONTINYE",
+        "SKIP_THIS": "Sote sa a",
+        "FIX_ERROR": "RANJE ERÈ SA A",
+        "LOGIN_FACEBOOK": "KONEKTE AK FACEBOOK."
+    },
+    "PLACEORDER": {
+        "SEARCH": "Mete non oswa imèl ou",
+        "TITLE": "Nouvo konvèsasyon",
+        "MESSAGE": "Ekri mesaj"
+    },
+    "ERROR_MESSAGES": {
+        "NO_DATA_FOUND": "Nou pa jwenn okenn done",
+        "LOADING_MORE_DATA_TO_LOAD": "N ap chaje plis done ...",
+        "NO_CONVERSATION": "Klike ikòn + la ki anwo sou bò goch la",
+        "NO_CONVERSATION_1": "apresa tape non nan bwat rechèch la pou kòmanse konekte ak lòm",
+        "NO_CONVERSATION_2": "Manm Rezility.",
+        "EMPTY_BLOCKED_LIST": "Ou pa te bloke okenn moun. Yon fwa ou te bloke yon itilizatè, l ap parèt sou lis moun ou bloke yo.",
+        "SOMETHING_WENT_WRONG": "Gen yon pwoblèm! Tanpri eseye ankò apre yon ti tan.",
+        "APP_VERSION_UPDATED": "Sanble ou te mete aplikasyon ou ajou, tanpri konekte ankò.",
+        "NO_MORE_DATA_TO_LOAD": "Pa gen done pou chaje",
+        "SAVE_DATA_DONE": "Nou te anrejistre done a",
+        "PROFILE_SAVE_DONE": "Pwofil ou anrejistre",
+        "POLL_SAVE_DONE": "Sondaj la anrejistre",
+        "SETTINGS_UPDATED": "Konfigirasyon ou anrejistre",
+        "LOGGED_USER": "Ou deja ap konekte sou Rezility.",
+        "DEVICE_REGISTRATION_FAILED": "Aparèy la pa te anrejistre, tanpri eseye pita.",
+        "LOCATION_NOT_FOUND": "Pa kapab jwenn kote ou ye kounye a. Tanpri eseye ankò pita.",
+        "ADDRESS_NOT_FOUND": "Nou pa jwenn adrès la.",
+        "SELECT_LOCATION": "Tanpri chwazi yon kote ki valab sou Kat.",
+        "LOCATION_NAME_BLANK": "Tanpri mete yon non kote valab.",
+        "INVALID_USERNAME_PASSWORD": "Tanpri antre adrès imèl ak modpas.",
+        "ADMIN_BLOCK": "Ou pa ka bloke administratè rezility a.",
+        "UNINVITED_MESSAGE": "Tanpri envite itilizatè a pou konekte.",
+        "INVALID_UNIT_MESSAGE": "Tanpri chwazi yon nimewo inite ki valab.",
+        "ZIP_CODE_VALID": "Mete Kòd postal ki valab (tankou 10461 oswa 10461-1235)",
+        "NO_NETWORK": "Tanpri tcheke koneksyon entènèt ou.",
+        "NO_NETWORK_TITLE": "Pa gen koneksyon entènèt",
+        "NO_NETWORK_MSG": "Tanpri tcheke koneksyon entènèt ou.",
+        "INVITATION_ACCEPTED_PREFIX": "Kounye a ou konekte ak",
+        "SENT_INVITE_NOT_POSTFIX": "te envite w konekte.",
+        "BLOCK_SUCCESS": "Ou bloke manm sa a.",
+        "UNBLOCK_SUCCESS": "Ou debloke manm sa a.",
+        "BLOCKED_USER_POSTFIX": "bloke.",
+        "GRP_SEND_ERROR_MSG": "Ou pa ka voye mesaj bay gwoup sa a paske ou pa yon patisipan ankò.",
+        "GRP_EDIT_ERROR_MSG": "Ou pa ka modifye gwoup sa a paske ou pa yon patisipan ankò.",
+        "GRP_JOINED": "Byenveni nan gwoup la",
+        "GRP_REMOVED": "Ou pa yon patisipan ankò.",
+        "PLEASE_WAIT": "Fè yon ti tann souple...",
+        "REPORTING": "N ap fè rapò...",
+        "UPLOADING": "N ap telechaje ...",
+        "LOGGING_OUT": "N ap dekonekte ou ...",
+        "UPDATE_SUCCESSFUL": "Nou te Mete Modpas la Ajou",
+        "PASSWORD_BLANK": "Modpas la pa ka kapab vid",
+        "PASSWORD_MISMATCH": "Modpas la pa Matche",
+        "PASSWORD_FORMAT": "Modpas yo dwe omwen 8 karaktè ak lèt ​​majiskil ak chif.",
+        "NAME_VALIDATION": "Prenon ak Siyati a pa ka vid",
+        "CANCEL_BTN": "NON, MÈSI.",
+        "OK_BTN": "MIZAJOU",
+        "VERIFY_ADDRESS_SUCCESS": "Rezidans la te verifye. ",
+        "VERIFY_ADDRESS_DENY": "Yo te refize verifikasyon rezidans la.",
+        "ADDED_GROUP": "Ou te ajoute nan gwoup la.",
+        "NO_LONGER_PARTICIPANT": "Ou pa yon patisipan nan gwoup ankò.",
+        "INVITED_YOU": "te envite w konekte.",
+        "NETWORK": "Rezo pa konekte",
+        "INVITATION_INVITED_POSTFIX": "poko aksepte envitasyon ou pou konekte.",
+        "VERIFICATION_PREFIX": "Verifikasyon mande:",
+        "ADVOCATE_VERIFICATION_PREFIX": "Defansè pou rezidan yo te mande: ",
+        "ACCEPTED_POSTFIX": "te verifye. Ou konekte. ",
+        "DENY_PREFIX": "Verifikasyon refize: ",
+        "VERIFICATION_MESSAGE": "Ou resevwa yon demann verifikayon.",
+        "NO_FAVORITE_FOUND": "Yonfwa ou chwazi yon manje prefere, manje sa a ap rete nan lis manje ou prefere yo.",
+        "VERIFICATION_CANCEL_MESSAGE": "Rezidan te anile demann verifikasyon li.",
+        "ERROR_TITLE": "Erè",
+        "TWITTER_ERROR": "Nou pa jwenn aplikasyon Twitter a.",
+        "PHONE_VALIDATION": "Tanpri antre yon nimewo telefòn ki valab."                
+    },
+    "DAYS_IN_SHORT": {
+        "SUNDAY": "Solèy",
+        "MONDAY": "Lendi",
+        "TUESDAY": "Madi",
+        "WEDNESDAY": "Mèkredi",
+        "THURSDAY": "Jedi",
+        "FRIDAY": "Vandredi",
+        "SATURDAY": "Samdi"
+    },
+    "MONTHS_IN_SHORT": {
+        "JAN": "janvye",
+        "FEB": "fevrye",
+        "MAR": "mas",
+        "APR": "Avril",
+        "MAY": "me",
+        "JUN": "jen",
+        "JUL": "jiyè",
+        "AUG": "out",
+        "SEP": "septanm",
+        "OCT": "oktòb",
+        "NOV": "novanm",
+        "DEC": "desanm"
+    },
+    "MISC": {
+        "Rezility": "Rezistans",
+        "IMAGE": "Imaj",
+        "PROFILE_IMAGE": "Profile Imaj",
+        "Oops": "Oops!",
+        "REFRESH": "Entérésan...",
+        "PULL": "Rale pou rafrechi",
+        "OK": "OK",
+        "DISMISS": "Dechè"
+    },
+    "TIMESTAMP": {
+        "DAY_AGO": "1 JOU AGO",
+        "AM": "AM",
+        "PM": "PM"
+    },
+    "WELCOME_FEED": {
+        "YOUR_FEED": "Paj\nou",
+        "YOUR_CONV": "Konvèsasyon\nou yo",
+        "AROUND_YOU": "Bò\nkote ou",
+        "YOUR_STUFF": "Zafè\nOu"
+    },
+    "CREATE_FEED":{
+        "TITLE":"Please add title to the feed.",
+        "DESCRIPTION":"Please add description to the feed.",
+        "LOGO":"Please add/select a logo."
+    }
+}

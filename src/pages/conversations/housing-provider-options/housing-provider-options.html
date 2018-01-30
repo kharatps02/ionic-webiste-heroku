@@ -1,0 +1,28 @@
+<ion-header labelHeader>
+    <ion-navbar>
+        <ion-title>{{selectedUser.user_name}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content silvergrey-background>
+    <div class="view-invite">
+        <ion-avatar>
+            <img *ngIf="!selectedUser.profile_pic" src="./assets/img/image-placeholder.jpg" alt="" />
+            <img *ngIf="selectedUser.profile_pic" [src]="selectedUser.profile_pic" alt="" />
+        </ion-avatar>
+    </div>
+    <!-- If Invitation profile page -->
+    <ion-list>  
+
+        <button ion-item detail-none class="list-grid-120" (click)="onAcceptAndConnect()">
+            <h2><span class="text14px-black">{{'CONVERSATIONS.PUBLIC_PROFILE.APPROVE_CONNECT' | translate}}</span></h2>
+            <ion-icon item-right class="icons-add-people icon-24"></ion-icon>
+        </button>
+
+        <button ion-item detail-none class="list-grid-120"  (click)="onDeny()">
+            <h2><span class="text14px-black">{{'CONVERSATIONS.PUBLIC_PROFILE.DENY' | translate}}</span></h2>
+            <ion-icon item-right class="icons-ignore icon-24"></ion-icon>
+        </button>
+
+    </ion-list>
+</ion-content>

@@ -1,0 +1,43 @@
+page-housing-unit{
+    ion-list.unit-input{
+        @include zeroPadding(0 1rem);
+        ion-item.shadow-box{
+            ion-label{
+                @include border-radius(.5rem);
+                box-shadow: 0 3px 6px rgba(0, 0, 0, .1);
+            }
+        }
+        ion-item.item{
+            background: transparent;
+            @include border(none);
+            @include zeroMargin(.625rem 0 0 0);
+            ion-searchbar{
+                @include border-radius(.5rem);
+                @include zeroPadding(0);
+                @include border(none);
+                background: transparent;
+                input.searchbar-input{
+                    box-shadow: none;
+                    @include zeroPadding(1rem);
+                    line-height: 1rem;
+                    @extend .input14px-black;
+                    text-align: center;
+                }
+                .searchbar-search-icon{
+                    display: none;
+                }
+            }
+        }
+    }
+    .unit-text{
+        @include zeroPadding(0 2.188rem);
+        @include zeroMargin(.5rem 0 0 0);
+        line-height: 1rem;
+    }
+    ion-footer[footer-full] {
+         ion-toolbar.toolbar-ios, ion-toolbar.toolbar-md{
+            background: transparent;
+            // min-height: 2.75rem;
+         }
+    }
+}

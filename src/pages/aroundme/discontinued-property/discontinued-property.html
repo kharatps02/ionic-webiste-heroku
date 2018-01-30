@@ -1,0 +1,13 @@
+<ion-content grey-background side-padding>
+    <div class="confirmation-msg">
+        <div class="circle-icon-108 confirmation-icon">
+            <ion-icon class="icons-alert"></ion-icon>
+        </div>
+        <h2 class="text30px-bold-white">{{'AROUND_ME.DISCONTINUED_PROPERTY.CONFIRMATION_MSG' | translate}}<span splitter></span></h2>
+        <p class="text15px-normal-white">{{'AROUND_ME.DISCONTINUED_PROPERTY.MSG' | translate}}</p>
+    </div>
+    <div class="action-grid">
+        <button ion-button block round class="button-light-blue" (click)="disconnect()">{{'AROUND_ME.DISCONTINUED_PROPERTY.SEND_BUTTON' | translate}}</button>
+        <p><button ion-button class="button-blue-link" (click)="cancelDisconnect()">{{'AROUND_ME.DISCONTINUED_PROPERTY.CANCEL_BTN_LINK' | translate}}</button></p>
+    </div>
+</ion-content>

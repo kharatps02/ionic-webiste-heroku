@@ -1,0 +1,490 @@
+<ion-header labelHeader>
+    <ion-toolbar topHeader *ngIf="!isFavorites">
+        <!-- <ion-buttons start *ngIf="(this.userInfo.user_type === usertype.HOUSING_PROVIDER || this.userInfo.user_type === usertype.SERVICE_PROVIDER)">
+            <button ion-button (click)="navigateToCreateFeedPage()">
+                <ion-icon class="icons-plus"></ion-icon>
+            </button>
+        </ion-buttons> -->
+        <ion-title>
+            {{'ACTIVITY.TITLE' | translate}}
+        </ion-title>
+    </ion-toolbar>
+    <ion-navbar *ngIf="isFavorites">
+        <ion-title> {{'YOUR_STUFF.FAVORITES.TITLE' | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content #activityFeedContent silvergrey-background>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="{{'MISC.PULL' | translate}}" refreshingSpinner="circles"
+            refreshingText="{{'MISC.REFRESH' | translate}}">
+        </ion-refresher-content>
+    </ion-refresher>
+    <div>
+        <ion-list list-group>
+            <div *ngIf="activityFeeds.length == 0 && isActivityAPICall  && !isFavorites" class="message-no-data-found">
+                <p class="no-records">{{'ERROR_MESSAGES.NO_DATA_FOUND' | translate}}</p>
+            </div>
+            <div *ngIf="activityFeeds.length == 0 && isActivityAPICall && isFavorites" class="message-no-data-found">
+                <p class="no-records">{{'ERROR_MESSAGES.NO_FAVORITE_FOUND' | translate}}</p>
+            </div>
+
+            <div *ngFor="let activity of activityFeeds; trackBy:trackActivityFeed; let cardIndex=index;">
+                <ion-card class="card-panel">
+                    <ion-item selected-row list-row [ngClass]="{'selected-row':expandFeedCollection[activity._id] === true}">
+                        <div class="alerts article-no-image" *ngIf="activity.template === activityTemplates[0] || activity.template === activityTemplates[7]"
+                            (click)="activity.template === activityTemplates[7] ">
+                            <div list-row-head>
+                                <ion-avatar item-left>
+                                    <ion-icon [ngClass]="{'icons-news-alert': activity.template === activityTemplates[0],  'icons-report': activity.template === activityTemplates[7]}"></ion-icon>
+                                </ion-avatar>
+                            </div>
+                            <ion-col list-expand-details>
+                                <h4 *ngIf="activity.header.title" class="">{{activity.header.title}}</h4>
+                            </ion-col>
+                            <div list-row-footer class="action-bar">
+                                <ion-row>
+                                    <ion-col start class="text10px-thin-grey" *ngIf="activity.timestampAgo">
+                                        {{activity.timestampAgo}}
+                                    </ion-col>
+                                    <ion-col end>
+                                        <button ion-item detail-none icon-only *ngIf="activity.isReading === undefined || (activity.isReading !== undefined && activity.isReading === false)"
+                                            (click)="readFeed(activity,cardIndex)">
+                                            <ion-icon class="icons-read"></ion-icon>
+                                        </button>
+                                        <button ion-item detail-none icon-only *ngIf="activity.isReading === true" (click)="muteFeed(activity)">
+                                            <ion-icon class="icons-mute"></ion-icon>
+                                        </button>
+                                        <ion-fab bottom #fab *ngIf="activity.is_system_feed !== true">
+                                            <button ion-fab mini>
+                                                <ion-icon class="icons-share"></ion-icon>
+                                            </button>
+                                            <ion-fab-list side="top">
+                                                <button ion-fab class="su">
+                                                    <ion-icon class="icons-chat01" (tap)="shareUser(activity,fab)"></ion-icon>
+                                                </button>
+                                            </ion-fab-list>
+                                        </ion-fab>
+                                    </ion-col>
+                                </ion-row>
+                            </div>
+                        </div>
+
+                        <div class="crime-alerts article-no-image" *ngIf="activity.template === activityTemplates[2]">
+                            <div list-row-head>
+                                <ion-avatar item-left>
+                                    <ion-icon class="icons-alert"></ion-icon>
+                                </ion-avatar>
+                                <span>
+                                    <h4 *ngIf="activity.header.title" class="text18px-normal-white">{{activity.header.title}}</h4>
+                                </span>
+                            </div>
+                            <ion-col list-expand-details>
+                                <ion-avatar class="list-detail-img">
+                                    <lazy-img *ngIf="activity.body.imageUrl" [inputSrc]="activity.body.imageUrl" alt=""></lazy-img>
+                                </ion-avatar>
+                            </ion-col>
+                            <div list-row-footer class="action-bar">
+                                <ion-row>
+                                    <ion-col start class="text10px-thin-grey" *ngIf="activity.timestampAgo">
+                                        {{activity.timestampAgo}}
+                                    </ion-col>
+                                    <ion-col end>
+                                        <button ion-item detail-none icon-only *ngIf="activity.isReading === undefined || (activity.isReading !== undefined && activity.isReading === false)"
+                                            (click)="readFeed(activity,cardIndex)">
+                                            <ion-icon class="icons-read"></ion-icon>
+                                        </button>
+                                        <button ion-item detail-none icon-only *ngIf="activity.isReading === true" (click)="muteFeed(activity)">
+                                            <ion-icon class="icons-mute"></ion-icon>
+                                        </button>
+                                    </ion-col>
+                                </ion-row>
+                            </div>
+                        </div>
+
+                        <div [ngClass]="{'article-no-image': activity.header.bgImageUrl === '' &&( activity.template === activityTemplates[3] || activity.template === activityTemplates[1]),
+                        'system-announcement':activity.template === activityTemplates[4],
+                        'property-manager-announcement':activity.template === activityTemplates[5],
+                        'article-image':activity.header.bgImageUrl !== ''}" *ngIf="isTemplateNo1345(activity) === true">
+                            <div list-row-head>
+                                <ion-avatar class="bg-image-168" *ngIf="activity.header.bgImageUrl" (click)="downloadImage(activity)">
+                                    <lazy-img *ngIf="userInfo.low_data === true && (activity.lowData === undefined || activity.lowData === true)" [inputSrc]="activity.header.bgImageUrl"
+                                        [lowData]="true" alt=""></lazy-img>
+                                    <lazy-img *ngIf="userInfo.low_data === false || activity.lowData === false" [inputSrc]="activity.header.bgImageUrl" [lowData]="false"
+                                        alt=""></lazy-img>
+                                </ion-avatar>
+
+                                <ion-avatar item-left (tap)="navigateToProviderDetails(activity)">
+                                    <ion-icon *ngIf="activity.template === activityTemplates[5]" class="icons-announcment"></ion-icon>
+                                    <lazy-img *ngIf="activity.header.leftIconUrl && activity.template !== activityTemplates[5]" [inputSrc]="activity.header.leftIconUrl"
+                                        alt=""></lazy-img>
+                                </ion-avatar>
+
+                            </div>
+
+                            <ion-col list-expand-details>
+                                <!-- list-row -->
+                                <h4 class="" *ngIf="activity.body.headLineText">{{activity.body.headLineText}}</h4>
+                                <!--<p class="text10px-thin-grey" *ngIf="activity.timestampAgo">{{activity.timestampAgo}}</p>-->
+                                <h6 *ngIf="activity.body.detailText">{{activity.body.detailText}}</h6>
+                            </ion-col>
+                            <div list-row-footer class="action-bar">
+                                <ion-row>
+                                    <ion-col start class="text10px-thin-grey" *ngIf="activity.timestampAgo">
+                                        {{activity.timestampAgo}}
+                                    </ion-col>
+                                    <ion-col end>
+                                        <button ion-item detail-none icon-only *ngIf="activity.openInUrl !== ''" (click)="openInAppBrowser(activity)">
+                                            <ion-icon class="icons-read-more"></ion-icon>
+                                        </button>
+                                        <button ion-item detail-none icon-only *ngIf="activity.isReading === undefined || (activity.isReading !== undefined && activity.isReading === false)"
+                                            (click)="readFeed(activity,cardIndex)">
+                                            <ion-icon class="icons-read"></ion-icon>
+                                        </button>
+                                        <button ion-item detail-none icon-only *ngIf="activity.isReading === true" (click)="muteFeed(activity)">
+                                            <ion-icon class="icons-mute"></ion-icon>
+                                        </button>
+                                        <button ion-item detail-none icon-only class="like" *ngIf="!activity.is_like && activity.is_system_feed !== true" (tap)=toggleLike(activity,cardIndex)>
+                                            <ion-icon class="icons-unlike"></ion-icon>
+                                            <ion-badge class="like-count">{{activity.total_likes}}</ion-badge>
+                                        </button>
+                                        <button ion-item detail-none icon-only class="like abc1" *ngIf="activity.is_like && activity.is_system_feed !== true" (tap)=toggleLike(activity,cardIndex)>
+                                            <ion-icon class="icons-like"></ion-icon>
+                                            <ion-badge class="like-count" *ngIf="activity.total_likes">{{activity.total_likes}}</ion-badge>
+                                        </button>
+
+                                        <!-- <ion-toggle class="icons-like" [(ngModel)]="activity.is_like" (ionChange)=toggleLike()></ion-toggle>                                      -->
+                                        <ion-fab bottom #fab *ngIf="activity.is_system_feed !== true">
+                                            <button ion-fab mini>
+                                                <ion-icon class="icons-share"></ion-icon>
+                                            </button>
+                                            <ion-fab-list side="top">
+                                                <button ion-fab *ngIf="activity.openInUrl !== ''" class="fb">
+                                                    <ion-icon class="icons-facebook" (tap)="shareOnFacebook(activity,fab)"></ion-icon>
+                                                </button>
+                                                <button ion-fab *ngIf="activity.openInUrl !== ''">
+                                                    <ion-icon class="icons-twitter" (tap)="shareOnTwitter(activity,fab)"></ion-icon>
+                                                </button>
+                                                <button ion-fab class="su">
+                                                    <ion-icon class="icons-chat01" (tap)="shareUser(activity,fab)"></ion-icon>
+                                                </button>
+                                            </ion-fab-list>
+                                        </ion-fab>
+                                    </ion-col>
+                                </ion-row>
+                            </div>
+                        </div>
+
+                        <!-- Start Portfolio option -->
+                        <div portfolio *ngIf="(activity.template === activityTemplates[8] && activity.body.answer.length === 0) || activity.template === activityTemplates[6]">
+                            <div list-expand-details>
+                                <ion-col ion-item list-row>
+                                    <ion-icon *ngIf="activity.template === activityTemplates[8]" class="icons-01"></ion-icon>
+                                    <ion-icon *ngIf="activity.template === activityTemplates[6]" class="icons-poll"></ion-icon>
+                                    <span>
+                                        <h4 class="text18px-normal-black" *ngIf="activity.body.question">{{activity.body.question}}</h4>
+                                        <p class="text10px-thin-grey" *ngIf="activity.timestampAgo">{{activity.timestampAgo}}</p>
+                                    </span>
+                                </ion-col>
+
+                                <ul list>
+                                    <li class="item item-checkbox" [ngClass]="{'selectOption': option.selected == true}" *ngFor="let option of activity.body.options">
+                                        <div poll-progress above-avg *ngIf="activity.body.answer.length>0" [style.width]="option.voteInPer"></div>
+                                        <label class="custom-types">
+                                            <cite title-info left-align>{{option.name}}</cite>
+                                            <div [ngClass]="{'custom-radio':!activity.is_multiselect,'custom-checkbox':activity.is_multiselect}" *ngIf="activity.body.answer.length==0">
+                                                <input *ngIf="!activity.is_multiselect" type="radio" [checked]="option.selected" (click)="setAnswerOption(activity,option,false)">
+
+                                                <input *ngIf="activity.is_multiselect" type="checkbox" [checked]="option.selected" (click)="setAnswerOption(activity,option,true)">
+                                                <span></span>
+                                            </div>
+                                            <span class="text18px-normal-black" *ngIf="activity.body.answer.length>0">{{option.voteInPer}}</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                                <div list-row-footer class="action-bar">
+                                    <ion-row>
+                                        <ion-col start class="text10px-normal-blue" *ngIf="activity.body.temp_answer && activity.body.temp_answer.length>0">
+                                            <span (click)="submitPoll(activity,cardIndex)">{{activity.body.actionButtonName}}</span>
+                                        </ion-col>
+                                        <ion-col end>
+                                            <button ion-item detail-none icon-only *ngIf="activity.isReading === undefined || (activity.isReading !== undefined && activity.isReading === false)"
+                                                (click)="readFeed(activity,cardIndex)">
+                                                <ion-icon class="icons-read"></ion-icon>
+                                            </button>
+                                            <button ion-item detail-none icon-only *ngIf="activity.isReading === true" (click)="muteFeed(activity)">
+                                                <ion-icon class="icons-mute"></ion-icon>
+                                            </button>
+                                            <button ion-item detail-none icon-only class="like" *ngIf="!activity.is_like" (tap)=toggleLike(activity,cardIndex)>
+                                                <ion-icon class="icons-unlike"></ion-icon>
+                                                <ion-badge class="like-count">{{activity.total_likes}}</ion-badge>
+                                            </button>
+                                            <button ion-item detail-none icon-only class="like" *ngIf="activity.is_like" (tap)=toggleLike(activity,cardIndex)>
+                                                <ion-icon class="icons-like"></ion-icon>
+                                                <ion-badge class="like-count" *ngIf="activity.total_likes">{{activity.total_likes}}</ion-badge>
+                                            </button>
+                                            <!-- <ion-toggle class="icons-like" [(ngModel)]="activity.is_like" (ionChange)=toggleLike()></ion-toggle> -->
+                                        </ion-col>
+                                    </ion-row>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Portfolio option -->
+
+                        <!-- Blog Article template -->
+                        <div *ngIf="activity.template === activityTemplates[9]" [ngClass]="{'article-image':(activity.header.bgImageUrl !== ''),'article-no-image':activity.header.bgImageUrl === ''}">
+                            <div list-row-head>
+                                <ion-avatar class="bg-image-168" *ngIf="activity.header.bgImageUrl" (click)="downloadImage(activity)">
+                                    <lazy-img *ngIf="userInfo.low_data === true && (activity.lowData === undefined || activity.lowData === true)" [inputSrc]="activity.header.bgImageUrl"
+                                        [lowData]="true" alt=""></lazy-img>
+                                    <lazy-img *ngIf="userInfo.low_data === false || activity.lowData === false" [inputSrc]="activity.header.bgImageUrl" [lowData]="false"
+                                        alt=""></lazy-img>
+                                </ion-avatar>
+                                <ion-avatar (tap)="navigateToProviderDetails(activity)">
+                                    <lazy-img *ngIf="activity.header.leftIconUrl" [inputSrc]="activity.header.leftIconUrl"></lazy-img>
+                                </ion-avatar>
+                            </div>
+                            <ion-col list-expand-details>
+                                <!-- list-row -->
+                                <h4 class="text18px-normal-black" *ngIf="activity.body.headLineText">{{activity.body.headLineText}}</h4>
+                                <!--<p class="text10px-thin-grey" *ngIf="activity.timestampAgo">{{activity.timestampAgo}}</p>-->
+                                <h6 title-info *ngIf="activity.body.detailText">{{activity.body.detailText}}</h6>
+                            </ion-col>
+                            <div list-row-footer class="action-bar">
+                                <ion-row>
+                                    <ion-col start class="text10px-thin-grey" *ngIf="activity.timestampAgo">
+                                        {{activity.timestampAgo}}
+                                    </ion-col>
+                                    <ion-col end>
+                                        <button ion-item detail-none icon-only *ngIf="activity.openInUrl !== ''" (click)="openInAppBrowser(activity)">
+                                            <ion-icon class="icons-read-more"></ion-icon>
+                                        </button>
+                                        <button ion-item detail-none icon-only [disabled]="this.userInfo.user_type === usertype.HOUSING_PROVIDER || this.userInfo.user_type === usertype.SERVICE_PROVIDER  || this.userInfo.user_type === usertype.ADMIN"
+                                            *ngIf="activity.is_allow_conversation === true" (click)="startConversation(activity)">
+                                            <ion-icon class="icons-conversion"></ion-icon>
+                                        </button>
+                                        <button ion-item detail-none icon-only *ngIf="activity.isReading === undefined || (activity.isReading !== undefined && activity.isReading === false)"
+                                            (click)="readFeed(activity,cardIndex)">
+                                            <ion-icon class="icons-read"></ion-icon>
+                                        </button>
+                                        <button ion-item detail-none icon-only *ngIf="activity.isReading === true" (click)="muteFeed(activity)">
+                                            <ion-icon class="icons-mute"></ion-icon>
+                                        </button>
+                                        <button ion-item detail-none icon-only class="like" *ngIf="!activity.is_like && activity.is_system_feed !== true" (tap)=toggleLike(activity,cardIndex)>
+                                            <ion-icon class="icons-unlike"></ion-icon>
+                                            <ion-badge class="like-count">{{activity.total_likes}}</ion-badge>
+                                        </button>
+                                        <button ion-item detail-none icon-only class="like" *ngIf="activity.is_like && activity.is_system_feed !== true" (tap)=toggleLike(activity,cardIndex)>
+                                            <ion-icon class="icons-like"></ion-icon>
+                                            <ion-badge class="like-count" *ngIf="activity.total_likes">{{activity.total_likes}}</ion-badge>
+                                        </button>
+                                        <!-- <ion-toggle class="icons-like" [(ngModel)]="activity.is_like" (ionChange)=toggleLike()></ion-toggle>                                      -->
+                                        <ion-fab bottom #fab *ngIf="activity.is_system_feed !== true">
+                                            <button ion-fab mini>
+                                                <ion-icon class="icons-share"></ion-icon>
+                                            </button>
+                                            <ion-fab-list side="top">
+                                                <button ion-fab *ngIf="activity.openInUrl !== ''" class="fb">
+                                                    <ion-icon class="icons-facebook" (tap)="shareOnFacebook(activity,fab)"></ion-icon>
+                                                </button>
+                                                <button ion-fab *ngIf="activity.openInUrl !== ''">
+                                                    <ion-icon class="icons-twitter" (tap)="shareOnTwitter(activity,fab)"></ion-icon>
+                                                </button>
+                                                <button ion-fab class="su">
+                                                    <ion-icon class="icons-chat01" (tap)="shareUser(activity,fab)"></ion-icon>
+                                                </button>
+                                            </ion-fab-list>
+                                        </ion-fab>
+                                    </ion-col>
+                                </ion-row>
+                            </div>
+                        </div>
+                        <!-- Blog Article template -->
+
+                        <!-- Welcome Feed Template -->
+                        <div *ngIf="activity.template === activityTemplates[13]" class="article-no-image welcome-feed">
+                            <ion-row list-row-head>
+                                <ion-col col-3 text-center>
+                                    <ion-icon class="icons-feed"></ion-icon>
+                                    <label>{{'WELCOME_FEED.YOUR_FEED' | translate}}</label>
+                                </ion-col>
+                                <ion-col col-3 text-center>
+                                    <ion-icon class="icons-conversion"></ion-icon>
+                                    <label>{{'WELCOME_FEED.YOUR_CONV' | translate}}</label>
+                                </ion-col>
+                                <ion-col col-3 text-center>
+                                    <ion-icon class="icons-around-me"></ion-icon>
+                                    <label>{{'WELCOME_FEED.AROUND_YOU' | translate}}</label>
+                                </ion-col>
+                                <ion-col col-3 text-center>
+                                    <ion-icon class="icons-my-stuff"></ion-icon>
+                                    <label>{{'WELCOME_FEED.YOUR_STUFF' | translate}}</label>
+                                </ion-col>
+                                <ion-avatar (tap)="navigateToProviderDetails(activity)">
+                                    <lazy-img *ngIf="activity.header.leftIconUrl" [inputSrc]="activity.header.leftIconUrl"></lazy-img>
+                                </ion-avatar>
+                            </ion-row>
+                            <img src="./assets/img/welcome-feed-strip.jpg" alt="" />
+                            <ion-col list-expand-details>
+                                <h4 class="text18px-normal-black" *ngIf="activity.body.headLineText">{{activity.body.headLineText}}</h4>
+                                <h6 title-info *ngIf="activity.body.detailText">{{activity.body.detailText}}</h6>
+                            </ion-col>
+                            <div list-row-footer class="action-bar">
+                                <ion-row>
+                                    <ion-col start class="text10px-thin-grey" *ngIf="activity.timestampAgo">
+                                        {{activity.timestampAgo}}
+                                    </ion-col>
+                                    <ion-col end>
+                                        <button ion-item detail-none icon-only *ngIf="activity.openInUrl !== ''" (click)="openInAppBrowser(activity)">
+                                            <ion-icon class="icons-read-more"></ion-icon>
+                                        </button>
+                                        <button ion-item detail-none icon-only [disabled]="this.userInfo.user_type === usertype.HOUSING_PROVIDER || this.userInfo.user_type === usertype.SERVICE_PROVIDER  || this.userInfo.user_type === usertype.ADMIN"
+                                            *ngIf="activity.is_allow_conversation === true" (click)="startConversation(activity)">
+                                            <ion-icon class="icons-conversion"></ion-icon>
+                                        </button>
+                                        <button ion-item detail-none icon-only *ngIf="activity.isReading === undefined || (activity.isReading !== undefined && activity.isReading === false)" (click)="readFeed(activity,cardIndex)">
+                                                <ion-icon class="icons-read"></ion-icon>
+                                            </button>
+                                            <button ion-item detail-none icon-only  *ngIf="activity.isReading === true" (click)="muteFeed(activity)">
+                                                <ion-icon class="icons-mute"></ion-icon>
+                                            </button>
+                                        <button ion-item detail-none icon-only class="like" *ngIf="!activity.is_like && activity.is_system_feed !== true" (tap)=toggleLike(activity,cardIndex)>
+                                            <ion-icon class="icons-unlike"></ion-icon>
+                                            <ion-badge class="like-count">{{activity.total_likes}}</ion-badge>                                           
+                                        </button>
+                                        <button ion-item detail-none icon-only class="like" *ngIf="activity.is_like && activity.is_system_feed !== true" (tap)=toggleLike(activity,cardIndex)>
+                                            <ion-icon class="icons-like"></ion-icon> 
+                                            <ion-badge class="like-count" *ngIf="activity.total_likes">{{activity.total_likes}}</ion-badge>
+                                        </button>
+                                        <ion-fab bottom #fab *ngIf="activity.is_system_feed !== true">
+                                            <button ion-fab mini><ion-icon class="icons-share"></ion-icon></button>
+                                            <ion-fab-list side="top">
+                                                <button ion-fab *ngIf="activity.openInUrl !== ''" class="fb"><ion-icon class="icons-facebook" (tap)="shareOnFacebook(activity,fab)"></ion-icon></button>
+                                                <button ion-fab *ngIf="activity.openInUrl !== ''" ><ion-icon class="icons-twitter" (tap)="shareOnTwitter(activity,fab)"></ion-icon></button>
+                                                <button ion-fab class="su"><ion-icon class="icons-chat01" (tap)="shareUser(activity,fab)"></ion-icon></button>
+                                            </ion-fab-list> 
+                                        </ion-fab>
+                                    </ion-col>
+                                </ion-row>
+                            </div>
+                        </div>
+                        <!-- Welcome Feed Template -->
+
+                        <!-- Property manager connect template -->
+                        <div *ngIf="activity.template === activityTemplates[10]" class="article-no-image">
+                            <div list-row-head>
+                                <ion-avatar (tap)="navigateToProviderDetails(activity)">
+                                    <lazy-img *ngIf="activity.header.leftIconUrl" [inputSrc]="activity.header.leftIconUrl" alt=""></lazy-img>
+                                </ion-avatar>
+                            </div>
+                            <ion-col list-expand-details>
+                                <!-- list-row -->
+                                <h4 class="text18px-normal-black" *ngIf="activity.body.headLineText">{{activity.body.headLineText}}</h4>
+                                <!--<p class="text10px-thin-grey" *ngIf="activity.timestampAgo">{{activity.timestampAgo}}</p>-->
+                                <h6 title-info *ngIf="activity.body.detailText">{{activity.body.detailText}}</h6>
+                            </ion-col>
+                            <div list-row-footer class="action-bar">
+                                <ion-row>
+                                    <ion-col start class="text10px-thin-grey" *ngIf="activity.timestampAgo">
+                                        {{activity.timestampAgo}}
+                                    </ion-col>
+                                    <ion-col end>
+                                        <button ion-item detail-none icon-only (click)="navigateToAroundMe(activity)">
+                                            <ion-icon class="icons-house"></ion-icon>
+                                        </button>
+                                        <button ion-item detail-none icon-only (click)="callToPM(activity)">
+                                            <ion-icon class="icons-contact"></ion-icon>
+                                        </button>
+                                        <button ion-item detail-none icon-only *ngIf="activity.isReading === undefined || (activity.isReading !== undefined && activity.isReading === false)"
+                                            (click)="readFeed(activity,cardIndex)">
+                                            <ion-icon class="icons-read"></ion-icon>
+                                        </button>
+                                        <button ion-item detail-none icon-only *ngIf="activity.isReading === true" (click)="muteFeed(activity)">
+                                            <ion-icon class="icons-mute"></ion-icon>
+                                        </button>
+                                    </ion-col>
+                                </ion-row>
+                            </div>
+                        </div>
+                        <!-- Property manager connect template -->
+
+                        <!-- Residency declined template -->
+                        <div *ngIf="activity.template === activityTemplates[11]" class="article-no-image">
+                            <div list-row-head>
+                                <ion-avatar (tap)="navigateToProviderDetails(activity)">
+                                    <lazy-img *ngIf="activity.header.leftIconUrl" [inputSrc]="activity.header.leftIconUrl" alt=""></lazy-img>
+                                </ion-avatar>
+                            </div>
+                            <ion-col list-expand-details>
+                                <!-- list-row -->
+                                <h4 class="text18px-normal-black" *ngIf="activity.body.headLineText">{{activity.body.headLineText}}</h4>
+                                <!--<p class="text10px-thin-grey" *ngIf="activity.timestampAgo">{{activity.timestampAgo}}</p>-->
+                                <h6 title-info *ngIf="activity.body.detailText">{{activity.body.detailText}}</h6>
+                            </ion-col>
+                            <div list-row-footer class="action-bar">
+                                <ion-row>
+                                    <ion-col start class="text10px-thin-grey" *ngIf="activity.timestampAgo">
+                                        {{activity.timestampAgo}}
+                                    </ion-col>
+                                    <ion-col end>
+                                        <button ion-item detail-none icon-only (click)="navigateToAroundMe(activity)">
+                                            <ion-icon class="icons-around-me"></ion-icon>
+                                        </button>
+                                        <button ion-item detail-none icon-only (click)="callToPM(activity)">
+                                            <ion-icon class="icons-contact"></ion-icon>
+                                        </button>
+                                        <button ion-item detail-none icon-only *ngIf="activity.isReading === undefined || (activity.isReading !== undefined && activity.isReading === false)"
+                                            (click)="readFeed(activity,cardIndex)">
+                                            <ion-icon class="icons-read"></ion-icon>
+                                        </button>
+                                        <button ion-item detail-none icon-only *ngIf="activity.isReading === true" (click)="muteFeed(activity)">
+                                            <ion-icon class="icons-mute"></ion-icon>
+                                        </button>
+                                    </ion-col>
+                                </ion-row>
+                            </div>
+                        </div>
+                        <!-- Residency declined template -->
+
+                        <!-- Residency Accept template -->
+                        <div *ngIf="activity.template === activityTemplates[12]" class="article-no-image">
+                            <div list-row-head>
+                                <ion-avatar (tap)="navigateToProviderDetails(activity)">
+                                    <lazy-img *ngIf="activity.header.leftIconUrl" [inputSrc]="activity.header.leftIconUrl" alt=""></lazy-img>
+                                </ion-avatar>
+                            </div>
+                            <ion-col list-expand-details>
+                                <!-- list-row -->
+                                <h4 class="text18px-normal-black" *ngIf="activity.body.headLineText">{{activity.body.headLineText}}</h4>
+                                <!--<p class="text10px-thin-grey" *ngIf="activity.timestampAgo">{{activity.timestampAgo}}</p>-->
+                                <h6 title-info *ngIf="activity.body.detailText">{{activity.body.detailText}}</h6>
+                            </ion-col>
+                            <div list-row-footer class="action-bar">
+                                <ion-row>
+                                    <ion-col start class="text10px-thin-grey" *ngIf="activity.timestampAgo">
+                                        {{activity.timestampAgo}}
+                                    </ion-col>
+                                    <ion-col end>
+                                        <button ion-item detail-none icon-only *ngIf="activity.isReading === undefined || (activity.isReading !== undefined && activity.isReading === false)"
+                                            (click)="readFeed(activity,cardIndex)">
+                                            <ion-icon class="icons-read"></ion-icon>
+                                        </button>
+                                        <button ion-item detail-none icon-only *ngIf="activity.isReading === true" (click)="muteFeed(activity)">
+                                            <ion-icon class="icons-mute"></ion-icon>
+                                        </button>
+                                    </ion-col>
+                                </ion-row>
+                            </div>
+                        </div>
+                        <!-- Residency Accept template -->
+                    </ion-item>
+                </ion-card>
+            </div>
+        </ion-list>
+
+
+    </div>
+    <ion-infinite-scroll (ionInfinite)="loadMore($event)" [enabled]="activityInfiniteScrollEnabled">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="{{'ERROR_MESSAGES.LOADING_MORE_DATA_TO_LOAD' | translate}}"></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

@@ -1,0 +1,521 @@
+{
+    "GET_STARTED": {
+        "TITLE": "Rezility 가입하기",
+        "ONBOARDING": {
+            "SKIP": "건너뛰기",
+            "FEED_TITLE": "내 피드",
+            "CONV_TITLE": "내 대화",
+            "AROUND_TITLE": "내 주변",
+            "APP_INFO_MESSAGE": "나만을 위한 기회와 정보로 더 촣은생활을 누리세요.",
+            "FEED_IMG": "신규 사용자 피드",
+            "CONV_IMG": "신규 사용자 대화",
+            "AROUND_IMG": "인근의 신규 사용자",
+            "CONV_DESC": "사람들과 대화를 나누세요. 여러분이 중요하게 생각하는 일에 새로운 기회가 열릴 수 있습니다.",
+            "AROUND_DESC": "집이나 직장, 우리 동네에서 사람과 장소를 찾아보고 주변에서 어떤 일이 일어나고 있는지 알아보세요.",
+            "PRIVACY": "Rezility는 사용자의 개인 정보를 중요하게 생각합니다.",
+            "PRIVACY_DESC": "Rezility에서는 사용자에게 전송되는 정보를 올바르게 통제하기 위해서 사용자의 데이터를 요청하고, 해당 데이터를 사용할 수 있습니다.  사용자의 데이터를 안전하게 보호할 것을 약속드립니다.",
+            "ALREADY_ACC": "계좌이 이미 잇습니다."
+        }
+    },
+    "LOGIN": {
+        "SIGN_IN": "로그인",
+        "LOGIN_BTN": "Rezility 로그인",
+        "LOGIN_WITH_FB_BTN": "페이스북으로 로그인",
+        "FORGOT_PASSWORD_BTN": "비밀번호가 기억나지 않습니다.",
+        "FORGOT_PASSWORD": "비밀번호가 기억나지 않습니다.",
+        "REQUEST_LOG_IN_LINK": "새 비밀번호 요청하기.",
+        "REQUEST_LOG_IN_LINK_MESSAGE": "비밀번호를 입력하는 건 귀찮은 일이죠.  특히 휴대폰에서는요.  Rezility도 알고 있습니다.  계정에 연결된 이메일 주소를 입력해주세요. 새로운 비밀번호를 곧 보내드리겠습니다.",
+        "EMAIL_ADDRESS": "이메일 주소",
+        "SEND_LOGIN_LINK": "새 비밀번호 전송",
+        "FORGOT_PASS_MESSAGE": "입력하신 이메일 주소로 새 비밀번호를 전송했습니다.  비밀번호를 복사한 후 현재 화면으로 돌아와서 '계속'을 탭하고 비밀번호를 붙여 넣으세요. Rezility에 바로 로그인할 수 있습니다.",
+        "LOGIN_LINK_SENT": "이메일을 확인하세요.",
+        "ACCOUNT_EXIST": "Rezility에 이미 존재하는 계정입니다.",
+        "CREATE_ACC": "새로운 계정을 만드세요.",
+        "VALID_EMAIL": "이메일 주소를 입력하세요.",
+        "PASSWORD": "비밀번호",
+        "CONTINUE_SAVE": "변경 사항을 저장하지 않고 계속하시겠어요?"
+    },
+    "SIGN_UP": {
+        "TITLE": "가입",
+        "FIRST_NAME": "이름",
+        "LAST_NAME": "성",
+        "ENTER_FN": "이름을 입력하세요.",
+        "ENTER_LN": "성을 입력하세요.",
+        "EMAIL": "이메일 주소",
+        "ZIP_CODE": "우편번호",
+        "ENTER_EMAIL": "이메일 주소를 입력하세요.",
+        "ENTER_ZIP": "우편번호를 입력하세요.",
+        "PRIVACY_MSG": "본인은 Rezility 개인 정보 취급 방침 및 이용 약관을 읽고 이해했으며 이에 동의합니다.",
+        "PRIVACY_MSG1": "개인 정보 취급 방침",
+        "PRIVACY_MSG2": "및",
+        "PRIVACY_MSG3": "이용 약관",
+        "PRIVACY_MSG5": "de Rezility.",
+        "PRIVACY_MSG4": "Rezility 개인 정보 취급 방침 및 이용 약관에 동의해주십시오.",
+        "GET_STARTED": "이메일을 확인하세요.",
+        "MESSGAE_1": "삶과 생활이 펼쳐지는 우리 마을,",
+        "MESSGAE_2": "나와 우리 모두를 위한 더 나은 미래.",
+        "WELCOME": "오신 것을",
+        "WELCOME_1": "Rezility에.",
+        "ALREADY_HAVE_ACCOUNT": "계좌이 이미 잇습니다.",
+        "CHOOSE_PASSWORD": "비밀번호 설정",
+        "MESSAGE": "가입을 완료하려면 비밀번호를 설정하거나 Facebook 계정으로 로그인을 선택하세요.",
+        "CREATE_PASSWORD": {
+            "TITLE": "비밀번호 설정",
+            "LOGIN_INTO_BEHOME": "Rezility 로그인",
+            "PASSWORD_STRENGTH_LEVEL1": "비밀번호를 설정하셔야 합니다.",
+            "PASSWORD_STRENGTH_LEVEL2": "안전한 비밀번호를 선택하세요. 비밀번호는 대문자와 숫자를 포함해서 최소 8자 이상으로 구성하세요.",
+            "PASSWORD_STRENGTH_LEVEL3": "안전한 비밀번호입니다!",
+            "PASSWORD_STRENGTH_LEVEL4": "비밀번호가 기억나지 않더라도 걱정하지 마세요. 바로 로그인할 수 있는 링크를 보내드립니다."
+        },
+        "SELECT_PASSWORD": {
+            "COMPLETE_SIGN": "가입 완료"
+        }
+    },
+    "COACH_MARK": {
+        "FEED_MSG_1": "피드를 자주 확인해서 새로운",
+        "FEED_MSG_2": "기회와 정보를 찾으세요.",
+        "GOT_IT": "네",
+        "FEED_COACH": "피드",
+        "CONV_MSG_1": "우리의",
+        "CONV_MSG_2": "대화입니다.",
+        "CONV_COACH": "대화 ",
+        "AROUND_PLACE01": "내 주변의 장소와 서비스를 찾아보세요.",
+        "AROUND_PLACE02": "내 주변.",
+        "AROUND_COACH": "내 주변",
+        "STUFF_COACH": "내 정보",
+        "STUFF_MSG_1": "프로필 및 설정을",
+        "STUFF_MSG_2": "관리하세요.",
+        "START_CONVERSATION": "대화 시작하기",
+        "MAP_SETTINGS": "지도 설정",
+        "YOUR_PINNED": "내가 고정한",
+        "LOCATION": "위치",
+        "SAVE_LOCATION": "위치 저장",
+        "CENTER_MAP": "현재 위치를 지도",
+        "YOUR_LOCATION": "가운데 놓으세요."
+    },
+    "ACTIVITY": {
+        "TITLE": "내 피드",
+        "COMMING_SOON": "곧 출시 예정....",
+        "START_CONVERSATION": "대화 시작하기",
+        "READ_THIS_ARTICLE": "주까 정보",
+        "CONNECT": "지금 연결",
+        "NEW_ADDRESS": "새 주소 입력",
+        "CALL": "전화",
+        "CREATE": "피드 만들기",
+        "SUBMIT_CARD": "제출 카드",
+        "DEFINE_AUDIENCE": "Define Audience",
+        "BUILD_PLACEMENT": "Build Placement",
+        "BUILD_POLL": "Build Poll",
+        "CREATE_FEED": { 
+            "HEADLINE": "Headline...",
+            "SUMMARY": "Summary...",
+            "NOW": "Now",
+            "PLACEMENT_HEADER": "Placement Details",
+            "POLL_HEADER": "Poll Details",
+            "SELECT_IMAGE": "Select a image",
+            "HEADER": "Header",
+            "TOTAL_CHARACTER": "characters remaining",
+            "DESCRIPTION": "Description",
+            "MORE_INFO": "More Info",
+            "ALLOW": "Allow User To Initiate A Private Conversation",
+            "BRANCHES": "Branches",
+            "SELECT_SEGMENT":"Select Segment",
+            "SELECT_TEMPLATE":"Select a Template",
+            "QUESTION": "Question",
+            "RESPOND_TYPE": "Respond Type",
+            "SINGLE_SELECTION": "Single Selection",
+            "MULTI_SELECTION": "Multiple Selection",
+            "OPTIONS": "Options",
+            "ENTER_QUESTION": "Enter a Question",
+            "SUBMIT": "Submit",
+            "SET_DELIVERY": "Set Delivery",
+            "RESET_DELIVERY": "Re-set Delivery",
+            "RUN_PLACEMENT": "Run my placement now",
+            "START_DATE": "Set start date",
+            "START_DELIVERY": "Start Delivery on"
+        }
+    },
+    "CONVERSATIONS": {
+        "TITLE": "내 대화",
+        "IS_TYPING": "입력 중...",
+        "INVITE_CONNECT": "친구 초대장",
+        "ARCHIVE": "보관",
+        "LEAVE": "나가기",
+        "DELETE": "삭제",
+        "WELCOME": "에 오신 것을 환영합니다.",
+        "YOUR_CONVERSATION": "내 대화.",
+        "LEAVE_GROUP": "이 그룹에서 나가시겠습니까?",
+        "DELETE_GROUP": "이 대화를 삭제하시겠습니까?",
+        "OK": "확인",
+        "CANCEL": "취소",
+        "NEW_MSG": {
+            "TITLE": "새 메시지",
+            "TO": "수신자",
+            "YOUR_CONNECTION": "내 친구 ",
+            "OTHERS": "Rezility 에 있는 다른 사용자",
+            "CREATE_GROUP": "새로운 그룹을 만드세요. ",
+            "INVITATION": "보낸 초대장",
+            "INVITE_CONNECT": "친구 초대장",
+            "NOT_CONNECT": "연결되지 않음",
+            "TAKE_PHOTO": "사진 찍기",
+            "ATTACH_PHOTO": "사진 첨부",
+            "LIB_PHOTO": "라이브러리에서 선택하십시오."
+        },
+        "SHOW_IMG": {
+            "CAPTION": "캡션"
+        },
+        "SETTING": {
+            "TITLE": "대화 설정",
+            "SEND_PUSH_NOTIFICATION": "이 대화 숨기기",
+            "PARTICIPANT": "참가자",
+            "ARCHIVE": "대화 보관하기",
+            "ADD_PEOPLE": "사람 추가",
+            "EDIT_GROUP": "그룹 편집",
+            "ACTIVE_NOW": "지금 활성화하기"
+        },
+        "GROUP_CHAT": {
+            "TITLE": "내 친구",
+            "CREATE_TITLE": "새로운 그룹 대화",
+            "EDIT_TITLE": "그룹 대화 편집",
+            "ADDPEOPLE_TITLE": "사람 추가",
+            "GROUP_NAME": "그룹 이름",
+            "SEARCH_PEOPLE": "사람 검색",
+            "GROUP_TITLE": "그룹 제목"
+        },
+        "PUBLIC_PROFILE": {
+            "INVITE": "초대",
+            "CANCEL_INVITE": "초대 취소",
+            "ACCEPT_CONNECT": "수락 및 친구 맺기",
+            "IGNORE": "무시",
+            "PRIVATE_MSG": "비밀 메시지",
+            "REMOVE_GRP": "그룹에서 삭제",
+            "LEAVE_GRP": "그룹에서 나가기",
+            "BLOCK": "차단",
+            "UNBLOCK": "차단 해제",
+            "APPROVE_CONNECT": "승인 및 연결",
+            "DENY": "거부"
+        }
+    },
+    "AROUND_ME": {
+        "TITLE": "내 주변",
+        "PINNED_LOCATION": "고정된 위치",
+        "YOUR_PINNED_LOCATION_BTN": "내가 고정한 위치",
+        "DROP_PIN_BTN": "고정 해제",
+        "EDIT_LOCATION_TITLE": "저장된 위치 편집",
+        "SEARCH_LOCATION": "위치 검색",
+        "YOUR_PINNED_LOCATION": {
+            "TITLE": "저장된 위치",
+            "EDIT_BUTTON": "편집",
+            "DELETE_BUTTON": "삭제"
+        },
+        "SET_PIN_LOCATION": {
+            "TITLE": "고정 해제",
+            "LOCATION": "위치 이름"
+        },
+        "MAP_OVERLAYS": {
+            "TITLE": "무엇을 보여드릴까요?",
+            "CLEAR_BTN": "삭제",
+            "PROVIDER_SECTION": "부동산 관리 업체",
+            "SERVICE_INTEREST": "서비스 업체",
+            "GOOGLE_PLACES": "명소"
+        },
+        "LIST_VIEW": {
+            "PROPERTY": "부동산 관리 업체",
+            "SERVICE_PROPVIDER": "서비스 업체"
+        },
+        "PROVIDER_DETAILS": {
+            "SERVICES": "서비스",
+            "ADDRESS": "주소",
+            "HOURS": "영업시간",
+            "FOLLOW": "팔로우",
+            "UNFOLLOW": "팔로우 중지",
+            "DONT_LIVE": "여기에 살지 않습니다.",
+            "LIVE": "여기에 삽니다.",
+            "TITLE_VERIFIED": "몇 호에",
+            "TITLE_UNVERIFIED": "주소 인증 보류 중",
+            "TITLE_RESIDENT_ADVOCATE": "거주자 대표",
+            "FOLLOW_BTN": "팔로우",
+            "UNFOLLOW_BTN": "팔로우 중지",
+            "RESIDENT_ADVOCATE": "나는 여기서 살고있는 누군가를 돌본다."
+        },
+        "NO_PINNED_MESSAGE": "시작하려면 몇 개의 위치를 고정하세요.",
+        "WORKING_STATUS": {
+            "OPEN_NOW": "지금 영업 중",
+            "CLOSED": "현재 종료됨"
+        },
+        "DISCONTINUED_PROPERTY": {
+            "CONFIRMATION_MSG": "정말이세요?",
+            "SEND_BUTTON": "예. 연결을 해제해주세요.",
+            "CANCEL_BTN_LINK": "연결을 해제하고 싶지 않습니다.",
+            "MSG": "이곳에 살지 않는다고 답변하셨으므로 앞으로 부동산 관리 업체의 정보가 Rezility 앱을 통해서 전달되지 않습니다."
+        },
+        "HOUSING_TYPES": {
+            "TITLE": "건물"
+        },
+        "HOUSING_UNIT": {
+            "TITLE": "사십니까?",
+            "VERIFY-BTN": "집 주소 확인",
+            "MSG": "사용자의 신원을 확인하고 서비스 요청에 답변해드리려면 해당 정보가 필요합니다. 사용자의 데이터를 안전하게 보호할 것을 약속드립니다. ",
+            "Unit": "호실 번호"
+        },
+        "PENDING_CONFIRMATION": {
+            "CONFIRMATION_MSG": "네!",
+            "SEND_BUTTON": "계속",
+            "MSG": "부동산 관리 업체에 주소를 제출하고 인증을 기다리는 중입니다.  주소가 인증되면 부동산 관리 업체에서 부동산 관련 정보, 업데이트 및 뉴스를 받을 수 있습니다."
+        },
+        "VERIFY_ADDRESS": {
+            "TITLE": "집 주소를 인증해주세요.",
+            "VERIFY_BUTTON": "집 주소 확인",
+            "APARTMENT_UNIT": "아파트 또는 호실 번호",
+            "ADDRESS": "주소",
+            "PROVIDER": "제공업체"
+        },
+        "ADDRESS_TYPE": {
+            "HOME": "집",
+            "WORK": "직장",
+            "OTHER": "기타"
+        }
+    },
+    "YOUR_STUFF": {
+        "TITLE": "내 정보",
+        "HI": "안녕하세요.",
+        "PROFILE": {
+            "TITLE": "프로필",
+            "EDIT": {
+                "TITLE": "내 프로필 편집",
+                "FIRST_NAME": "이름",
+                "LAST_NAME": "성",
+                "MIDDLE_NAME": "중간 이름",
+                "PHONE_NUMBER": "전화번호",
+                "ABOUT": "소개",
+                "DATE_OF_BIRTH": "생년월일",
+                "AGE": "나이",
+                "GENDER": "성별",
+                "UNDER": "이하 ",
+                "OVER": "이상",
+                "VERIFIED": "인증됨",
+                "UNVERIFIED": "인증되지 않음",
+                "HOME_ADDRESS": "집 주소",
+                "ADDRESS": {
+                    "TITLE": "주소",
+                    "STREET_ADDRESS_1": "도로명 주소",
+                    "UNIT_NO": "호실 번호",
+                    "CITY": "시/군/구",
+                    "STATE": "특별시/광역시/도",
+                    "ZIP_CODE": "우편번호",
+                    "SEARCH_LOCATION": "위치 검색"
+                },
+                "LANGUAGE": "언어",
+                "EDUCATION_LEVEL": "교육 수준",
+                "ANNUAL_INCOME": "연 수입",
+                "SERVICE_INTERESTS": "관심 서비스",
+                "VERIFICATIONS": {
+                    "TITLE": "인증",
+                    "FACEBOOK_CONNECTED": "Facebook 연결됨",
+                    "FB_STATUS": "Facebook 상태",
+                    "FB_NOT": "Facebook 에 연결되지 않았습니다."
+                }
+            },
+            "MESSAGES": {
+                "DOB_ERROR": "생년월일에 미래 날짜를 입력하실 수 없습니다."
+            }
+        },
+        "SETTINGS": {
+            "TITLE": "설정",
+            "PINNED_LOCATIONS": "고정된 위치",
+            "SEND_PUSH_NOTIFICATIONS": "푸시 알림 보내기",
+            "LOW_DATA": "낮은 데이터 사용량",
+            "CHANGE_PASSWORD": {
+                "TITLE": "비밀번호 변경",
+                "NEW_PASSWORD": "새로운 비밀번호",
+                "REPEAT_PASSWORD": "도움말 패턴 표시"
+            },
+            "BLOCKED_USERS": "차단된 사용자",
+            "SHOW_COACHMARKS": "도움말 패턴 표시",
+            "ABOUT_APP": "앱 소개",
+            "LOG_OUT": "로그아웃",
+            "DEACTIVE_YOUR_ACCOUNT": "내 계정 비활성화하기",
+            "VERSION": "Rezility 버전 "
+        },
+        "FAQ": {
+            "TITLE": "자주 묻는 질문"
+        },
+        "FEEDBACK": {
+            "TITLE": "의견을 보내주세요"
+        },
+        "TELL_FEEDBACK": {
+            "TITLE": "의견을 보내주세요",
+            "SEND_BTN": "보내기",
+            "PLACEHOLDER": "질문이나 의견이 있으신가요? 여기에서 보내주세요."
+        },
+        "FAVORITES": {
+            "TITLE": "즐겨찾기"
+        }
+    },
+    "SERVICE_REQUESTS": {
+        "TITLE": "서비스 신청",
+        "TYPE": "유형",
+        "DESCRIPTION": "설명",
+        "DESCRIPTION_HINT": "문제에 대한 설명을 입력하십시오(최대 500자).",
+        "PHOTOS": "사진",
+        "PHOTOS_HINT": "사진 첨부는 선택 사항입니다.",
+        "NEXT": "다음",
+        "ADD_PHOTOS": "사진 추가",
+        "SETTINGS": {
+            "TITLE": "새 서비스 신청",
+            "PARTICIPANT": "참가자",
+            "NEWSERVICE": "새 서비스 신청 작성하기"
+        },
+        "DETAILS": {
+            "METAID": "#123-456-789",
+            "DETAILS": "세부 사항",
+            "CONVERSATION": "대화",
+            "STATUS": "상태:",
+            "ACTIVE": "유효한"
+        },
+        "REQUEST_LIST": {
+            "ACTIVE": "진행 중",
+            "RESOLVED": "완료",
+            "CANCELLED":"취소됨",            
+            "ACTIVE_MSG": "작성된 서비스 신청서가 없습니다. 서비스 신청서를 작성하면 해당 신청서가 서비스 신청서 목록에 표시됩니다.",
+            "RESOLVED_MSG": "현재 해결 된 서비스 요청이 없습니다."
+        },
+        "REFERENCE_NUMBER": "사고가 할당되었습니다",
+        "PROBLEMREPORTED": "문제 보고",
+        "NO_SERVICE_REQUEST": "해당 건물은 서비스 신청을 지원하지 않습니다.",
+        "VERIFY_ADDRESS": "서비스를 신청하기 전에 주소를 확인해주십시오.",
+        "SERVICE_REQUEST_CREATED": "서비스 신청서가 작성되었습니다."
+    },
+    "BUTTON_LABEL": {
+        "SEND": "보내기",
+        "SAVE": "저장",
+        "EDIT": "편집",
+        "CANCEL": "취소",
+        "BACK": "뒤로",
+        "CLEAR": "삭제",
+        "CONTINUE": "계속",
+        "SKIP_THIS": "건너뛰기",
+        "FIX_ERROR": "오류 수정하기",
+        "LOGIN_FACEBOOK": "페이스북으로 로그인"
+    },
+    "PLACEORDER": {
+        "SEARCH": "이름 또는 이메일 입력",
+        "TITLE": "새 대화",
+        "MESSAGE": "메시지 쓰기"
+    },
+    "ERROR_MESSAGES": {
+        "NO_DATA_FOUND": "데이터를 찾지 못했습니다.",
+        "LOADING_MORE_DATA_TO_LOAD": "더 많은 데이터 로드 중...",
+        "NO_CONVERSATION": "왼쪽 상단에서 + 아이콘을 클릭하고",
+        "NO_CONVERSATION_1": "검색창에 이름을 입력해서 다른 Rezility 사용자와",
+        "NO_CONVERSATION_2": "친구가 되세요.",
+        "EMPTY_BLOCKED_LIST": "현재 차단된 사용자가 없습니다. 다른 사용자를 차단하면 해당 사용자는 차단 리스트에 표시됩니다.",
+        "SOMETHING_WENT_WRONG": "문제가 발생했습니다! 나중에 다시 시도해주세요.",
+        "APP_VERSION_UPDATED": "앱이 업데이트되었습니다. 다시 로그인해주세요.",
+        "NO_MORE_DATA_TO_LOAD": "로드할 데이터가 없습니다.",
+        "SAVE_DATA_DONE": "데이터가 저장되었습니다.",
+        "PROFILE_SAVE_DONE": "프로필이 저장되었습니다.",
+        "POLL_SAVE_DONE": "투표가 저장되었습니다.",
+        "SETTINGS_UPDATED": "데이터가 저장되었습니다.",
+        "LOGGED_USER": "이미 Rezility에 로그인되어 있습니다.",
+        "DEVICE_REGISTRATION_FAILED": "기기 등록에 실패했습니다. 나중에 다시 시도해주세요.",
+        "LOCATION_NOT_FOUND": "현재 위치를 찾을 수 없습니다. 나중에 다시 시도해주세요.",
+        "ADDRESS_NOT_FOUND": "주소를 찾을 수 없습니다.",
+        "SELECT_LOCATION": "지도에서 올바른 위치를 선택해주세요.",
+        "LOCATION_NAME_BLANK": "올바른 위치 이름을 설정해주세요.",
+        "INVALID_USERNAME_PASSWORD": "이메일 주소와 비밀번호를 입력하세요.",
+        "ADMIN_BLOCK": "Rezility 관리자는 차단할 수 없습니다.",
+        "UNINVITED_MESSAGE": "님을 친구로 초대하세요.",
+        "INVALID_UNIT_MESSAGE": "올바른 아파트 번호를 선택해주세요.",
+        "ZIP_CODE_VALID": "우편번호를 입력해주세요(예: 10461 또는 10461-1235)",
+        "NO_NETWORK": "인터넷 연결을 확인하세요.",
+        "NO_NETWORK_TITLE": "인터넷에 연결되지 않음",
+        "NO_NETWORK_MSG": "인터넷 연결을 확인하세요.",
+        "INVITATION_ACCEPTED_PREFIX": "이제 연결되었습니다 ",
+        "SENT_INVITE_NOT_POSTFIX": "님이 친구로 초대하셨습니다.",
+        "BLOCK_SUCCESS": "사용자가 차단되었습니다.",
+        "UNBLOCK_SUCCESS": "사용자가 차단 해제되었습니다.",
+        "BLOCKED_USER_POSTFIX": "님이 차단되었습니다.",
+        "GRP_SEND_ERROR_MSG": "그룹 참여자가 아니므로 이 그룹에 메시지를 보낼 수 없습니다.",
+        "GRP_EDIT_ERROR_MSG": "그룹 참여자가 아니므로 이 그룹을 편집할 수 없습니다.",
+        "GRP_JOINED": "그룹에 오신 것을 환영합니다.",
+        "GRP_REMOVED": "이 그룹 참여자가 아닙니다.",
+        "PLEASE_WAIT": "기다려 주십시오…",
+        "REPORTING": "보고 중...",
+        "UPLOADING": "업로드 중...",
+        "LOGGING_OUT": "로그아웃 중...",
+        "UPDATE_SUCCESSFUL": "비밀번호가 저장되었습니다.",
+        "PASSWORD_BLANK": "비밀번호를 입력해야 합니다.",
+        "PASSWORD_MISMATCH": "비밀번호가 일치하지 않습니다.",
+        "PASSWORD_FORMAT": "비밀번호는 대문자와 숫자를 포함해서 최소 8자 이상으로 구성되어야 합니다.",
+        "NAME_VALIDATION": "이름과 성을 입력해야 합니다.",
+        "CANCEL_BTN": "아니요.",
+        "OK_BTN": "업데이트",
+        "VERIFY_ADDRESS_SUCCESS": "거주지 인증이 거부되었습니다.",
+        "VERIFY_ADDRESS_DENY": "거주지 인증이 완료되었습니다.",
+        "ADDED_GROUP": "이 그룹에 추가되셨습니다.",
+        "NO_LONGER_PARTICIPANT": "이 그룹 참여자가 아닙니다.",
+        "INVITED_YOU": "님이 친구로 초대하셨습니다.",
+        "NETWORK": "네트워크 연결되지 않음",
+        "INVITATION_INVITED_POSTFIX": "님이 아직 친구 초대장을 수락하지 않으셨습니다.",
+        "VERIFICATION_PREFIX": "인증 요청: ",
+        "ADVOCATE_VERIFICATION_PREFIX": "거주자 대표 신청됨: ",
+        "ACCEPTED_POSTFIX": "이(가) 인증되었습니다. 이제 연결되었습니다.",
+        "DENY_PREFIX": "인증 거부: ",
+        "VERIFICATION_MESSAGE": "인증 요청이 전송되었습니다.",
+        "NO_FAVORITE_FOUND": "피드를 즐겨찾기에 추가하면 해당 피드가 즐겨찾기 피드 목록에 표시됩니다.",
+        "VERIFICATION_CANCEL_MESSAGE": "거주자가 승인 요청을 취소했습니다.",
+        "ERROR_TITLE": "오류",
+        "TWITTER_ERROR": "트위터 앱을 찾을 수 없습니다.",
+        "PHONE_VALIDATION": "유효한 전화 번호를 입력하세요."                
+    },
+    "DAYS_IN_SHORT": {
+        "SUNDAY": "일",
+        "MONDAY": "월",
+        "TUESDAY": "화",
+        "WEDNESDAY": "수",
+        "THURSDAY": "목",
+        "FRIDAY": "금",
+        "SATURDAY": "토"
+    },
+    "MONTHS_IN_SHORT": {
+        "JAN": "1월",
+        "FEB": "2월",
+        "MAR": "3월",
+        "APR": "4월",
+        "MAY": "5월",
+        "JUN": "6월",
+        "JUL": "7월",
+        "AUG": "8월",
+        "SEP": "9월",
+        "OCT": "10월",
+        "NOV": "11월",
+        "DEC": "12월"
+    },
+    "MISC": {
+        "Rezility": "Rezility",
+        "IMAGE": "이미지",
+        "PROFILE_IMAGE": "프로필 이미지",
+        "Oops": "이런!",
+        "REFRESH": "새로고침 중... ",
+        "PULL": "밀어서 새로고침하기",
+        "OK": "확인",
+        "DISMISS": "해제"
+    },
+    "TIMESTAMP": {
+        "DAY_AGO": "1 일 전",
+        "AM": "오전",
+        "PM": "오후"
+    },
+    "WELCOME_FEED": {
+        "YOUR_FEED": "내\n피드",
+        "YOUR_CONV": "내\n대화",
+        "AROUND_YOU": "내\n주변",
+        "YOUR_STUFF": "내\n정보"
+    },
+    "CREATE_FEED":{
+        "TITLE":"Please add title to the feed.",
+        "DESCRIPTION":"Please add description to the feed.",
+        "LOGO":"Please add/select a logo."
+    }
+}

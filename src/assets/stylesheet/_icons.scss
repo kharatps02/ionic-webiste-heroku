@@ -1,0 +1,327 @@
+/* All Icons */
+
+@font-face {
+    font-family: "rezility-mobile";
+    src: url("../assets/fonts/rezility-mobile.eot");
+    src: url("../assets/fonts/rezility-mobile.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/rezility-mobile.woff") format("woff"), url("./assets/fonts/rezility-mobile.ttf") format("truetype"), url("../assets/fonts/rezility-mobile.svg#rezility-mobile") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icons-"]:before,
+[class*="icons-"]:before,
+.tab-button ion-icon:before,
+.back-button-icon:before, ion-toggle.favorite.toggle .toggle-icon:before,
+input[type="checkbox"]:checked+span:before, .placeholder:before, .fab-close-icon:before, [list-grid] .radio-icon.radio-checked:before,
+.download-placeholder:before{ 
+    font-family: "rezility-mobile" !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+}
+
+ion-tabs[tabs] .tab-button ion-icon:before {
+    vertical-align: middle;
+}
+.icons-favorite:before {
+  content: "\3a";
+}
+.icons-like:before {
+  content: "\3f";
+}
+.icons-delete:before {
+    content: "\45";
+}
+
+.icons-archive:before {
+    content: "\50";
+}
+
+.icons-contact:before {
+    content: "\52";
+}
+
+.icons-world:before {
+    content: "\46";
+}
+
+.icons-plus:before {
+    content: "\61";
+}
+
+.icons-around-me:before,
+ion-icon[aria-label="icons around-me"]:before,
+ion-icon[aria-label="icons around-me-outline"]:before {
+    content: "\62";
+}
+
+.icons-back-arrow:before,
+.back-button-icon-md:before,
+.back-button-icon:before {
+    content: "\63";
+}
+
+.icons-camera:before,
+ion-icon[aria-label="icons camera"]:before {
+    content: "\64";
+}
+
+.icons-chat:before {
+    content: "\65";
+}
+
+.icons-close:before, .fab-close-icon:before {
+    content: "\66";
+}
+
+.icons-correct:before,
+input[type="checkbox"]:checked+span:before {
+    content: "\56";
+}
+
+.icons-edit:before {
+    content: "\68";
+}
+
+.icons-feed:before,
+ion-icon[aria-label="icons feed"]:before,
+ion-icon[aria-label="icons feed-outline"]:before {
+    content: "\69";
+}
+
+.icons-location:before {
+    content: "\6a";
+}
+
+.icons-conversion:before,
+ion-icon[aria-label="icons conversion"]:before,
+ion-icon[aria-label="icons conversion-outline"]:before {
+    content: "\6b";
+}
+
+.icons-my-stuff:before,
+ion-icon[aria-label="icons my-stuff"]:before,
+ion-icon[aria-label="icons my-stuff-outline"]:before {
+    content: "\41";
+}
+
+.icons-map-pin:before {
+    content: "\2e";
+}
+
+.icons-unlike:before {
+    content: "\28";
+}
+
+.icons-share:before {
+    content: "\29";
+}
+
+.icons-preview:before {
+    content: "\6d";
+}
+
+.icons-profile:before {
+    content: "\6e";
+}
+
+.icons-right-arrow:before {
+    content: "\6f";
+}
+
+.icons-search:before{
+    content: "\70";
+}
+
+.icons-setting:before {
+    content: "\71";
+}
+
+.icons-chat-group:before {
+    content: "\72";
+}
+
+.icons-chat01:before {
+    content: "\73";
+}
+
+.icons-poll:before {
+    content: "\74";
+}
+
+.icons-news-alert:before {
+    content: "\55";
+}
+
+.icons-announcment:before {
+    content: "\44";
+}
+
+.icons-article:before {
+    content: "\77";
+}
+
+.icons-affiliate:before {
+    content: "\78";
+}
+
+.icons-attachement:before {
+    content: "\79";
+}
+
+.icons-alert:before,
+ion-icon[aria-label="icons alert"]:before {
+    content: "\7a";
+}
+
+.icons-more:before {
+    content: "\53";
+}
+
+.icons-upload:before {
+    content: "\42";
+}
+
+.icons-report:before,
+ion-icon[aria-label="icons report"]:before {
+    content: "\43";
+}
+
+.icons-location01:before {
+    content: "\43";
+}
+
+.icons-pin:before {
+    content: "\47";
+}
+
+.icons-up-arrow:before {
+    content: "\48";
+}
+
+.icons-image-photo:before,
+ion-icon[aria-label="icons image-photo"]:before {
+    content: "\4a";
+}
+
+.icons-assign:before {
+    content: "\51";
+}
+
+.icons-01:before {
+    content: "\24";
+}
+
+.icons-incident-conversation:before {
+    content: "\5a";
+}
+
+.icons-user:before {
+    content: "\23";
+}
+
+.icons-help:before {
+    content: "\39";
+}
+
+.icons-privacy:before {
+    content: "\35";
+}
+
+.icons-mail:before {
+    content: "\54";
+}
+
+.icons-list:before {
+    content: "\34";
+}
+
+.icons-block:before {
+    content: "\33";
+}
+
+.icons-add-people:before {
+    content: "\4f";
+}
+
+.icons-ignore:before {
+    content: "\2a";
+}
+
+.icons-sign-out:before {
+    content: "\30";
+}
+.icons-read-more:before {
+    content: "\4c";
+}
+.icons-facebook:before{
+    content: "\40"; 
+}
+.icons-twitter:before{
+    content: "\5b";
+}
+.icons-house:before{
+    content: "\5d";
+}
+.icons-service:before, 
+ion-icon[aria-label="icons service"]:before,
+ion-icon[aria-label="icons service-outline"]:before{
+    content: "\38";
+}
+.icons-plug:before{
+    content: "\22";
+}
+.icons-appliances:before{
+    content: "\36";
+}
+.icons-thermometer:before{
+    content: "\5e";
+}
+.icons-plumbing:before{
+    content: "\37";
+}
+.icons-commonarea:before{
+    content: "\31";
+}
+.icons-general:before{
+    content: "\21";
+}
+.icons-close-big:before{
+    content: "\5f";
+}
+.icons-uploadimg:before{
+    content: "\26";
+}
+.icons-download:before{
+    content: "\60";
+}
+.icons-read:before{
+    content: "\7b";
+}
+.icons-mute:before{
+    content: "\7c";
+}
+.icons-modify:before{
+    content: "\7d";
+}
+.icons-selection:before{
+    content: "\7e";
+}
+.icons-reset:before{
+    content: "\e000";
+}
+.icons-refresh:before{
+    content: "\5c";
+}
+.icons-calendar:before{
+    content: "\4e"
+}
+.icons-time:before{
+    content: "\4d"
+}

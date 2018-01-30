@@ -1,0 +1,30 @@
+@import "../../../assets/stylesheet/_confirmation-page";
+page-pending-confirmation {
+    .scroll-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .confirmation-msg {
+        .confirmation-icon {
+            background: $darkBlue;
+            @include zeroMargin(0 auto 1.5rem auto);
+        }
+        [splitter] {
+            background: $darkBlue;
+        }
+    }
+    .action-grid {
+        //@include zeroPadding(0 0 2.5rem 0);
+    }
+    @media (max-height: 533px) {
+        .confirmation-msg {
+            .confirmation-icon {
+                @include zeroMargin(4.75rem auto 1.5rem auto);
+            }
+        }
+        .button-light-blue {
+            @include zeroMargin(2rem 0 0 0);
+        }
+    }
+}

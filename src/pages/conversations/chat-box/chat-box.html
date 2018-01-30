@@ -1,0 +1,78 @@
+<ion-header labelHeader>
+    <ion-navbar>
+        <ion-title>
+            <span active-user [ngClass]="{'active': (selectedUser.presence && selectedUser.type!==groupType 
+                                                    && (selectedUser.connection_status === connectionStatus.CONNECTED || selectedUser.connection_status === connectionStatus.CONNECTED_BLOCKED) ),
+                                        'de-active':(!selectedUser.presence && selectedUser.type!==groupType 
+                                                    && (selectedUser.connection_status === connectionStatus.CONNECTED || selectedUser.connection_status === connectionStatus.CONNECTED_BLOCKED))}">
+             {{selectedUser.user_name}}
+         <cite *ngIf="selectedUser.isTyping"> {{'CONVERSATIONS.IS_TYPING' | translate}}</cite> </span>
+        </ion-title>
+        <ion-buttons end>
+            <button [disabled]="isSettingsDisabled" (tap)="navigatetoConversationSetting()" ion-button clear outline-btn><ion-icon class="icons-more"></ion-icon></button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content #content>
+    <ion-infinite-scroll *ngIf="chatBoxInfiniteScrollShow" (ionInfinite)="loadMoreMessage($event)" position="top" [enabled]="chatBoxInfiniteScrollEnabled" >
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="{{'ERROR_MESSAGES.LOADING_MORE_DATA_TO_LOAD' | translate}}"></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+    <ion-list *ngIf="selectedUser.type!==groupType && selectedUser.connection_status === connectionStatus.INVITED" class="invitation-block">
+        <ion-item class="invitation-msg">
+            <ion-avatar item-left>                 
+                <lazy-img  *ngIf="selectedUser.profile_pic" [inputSrc]="selectedUser.profile_pic" alt=""></lazy-img>
+                <lazy-img  *ngIf="!selectedUser.profile_pic" [inputSrc]="placeholderIamges.PROFILE_PIC" alt=""></lazy-img>
+            </ion-avatar>
+            <h2><span *ngIf="selectedUser.user_name"> </span> <span *ngIf="selectedUser.joining_time_token">{{ selectedUser.joining_time_token/10000 | localizedDate: 'MM/dd/yy hh:mm a' }}</span></h2>
+            <p>{{selectedUser.first_name}} {{'ERROR_MESSAGES.INVITATION_INVITED_POSTFIX' | translate}}</p>
+        </ion-item>
+    </ion-list>
+
+    <ion-list *ngIf="selectedUser.type!==groupType && selectedUser.connection_status === connectionStatus.CONNECTED" class="invitation-block">
+        <ion-item class="invitation-msg">
+            <ion-avatar item-left>
+                <lazy-img  *ngIf="selectedUser.profile_pic" [inputSrc]="selectedUser.profile_pic" alt=""></lazy-img>
+                <lazy-img  *ngIf="!selectedUser.profile_pic" [inputSrc]="placeholderIamges.PROFILE_PIC" alt=""></lazy-img>
+            </ion-avatar>
+            <h2><span *ngIf="selectedUser.user_name"></span> <span *ngIf="selectedUser.joining_time_token">{{ selectedUser.joining_time_token/10000 | localizedDate: 'MM/dd/yy hh:mm a' }}</span></h2>
+            <p>{{'ERROR_MESSAGES.INVITATION_ACCEPTED_PREFIX' | translate}} {{selectedUser.user_name}}</p>
+        </ion-item>
+    </ion-list>
+
+    <div class="bottom-space">
+        <ion-list *ngFor="let message of messages" class="conversation-chat" [ngClass]="{'chat-img-text': message.image && message.content !== 'image'}">
+            <ion-item *ngIf="!message.content_type_id  || message.content_type_id === messageContentType.SYSTEM_MESSAGE_TO_ALL || this.userData.user_type === usertype.HOUSING_PROVIDER "
+             [ngClass]="{'chat-property-img': message.image && message.content !== 'image', 'no-img-text': message.content === 'image'}">
+                <ion-avatar item-left>
+                    <lazy-img  *ngIf="message.profile_pic" [inputSrc]="message.profile_pic" alt=""></lazy-img>
+                    <lazy-img  *ngIf="!message.profile_pic" [inputSrc]="placeholderIamges.PROFILE_PIC" alt=""></lazy-img>
+                </ion-avatar>
+                <h4>
+                    <span *ngIf="message.user_name">{{message.user_name}}</span>                    
+                    <ion-note class="datetime">{{ message.timetoken | localizedDate: 'MM/dd/yy hh:mm a'}}</ion-note>
+                </h4>
+
+                <div *ngIf="message.image">
+                    <lazy-img  name="image" [inputSrc]="message.image" (tap)="presentShowImageModal(message.image, false)" alt=""></lazy-img>
+                </div>
+                <h3>{{message.content}}</h3>
+            </ion-item>
+        </ion-list>
+    </div>
+</ion-content>
+<ion-footer *ngIf="selectedUser.connection_status !== connectionStatus.INVITED" [keyboardAttach]="content" footer-full id="chat-box-footer">
+    <ion-toolbar>
+        <button ion-button icon-only clear (click)="showActionSheet()">
+            <ion-icon class="icons-attachement"></ion-icon>
+        </button>
+        <ion-list class="chat-type-msg" id="chat-text">
+            <ion-item>
+                <ion-textarea autoresize autocomplete="true" spellcheck="true" autocorrect="true" [(ngModel)]="messageModel" col="55" placeholder="{{'PLACEORDER.MESSAGE' | translate}}" [formControl]="writeMessage" name="writeMessage"></ion-textarea>
+            </ion-item>
+        </ion-list>
+        <button ion-button icon-only clear [ngClass]="{'active-btn': !(messageModel && !pictureModel && messageModel.trim().length > 0)}" (click)="sendMessage(messageModel);">
+        <ion-icon class="icons-upload"></ion-icon>
+    </button>
+    </ion-toolbar>
+</ion-footer>

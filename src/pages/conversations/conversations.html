@@ -1,0 +1,55 @@
+<ion-header labelHeader>
+    <ion-toolbar topHeader>
+        <ion-buttons start *ngIf="(userType !== usertypeConstant.HOUSING_PROVIDER && userType !== usertypeConstant.SERVICE_PROVIDER)">
+            <button ion-button (click)="navigateToNewMessagePage()">
+               <ion-icon class="icons-plus"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>{{'CONVERSATIONS.TITLE' | translate}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content silvergrey-background>
+    <ion-refresher (ionRefresh)="doRefreshConversation($event)">
+            <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="{{'MISC.PULL' | translate}}" refreshingSpinner="circles" refreshingText="{{'MISC.REFRESH' | translate}}">
+            </ion-refresher-content>
+        </ion-refresher>
+    <div *ngIf="conversations && conversations.length === 0 && isConversationsAPICall" class="conversation-message">
+        <h2>{{'CONVERSATIONS.WELCOME' | translate }} <br> {{'CONVERSATIONS.YOUR_CONVERSATION' | translate }} <span></span></h2>
+        <p class="no-records">{{'ERROR_MESSAGES.NO_CONVERSATION' | translate}} <br> {{'ERROR_MESSAGES.NO_CONVERSATION_1' | translate}} {{'ERROR_MESSAGES.NO_CONVERSATION_2' | translate}}</p>
+    </div>
+    <div>
+        <ion-list *ngFor="let conversation of conversations; let position = index">
+            <ion-item-sliding *ngIf="conversation.status !== 'archived'" #slidingItem>
+                <button ion-item detail-none *ngIf="conversation.status !== 'archived' && (conversation.type === groupType || conversation.connection_status === connectionStatus.CONNECTED
+                    || conversation.connection_status === connectionStatus.INVITATION_RECEIVED || conversation.connection_status === connectionStatus.CONNECTED_BLOCKED )" class="list-grid-136" (click)="openConversation(conversation)">
+                    <ion-avatar class="profile-img-44" item-start [ngClass]="{'active': conversation.type !==groupType && (conversation.connection_status === connectionStatus.CONNECTED || conversation.connection_status === connectionStatus.CONNECTED_BLOCKED ) && conversation.presence,
+                        'de-active': conversation.type !==groupType && (conversation.connection_status === connectionStatus.CONNECTED  || conversation.connection_status === connectionStatus.CONNECTED_BLOCKED ) && !conversation.presence}">
+                        <lazy-img  *ngIf="conversation.profile_pic" [inputSrc]="conversation.profile_pic" alt="" ></lazy-img>
+                        <lazy-img  *ngIf="!conversation.profile_pic" [inputSrc]="placeholderIamges.PROFILE_PIC" alt=""></lazy-img>
+                    </ion-avatar>
+
+                    <h2 *ngIf="conversation.user_name"><span class="text12px-black">{{conversation.user_name}} </span>
+                        <span *ngIf="conversation.latestMessageTimestamp" class="date-time-view">{{conversation.latestMessageTimestamp}}</span>
+                    </h2>
+                    <ion-chip *ngIf="conversation.type === groupType || conversation.connection_status === connectionStatus.CONNECTED || conversation.connection_status === connectionStatus.CONNECTED_BLOCKED">
+                        <p *ngIf="conversation.latestMessage && !conversation.isTyping" class="sendmsg">{{conversation.latestMessage}}
+                        </p>
+                        <p class="isType" *ngIf="conversation.isTyping"><cite>{{'CONVERSATIONS.IS_TYPING' | translate}}</cite></p>
+                        <ion-badge item-right *ngIf="conversation.badgeCount>0">{{conversation.badgeCount}}</ion-badge>
+                    </ion-chip>
+
+                    <ion-chip *ngIf="conversation.connection_status === connectionStatus.INVITATION_RECEIVED && conversation.group_type !== usertypeConstant.HOUSING_PROVIDER">
+                        <p class="invitation-msg">{{'CONVERSATIONS.INVITE_CONNECT' | translate}}</p>
+                    </ion-chip>
+                </button>
+
+                <ion-item-options side="right">
+                    <button *ngIf="(conversation.type !== groupType || conversation.group_type === 'service_provider' || conversation.group_type === 'housing_provider' ) && (conversation.connection_status === connectionStatus.CONNECTED || conversation.connection_status === connectionStatus.CONNECTED_BLOCKED)" ion-button color="danger" (click)="archiveConversation(conversation,position)"><ion-icon class="icons-archive"></ion-icon> {{'CONVERSATIONS.ARCHIVE' | translate}}</button>
+                    <button *ngIf="conversation.type === groupType && conversation.group_type === 'normal' && conversation.leaving_time_token == null" ion-button color="danger" (click)="leaveGroup(conversation,slidingItem)"><ion-icon class="icons-sign-out"></ion-icon>{{ 'CONVERSATIONS.LEAVE' | translate}}</button>
+                    <button *ngIf="conversation.type === groupType && conversation.group_type === 'normal' && conversation.leaving_time_token > 0" ion-button color="danger" (click)="deleteConversation(conversation,slidingItem,position)"><ion-icon class="icons-delete"></ion-icon> {{ 'CONVERSATIONS.DELETE' | translate}}</button>
+                </ion-item-options>
+            </ion-item-sliding>
+        </ion-list>
+    </div>
+</ion-content>

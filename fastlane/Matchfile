@@ -1,0 +1,8 @@
+git_url "https://bitbucket.org/enterprisebp/rezility-certificates.git"
+
+type "development" # The default type, can be: appstore, adhoc or development
+
+app_identifier ["com.enterprise.rezility"]
+username "manish.oswal@extentia.com" # Your Apple Developer Portal username
+
+team_id "6CNVSY36B4"  # Developer Portal Team ID

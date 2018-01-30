@@ -1,0 +1,294 @@
+page-chat-box,
+.conv-comment {
+    ion-navbar {
+        ion-buttons[end] {
+            .bar-button {
+                ion-icon {
+                    font-size: 1.063rem;
+                }
+            }
+        }
+        ion-title {
+            text-transform: capitalize;
+        }
+    }
+    [active-user].active:after,
+    [active-user].de-active:after {
+        display: inline-block;
+        margin-left: .5rem;
+        position: static;
+        border: none;
+    }
+    [active-user].active:after {
+        background: $greenShade1;
+    }
+    [active-user].de-active:after {
+        background: $grey1;
+    }
+    .invitation-block {
+        @include zeroMargin(0);
+    }
+    ion-item.invitation-msg.item-block {
+        min-height: 2.313rem;
+        align-items: flex-start;
+        @include zeroMargin(0);
+        &:first-child {
+            @include border(0);
+        }
+        &:last-child {
+            @include border(0);
+        }
+        background: transparent;
+        //@include zeroPadding(0);
+        .item-inner {
+            //@include zeroPadding(0);
+            @include border(none);
+            ion-label {
+                @include zeroMargin(0);
+                h2 {
+                    @include typography(.75rem, $black, 700, null);
+                    span {
+                        position: static;
+                        @include zeroPadding(0 0 0 .133rem);
+                        @include typography(.75rem, $silverShade8, 400, null);
+                    }
+                }
+                p {
+                    @include typography(.75rem, $charcoalBlack, 400, null);
+                    @include zeroMargin(.313rem 0 0 0);
+                    text-overflow: initial;
+                    white-space: pre-wrap;
+                    word-wrap: break-word;
+                    //text-transform: capitalize;
+                }
+            }
+        }
+    }
+    
+    .conversation-chat {
+        // @include zeroMargin(0 0 1rem 0);
+        /* If upload only image without image caption then default caption come as like "image" */
+        .no-img-text {
+            h3 {
+                display: none;
+            }
+        }
+        /* End image caption 'image' text */
+        ion-item.item-block {
+            min-height: 2.313rem;
+            align-items: flex-start;
+            //@include zeroPadding(0);
+            &:first-child {
+                @include border(0);
+            }
+            &:last-child {
+                @include border(0);
+            }
+            .item-inner {
+                //@include zeroPadding(0);
+                ion-label {
+                    @include zeroMargin(0);
+                    h4 {
+                        @include typography(.75rem, $black, 700, null);
+                        @include zeroMargin(0);
+                        span {
+                            @include typography(.75rem, $black, 700, null);
+                            max-width: 50%;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            display: inline-block;
+                            vertical-align: text-bottom;
+                            text-transform: capitalize;
+                        }
+                        ion-note {
+                            @include typography(.75rem, $silverShade8, 400, null);
+                            @include zeroPadding(0 0 0 .25rem);
+                        }
+                    }
+                    h3 {
+                        @include zeroMargin(0.438rem 0 0 0);
+                        @include typography(0.75rem, $charcoalBlack, 400, null);
+                        word-break: break-word;
+                        white-space: pre-wrap;
+                    }
+                    img {
+                        border-radius: 4px;
+                        @include zeroMargin(.563rem 0 0 0);
+                        width: 100%;
+                        min-height: 8rem;
+                        max-height: 12rem;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+page-chat-box ion-content .scroll-content, .conv-comment{
+    background: $white;
+    ion-item.item-block{
+        @include zeroPadding(1rem 1rem 0 1rem);
+    }
+    ion-avatar[item-left] {
+        @extend ion-avatar.profile-img-32;
+        @include zeroMargin(.125rem 0.625rem 0 0);
+    }
+    .bottom-space{
+        @include zeroPadding(0 0 0.75rem 0);
+    }
+}
+
+page-chat-box [footer-full],
+.conv-comment-footer[footer-full] {
+    background: transparent;
+    min-height: 3rem;
+    @include display-flex(flex);
+    ion-toolbar {
+        .toolbar-background {
+            background: $silverShade9;
+            border-top: 1px solid $silverShade6;
+        }
+        .toolbar-content {
+            display: flex;
+            align-items: flex-end;
+        }
+    }
+    ion-list.chat-type-msg {
+        @include zeroMargin(0);
+        width: calc(100% - 35.5%);
+        ion-item.input-has-focus,
+        .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child {
+            &:last-child {
+                box-shadow: none;
+            }
+        }
+        ion-item {
+            min-height: 2.25rem;
+            max-height: 7.125rem;
+            overflow: hidden;
+            background: transparent;
+            @include display-flex(flex);
+            @include zeroPadding(.563rem 0 .5rem 0);
+            @include border(none !important);
+            //.item-inner{ @include zeroPadding(0); }
+            .input-wrapper {
+                align-items: center;
+                ion-textarea {
+                    background: $white;
+                    width: calc(100% - 37.5%);
+                    @include border(1px solid $silverShade6);
+                    @include border-radius(.375rem);
+                    @include zeroPadding(0.688rem 0.938rem 0.5rem 0.938rem);
+                    @include zeroMargin(0);
+                    @include display-flex(flex);
+                    textarea.text-input {
+                        display: inline-block;
+                        width: 100%;
+                        @include zeroPadding(0);
+                        @include zeroMargin(0);
+                        @include border(none);
+                        height: 1rem;
+                        max-height: 4.75rem;
+                        resize: none;
+                        vertical-align: middle;
+                        @include typography(.75rem, $charcoalBlack, 400, null)
+                    }
+                }
+            }
+        }
+    }
+    .text-input::-webkit-input-placeholder {
+        color: $charcoalBlack;
+    }
+    .text-input::-moz-placeholder {
+        color: $charcoalBlack;
+    }
+    .text-input:-ms-input-placeholder {
+        color: $charcoalBlack;
+    }
+    button {
+        display: flex;
+        display: -webkit-flex;
+        justify-content: center;
+        -webkit-justify-content: center;
+        align-items: flex-end;
+        height: auto;
+        width: 17.75%;
+        @include zeroPadding(0);
+        @include zeroMargin(0);
+        pointer-events: inherit;
+        .button-inner {
+            align-items: flex-end;
+            ion-icon {
+                font-size: 1.375rem;
+                line-height: 1.375rem;
+                color: $skyBlueShade5;
+                @include zeroPadding(.675rem 0);
+                min-height: 54px;
+                width: 100%;
+                display: flex;
+                display: -webkit-flex;
+                justify-content: center;
+                align-items: center;
+            }
+            ion-icon.icons-attachement {
+                color: $grey2;
+                font-size: 1.125rem;
+                line-height: 1.125rem;
+            }
+        }
+    }
+    button.active-btn {
+        pointer-events: none;
+        ion-icon {
+            color: $grey2;
+        }
+    }
+    .icons-attachement {
+        @include typography(1.125rem, $grey2, null, null);
+        @include zeroPadding(0 0 1.063rem 0);
+        @include zeroMargin(0);
+        width: 18.75%;
+    }
+}
+
+
+
+ion-action-sheet.photo-sheet {
+    ion-backdrop {
+        opacity: 0.85 !important;
+    }
+    .action-sheet-container {
+        @include zeroPadding(0);
+        .action-sheet-group {
+            background: $white;
+            @include border-radius(0);
+            @include zeroMargin(0);
+        }
+    }
+    .action-sheet-button.take-photo {
+        @include zeroPadding(0 1.25rem);
+        border-top: 1px solid $silverShade6;
+        border-bottom: none;
+        @include border-radius(0);
+        @include typography(.875rem, $black, 400, null);
+        min-height: 3.75rem;
+        @include zeroMargin(0 !important);
+        span {
+            -webkit-justify-content: flex-start;
+            -ms-flex-pack: center;
+            justify-content: left;
+        }
+        ion-icon {
+            color: $silverShade8;
+            font-size: 1.5rem;
+            position: absolute;
+            right: 1.25rem;
+            @include zeroMargin(0);
+            @include zeroPadding(0);
+        }
+    }
+}

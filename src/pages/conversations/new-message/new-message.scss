@@ -1,0 +1,109 @@
+page-new-message {
+    ion-toolbar[topHeader] ion-buttons .icons-close {
+        font-size: 1.375rem !important;
+        margin: 0 0 0 -4px;
+    }
+    ion-toolbar.toolbar {
+        .toolbar-background {
+            background: $white;
+        }
+        .search-user {
+            display: flex;
+            align-items: center;
+            @include zeroPadding(0.563rem 1.25rem 0.5rem 1.25rem);
+            border-bottom: 1px solid $silverShade6;
+            ion-icon {
+                display: flex;
+                width: 1.375rem;
+                vertical-align: middle;
+                color: $black;
+                font-size: 1.125rem;
+            }
+            ion-searchbar.input-searchbar {
+                width: calc(100% - 1.375rem);
+                @include zeroPadding(0);
+                .searchbar-clear-icon{
+                    display: none;
+                }
+                .searchbar-input {
+                    height: 1.6rem;
+                    //line-height: 1.625rem;
+                    background: $white;
+                    @include zeroPadding(0 0 0 1rem);
+                }
+            }
+        }
+        button, button[ion-button].activated, button[ion-button]:hover:not(.disable-hover){
+            height: 2.75rem;
+            width: 100%;
+            text-transform: capitalize;
+            background: $silverShade9;
+            @include zeroMargin(0);
+            @include zeroPadding(.5rem 1.25rem);
+            @extend .text12px-normal-grey;
+            .button-inner{
+                height: auto;
+                justify-content: flex-start;
+            }
+            ion-icon{
+                font-size: 1.313rem;
+                color: $skyBlueShade5;
+                @include zeroPadding(0 1.125rem 0 0);
+            }
+        }
+    }
+    
+    [new-message] {
+        
+        .invite-status {
+            ion-item {
+                @include zeroPadding(0);
+                button[ion-button].activated,
+                .button-md:hover:not(.disable-hover) {
+                    background: #f1f1f1;
+                }
+                button.invite-name {
+                    height: auto;
+                    @include zeroMargin(0);
+                    @include zeroPadding(0);
+                    background: transparent;
+                    width: 100%;
+                    text-transform: inherit;
+                    box-shadow: none;
+                    text-align: left;
+                    vertical-align: top;
+                    span {
+                        display: block;
+                        width: 100%;
+                    }
+                   
+                }
+                button.invite-action {
+                    @include zeroPadding(0);
+                    @include zeroMargin(0);
+                    height: 2.25rem;
+                    background: transparent;
+                    ion-icon {}
+                    .icons-close {
+                        font-size: .875rem;
+                        color: $silverShade8;
+                        border-radius: 50%;
+                        width: 1.563rem;
+                        height: 1.563rem;
+                        justify-content: center;
+                        @include zeroMargin(0 0 0 1.188rem);
+                        @include border(1px solid $silverShade8);
+                    }
+                    .icons-add-people {
+                        font-size: 1.5rem;
+                        color: $skyBlueShade5;
+                        width: 1.5rem;
+                        height: 1.5rem;
+                        @extend %vertical-center;
+                    }
+                }
+            }
+            
+        }
+    }
+}

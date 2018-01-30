@@ -1,0 +1,27 @@
+<ion-header labelHeader>
+    <ion-navbar>
+        <ion-title>{{'AROUND_ME.YOUR_PINNED_LOCATION.TITLE' | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content silvergrey-background>
+    <div *ngIf="pinedLocations.length == 0 && isPinnedLocationAPICall" class="message-no-data-found">
+        <p class="no-records">{{'AROUND_ME.NO_PINNED_MESSAGE' | translate}} </p>
+    </div>
+    <ion-list pinned-location-list *ngFor=" let pinedLocation of pinedLocations; let position = index">
+        <ion-item-sliding #item>
+            <button ion-item detail-none class="list-grid-136" (click)="loadMapByPinedLocation(pinedLocation)">
+            <h2>
+                <span *ngIf="pinedLocation.name && pinedLocation.address_type==='Home'" class="text14px-black">{{'AROUND_ME.ADDRESS_TYPE.HOME' | translate}}</span>
+                <span *ngIf="pinedLocation.name && pinedLocation.address_type==='Work'" class="text14px-black">{{'AROUND_ME.ADDRESS_TYPE.WORK' | translate}}</span>
+                <span *ngIf="pinedLocation.name && pinedLocation.address_type==='Other'" class="text14px-black">{{pinedLocation.name}}</span>
+              
+                <span *ngIf="pinedLocation.address" class="sendmsg" >{{pinedLocation.address}}</span>
+            </h2>
+        </button>
+            <ion-item-options side="right">
+                <button ion-button (tap)="delete(pinedLocation,item,position)" ion-icon class="icons-delete">{{'AROUND_ME.YOUR_PINNED_LOCATION.DELETE_BUTTON' | translate}}</button>
+            </ion-item-options>
+        </ion-item-sliding>
+
+    </ion-list>
+</ion-content>

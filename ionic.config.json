@@ -1,6 +1,6 @@
 {
-  "name": "ionic-conference-app",
-  "app_id": "",
+  "name": "rez-mobile-new",
+  "app_id": "dd8a0685",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

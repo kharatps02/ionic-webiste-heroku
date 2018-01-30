@@ -1,0 +1,55 @@
+@import "../../../assets/stylesheet/activity-card-feed.scss";
+create-placement-feed{
+    .article-no-image, .article-image{
+        [list-row-head].feed-upload{
+            ion-avatar:not(.bg-image-168):first-child{
+                position: static;
+                width: 100%;
+                border: none;
+                @include zeroMargin(-.625rem 0 0 0);
+                //@include zeroMargin(0 0 0 68px);
+                ion-icon{
+                    width: 100%;
+                    color: $white;
+                    background: transparent;
+                }
+            }
+            ion-avatar{
+                ion-icon{
+                    height: 60px;
+                    width: 100%;
+                    color: $black;
+                    background: $silverShade6;
+                    @extend %vertical-center;
+                }
+            }
+        }
+    }
+    
+
+    [list-group]{
+        @include margin(0.25rem);
+        width: calc(100% - .5rem);
+        [portfolio]{
+            [list-expand-details]{
+                ion-label{
+                    ion-icon.icons-modify{
+                        position: absolute;
+                        right: -25px;
+                        font-size: .875rem;
+                        top: 19px;
+                        color: $skyBlueShade5;
+                    }
+                    .custom-checkbox{
+                        width: 20px;
+                        height: 20px;
+                        span{
+                            width: 100%;
+                        }
+                    }
+                    
+                } 
+            } 
+        }
+    }
+}

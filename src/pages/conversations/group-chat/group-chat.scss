@@ -1,0 +1,9 @@
+@import "../../../assets/stylesheet/group-chat--contact-list.scss";
+page-group-chat{    
+    [new-message] {
+        overflow-y: auto;
+        .list-grid-136.selected-card {
+            background: $silverShade6;
+        }
+    }
+}

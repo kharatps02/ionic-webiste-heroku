@@ -1,0 +1,64 @@
+<ion-header labelHeader>
+    <ion-navbar>
+        <ion-title> {{'ACTIVITY.BUILD_PLACEMENT' | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content silvergrey-background>
+    <ion-list list-group>
+        <ion-item selected-row list-row>
+            <!-- Blog Article template -->
+            <div [ngClass]="{'article-image': this.feedInfo.header.bgImageUrl !== '', 'article-no-image': this.feedInfo.header.bgImageUrl === ''}">
+                <div list-row-head class="feed-upload">
+                    <ion-avatar (click)="presentActionSheet('images')" [ngClass]="{'bg-image-168': this.feedInfo.header.bgImageUrl !== ''}">
+                        <ion-icon *ngIf="!this.feedInfo.header.bgImageUrl" class="icons-uploadimg"></ion-icon>
+                        <img *ngIf="this.feedInfo.header.bgImageUrl !== ''" src="{{this.feedInfo.header.bgImageUrl}}" alt="" />
+                    </ion-avatar>
+                    <ion-avatar item-left (click)="presentActionSheet('logos')">
+                        <ion-icon *ngIf="!this.feedInfo.header.leftIconUrl" class="icons-uploadimg"></ion-icon>
+                        <img *ngIf="this.feedInfo.header.leftIconUrl !== ''" src="{{this.feedInfo.header.leftIconUrl}}" alt="" />
+                    </ion-avatar>
+                </div>
+                <ion-col list-expand-details (click)="presentDescriptionModal()">
+                    <h4 class="text18px-normal-black" *ngIf="this.feedInfo.header.title === ''">{{'ACTIVITY.CREATE_FEED.HEADLINE' | translate}}</h4>
+                    <h6 class="text18px-normal-black" *ngIf="this.feedInfo.body.detailText === ''">{{'ACTIVITY.CREATE_FEED.SUMMARY' | translate}}</h6>
+                    <h4 class="text18px-normal-black">{{this.feedInfo.header.title}}</h4>
+                    <h6 title-info>{{this.feedInfo.body.detailText}}</h6>
+                </ion-col>
+                <div list-row-footer class="action-bar">
+                    <ion-row>
+                        <ion-col start class="text10px-thin-grey">
+                            {{'ACTIVITY.CREATE_FEED.NOW' | translate}}
+                        </ion-col>
+                        <ion-col end>
+
+                            <button ion-item detail-none icon-only *ngIf="feedInfo.openInUrl !== ''">
+                                <ion-icon class="icons-read-more"></ion-icon>
+                            </button>
+                            <button ion-item detail-none icon-only *ngIf="feedInfo.is_allow_conversation === true">
+                                <ion-icon class="icons-conversion"></ion-icon>
+                            </button>
+                            <button ion-item detail-none icon-only>
+                                <ion-icon class="icons-read"></ion-icon>
+                            </button>
+                            <button ion-item detail-none icon-only class="like">
+                                <ion-icon class="icons-unlike"></ion-icon>
+                            </button>
+                            <button ion-item detail-none icon-only>
+                                <ion-icon class="icons-share"></ion-icon>
+                            </button>
+
+                        </ion-col>
+                    </ion-row>
+                </div>
+            </div>
+            <!-- Blog Article template -->
+        </ion-item>
+    </ion-list>
+</ion-content>
+<ion-footer footer-full>
+    <ion-toolbar>
+        <button ion-button block [disabled]="feedInfo.body.headLineText.length === 0 || feedInfo.body.detailText.length ===0 || feedInfo.header.leftIconUrl.length === 0 "
+            class="button-square-blue" (click)="setDelivery()">{{'ACTIVITY.CREATE_FEED.SET_DELIVERY' | translate}}</button>
+    </ion-toolbar>
+
+</ion-footer>

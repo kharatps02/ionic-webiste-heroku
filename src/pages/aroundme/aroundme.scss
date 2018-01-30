@@ -1,0 +1,199 @@
+.keyboard-open {
+    page-aroundme {
+        .scroll-content {
+            margin-bottom: 0 !important;
+        }
+    }
+}
+
+page-aroundme {
+    ion-header[labelHeader] {
+        ion-navbar ion-buttons[end] ion-icon {
+            font-size: 1.125rem;
+        }
+        /* Start ion-segment tab */
+        ion-segment.map-tab {
+            background: $silverShade3;
+            ion-segment-button.segment-button {
+                height: 2.813rem;
+                border: none;
+                border-top: 1px solid $silverShade1;
+                border-bottom: 1px solid $silverShade6;
+                @extend %vertical-center;
+                @include border-radius(0 !important);
+                &:first-child {
+                    border-right: 1px solid $silverShade6;
+                }
+                ion-icon {
+                    color: $grey2;
+                    font-size: 1.125rem;
+                    line-height: 1.125rem;
+                }
+            }
+            ion-segment-button.segment-button.segment-activated {
+                background: transparent;
+                border-top: 1px solid $silverShade1;
+                border-bottom: 1px solid $silverShade6;
+                ion-icon {
+                    color: $skyBlueShade5;
+                }
+            }
+        }
+        /* End ion-segment tab */
+        /* Start Searchbar */
+        ion-toolbar.toolbar {
+            position: relative;
+            min-height: 3.25rem;
+            @include zeroPadding(.5rem 1rem);
+            .toolbar-background {
+                background: $white;
+                @include border(none);
+            }
+            .searchbar-search-icon {
+                display: none;
+            }
+            ion-searchbar.searchbar {
+                border: 0;
+                min-height: 2.25rem;
+                @include zeroPadding(0);
+                input {
+                    height: 2.25rem;
+                    box-shadow: none;
+                    border-radius: .375rem;
+                    background: $silverShade9;
+                    @include zeroPadding(0 2.25rem 0 2.625rem);
+                    @extend .text12px-normal-grey;
+                }
+            }
+            ion-icon.icons-list{
+                font-size: 1.063rem;
+            }
+            ion-icon.icons-back-arrow{
+                font-size: .918rem;
+            }
+            ion-icon.icons-list,
+            ion-icon.icons-back-arrow {
+                top: .5rem;
+                height: 2.25rem;
+                color: $black;
+                position: absolute;
+                @include zeroPadding(.625rem .75rem);
+            }
+        }
+        /* End Searchbar */
+    }
+    /* Start ion-content */
+    ion-content {
+        background-color: transparent;
+        background: transparent;
+        .scroll-content {
+            overflow: hidden;
+        }
+    }
+    ion-content.list-scroll .scroll-content {
+        overflow: auto;
+    }
+    /* End ion-content */
+    /* Start Selected List */
+    .map-view {
+        height: 100%;
+        .selected-property {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    }
+    /* End Selected List */
+    #map.selected-list {
+        height: 100%;
+        width: 100%;
+        @include zeroPadding(50% 0);
+        ion-item.item-block.glocation {
+            bottom: 5.5rem;
+            transition: 1s bottom ease-in;
+        }
+    }
+    #map {
+        height: 100%;
+        width: 100%;
+        background: $silverShade9;
+        //@include zeroPadding(50% 0);
+        /* start tappable wrapper */
+        .tappable-area {
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            display: none;
+            position: fixed;
+            background: transparent;
+            @include zeroPadding(0);
+            @include zeroMargin(0);
+        }
+        .tabarea-show {
+            display: block;
+        }
+        /* End tappable wrapper */
+        /* Start Geo Location Target */
+        ion-item.item-block.glocation {
+            background: $skyBlueShade5;
+            position: absolute;
+            width: 3.75rem;
+            height: 3.75rem;
+            min-height: 3.75rem;
+            border-radius: 50%;
+            right: 1.25rem;
+            bottom: 1.25rem;
+            z-index: 999;
+            .item-inner {
+                @include border(none);
+                ion-label {
+                    @include zeroMargin(0);
+                    @extend %vertical-center;
+                }
+            }
+        }
+        .location-show {
+            opacity: 1;
+            transition: 1s opacity ease-in;
+        }
+        .location-hide {
+            opacity: 0;
+            transition: 1s opacity ease-in;
+        }
+        button.icons-location01 {
+            color: $white;
+            background: transparent;
+            padding: 0;
+            font-size: 1.56rem;
+            width: 3.75rem;
+            height: 3.75rem;
+            &:before {
+                vertical-align: middle;
+                margin-top: -1px;
+            }
+        }
+        /* End Geo Location Target */
+    }
+    .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+        box-shadow: none;
+        border: none;
+    }
+    .item-md.item-input.input-has-focus .item-inner {
+        box-shadow: none;
+    }
+    button[ion-fab] {
+        display: none;
+    }
+    /* Start Selected List Tab */
+    .list-view {
+        background: $white;
+    }
+    /* End Selected List Tab */
+    // .search-list {
+    //     position: absolute;
+    //     bottom: 0;
+    //     width: 100%;
+    //     border-top: 1px solid $silverShade6;
+    // }   
+}

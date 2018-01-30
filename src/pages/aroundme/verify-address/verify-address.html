@@ -1,0 +1,28 @@
+<ion-header labelHeader>
+    <ion-navbar>
+        <ion-title>{{'AROUND_ME.VERIFY_ADDRESS.TITLE' | translate}}</ion-title>
+        <ion-buttons end>
+            <button ion-button clear><ion-icon class="icons-correct"></ion-icon></button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <form>
+        <ion-list class="message-mob-bg">
+            <ion-item>
+                <ion-input type="text" class="input14px-black" name="unit" [ngModel]="unit" placeholder="{{'AROUND_ME.VERIFY_ADDRESS.APARTMENT_UNIT' | translate}}"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input type="text" readonly class="input14px-black" placeholder="{{'AROUND_ME.VERIFY_ADDRESS.ADDRESS' | translate}}" [value]="providerDetails.location.street_address1"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input type="text" readonly class="input14px-black" placeholder="{{'AROUND_ME.VERIFY_ADDRESS.PROVIDER' | translate}}" [value]="providerDetails.public_name"></ion-input>
+            </ion-item>
+        </ion-list>
+    </form>
+</ion-content>
+<ion-footer [keyboardAttach]="content" footer-full>
+    <ion-toolbar>
+        <ion-button ion-button block [ngClass]="{'button-disable': isAddressValid}" class="button-square-blue" (click)="verifyHomeAddress()">{{'AROUND_ME.VERIFY_ADDRESS.VERIFY_BUTTON' | translate}}</ion-button>
+    </ion-toolbar>
+</ion-footer>

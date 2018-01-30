@@ -1,0 +1,48 @@
+<ion-header labelHeader>
+    <ion-navbar>
+        <ion-title>{{'PLACEORDER.TITLE' | translate}}</ion-title>
+    </ion-navbar>
+    <ion-toolbar class="search-box">
+        <div class="search-user">
+            <ion-icon class="icons-search"></ion-icon>
+            <ion-searchbar class="input-searchbar" right new-message-search [(ngModel)]="searchStr" (ionInput)="searchUser()" placeholder="{{'PLACEORDER.SEARCH' | translate}}"></ion-searchbar>
+        </div>
+        <button ion-button (click)="createNewGroup()">
+            <ion-icon item-left class="icons-chat01"></ion-icon>
+            {{'CONVERSATIONS.NEW_MSG.CREATE_GROUP' | translate}}
+        </button>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content silvergrey-background new-message (pan)="hideKeyboard();">
+    <!-- [KeyboardContentScrollBottom]="content" -->
+    <ion-list>
+        <ion-item-divider *ngIf="{first: first}; let firstUser;">{{'CONVERSATIONS.NEW_MSG.YOUR_CONNECTION' | translate}}</ion-item-divider>
+         <button ion-item detail-none class="list-grid-136" *ngFor="let conversation of connectedUsersList" (click)="openConversation(conversation)">
+            <h2><span class="text14px-black">{{conversation.user_name}}</span></h2>
+            <ion-avatar item-end class="profile-img-44" [ngClass]="{'active': conversation.type !=='group' && conversation.presence, 'de-active': conversation.type !=='group' && !conversation.presence}">
+                <img *ngIf="conversation.profile_pic" src={{conversation.profile_pic}} alt="" />
+                <img *ngIf="!conversation.profile_pic" [src]="placeholderIamges.PROFILE_PIC" alt="" />
+            </ion-avatar>
+        </button>
+    </ion-list>
+
+    <ion-list class="invite-status">
+        <ion-item-divider *ngIf="{first: first}; let firstUser;">{{'CONVERSATIONS.NEW_MSG.OTHERS' | translate}}</ion-item-divider>
+        <ion-item class="list-grid-136 multiaction" *ngFor="let conversation of otherUsersList; let position=index">
+            <button ion-button class="invite-name" (click)="openConversation(conversation)">
+                <h2><span class="text14px-black">{{conversation.first_name}} {{conversation.last_name}}</span></h2>
+                <ion-chip>
+                    <p *ngIf="conversation.connection_status === connectionStatus.INVITED" class="sendmsg" >{{'CONVERSATIONS.NEW_MSG.INVITATION' | translate}}</p>
+                    <p *ngIf="conversation.connection_status === connectionStatus.INVITATION_RECEIVED" class="invitation-msg">{{ 'CONVERSATIONS.NEW_MSG.INVITE_CONNECT' | translate }}</p>
+                    <p *ngIf="conversation.connection_status === connectionStatus.NOT_CONNECTED" class="sendmsg">{{ 'CONVERSATIONS.NEW_MSG.NOT_CONNECT' | translate}}</p>
+                </ion-chip>
+            </button>
+
+            <button ion-button clear item-end class="invite-action" *ngIf="conversation.connection_status === connectionStatus.INVITED || conversation.connection_status === connectionStatus.NOT_CONNECTED" (click)="inviteOrCancelInvite(conversation,position);">
+                <ion-icon *ngIf="conversation.connection_status === connectionStatus.INVITED" class="icons-close"></ion-icon>
+                <ion-icon *ngIf="conversation.connection_status === connectionStatus.NOT_CONNECTED" class="icons-add-people"></ion-icon>
+            </button>
+        </ion-item>
+    </ion-list>
+</ion-content>

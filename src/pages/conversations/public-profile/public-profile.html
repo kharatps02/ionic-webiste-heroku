@@ -1,0 +1,69 @@
+<ion-header labelHeader>
+    <ion-navbar>
+        <ion-title>{{selectedUser.user_name}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content silvergrey-background>
+    <div class="view-invite">
+        <ion-avatar>
+            <img *ngIf="!selectedUser.profile_pic" src="./assets/img/image-placeholder.jpg" alt="" />
+            <img *ngIf="selectedUser.profile_pic" [src]="selectedUser.profile_pic" alt="" />
+        </ion-avatar>
+    </div>
+    <!-- If Invitation profile page -->
+    <ion-list  *ngIf="(selectedUser.user_type !== usertype.HOUSING_PROVIDER && selectedUser.user_type !== usertype.SERVICE_PROVIDER &&
+                       this.userData.user_type !== usertype.HOUSING_PROVIDER && this.userData.user_type !== usertype.SERVICE_PROVIDER ) ||
+                      (this.userData.user_type === usertype.ADMIN)">
+        <button ion-item detail-none class="list-grid-120" *ngIf="(selectedUser.connection_status === connectionStatus.NOT_CONNECTED
+         || selectedUser.connection_status === connectionStatus.INVITED) && selectedUser.user_id !== userData.user_id" (click)="inviteOrCancelInvite(selectedUser)">
+            <h2 *ngIf="selectedUser.connection_status === connectionStatus.NOT_CONNECTED"><span class="text14px-black">{{'CONVERSATIONS.PUBLIC_PROFILE.INVITE' | translate}}</span></h2>
+            <h2 *ngIf="selectedUser.connection_status === connectionStatus.INVITED"><span class="text14px-black">{{'CONVERSATIONS.PUBLIC_PROFILE.CANCEL_INVITE' | translate}}</span></h2>
+            <ion-icon item-right *ngIf="selectedUser.connection_status === connectionStatus.NOT_CONNECTED" class="icons-add-people icon-24"></ion-icon>
+            <ion-icon item-right  *ngIf="selectedUser.connection_status === connectionStatus.INVITED" class="icons-close icon-24"></ion-icon>
+         </button>
+
+        <button ion-item detail-none class="list-grid-120" *ngIf="selectedUser.connection_status && selectedUser.connection_status === connectionStatus.INVITATION_RECEIVED 
+         && selectedUser.user_id !== userData.user_id" (click)="onAcceptAndconnect()">
+            <h2><span class="text14px-black">{{'CONVERSATIONS.PUBLIC_PROFILE.ACCEPT_CONNECT' | translate}}</span></h2>
+            <ion-icon item-right class="icons-add-people icon-24"></ion-icon>
+        </button>
+
+        <button ion-item detail-none class="list-grid-120" *ngIf="selectedUser.connection_status && selectedUser.connection_status === connectionStatus.INVITATION_RECEIVED 
+         && selectedUser.user_id !== userData.user_id" (click)="onIgnoreClick()">
+            <h2><span class="text14px-black">{{'CONVERSATIONS.PUBLIC_PROFILE.IGNORE' | translate}}</span></h2>
+            <ion-icon item-right class="icons-ignore icon-24"></ion-icon>
+        </button>
+
+        <button ion-item detail-none class="list-grid-120" *ngIf="!selectedUser.type && selectedUser.user_id !== userData.user_id && 
+        (selectedUser.connection_status && selectedUser.connection_status !== connectionStatus.BLOCKED 
+        && selectedUser.connection_status !== connectionStatus.INVITATION_RECEIVED 
+        && selectedUser.connection_status !== connectionStatus.INVITED )" (click)="onMessageClick()">
+            <h2><span class="text14px-black">{{'CONVERSATIONS.PUBLIC_PROFILE.PRIVATE_MSG' | translate}}</span></h2>
+            <ion-icon item-right class="icons-conversion icon-24"></ion-icon>
+        </button>
+
+        <button ion-item detail-none class="list-grid-120" *ngIf="!selectedUser.type && selectedUser.user_id !== userData.user_id"
+            (click)="onRemoveClick(false)">
+            <h2><span class="text14px-black">{{'CONVERSATIONS.PUBLIC_PROFILE.REMOVE_GRP' | translate}}</span></h2>
+            <ion-icon item-right class="icons-sign-out icon-24"></ion-icon>
+        </button>
+
+        <button ion-item detail-none class="list-grid-120" *ngIf="!selectedUser.type && selectedUser.user_id === userData.user_id" (click)="onRemoveClick(true)">
+            <h2><span class="text14px-black">{{'CONVERSATIONS.PUBLIC_PROFILE.LEAVE_GRP' | translate}}</span></h2>
+            <ion-icon item-right class="icons-sign-out icon-24"></ion-icon>
+        </button>
+
+        <button ion-item detail-none class="list-grid-120" *ngIf="((selectedUser.connection_status && selectedUser.connection_status !== connectionStatus.BLOCKED )
+         || !selectedUser.connection_status) && selectedUser.user_id !== userData.user_id" (click)="onBlockClick()">
+            <h2><span class="text14px-black">{{'CONVERSATIONS.PUBLIC_PROFILE.BLOCK' | translate}}</span></h2>
+            <ion-icon item-right class="icons-block icon-24"></ion-icon>
+        </button>
+
+        <button ion-item detail-none class="list-grid-120" *ngIf="(selectedUser.connection_status && selectedUser.connection_status == connectionStatus.BLOCKED
+         && selectedUser.user_id !== userData.user_id)" (click)="onUnBlockClick()">
+            <h2><span class="text14px-black">{{'CONVERSATIONS.PUBLIC_PROFILE.UNBLOCK' | translate}}</span></h2>
+            <ion-icon item-right class="icons-block icon-24"></ion-icon>
+        </button>
+    </ion-list>
+</ion-content>

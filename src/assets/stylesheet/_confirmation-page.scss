@@ -1,0 +1,25 @@
+.confirmation-msg, .action-grid{
+    @extend %vertical-center;
+    flex-direction: column;
+    text-align: center;
+}
+.confirmation-msg{
+    h2{
+        line-height: 2rem;
+    }
+    .text15px-normal-white{
+        @include zeroMargin(1.188rem 0 0 0);
+    }
+    [splitter] {
+        width: 3.75rem;
+        background: $skyBlueShade6;
+        height: .25rem;
+        display: block;
+        @include zeroMargin(1.687rem auto 0);
+    }
+}
+.action-grid{
+    button{
+        overflow: hidden;
+    }
+}

@@ -1,0 +1,84 @@
+page-conversations {
+    // ion-content .scroll-content {
+    //     background: $silverShade6;
+    // }
+    ion-list.list{
+        margin-top: 0;
+        // border-top: 1px solid $silverShade6;
+        // Comment because if it is showing single record then bottom border not showing. root cause is ion-list calculate the height 
+    }
+
+    .conversation-message {
+        height: 100%;
+        @include zeroPadding(0 2.133rem);
+        @extend %vertical-center;
+        flex-direction: column;
+        h2 {
+            text-align: center;
+            letter-spacing: -0.06rem;
+            @include typography(1.875rem, $black, 700, 2rem);
+            text-transform: capitalize;
+            span {
+                text-align: center;
+                display: block;
+                width: 3.75rem;
+                height: .25rem;
+                background: $silverShade8;
+                @include zeroMargin(1.5rem auto 1.375rem);
+            }
+        }
+        p {
+            @include zeroPadding(0 .563rem);
+            @include zeroMargin(0);
+            @include typography(.938rem, $charcoalBlack, 400, null);
+        }
+    }
+    .list-grid-136.item.item-block{
+        .item-inner{
+            ion-label{
+                h2{
+                    span.text12px-black{
+                        padding-right: 6px;
+                        width: 78%;
+                    }
+                }
+                ion-badge{
+                    position: absolute;
+                    right: 1.25rem;
+                }
+                .sendmsg, .isType{ width: 82%; @extend %text-ellipsis; }
+                .isType{
+                    @include typography(.75rem, $skyBlueShade5, 400, null);
+                    @extend %text-ellipsis;
+                }
+                // ion-badge[item-right] {
+                //     align-items: center;
+                //     display: flex;
+                //     justify-content: space-around;
+                //     @include zeroMargin(0);
+                //     @include zeroPadding(0 .5rem 1px);
+                //     height: 1.375rem;
+                //     background: $skyBlueShade5;
+                //     @include typography(.5rem, $white, 400, null);
+                // }
+            }
+        }
+    }
+   
+   @media (max-height: 533px) {
+       .list-grid-136.item.item-block{
+           .item-inner{
+               ion-label{
+                   h2{
+                       span.text12px-black{
+                            width: 70%;
+                        }
+                        span.date-time-view {
+                            margin: 0.188rem 0 0 0;
+                        }
+                   } 
+               } 
+           } 
+       } 
+   }
+}

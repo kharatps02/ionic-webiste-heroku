@@ -1,0 +1,77 @@
+<ion-header id="aroundHeaderH" labelHeader bg-transparant>
+    <ion-navbar>
+        <ion-buttons start>
+            <button (tap)="setPinnedLocation()" ion-button>
+               <ion-icon class="icons-plus" ></ion-icon>
+            </button>
+        </ion-buttons>
+
+        <ion-title> {{'AROUND_ME.TITLE' | translate}}</ion-title>
+        <ion-buttons end>
+            <button ion-button (tap)="goToMapOverlaysPage()">
+               <ion-icon class="icons-edit"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+    <ion-segment [(ngModel)]="selectedTab" class="segment-tab">
+        <ion-segment-button value="mapView" class="segment-activated" (ionSelect)="initMapView()">
+            <ion-icon class="icons-map-pin"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button value="listView" (ionSelect)="initListView()">
+            <ion-icon class="icons-chat-group"></ion-icon>
+        </ion-segment-button>
+    </ion-segment>
+    <ion-toolbar [hidden]="selectedTab !== 'mapView'">
+        <ion-searchbar (ionInput)="autocompletePlacesSearch()" (ionFocus)="disableMap();" autocomplete="on" debounce="500" (ionBlur)="hideKeyboard()" [(ngModel)]="searchLocation.query" placeholder="{{'AROUND_ME.SEARCH_LOCATION' | translate}}"></ion-searchbar>
+        <ion-icon *ngIf="!togglePinnedClass" class="icons-list" (tap)="openPinnedLocation()"></ion-icon>
+        <ion-icon *ngIf="togglePinnedClass" class="icons-back-arrow" (tap)="enableMap()"></ion-icon>
+        <ion-list (pan)="hideKeyboard()" class="places-list" *ngIf="autocompletePlaces && autocompletePlaces.length > 0">
+            <button ion-item detail-none class="list-grid-120" *ngFor="let place of autocompletePlaces" (tap)="onPlaceSelect(place)">
+                <h2 class="text14px-black">{{ place.description }}</h2>
+            </button>
+        </ion-list>
+    </ion-toolbar>
+</ion-header>
+<ion-content silvergrey-background class="map-page" [ngClass]="{'list-scroll': selectedTab !== 'mapView'}">
+
+    <div [hidden]="selectedTab !== 'mapView'" class="map-view">
+        <div #map id="map" [ngClass]="{'selected-list': selectedProperty && selectedProperty.selected}">
+            <ion-card class="tappable-area" [ngClass]="{'tabarea-show': tabMapClass}" (tap)="hideKeyboard();"></ion-card>
+
+            <ion-item class="glocation" [ngClass]="{'location-hide':!isMapVisible,'location-show':isMapVisible}">
+                <button fab class="icons-location01" fab-right (tap)="getMyLocation()" style="position: static"></button>
+            </ion-item>
+            <ion-list class="selected-property">
+                <button ion-item detail-none (tap)="openDetailsView(selectedProperty)" *ngIf="selectedProperty && selectedProperty.selected" class="list-grid-136">
+                        <h2>
+                            <span class="text14px-black" *ngIf="selectedProperty.public_name">{{selectedProperty.public_name}}</span>
+                        </h2>
+                        <p class="sendmsg" *ngIf="selectedProperty.street_address1">{{selectedProperty.street_address1}}</p>
+                        <ion-avatar *ngIf="selectedProperty.profile_pic" item-end class="profile-img-44"><img [src]="selectedProperty.profile_pic" alt="" /></ion-avatar>
+                    </button>
+            </ion-list>
+        </div>
+    </div>
+
+    <div *ngIf="(housingProviders.length === 0 && serviceProviders.length === 0) " class="message-no-data-found">
+        <p class="no-records">{{'ERROR_MESSAGES.NO_DATA_FOUND' | translate}}</p>
+    </div>
+    <div [hidden]="selectedTab !== 'listView'" class="list-view">
+        <ion-list>
+            <ion-item-divider *ngIf="housingProviders && housingProviders.length>0">{{'AROUND_ME.LIST_VIEW.PROPERTY' | translate}} </ion-item-divider>
+            <button ion-item detail-none class="list-grid-136" *ngFor="let property of housingProviders" (click)="openDetailsView(property)">
+                <h2><span class="text14px-black" *ngIf="property.public_name">{{property.public_name}}</span></h2>
+                <p class="sendmsg" *ngIf="property.street_address1">{{property.street_address1}}</p>
+                <ion-avatar *ngIf="property.profile_pic" item-end class="profile-img-44"><img [src]="property.profile_pic" alt="" /></ion-avatar>
+            </button>
+        </ion-list>
+        <ion-list>
+            <ion-item-divider *ngIf="serviceProviders && serviceProviders.length>0">{{'AROUND_ME.LIST_VIEW.SERVICE_PROPVIDER' | translate}} </ion-item-divider>
+            <button ion-item detail-none class="list-grid-136" *ngFor="let property of serviceProviders" (click)="openDetailsView(property)">
+                <h2><span class="text14px-black" *ngIf="property.public_name">{{property.public_name}}</span></h2>
+                <p class="sendmsg" *ngIf="property.street_address1">{{property.street_address1}}</p>
+                <ion-avatar *ngIf="property.profile_pic" item-end class="profile-img-44"><img [src]="property.profile_pic" alt="" /></ion-avatar>
+            </button>
+        </ion-list>
+    </div>
+</ion-content>

@@ -1,0 +1,60 @@
+<ion-header labelHeader>
+    <ion-navbar>
+        <ion-title> {{'ACTIVITY.BUILD_POLL' | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content silvergrey-background>
+    <!-- Start Portfolio option -->
+    <ion-list list-group>
+        <ion-item list-row *ngIf="pollInfo.template === 'Poll'" (click)="pollDescriptionModal()">
+            <div portfolio>
+                <div list-expand-details>
+                    <ion-col ion-item list-row>
+                        <ion-icon class="icons-poll"></ion-icon>
+                        <span>
+                            <h4 class="text18px-normal-black" *ngIf="pollInfo.question === ''">{{'ACTIVITY.CREATE_FEED.ENTER_QUESTION' | translate}}</h4>
+                            <h4 class="text18px-normal-black" *ngIf="pollInfo.question !== ''">{{pollInfo.question}}</h4>
+                            <p class="text10px-thin-grey">{{'ACTIVITY.CREATE_FEED.NOW' | translate}}</p>
+                        </span>
+                    </ion-col>
+                    <ul list>      
+                        <li class="item item-checkbox" *ngFor="let pollOption of pollInfo.answer_options">
+                            <label class="custom-types">
+                                <cite title-info left-align>{{pollOption}}</cite>
+                                <div class="custom-radio" *ngIf="pollInfo.is_multiselect === false">
+                                    <input type="radio">
+                                    <span></span>
+                                </div>
+                                <div class="custom-checkbox" *ngIf="pollInfo.is_multiselect === true">
+                                    <input type="checkbox">
+                                    <span></span>
+                                </div>
+                            </label>
+                        </li>
+                    </ul>
+
+                    <div list-row-footer class="action-bar">
+                        <ion-row>
+                            <ion-col start class="text10px-normal-blue">
+                                <span>{{'ACTIVITY.CREATE_FEED.SUBMIT' | translate}}</span>
+                            </ion-col>
+                            <ion-col end>
+                                <button ion-item detail-none icon-only>
+                                    <ion-icon class="icons-read"></ion-icon>
+                                </button>
+                                <button ion-item detail-none icon-only class="like">
+                                    <ion-icon class="icons-unlike"></ion-icon>                                         
+                                </button>  
+                            </ion-col>
+                        </ion-row>
+                    </div>
+                </div>
+            </div>
+        </ion-item>
+    </ion-list>
+    <ion-footer footer-full>
+        <ion-toolbar>
+            <button ion-button block [disabled] = "pollInfo.question.length === 0 || pollInfo.answer_options.length === 0" class="button-square-blue" (click)="setDelivery()">{{'ACTIVITY.CREATE_FEED.SET_DELIVERY' | translate}}</button>
+        </ion-toolbar>
+    </ion-footer>
+</ion-content>

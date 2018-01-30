@@ -1,0 +1,23 @@
+<ion-header labelHeader>
+    <ion-navbar>
+        <ion-title>{{'AROUND_ME.EDIT_LOCATION_TITLE' | translate}}</ion-title>
+        <ion-buttons end>
+            <button (tap)="updatePin()" ion-button clear outline-btn><ion-icon class="icons-correct"></ion-icon></button>
+        </ion-buttons>
+   </ion-navbar>
+</ion-header>
+<ion-content class="map-page" bg-transparant>
+    <div #maplocation id="map-location" class="map-view">
+        <ion-item>
+            <ion-input [clearInput]="pinnedLocation.address_type !=='other'" [readonly]="pinnedLocation.address_type !=='other'" [(ngModel)]="pinnedLocation.name"></ion-input>
+        </ion-item>
+        <ion-item search-location>
+            <ion-searchbar (ionInput)="autocompletePlacesSearch()" (ionFocus)="hideMap();" autocomplete="on" (ionBlur)="hideKeyboard()" [(ngModel)]="searchLocation"></ion-searchbar>
+            <ion-list list-items (pan)="hideKeyboard()">
+                <ion-item grid1 *ngFor="let place of autocompletePlaces" (tap)="onPlaceSelect(place)">
+                    <h2 list-title>{{ place.description }}</h2>
+                </ion-item>
+            </ion-list>
+        </ion-item>
+    </div>
+</ion-content>

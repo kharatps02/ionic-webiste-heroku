@@ -1,0 +1,42 @@
+<ion-header labelHeader>
+    <ion-navbar>
+        <ion-title>{{'AROUND_ME.MAP_OVERLAYS.TITLE' | translate}}</ion-title>
+        <ion-buttons end>
+            <!--<button (click)="clearMapOverlays()" ion-button clear text-outline-btn>{{'AROUND_ME.MAP_OVERLAYS.CLEAR_BTN' | translate}} </button>-->
+            <button ion-button (click)="saveFilter()"><ion-icon class="icons-correct" ></ion-icon></button>
+            
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content silvergrey-background>
+     <ion-list *ngIf="overlaysOptions.provider_overlay!==null">        
+        <ion-item-divider>{{'AROUND_ME.MAP_OVERLAYS.PROVIDER_SECTION' | translate}} </ion-item-divider> 
+        <button *ngIf="overlaysOptions.provider_overlay[0]" ion-item detail-none class="list-grid-120">
+            <ion-label>
+                <h2 class="text14px-black">{{overlaysOptions.provider_overlay[0].name}}</h2>
+            </ion-label>            
+            <ion-checkbox checked="overlaysOptions.provider_overlay[0].flag" item-right [(ngModel)]="overlaysOptions.provider_overlay[0].flag"></ion-checkbox>
+        </button>
+    </ion-list>
+
+    <ion-list *ngIf="overlaysOptions.service_interest!==null">
+        <ion-item-divider>{{'AROUND_ME.MAP_OVERLAYS.SERVICE_INTEREST' | translate}} </ion-item-divider>   
+        <button ion-item detail-none class="list-grid-120" *ngFor="let option of overlaysOptions.service_interest">
+            <ion-label>
+                <h2 class="text14px-black">{{option.name}}</h2>
+            </ion-label>
+            <ion-checkbox checked="option.flag" item-right [(ngModel)]="option.flag"></ion-checkbox>
+        </button>
+    </ion-list>
+
+    <ion-list *ngIf="overlaysOptions.google_places!==null">
+        <ion-item-divider>{{'AROUND_ME.MAP_OVERLAYS.GOOGLE_PLACES' | translate}}</ion-item-divider>   
+        <button ion-item detail-none class="list-grid-120" *ngFor="let option of overlaysOptions.google_places">
+            <ion-label>
+                <h2 class="text14px-black">{{option.name}}</h2>
+            </ion-label>
+            <ion-checkbox checked="option.flag" item-right [(ngModel)]="option.flag"></ion-checkbox>
+        </button>
+   </ion-list>    
+</ion-content>

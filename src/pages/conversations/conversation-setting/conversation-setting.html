@@ -1,0 +1,43 @@
+<ion-header labelHeader>
+    <ion-navbar topHeader>
+        <ion-title>{{'CONVERSATIONS.SETTING.TITLE' | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content silvergrey-background incident-settings>
+    <ion-list>
+        <ion-item class="list-grid-120" toggle *ngIf="selectedUser.type === groupType">
+            <ion-label><span class="text14px-black">{{'CONVERSATIONS.SETTING.SEND_PUSH_NOTIFICATION' | translate}}</span></ion-label>
+            <ion-toggle [checked]="selectedUser.notification" [(ngModel)]="selectedUser.notification" (ionChange)="changeNotitficationStatus()"></ion-toggle>
+        </ion-item>
+
+        <ion-item-group>
+            <ion-item-divider>{{'CONVERSATIONS.SETTING.PARTICIPANT' | translate}}</ion-item-divider>
+             <button ion-item detail-none class="list-grid-136" *ngIf="selectedUser.type!== groupType" (click)="openProfile(selectedUser)">                
+                <h2><span class="text14px-black" *ngIf="selectedUser.first_name || selectedUser.last_name">
+                    {{selectedUser.first_name}} {{selectedUser.last_name}}</span></h2>
+                <ion-avatar item-end class="profile-img-44" [ngClass]="{'active': selectedUser.presence, 'de-active':!selectedUser.presence}">
+                    <img *ngIf="selectedUser.profile_pic" [src]="selectedUser.profile_pic" alt="" />
+                    <img *ngIf="!selectedUser.profile_pic" [src]="placeholderIamges.PROFILE_PIC" alt="" />
+                </ion-avatar>
+            </button>
+            <div *ngIf="selectedUser.type === groupType">
+                <button ion-item detail-none class="list-grid-136" *ngFor="let member of selectedUser.members let position = index" (click)="openProfile(member,position)">
+                    <h2><span class="text14px-black" *ngIf="member.first_name || member.last_name">{{member.first_name}} {{member.last_name}}</span></h2>
+                    <ion-avatar class="profile-img-44" item-end [ngClass]="{'active': member.presence, 'de-active':!member.presence}">
+                        <img *ngIf="member.profile_pic" [src]="member.profile_pic" alt="" />
+                        <img *ngIf="!member.profile_pic" [src]="placeholderIamges.PROFILE_PIC" alt="" />
+                    </ion-avatar>
+                </button>
+            </div>
+        </ion-item-group>
+    </ion-list>
+</ion-content>
+<ion-footer footer-full>
+    <ion-toolbar>
+    <button *ngIf="(selectedUser.type === groupType && selectedUser.members.length > 0) || selectedUser.type !== groupType" ion-button block large class="button-square-blue"  (click)="openGroupChat()">
+        <span *ngIf="selectedUser.type !== groupType ">{{'CONVERSATIONS.SETTING.ADD_PEOPLE' | translate}}</span>
+        <span *ngIf="selectedUser.type === groupType ">{{'CONVERSATIONS.SETTING.EDIT_GROUP' | translate}}</span>
+    </button>
+    </ion-toolbar>
+</ion-footer>

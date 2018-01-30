@@ -1,0 +1,54 @@
+<ion-header labelHeader>
+    <ion-navbar>
+        <ion-title>{{'ACTIVITY.CREATE_FEED.POLL_HEADER' | translate}}</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="dismiss()">
+                <ion-icon class="icons-correct"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-list>
+        <ion-item class="list-grid-136">
+            <ion-label class="text14px-black">{{'ACTIVITY.CREATE_FEED.QUESTION' | translate}}<cite class="has-error">*</cite>
+                <span>
+                    <cite *ngIf="pollInfo.question.length <= 0">100&nbsp;</cite>
+                    <cite *ngIf="pollInfo.question.length > 0">{{100 - pollInfo.question.length}}&nbsp;</cite>
+                    {{'ACTIVITY.CREATE_FEED.TOTAL_CHARACTER' | translate}}
+                </span>
+            </ion-label>
+            <ion-input class="feed-text" maxlength="100" type="text" [(ngModel)]="pollInfo.question" value=""></ion-input>
+        </ion-item>
+
+        <ion-item class="list-grid-136">
+            <ion-label class="text14px-black">{{'ACTIVITY.CREATE_FEED.RESPOND_TYPE' | translate}}<cite class="has-error">*</cite></ion-label>
+            <div item-content>
+                <ion-segment [(ngModel)]="answerType" color="primary">
+                    <ion-segment-button value="single">{{'ACTIVITY.CREATE_FEED.SINGLE_SELECTION' | translate}}</ion-segment-button>
+                    <ion-segment-button value="multiple">{{'ACTIVITY.CREATE_FEED.MULTI_SELECTION' | translate}}</ion-segment-button>
+                </ion-segment>
+            </div>
+        </ion-item>
+        <ion-item class="list-grid-136 no-space-between">
+            <ion-label class="text14px-black">{{'ACTIVITY.CREATE_FEED.OPTIONS' | translate}}<cite class="has-error">*</cite>
+                <span>
+                    <cite *ngIf="pollAnswerOption.length <= 0">100&nbsp;</cite>
+                    <cite *ngIf="pollAnswerOption.length > 0">{{100 - pollAnswerOption.length}}&nbsp;</cite>
+                    {{'ACTIVITY.CREATE_FEED.TOTAL_CHARACTER' | translate}}
+                </span>
+            </ion-label>
+            <div item-content class="remove-label" *ngFor='let multipleRow of pollInfo.answer_options; let indexNumber = index'>
+                {{multipleRow}}
+                <ion-icon class="icons-close" (click)="removeOption(indexNumber)"></ion-icon>
+            </div>
+            <div item-content class="add-answer" *ngIf="pollInfo.answer_options.length<6">
+                <ion-input class="feed-text" maxlength="100" type="text" [(ngModel)]="pollAnswerOption" value=""></ion-input>
+                <button ion-button *ngIf="pollInfo.answer_options.length<6" [disabled]="pollAnswerOption === ''" name="pollAnswer" (click)="onAddOptions()">
+                    <ion-icon class="icons-plus"></ion-icon>
+                </button>
+            </div>
+        </ion-item>
+    </ion-list>
+    
+</ion-content>

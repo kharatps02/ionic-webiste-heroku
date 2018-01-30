@@ -1,0 +1,40 @@
+page-verify-address {
+    ion-content.content{
+        background: $darkBlue;
+    }
+  
+    ion-list.message-mob-bg {
+        // box-shadow: $box-shadow;
+        width: 100%;
+        // background: transparent;
+        @include zeroPadding(1rem 1rem 0 1rem);
+        // @include zeroMargin(0 0 0 0);
+        
+        ion-item {
+            min-height: 3.75rem;
+            background: transparent;
+            //@include zeroPadding(0);
+            .input-wrapper {
+                flex-direction: column;
+                ion-input,
+                ion-input.input-ios {
+                    margin-bottom: .5rem;
+                }
+                ion-label {
+                    order: 2;
+                    white-space: normal;
+                    width: 100%;
+                    max-width: 100%;
+                    text-align: center;
+                    @include typography(.875rem, #f36161, 400, null);
+                    @include zeroMargin(0 0 1rem 0);
+                }
+            }
+        }
+    }
+
+    
+    // [footer-full] ion-toolbar {
+    //     min-height: 2.75rem;
+    // }
+}

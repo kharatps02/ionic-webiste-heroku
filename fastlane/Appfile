@@ -1,0 +1,5 @@
+app_identifier "com.enterprise.rezility" # The bundle identifier of your app
+apple_id "manish.oswal@extentia.com" # Your Apple email address
+
+team_id "6CNVSY36B4"  # Developer Portal Team ID
+itc_team_name "Enterprise Technology Company, LLC"

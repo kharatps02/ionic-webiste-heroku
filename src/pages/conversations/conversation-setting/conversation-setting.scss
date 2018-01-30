@@ -1,0 +1,14 @@
+page-conversation-setting {
+	ion-footer[footer-full] {
+         ion-toolbar.toolbar-ios, ion-toolbar.toolbar-md{
+            background: $silverShade6;
+            //min-height: 2.75rem;
+         }
+    }
+    ion-toolbar{
+        button.button-square-blue{
+            height: 3rem;
+        }
+    } 
+
+}

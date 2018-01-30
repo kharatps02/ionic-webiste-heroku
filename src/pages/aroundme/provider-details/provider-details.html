@@ -1,0 +1,96 @@
+<ion-header labelHeader bg-transparant>
+    <ion-navbar [ngClass]="{'status-pending': providerDetails.verification_status === 'unverified', 'status-verified': providerDetails.verification_status === 'verified'}">
+        <ion-title *ngIf="!providerDetails.verification_status  && providerDetails.public_name">{{providerDetails.public_name}}</ion-title>
+        <ion-title *ngIf="providerDetails.verification_status === 'verified' && providerDetails.is_advocate === false">{{'AROUND_ME.PROVIDER_DETAILS.TITLE_VERIFIED' | translate}}</ion-title>
+        <ion-title *ngIf="providerDetails.verification_status === 'verified' && providerDetails.is_advocate === true">{{'AROUND_ME.PROVIDER_DETAILS.TITLE_RESIDENT_ADVOCATE' | translate}}</ion-title>        
+        <ion-title *ngIf="providerDetails.verification_status === 'unverified'">{{'AROUND_ME.PROVIDER_DETAILS.TITLE_UNVERIFIED' | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+<!-- providerDetails.verification_status = undefined is default 
+    providerDetails.verification_status = unverified - Address verification pending blue header - status-pending
+    providerDetails.verification_status = verified - You live here green header.  - status-verified
+-->
+
+<ion-content>
+    <div class="" [ngClass]="{'live-bottom' : !providerDetails.verification_status, 'dont-live-bottom' : providerDetails.verification_status === 'unverified' || providerDetails.verification_status === 'verified'}">
+        <ion-slides *ngIf="providerDetails.banners" pager>
+            <ion-slide *ngFor="let banner of providerDetails.banners">
+                <img [src]="banner" alt="" />
+            </ion-slide>
+        </ion-slides>
+
+        <ion-card [ngClass]="{'no-image-card': (providerDetails.banners && providerDetails.banners.length === 0) || (!providerDetails.profile_pic || providerDetails.profile_pic =='')}">
+            <ion-avatar *ngIf="providerDetails.profile_pic">
+                <img [src]="providerDetails.profile_pic" alt="" />
+            </ion-avatar>
+            <ion-card-title class="text30px-normal-grey" *ngIf="providerDetails.public_name">{{providerDetails.public_name}}</ion-card-title>
+
+            <ion-card-content class="text13px-thin-grey" *ngIf="providerDetails.location !== null">
+                <span *ngIf="providerDetails.location.street_address1">{{providerDetails.location.street_address1}}</span>
+            </ion-card-content>
+            <ion-col>
+                <button class="follow" *ngIf="!isFollowing" ion-button (click)=toggleFollow(isFollowing)>{{'AROUND_ME.PROVIDER_DETAILS.FOLLOW_BTN' | translate}}</button>
+                <button class="unfollow" *ngIf="isFollowing" ion-button (click)=toggleFollow(isFollowing)>{{'AROUND_ME.PROVIDER_DETAILS.UNFOLLOW_BTN' | translate}}</button>
+                <!--<ion-toggle class="follow" [(ngModel)]="isFollowing" (ionChange)=toggleFollow()></ion-toggle>-->
+                <ion-toggle class="favorite" [(ngModel)]="isFavorite" (ionChange)=toggleFavorite()></ion-toggle>
+            </ion-col>
+            <p *ngIf="providerDetails.about"> {{providerDetails.about}}</p>
+
+            <ion-card-header class="text10px-thin-grey" *ngIf="providerDetails.location_type === userType.SERVICE_PROVIDER && providerDetails.service_interests">{{'AROUND_ME.PROVIDER_DETAILS.SERVICES' | translate}}</ion-card-header>
+            <ion-grid *ngIf="providerDetails.location_type === userType.SERVICE_PROVIDER" class="row-list">
+                <ion-col col-6 *ngFor="let service of providerDetails.service_interests">
+                    <span *ngIf="service.name">{{service.name}}</span>
+                </ion-col>
+            </ion-grid>
+
+            <ion-card-header *ngIf="providerDetails.location_type === userType.SERVICE_PROVIDER && providerDetails.hours_of_operation!==null  && hoursOfOperationCount > 0"
+                class="working-status">
+                <span class="text10px-thin-grey">{{'AROUND_ME.PROVIDER_DETAILS.HOURS' | translate}}</span>
+                <span align-right class="text13px-normal-green" *ngIf="providerDetails.location_type === userType.SERVICE_PROVIDER && providerDetails.hours_of_operation!==null && !isClosed">{{'AROUND_ME.WORKING_STATUS.OPEN_NOW' | translate}}</span>
+                <span align-right class="text13px-normal-green red-text" *ngIf="providerDetails.location_type === userType.SERVICE_PROVIDER && providerDetails.hours_of_operation!==null && isClosed">{{'AROUND_ME.WORKING_STATUS.CLOSED' | translate}}</span>
+            </ion-card-header>
+
+
+
+            <div *ngIf="providerDetails.location_type && providerDetails.location_type.length == 0" class="message-no-data-found">
+                <p class="no-records">{{'ERROR_MESSAGES.NO_DATA_FOUND' | translate}}</p>
+            </div>
+            <ion-grid *ngIf="providerDetails.location_type === userType.SERVICE_PROVIDER && providerDetails.hours_of_operation!==null && hoursOfOperationCount > 0"
+                class="row-list">
+                <ion-col col-6 *ngIf="providerDetails.hours_of_operation.monday">
+                    <cite>{{'DAYS_IN_SHORT.MONDAY' | translate}}</cite> {{providerDetails.hours_of_operation.monday.start_time}}-{{providerDetails.hours_of_operation.monday.end_time}}
+                </ion-col>
+                <ion-col col-6 *ngIf="providerDetails.hours_of_operation.tuesday">
+                    <cite>{{'DAYS_IN_SHORT.TUESDAY' | translate}}</cite> {{providerDetails.hours_of_operation.tuesday.start_time}}-{{providerDetails.hours_of_operation.tuesday.end_time}}
+                </ion-col>
+                <ion-col col-6 *ngIf="providerDetails.hours_of_operation.wednesday">
+                    <cite>{{'DAYS_IN_SHORT.WEDNESDAY' | translate}}</cite> {{providerDetails.hours_of_operation.wednesday.start_time}}-{{providerDetails.hours_of_operation.wednesday.end_time}}
+                </ion-col>
+                <ion-col col-6 *ngIf="providerDetails.hours_of_operation.thursday">
+                    <cite>{{'DAYS_IN_SHORT.THURSDAY' | translate}}</cite> {{providerDetails.hours_of_operation.thursday.start_time}}-{{providerDetails.hours_of_operation.thursday.end_time}}
+                </ion-col>
+                <ion-col col-6 *ngIf="providerDetails.hours_of_operation.friday">
+                    <cite>{{'DAYS_IN_SHORT.FRIDAY' | translate}}</cite> {{providerDetails.hours_of_operation.friday.start_time}}-{{providerDetails.hours_of_operation.friday.end_time}}
+                </ion-col>
+                <ion-col col-6 *ngIf="providerDetails.hours_of_operation.saturday">
+                    <cite>{{'DAYS_IN_SHORT.SATURDAY' | translate}}</cite> {{providerDetails.hours_of_operation.saturday.start_time}}-{{providerDetails.hours_of_operation.saturday.end_time}}
+                </ion-col>
+                <ion-col col-6 *ngIf="providerDetails.hours_of_operation.sunday">
+                    <cite>{{'DAYS_IN_SHORT.SUNDAY' | translate}}</cite> {{providerDetails.hours_of_operation.sunday.start_time}}-{{providerDetails.hours_of_operation.sunday.end_time}}
+                </ion-col>
+            </ion-grid>
+        </ion-card>
+
+        <div class="absolute-bottom" *ngIf="providerDetails.location_type === 'housing_provider' && this.showConnect !== false">
+            <button ion-button full class="button-square-grey" *ngIf="providerDetails.verification_status === 'unverified' || providerDetails.verification_status === 'verified'"
+                (click)="discontinued()">{{'AROUND_ME.PROVIDER_DETAILS.DONT_LIVE' | translate}}</button>
+            <button ion-button round full class="button-light-blue" *ngIf="!providerDetails.verification_status" (click)="addressVerification(false)">{{'AROUND_ME.PROVIDER_DETAILS.LIVE' | translate}}</button>
+            <button ion-button round full class="button-light-grey" *ngIf="!providerDetails.verification_status" (click)="addressVerification(true)">{{'AROUND_ME.PROVIDER_DETAILS.RESIDENT_ADVOCATE' | translate}}</button>
+        </div>
+    </div>
+</ion-content>
+<ion-footer class="quick-switch" footer-full>
+    <ion-toolbar>
+        <provider-options [providerDetails]='providerDetails'></provider-options>
+    </ion-toolbar>
+</ion-footer>

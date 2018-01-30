@@ -1,0 +1,521 @@
+{
+    "GET_STARTED": {
+        "TITLE": "注册REZILITY",
+        "ONBOARDING": {
+            "SKIP": "跳过",
+            "FEED_TITLE": "您的馈送消息",
+            "CONV_TITLE": "您的对话",
+            "AROUND_TITLE": "您周围",
+            "APP_INFO_MESSAGE": "个性化的机会和信息，帮助您生活地更美好。",
+            "FEED_IMG": "新用户引导消息推送",
+            "CONV_IMG": "新用户引导对话",
+            "AROUND_IMG": "新用户引导周边",
+            "CONV_DESC": "与那些能够为您带来重大机会的人交谈。",
+            "AROUND_DESC": "发现您周围的人、地方和 发生的事 - 无论是在家里，在工作中，还是在您的社区。",
+            "PRIVACY": "我们非常重视您的隐私。",
+            "PRIVACY_DESC": "在整个过程中，我们将要求您提供您的一些数据，并利用这些数据来让您控制您所收到的信息。我们承诺将保障您数据的安全，就像保护我们自己的数据一样。",
+            "ALREADY_ACC": "我已有帐户。"
+        }
+    },
+    "LOGIN": {
+        "SIGN_IN": "登录",
+        "LOGIN_BTN": "登录REZILITY",
+        "LOGIN_WITH_FB_BTN": "使用FACEBOOK登录。",
+        "FORGOT_PASSWORD_BTN": "我忘记了密码。",
+        "FORGOT_PASSWORD": "忘记我的密码",
+        "REQUEST_LOG_IN_LINK": "申请新密码。",
+        "REQUEST_LOG_IN_LINK_MESSAGE": "密码是个麻烦的东西，特别是在您的手机上。我们深知这一点，因此只需输入您帐户的电子邮箱，我们就会向您发送一个新密码。",
+        "EMAIL_ADDRESS": "电子邮箱",
+        "SEND_LOGIN_LINK": "发送新密码",
+        "FORGOT_PASS_MESSAGE": "我们已向您的电子邮箱发送了一个新密码。复制密码，返回此屏幕，点击“继续”并粘贴密码登录Rezility。",
+        "LOGIN_LINK_SENT": "查看您的电子邮件。",
+        "ACCOUNT_EXIST": "这个帐户已存在于Rezility中。",
+        "CREATE_ACC": "创建一个新帐户。",
+        "VALID_EMAIL": "请输入一个有效的电子邮箱。",
+        "PASSWORD": "密码",
+        "CONTINUE_SAVE": "继续且不保存您的更改？"
+    },
+    "SIGN_UP": {
+        "TITLE": "注册",
+        "FIRST_NAME": "名字",
+        "LAST_NAME": "姓氏",
+        "ENTER_FN": "请输入名字。",
+        "ENTER_LN": "请输入姓氏。",
+        "EMAIL": "电子邮箱",
+        "ZIP_CODE": "邮政编码",
+        "ENTER_EMAIL": "请输入一个有效的电子邮箱。",
+        "ENTER_ZIP": "请输入一个有效的邮政编码。",
+        "PRIVACY_MSG": "我已经阅读，理解并接受了Rezility",
+        "PRIVACY_MSG1": "隐私声明",
+        "PRIVACY_MSG2": "和",
+        "PRIVACY_MSG3": "使用条款",
+        "PRIVACY_MSG5": "的力量。",
+        "PRIVACY_MSG4": "请接受隐私声明和使用条款。",
+        "GET_STARTED": "REZILITY如何能够帮助您？",
+        "MESSGAE_1": "为我们自己",
+        "MESSGAE_2": "和其他人开创更美好的未来 - 在我们工作和生活的社区。",
+        "WELCOME": "欢迎进入",
+        "WELCOME_1": "Rezility。",
+        "ALREADY_HAVE_ACCOUNT": "我已有帐户。",
+        "CHOOSE_PASSWORD": "选择一个密码",
+        "MESSAGE": "要完成注册，请选择一个密码或使用您的Facebook帐户登录。",
+        "CREATE_PASSWORD": {
+            "TITLE": " 创建一个密码",
+            "LOGIN_INTO_BEHOME": "登录REZILITY",
+            "PASSWORD_STRENGTH_LEVEL1": "您将需要一个密码。",
+            "PASSWORD_STRENGTH_LEVEL2": "一个好的密码。至少含有8个字符，包含大写字母和数字，诸如此类。",
+            "PASSWORD_STRENGTH_LEVEL3": "这一个就可以！",
+            "PASSWORD_STRENGTH_LEVEL4": "但不必担心忘记了密码。我们可以给您发送一个链接来恢复使用。"
+        },
+        "SELECT_PASSWORD": {
+            "COMPLETE_SIGN": "完成注册"
+        }
+    },
+    "COACH_MARK": {
+        "FEED_MSG_1": "经常查看您的馈送消息",
+        "FEED_MSG_2": "以发现新的机会和信息。",
+        "GOT_IT": "知道了",
+        "FEED_COACH": "消息推送",
+        "CONV_MSG_1": "这些是",
+        "CONV_MSG_2": "您的对话。",
+        "CONV_COACH": "对话",
+        "AROUND_PLACE01": "发现地方和服务",
+        "AROUND_PLACE02": "您周围.",
+        "AROUND_COACH": "您周围",
+        "STUFF_COACH": "您的设置",
+        "STUFF_MSG_1": "管理您的",
+        "STUFF_MSG_2": "个人资料和设置。",
+        "START_CONVERSATION": "开始对话",
+        "MAP_SETTINGS": "地图设置",
+        "YOUR_PINNED": "您的固定",
+        "LOCATION": "位置",
+        "SAVE_LOCATION": "保存位置",
+        "CENTER_MAP": "将地图置于",
+        "YOUR_LOCATION": "您当前位置的中央"
+    },
+    "ACTIVITY": {
+        "TITLE": "您的馈送消息",
+        "COMMING_SOON": "即将推出...",
+        "START_CONVERSATION": "开始对话",
+        "READ_THIS_ARTICLE": "更多信息",
+        "CONNECT": "立即连接",
+        "NEW_ADDRESS": "输入新地址",
+        "CALL": "呼叫",
+        "CREATE": "创建供稿",
+        "SUBMIT_CARD": "提交卡片",
+        "DEFINE_AUDIENCE": "Define Audience",
+        "BUILD_PLACEMENT": "Build Placement",
+        "BUILD_POLL": "Build Poll",
+        "CREATE_FEED": { 
+            "HEADLINE": "Headline...",
+            "SUMMARY": "Summary...",
+            "NOW": "Now",
+            "PLACEMENT_HEADER": "Placement Details",
+            "POLL_HEADER": "Poll Details",
+            "SELECT_IMAGE": "Select a image",
+            "HEADER": "Header",
+            "TOTAL_CHARACTER": "characters remaining",
+            "DESCRIPTION": "Description",
+            "MORE_INFO": "More Info",
+            "ALLOW": "Allow User To Initiate A Private Conversation",
+            "BRANCHES": "Branches",
+            "SELECT_SEGMENT":"Select Segment",
+            "SELECT_TEMPLATE":"Select a Template",
+            "QUESTION": "Question",
+            "RESPOND_TYPE": "Respond Type",
+            "SINGLE_SELECTION": "Single Selection",
+            "MULTI_SELECTION": "Multiple Selection",
+            "OPTIONS": "Options",
+            "ENTER_QUESTION": "Enter a Question",
+            "SUBMIT": "Submit",
+            "SET_DELIVERY": "Set Delivery",
+            "RESET_DELIVERY": "Re-set Delivery",
+            "RUN_PLACEMENT": "Run my placement now",
+            "START_DATE": "Set start date",
+            "START_DELIVERY": "Start Delivery on"
+        }
+    },
+    "CONVERSATIONS": {
+        "TITLE": "您的对话",
+        "IS_TYPING": "正在输入…",
+        "INVITE_CONNECT": "邀请连接",
+        "ARCHIVE": "存档",
+        "LEAVE": "离开",
+        "DELETE": "删除",
+        "WELCOME": "欢迎进入",
+        "YOUR_CONVERSATION": "您的对话.",
+        "LEAVE_GROUP": "您确定要离开这个组吗？",
+        "DELETE_GROUP": "您确定要删除此对话吗？",
+        "OK": "确定",
+        "CANCEL": "取消",
+        "NEW_MSG": {
+            "TITLE": "新消息",
+            "TO": "至",
+            "YOUR_CONNECTION": "您的人脉",
+            "OTHERS": "REZILITY上的其他人",
+            "CREATE_GROUP": "创建新组",
+            "INVITATION": "邀请已发送",
+            "INVITE_CONNECT": "邀请连接",
+            "NOT_CONNECT": "未连接",
+            "TAKE_PHOTO": "拍照",
+            "ATTACH_PHOTO": "附加照片",
+            "LIB_PHOTO": "从图书馆中选择"
+        },
+        "SHOW_IMG": {
+            "CAPTION": "标题"
+        },
+        "SETTING": {
+            "TITLE": "对话设置",
+            "SEND_PUSH_NOTIFICATION": "静音此对话",
+            "PARTICIPANT": "参与者",
+            "ARCHIVE": "存档对话",
+            "ADD_PEOPLE": "添加人",
+            "EDIT_GROUP": "编辑组",
+            "ACTIVE_NOW": "立即激活"
+        },
+        "GROUP_CHAT": {
+            "TITLE": "您的人脉",
+            "CREATE_TITLE": "新建组对话",
+            "EDIT_TITLE": "编辑组对话",
+            "ADDPEOPLE_TITLE": "添加人",
+            "GROUP_NAME": "组名称",
+            "SEARCH_PEOPLE": "搜索人",
+            "GROUP_TITLE": "组标题"
+        },
+        "PUBLIC_PROFILE": {
+            "INVITE": "邀请",
+            "CANCEL_INVITE": "取消邀请",
+            "ACCEPT_CONNECT": "接受并连接",
+            "IGNORE": "忽略",
+            "PRIVATE_MSG": "私人消息",
+            "REMOVE_GRP": "从组中删除",
+            "LEAVE_GRP": "离开这个组",
+            "BLOCK": "阻止",
+            "UNBLOCK": "取消阻止",
+            "APPROVE_CONNECT": "批准并连接",
+            "DENY": "拒绝"
+        }
+    },
+    "AROUND_ME": {
+        "TITLE": "您周围",
+        "PINNED_LOCATION": "固定位置",
+        "YOUR_PINNED_LOCATION_BTN": "您的固定位置",
+        "DROP_PIN_BTN": "放置固定针",
+        "EDIT_LOCATION_TITLE": "编辑保存的位置",
+        "SEARCH_LOCATION": "搜索位置",
+        "YOUR_PINNED_LOCATION": {
+            "TITLE": "保存的位置",
+            "EDIT_BUTTON": "编辑",
+            "DELETE_BUTTON": "删除"
+        },
+        "SET_PIN_LOCATION": {
+            "TITLE": "放置固定针",
+            "LOCATION": "位置名称"
+        },
+        "MAP_OVERLAYS": {
+            "TITLE": "您要看什么？",
+            "CLEAR_BTN": "清空",
+            "PROVIDER_SECTION": "住房服务提供商",
+            "SERVICE_INTEREST": "服务提供商",
+            "GOOGLE_PLACES": "感兴趣的地方"
+        },
+        "LIST_VIEW": {
+            "PROPERTY": "住房服务提供商",
+            "SERVICE_PROPVIDER": "服务提供商"
+        },
+        "PROVIDER_DETAILS": {
+            "SERVICES": "服务",
+            "ADDRESS": "地址",
+            "HOURS": "时间",
+            "FOLLOW": "关注",
+            "UNFOLLOW": "取消关注",
+            "DONT_LIVE": "我不住在这里",
+            "LIVE": "我住在这里",
+            "TITLE_VERIFIED": "您住在这里",
+            "TITLE_RESIDENT_ADVOCATE": "居民代言人",
+            "TITLE_UNVERIFIED": "地址验证等待中",
+            "FOLLOW_BTN": "关注",
+            "UNFOLLOW_BTN": "取消关注",
+            "RESIDENT_ADVOCATE": "我照顾在这里住的某个人"
+        },
+        "NO_PINNED_MESSAGE": "让我们开始固定几个位置。",
+        "WORKING_STATUS": {
+            "OPEN_NOW": "现在开启",
+            "CLOSED": "现已关闭"
+        },
+        "DISCONTINUED_PROPERTY": {
+            "CONFIRMATION_MSG": "是否确定？",
+            "SEND_BUTTON": "是的。请断开我的连接。",
+            "CANCEL_BTN_LINK": "我不想断开连接。",
+            "MSG": "通过说您不住在这里，您将不会通过Rezility应用程序从您的住房服务提供商那里收到任何进一步信息。"
+        },
+        "HOUSING_TYPES": {
+            "TITLE": "哪栋楼"
+        },
+        "HOUSING_UNIT": {
+            "TITLE": "在哪个单位？",
+            "VERIFY-BTN": "验证家庭地址",
+            "MSG": "我们需要知道这一点，以验证您的身份并回复服务电话。我们承诺将保障您数据的安全，就像保护我们自己的数据一样。",
+            "Unit": "单位号"
+        },
+        "PENDING_CONFIRMATION": {
+            "CONFIRMATION_MSG": "知道了",
+            "SEND_BUTTON": "继续",
+            "MSG": "您的地址已提交给您的住房服务提供商进行验证。一旦通过验证，您将能够随时从您的住房服务提供商收到与物业相关的信息、更新和新闻。"
+        },
+        "VERIFY_ADDRESS": {
+            "TITLE": "验证您的家庭地址",
+            "VERIFY_BUTTON": "验证家庭地址",
+            "APARTMENT_UNIT": "公寓或单位号",
+            "ADDRESS": "地址",
+            "PROVIDER": "提供商"
+        },
+        "ADDRESS_TYPE": {
+            "HOME": "家",
+            "WORK": "工作单位",
+            "OTHER": "其他"
+        }
+    },
+    "YOUR_STUFF": {
+        "TITLE": "您的设置",
+        "HI": "您好",
+        "PROFILE": {
+            "TITLE": "个人资料",
+            "EDIT": {
+                "TITLE": "编辑您的个人资料",
+                "FIRST_NAME": "名字",
+                "LAST_NAME": "姓氏",
+                "MIDDLE_NAME": "中间名字",
+                "PHONE_NUMBER": "电话号码",
+                "ABOUT": "关于",
+                "DATE_OF_BIRTH": "出生日期",
+                "AGE": "年龄",
+                "GENDER": "性别",
+                "UNDER": "不到",
+                "OVER": "超过",
+                "VERIFIED": "已验证",
+                "UNVERIFIED": "未经验证",
+                "HOME_ADDRESS": "家庭地址",
+                "ADDRESS": {
+                    "TITLE": "地址",
+                    "STREET_ADDRESS_1": "街道地址",
+                    "UNIT_NO": "单位号",
+                    "CITY": "城市",
+                    "STATE": "州",
+                    "ZIP_CODE": "邮政编码",
+                    "SEARCH_LOCATION": "搜索位置"
+                },
+                "LANGUAGE": "语言",
+                "EDUCATION_LEVEL": "教育程度",
+                "ANNUAL_INCOME": "年收入",
+                "SERVICE_INTERESTS": "感兴趣的服务",
+                "VERIFICATIONS": {
+                    "TITLE": "验证",
+                    "FACEBOOK_CONNECTED": "Facebook已连接",
+                    "FB_STATUS": "Facebook状态。",
+                    "FB_NOT": "Facebook未连接"
+                }
+            },
+            "MESSAGES": {
+                "DOB_ERROR": "出生日期不能是未来的日期。"
+            }
+        },
+        "SETTINGS": {
+            "TITLE": "设置",
+            "PINNED_LOCATIONS": "固定位置",
+            "SEND_PUSH_NOTIFICATIONS": "发送推送通知",
+            "LOW_DATA": "数据使用率低",
+            "CHANGE_PASSWORD": {
+                "TITLE": "更改密码",
+                "NEW_PASSWORD": "新密码",
+                "REPEAT_PASSWORD": "重复输入密码"
+            },
+            "BLOCKED_USERS": "被阻止的用户",
+            "SHOW_COACHMARKS": "显示指导标记",
+            "ABOUT_APP": "关于应用程序",
+            "LOG_OUT": "注销",
+            "DEACTIVE_YOUR_ACCOUNT": "停用您的帐户",
+            "VERSION": "REZILITY版本"
+        },
+        "FAQ": {
+            "TITLE": "常见问题"
+        },
+        "FEEDBACK": {
+            "TITLE": "告诉我们您的反馈"
+        },
+        "TELL_FEEDBACK": {
+            "TITLE": "告诉我们您的反馈",
+            "SEND_BTN": "发送",
+            "PLACEHOLDER": "有疑问/想分享反馈？请在这里提交。"
+        },
+        "FAVORITES": {
+            "TITLE": "收藏"
+        }
+    },
+    "SERVICE_REQUESTS": {
+        "TITLE": "服务请求",
+        "TYPE": "类型",
+        "DESCRIPTION": "说明",
+        "DESCRIPTION_HINT": "描述问题...（最多500个字符）",
+        "PHOTOS": "照片",
+        "PHOTOS_HINT": "照片是可选的。",
+        "NEXT": "下一步",
+        "ADD_PHOTOS": "添加照片",
+        "SETTINGS": {
+            "TITLE": "新服务请求",
+            "PARTICIPANT": "参与者",
+            "NEWSERVICE": "创建新服务请求"
+        },
+        "DETAILS": {
+            "METAID": "#123-456-789",
+            "DETAILS": "详情",
+            "CONVERSATION": "对话",
+            "STATUS": "状态:",
+            "ACTIVE": "活动"
+        },
+        "REQUEST_LIST": {
+            "ACTIVE": "活动",
+            "RESOLVED": "已解决",
+            "CANCELLED":"取消",            
+            "ACTIVE_MSG": "您尚未创建服务请求。创建服务请求后，服务请求将显示在您的服务请求列表中。",
+            "RESOLVED_MSG": "当前没有已解决的服务请求。"
+        },
+        "REFERENCE_NUMBER": "此事件已分配参考号",
+        "PROBLEMREPORTED": "问题已报告",
+        "NO_SERVICE_REQUEST": "该属性不支持服务请求。",
+        "VERIFY_ADDRESS": "请验证您的地址以创建服务请求。",
+        "SERVICE_REQUEST_CREATED": "服务请求已创建。"
+    },
+    "BUTTON_LABEL": {
+        "SEND": "发送",
+        "SAVE": "保存",
+        "EDIT": "编辑",
+        "CANCEL": "取消",
+        "BACK": "上一步",
+        "CLEAR": "清空",
+        "CONTINUE": "继续",
+        "SKIP_THIS": "跳过这个",
+        "FIX_ERROR": "修复此错误",
+        "LOGIN_FACEBOOK": "使用FACEBOOK登录。"
+    },
+    "PLACEORDER": {
+        "SEARCH": "输入姓名或电子邮箱",
+        "TITLE": "新对话",
+        "MESSAGE": "编写消息"
+    },
+    "ERROR_MESSAGES": {
+        "NO_DATA_FOUND": "没有找到数据",
+        "LOADING_MORE_DATA_TO_LOAD": "正在加载更多数据...",
+        "NO_CONVERSATION": "点击左上角的+图标，",
+        "NO_CONVERSATION_1": "然后在搜索框中输入姓名以开始与其他",
+        "NO_CONVERSATION_2": "Rezility用户连接。",
+        "EMPTY_BLOCKED_LIST": "您当前没有屏蔽任何用户。被您屏蔽的用户会随即出现在黑名单中。",
+        "SOMETHING_WENT_WRONG": "出了些问题！请稍后再试。",
+        "APP_VERSION_UPDATED": "看起来您已更新了您的应用程序，请再次登录。",
+        "NO_MORE_DATA_TO_LOAD": "没有更多的数据要加载",
+        "SAVE_DATA_DONE": "数据已成功保存",
+        "PROFILE_SAVE_DONE": "个人资料已成功保存",
+        "POLL_SAVE_DONE": "调查已成功保存",
+        "SETTINGS_UPDATED": "设置已成功更新",
+        "LOGGED_USER": "您已登录到Rezility。",
+        "DEVICE_REGISTRATION_FAILED": "设备注册失败，请稍后再试。",
+        "LOCATION_NOT_FOUND": "无法找到您当前的位置。请稍后再试。",
+        "ADDRESS_NOT_FOUND": "找不到地址。",
+        "SELECT_LOCATION": "请在地图上选择一个有效位置。",
+        "LOCATION_NAME_BLANK": "请设置一个有效的位置名称。",
+        "INVALID_USERNAME_PASSWORD": "电子邮箱或密码无效。",
+        "ADMIN_BLOCK": "您不能阻止Rezility管理员。",
+        "UNINVITED_MESSAGE": "请邀请用户连接。",
+        "INVALID_UNIT_MESSAGE": "请选择有效的单位号。",
+        "ZIP_CODE_VALID": "输入有效的邮政编码（例如10461或10461-1235）",
+        "NO_NETWORK": "请检查您的网络连接。",
+        "NO_NETWORK_TITLE": "没有网络连接",
+        "NO_NETWORK_MSG": "请检查您的网络连接。",
+        "INVITATION_ACCEPTED_PREFIX": "您现在连接到 ",
+        "SENT_INVITE_NOT_POSTFIX": "已邀请您进行连接。",
+        "BLOCK_SUCCESS": "用户已被成功阻止。",
+        "UNBLOCK_SUCCESS": "用户已被成功取消阻止。",
+        "BLOCKED_USER_POSTFIX": "被阻止。",
+        "GRP_SEND_ERROR_MSG": "由于您不再是参与者，因此无法向此组发送消息。",
+        "GRP_EDIT_ERROR_MSG": "由于您不再是参与者，因此无法编辑此组。",
+        "GRP_JOINED": "欢迎进入组",
+        "GRP_REMOVED": "您不再是参与者。",
+        "PLEASE_WAIT": "请稍候…",
+        "REPORTING": "正在报告…",
+        "UPLOADING": "正在上传…",
+        "LOGGING_OUT": "正在注销...",
+        "UPDATE_SUCCESSFUL": "密码已成功更新",
+        "PASSWORD_BLANK": "密码不能为空",
+        "PASSWORD_MISMATCH": "密码不匹配",
+        "PASSWORD_FORMAT": "密码应至少含有8个字符，并包含大写字母和数字。",
+        "NAME_VALIDATION": "名字和姓氏不能为空",
+        "CANCEL_BTN": "不，谢谢。",
+        "OK_BTN": "更新",
+        "VERIFY_ADDRESS_SUCCESS": "住所验证成功。",
+        "VERIFY_ADDRESS_DENY": "住所验证被拒绝。",
+        "ADDED_GROUP": "您已被添加到组中。",
+        "NO_LONGER_PARTICIPANT": "您不再是组的参与者。",
+        "INVITED_YOU": "已邀请您进行连接。",
+        "NETWORK": "网络未连接",
+        "INVITATION_INVITED_POSTFIX": "尚未接受您的连接邀请。",
+        "VERIFICATION_PREFIX": "已请求验证： ",
+        "ADVOCATE_VERIFICATION_PREFIX": "居民代言人请求：",
+        "ACCEPTED_POSTFIX": "已验证。您已连接。 ",
+        "DENY_PREFIX": "验证被拒绝：",
+        "VERIFICATION_MESSAGE": "您已收到验证请求。",
+        "NO_FAVORITE_FOUND": "当您将馈送消息设为收藏后，此馈送消息将显示在您的收藏馈送消息列表中。",
+        "VERIFICATION_CANCEL_MESSAGE": "居民已取消验证请求。",
+        "ERROR_TITLE": "错误",
+        "TWITTER_ERROR": "没有找到Twitter应用程序。",
+        "PHONE_VALIDATION": "请输入一个有效的电话号码。"                
+    },
+    "DAYS_IN_SHORT": {
+        "SUNDAY": "周日",
+        "MONDAY": "周一",
+        "TUESDAY": "周二",
+        "WEDNESDAY": "周三",
+        "THURSDAY": "周四",
+        "FRIDAY": "周五",
+        "SATURDAY": "周六"
+    },
+    "MONTHS_IN_SHORT": {
+        "JAN": "1月",
+        "FEB": "2月",
+        "MAR": "3月",
+        "APR": "4月",
+        "MAY": "5月",
+        "JUN": "6月",
+        "JUL": "7月",
+        "AUG": "8月",
+        "SEP": "9月",
+        "OCT": "10月",
+        "NOV": "11月",
+        "DEC": "12月"
+    },
+    "MISC": {
+        "Rezility": "Rezility",
+        "IMAGE": "图像",
+        "PROFILE_IMAGE": "个人资料图像",
+        "Oops": "糟糕！",
+        "REFRESH": "正在刷新...",
+        "PULL": "下拉以刷新",
+        "OK": "确定",
+        "DISMISS": "取消"
+    },
+    "TIMESTAMP": {
+        "DAY_AGO": "1 天前",
+        "AM": "上午",
+        "PM": "下午"
+    },
+    "WELCOME_FEED": {
+        "YOUR_FEED": "您的馈送消息",
+        "YOUR_CONV": "您的对话",
+        "AROUND_YOU": "您周围",
+        "YOUR_STUFF": "您的设置"
+    },
+    "CREATE_FEED":{
+        "TITLE":"Please add title to the feed.",
+        "DESCRIPTION":"Please add description to the feed.",
+        "LOGO":"Please add/select a logo."
+    }
+}

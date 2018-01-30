@@ -1,0 +1,11 @@
+<button ion-button icon-only class="button-square-blueicon"[ngClass]="{'button-disable':!providerDetails.verification_status && providerDetails.location_type === 'housing_provider' || providerDetails.verification_status === 'unverified'}" (click)="sendMessageToProvider(providerDetails)">
+        <ion-icon class="icons-conversion"></ion-icon>
+    </button>
+<button ion-button icon-only class="button-square-blueicon" [ngClass]="{'button-disable':providerDetails.contacts && providerDetails.contacts.phone_number ===''}"
+    (click)="makeCall(providerDetails)">
+        <ion-icon class="icons-contact"></ion-icon>
+    </button>
+<button ion-button icon-only class="button-square-blueicon" [ngClass]="{'button-disable':providerDetails.website ===''}"
+    (click)="openWebsite(providerDetails)">
+        <ion-icon class="icons-world"></ion-icon>
+    </button>

@@ -1,0 +1,40 @@
+lazy-img {
+  width: 100%;
+  height: 100%;
+  div {
+    position: relative;
+    transition: 2s background-color ease;
+    width: 100%;
+    height: 100%;
+  }
+
+  .placeholder, .download-placeholder {
+    font-size: 3rem;
+    color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    &::before {
+      align-items: center;
+      display: flex;
+      height: 100%;
+      justify-content: center;
+      left: 0;
+      position: absolute;
+      right: 0;
+    }
+}
+  .placeholder {
+     &::before {
+       content: '\3c';
+     }
+  }
+  .download-placeholder {
+    &::before {
+       content: '\60';
+     }
+  }
+
+}
+
