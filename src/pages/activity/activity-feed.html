@@ -1,10 +1,10 @@
 <ion-header labelHeader>
     <ion-toolbar topHeader *ngIf="!isFavorites">
-        <!-- <ion-buttons start *ngIf="(this.userInfo.user_type === usertype.HOUSING_PROVIDER || this.userInfo.user_type === usertype.SERVICE_PROVIDER)">
+   <ion-buttons start *ngIf="(this.userInfo.user_type === usertype.HOUSING_PROVIDER || this.userInfo.user_type === usertype.SERVICE_PROVIDER)">
             <button ion-button (click)="navigateToCreateFeedPage()">
                 <ion-icon class="icons-plus"></ion-icon>
             </button>
-        </ion-buttons> -->
+        </ion-buttons>
         <ion-title>
             {{'ACTIVITY.TITLE' | translate}}
         </ion-title>
@@ -48,15 +48,16 @@
                                         {{activity.timestampAgo}}
                                     </ion-col>
                                     <ion-col end>
-                                        <button ion-item detail-none icon-only *ngIf="activity.isReading === undefined || (activity.isReading !== undefined && activity.isReading === false)"
+                                        <button ion-item detail-none icon-only [disabled]="this.userInfo.user_type !== usertype.RESIDENT" *ngIf="activity.isReading === undefined || (activity.isReading !== undefined && activity.isReading === false)"
                                             (click)="readFeed(activity,cardIndex)">
                                             <ion-icon class="icons-read"></ion-icon>
                                         </button>
-                                        <button ion-item detail-none icon-only *ngIf="activity.isReading === true" (click)="muteFeed(activity)">
+                                        <button ion-item detail-none icon-only [disabled]="this.userInfo.user_type !== usertype.RESIDENT" *ngIf="activity.isReading === true"
+                                            (click)="muteFeed(activity)">
                                             <ion-icon class="icons-mute"></ion-icon>
                                         </button>
                                         <ion-fab bottom #fab *ngIf="activity.is_system_feed !== true">
-                                            <button ion-fab mini>
+                                            <button ion-fab mini [disabled]="this.userInfo.user_type !== usertype.RESIDENT">
                                                 <ion-icon class="icons-share"></ion-icon>
                                             </button>
                                             <ion-fab-list side="top">
@@ -90,11 +91,12 @@
                                         {{activity.timestampAgo}}
                                     </ion-col>
                                     <ion-col end>
-                                        <button ion-item detail-none icon-only *ngIf="activity.isReading === undefined || (activity.isReading !== undefined && activity.isReading === false)"
+                                        <button ion-item detail-none icon-only [disabled]="this.userInfo.user_type !== usertype.RESIDENT" *ngIf="activity.isReading === undefined || (activity.isReading !== undefined && activity.isReading === false)"
                                             (click)="readFeed(activity,cardIndex)">
                                             <ion-icon class="icons-read"></ion-icon>
                                         </button>
-                                        <button ion-item detail-none icon-only *ngIf="activity.isReading === true" (click)="muteFeed(activity)">
+                                        <button ion-item detail-none icon-only [disabled]="this.userInfo.user_type !== usertype.RESIDENT" *ngIf="activity.isReading === true"
+                                            (click)="muteFeed(activity)">
                                             <ion-icon class="icons-mute"></ion-icon>
                                         </button>
                                     </ion-col>
@@ -114,7 +116,7 @@
                                         alt=""></lazy-img>
                                 </ion-avatar>
 
-                                <ion-avatar item-left (tap)="navigateToProviderDetails(activity)">
+                                <ion-avatar item-left (tap)="this.userInfo.user_type === usertype.RESIDENT && navigateToProviderDetails(activity)">
                                     <ion-icon *ngIf="activity.template === activityTemplates[5]" class="icons-announcment"></ion-icon>
                                     <lazy-img *ngIf="activity.header.leftIconUrl && activity.template !== activityTemplates[5]" [inputSrc]="activity.header.leftIconUrl"
                                         alt=""></lazy-img>
@@ -134,28 +136,32 @@
                                         {{activity.timestampAgo}}
                                     </ion-col>
                                     <ion-col end>
-                                        <button ion-item detail-none icon-only *ngIf="activity.openInUrl !== ''" (click)="openInAppBrowser(activity)">
+                                        <button ion-item detail-none icon-only [disabled]="this.userInfo.user_type !== usertype.RESIDENT" *ngIf="activity.openInUrl !== ''"
+                                            (click)="openInAppBrowser(activity)">
                                             <ion-icon class="icons-read-more"></ion-icon>
                                         </button>
-                                        <button ion-item detail-none icon-only *ngIf="activity.isReading === undefined || (activity.isReading !== undefined && activity.isReading === false)"
+                                        <button ion-item detail-none icon-only [disabled]="this.userInfo.user_type !== usertype.RESIDENT" *ngIf="activity.isReading === undefined || (activity.isReading !== undefined && activity.isReading === false)"
                                             (click)="readFeed(activity,cardIndex)">
                                             <ion-icon class="icons-read"></ion-icon>
                                         </button>
-                                        <button ion-item detail-none icon-only *ngIf="activity.isReading === true" (click)="muteFeed(activity)">
+                                        <button ion-item detail-none icon-only [disabled]="this.userInfo.user_type !== usertype.RESIDENT" *ngIf="activity.isReading === true"
+                                            (click)="muteFeed(activity)">
                                             <ion-icon class="icons-mute"></ion-icon>
                                         </button>
-                                        <button ion-item detail-none icon-only class="like" *ngIf="!activity.is_like && activity.is_system_feed !== true" (tap)=toggleLike(activity,cardIndex)>
+                                        <button ion-item detail-none icon-only class="like" *ngIf="!activity.is_like && activity.is_system_feed !== true" (tap)="this.userInfo.user_type === usertype.RESIDENT && toggleLike(activity,cardIndex)"
+                                            [disabled]="this.userInfo.user_type !== usertype.RESIDENT">
                                             <ion-icon class="icons-unlike"></ion-icon>
                                             <ion-badge class="like-count">{{activity.total_likes}}</ion-badge>
                                         </button>
-                                        <button ion-item detail-none icon-only class="like abc1" *ngIf="activity.is_like && activity.is_system_feed !== true" (tap)=toggleLike(activity,cardIndex)>
+                                        <button ion-item detail-none icon-only class="like abc1" *ngIf="activity.is_like && activity.is_system_feed !== true" (tap)="this.userInfo.user_type === usertype.RESIDENT && toggleLike(activity,cardIndex)"
+                                            [disabled]="this.userInfo.user_type !== usertype.RESIDENT">
                                             <ion-icon class="icons-like"></ion-icon>
                                             <ion-badge class="like-count" *ngIf="activity.total_likes">{{activity.total_likes}}</ion-badge>
                                         </button>
 
                                         <!-- <ion-toggle class="icons-like" [(ngModel)]="activity.is_like" (ionChange)=toggleLike()></ion-toggle>                                      -->
                                         <ion-fab bottom #fab *ngIf="activity.is_system_feed !== true">
-                                            <button ion-fab mini>
+                                            <button ion-fab mini [disabled]="this.userInfo.user_type !== usertype.RESIDENT">
                                                 <ion-icon class="icons-share"></ion-icon>
                                             </button>
                                             <ion-fab-list side="top">
@@ -208,18 +214,21 @@
                                             <span (click)="submitPoll(activity,cardIndex)">{{activity.body.actionButtonName}}</span>
                                         </ion-col>
                                         <ion-col end>
-                                            <button ion-item detail-none icon-only *ngIf="activity.isReading === undefined || (activity.isReading !== undefined && activity.isReading === false)"
+                                            <button ion-item detail-none icon-only [disabled]="this.userInfo.user_type !== usertype.RESIDENT" *ngIf="activity.isReading === undefined || (activity.isReading !== undefined && activity.isReading === false)"
                                                 (click)="readFeed(activity,cardIndex)">
                                                 <ion-icon class="icons-read"></ion-icon>
                                             </button>
-                                            <button ion-item detail-none icon-only *ngIf="activity.isReading === true" (click)="muteFeed(activity)">
+                                            <button ion-item detail-none icon-only [disabled]="this.userInfo.user_type !== usertype.RESIDENT" *ngIf="activity.isReading === true"
+                                                (click)="muteFeed(activity)">
                                                 <ion-icon class="icons-mute"></ion-icon>
                                             </button>
-                                            <button ion-item detail-none icon-only class="like" *ngIf="!activity.is_like" (tap)=toggleLike(activity,cardIndex)>
+                                            <button ion-item detail-none icon-only class="like" *ngIf="!activity.is_like" [disabled]="this.userInfo.user_type !== usertype.RESIDENT"
+                                                (tap)="this.userInfo.user_type === usertype.RESIDENT && toggleLike(activity,cardIndex)">
                                                 <ion-icon class="icons-unlike"></ion-icon>
                                                 <ion-badge class="like-count">{{activity.total_likes}}</ion-badge>
                                             </button>
-                                            <button ion-item detail-none icon-only class="like" *ngIf="activity.is_like" (tap)=toggleLike(activity,cardIndex)>
+                                            <button ion-item detail-none icon-only class="like" *ngIf="activity.is_like" [disabled]="this.userInfo.user_type !== usertype.RESIDENT"
+                                                (tap)="this.userInfo.user_type === usertype.RESIDENT && toggleLike(activity,cardIndex)">
                                                 <ion-icon class="icons-like"></ion-icon>
                                                 <ion-badge class="like-count" *ngIf="activity.total_likes">{{activity.total_likes}}</ion-badge>
                                             </button>
@@ -240,7 +249,7 @@
                                     <lazy-img *ngIf="userInfo.low_data === false || activity.lowData === false" [inputSrc]="activity.header.bgImageUrl" [lowData]="false"
                                         alt=""></lazy-img>
                                 </ion-avatar>
-                                <ion-avatar (tap)="navigateToProviderDetails(activity)">
+                                <ion-avatar (tap)="this.userInfo.user_type === usertype.RESIDENT && navigateToProviderDetails(activity)">
                                     <lazy-img *ngIf="activity.header.leftIconUrl" [inputSrc]="activity.header.leftIconUrl"></lazy-img>
                                 </ion-avatar>
                             </div>
@@ -256,31 +265,34 @@
                                         {{activity.timestampAgo}}
                                     </ion-col>
                                     <ion-col end>
-                                        <button ion-item detail-none icon-only *ngIf="activity.openInUrl !== ''" (click)="openInAppBrowser(activity)">
+                                        <button ion-item detail-none icon-only [disabled]="this.userInfo.user_type !== usertype.RESIDENT" *ngIf="activity.openInUrl !== ''" (click)="openInAppBrowser(activity)">
                                             <ion-icon class="icons-read-more"></ion-icon>
                                         </button>
-                                        <button ion-item detail-none icon-only [disabled]="this.userInfo.user_type === usertype.HOUSING_PROVIDER || this.userInfo.user_type === usertype.SERVICE_PROVIDER  || this.userInfo.user_type === usertype.ADMIN"
-                                            *ngIf="activity.is_allow_conversation === true" (click)="startConversation(activity)">
+                                        <button ion-item detail-none icon-only [disabled]="this.userInfo.user_type !== usertype.RESIDENT" *ngIf="activity.is_allow_conversation === true"
+                                            (click)="startConversation(activity)">
                                             <ion-icon class="icons-conversion"></ion-icon>
                                         </button>
-                                        <button ion-item detail-none icon-only *ngIf="activity.isReading === undefined || (activity.isReading !== undefined && activity.isReading === false)"
+                                        <button ion-item detail-none icon-only [disabled]="this.userInfo.user_type !== usertype.RESIDENT" *ngIf="activity.isReading === undefined || (activity.isReading !== undefined && activity.isReading === false)"
                                             (click)="readFeed(activity,cardIndex)">
                                             <ion-icon class="icons-read"></ion-icon>
                                         </button>
-                                        <button ion-item detail-none icon-only *ngIf="activity.isReading === true" (click)="muteFeed(activity)">
+                                        <button ion-item detail-none icon-only [disabled]="this.userInfo.user_type !== usertype.RESIDENT" *ngIf="activity.isReading === true"
+                                            (click)="muteFeed(activity)">
                                             <ion-icon class="icons-mute"></ion-icon>
                                         </button>
-                                        <button ion-item detail-none icon-only class="like" *ngIf="!activity.is_like && activity.is_system_feed !== true" (tap)=toggleLike(activity,cardIndex)>
+                                        <button ion-item detail-none icon-only class="like" *ngIf="!activity.is_like && activity.is_system_feed !== true" [disabled]="this.userInfo.user_type !== usertype.RESIDENT"
+                                            (tap)="this.userInfo.user_type === usertype.RESIDENT && toggleLike(activity,cardIndex)">
                                             <ion-icon class="icons-unlike"></ion-icon>
                                             <ion-badge class="like-count">{{activity.total_likes}}</ion-badge>
                                         </button>
-                                        <button ion-item detail-none icon-only class="like" *ngIf="activity.is_like && activity.is_system_feed !== true" (tap)=toggleLike(activity,cardIndex)>
+                                        <button ion-item detail-none icon-only class="like" *ngIf="activity.is_like && activity.is_system_feed !== true" [disabled]="this.userInfo.user_type !== usertype.RESIDENT"
+                                            (tap)="this.userInfo.user_type === usertype.RESIDENT && toggleLike(activity,cardIndex)">
                                             <ion-icon class="icons-like"></ion-icon>
                                             <ion-badge class="like-count" *ngIf="activity.total_likes">{{activity.total_likes}}</ion-badge>
                                         </button>
                                         <!-- <ion-toggle class="icons-like" [(ngModel)]="activity.is_like" (ionChange)=toggleLike()></ion-toggle>                                      -->
                                         <ion-fab bottom #fab *ngIf="activity.is_system_feed !== true">
-                                            <button ion-fab mini>
+                                            <button ion-fab mini [disabled]="this.userInfo.user_type !== usertype.RESIDENT">
                                                 <ion-icon class="icons-share"></ion-icon>
                                             </button>
                                             <ion-fab-list side="top">
@@ -303,24 +315,24 @@
 
                         <!-- Welcome Feed Template -->
                         <div *ngIf="activity.template === activityTemplates[13]" class="article-no-image welcome-feed">
-                            <ion-row list-row-head>
+                            <ion-row list-row-head *ngIf="activity.header.leftIconName">
                                 <ion-col col-3 text-center>
                                     <ion-icon class="icons-feed"></ion-icon>
-                                    <label>{{'WELCOME_FEED.YOUR_FEED' | translate}}</label>
+                                    <label *ngIf="activity.header.leftIconName.YOUR_FEED">{{activity.header.leftIconName.YOUR_FEED}}</label>
                                 </ion-col>
                                 <ion-col col-3 text-center>
                                     <ion-icon class="icons-conversion"></ion-icon>
-                                    <label>{{'WELCOME_FEED.YOUR_CONV' | translate}}</label>
+                                    <label *ngIf="activity.header.leftIconName.YOUR_CONV">{{activity.header.leftIconName.YOUR_CONV}}</label>
                                 </ion-col>
                                 <ion-col col-3 text-center>
                                     <ion-icon class="icons-around-me"></ion-icon>
-                                    <label>{{'WELCOME_FEED.AROUND_YOU' | translate}}</label>
+                                    <label *ngIf="activity.header.leftIconName.AROUND_YOU">{{activity.header.leftIconName.AROUND_YOU}}</label>
                                 </ion-col>
                                 <ion-col col-3 text-center>
                                     <ion-icon class="icons-my-stuff"></ion-icon>
-                                    <label>{{'WELCOME_FEED.YOUR_STUFF' | translate}}</label>
+                                    <label *ngIf="activity.header.leftIconName.YOUR_STUFF">{{activity.header.leftIconName.YOUR_STUFF}}</label>
                                 </ion-col>
-                                <ion-avatar (tap)="navigateToProviderDetails(activity)">
+                                <ion-avatar (tap)="this.userInfo.user_type === usertype.RESIDENT && navigateToProviderDetails(activity)">
                                     <lazy-img *ngIf="activity.header.leftIconUrl" [inputSrc]="activity.header.leftIconUrl"></lazy-img>
                                 </ion-avatar>
                             </ion-row>
@@ -335,34 +347,47 @@
                                         {{activity.timestampAgo}}
                                     </ion-col>
                                     <ion-col end>
-                                        <button ion-item detail-none icon-only *ngIf="activity.openInUrl !== ''" (click)="openInAppBrowser(activity)">
+                                        <button ion-item detail-none icon-only [disabled]="this.userInfo.user_type !== usertype.RESIDENT" *ngIf="activity.openInUrl !== ''"
+                                            (click)="openInAppBrowser(activity)">
                                             <ion-icon class="icons-read-more"></ion-icon>
                                         </button>
                                         <button ion-item detail-none icon-only [disabled]="this.userInfo.user_type === usertype.HOUSING_PROVIDER || this.userInfo.user_type === usertype.SERVICE_PROVIDER  || this.userInfo.user_type === usertype.ADMIN"
                                             *ngIf="activity.is_allow_conversation === true" (click)="startConversation(activity)">
                                             <ion-icon class="icons-conversion"></ion-icon>
                                         </button>
-                                        <button ion-item detail-none icon-only *ngIf="activity.isReading === undefined || (activity.isReading !== undefined && activity.isReading === false)" (click)="readFeed(activity,cardIndex)">
-                                                <ion-icon class="icons-read"></ion-icon>
-                                            </button>
-                                            <button ion-item detail-none icon-only  *ngIf="activity.isReading === true" (click)="muteFeed(activity)">
-                                                <ion-icon class="icons-mute"></ion-icon>
-                                            </button>
-                                        <button ion-item detail-none icon-only class="like" *ngIf="!activity.is_like && activity.is_system_feed !== true" (tap)=toggleLike(activity,cardIndex)>
-                                            <ion-icon class="icons-unlike"></ion-icon>
-                                            <ion-badge class="like-count">{{activity.total_likes}}</ion-badge>                                           
+                                        <button ion-item detail-none icon-only [disabled]="this.userInfo.user_type !== usertype.RESIDENT" *ngIf="activity.isReading === undefined || (activity.isReading !== undefined && activity.isReading === false)"
+                                            (click)="readFeed(activity,cardIndex)">
+                                            <ion-icon class="icons-read"></ion-icon>
                                         </button>
-                                        <button ion-item detail-none icon-only class="like" *ngIf="activity.is_like && activity.is_system_feed !== true" (tap)=toggleLike(activity,cardIndex)>
-                                            <ion-icon class="icons-like"></ion-icon> 
+                                        <button ion-item detail-none icon-only [disabled]="this.userInfo.user_type !== usertype.RESIDENT" *ngIf="activity.isReading === true"
+                                            (click)="muteFeed(activity)">
+                                            <ion-icon class="icons-mute"></ion-icon>
+                                        </button>
+                                        <button ion-item detail-none icon-only class="like" *ngIf="!activity.is_like && activity.is_system_feed !== true" [disabled]="this.userInfo.user_type !== usertype.RESIDENT"
+                                            (tap)="this.userInfo.user_type === usertype.RESIDENT && toggleLike(activity,cardIndex)">
+                                            <ion-icon class="icons-unlike"></ion-icon>
+                                            <ion-badge class="like-count">{{activity.total_likes}}</ion-badge>
+                                        </button>
+                                        <button ion-item detail-none icon-only class="like" *ngIf="activity.is_like && activity.is_system_feed !== true" [disabled]="this.userInfo.user_type !== usertype.RESIDENT"
+                                            (tap)="this.userInfo.user_type === usertype.RESIDENT && toggleLike(activity,cardIndex)">
+                                            <ion-icon class="icons-like"></ion-icon>
                                             <ion-badge class="like-count" *ngIf="activity.total_likes">{{activity.total_likes}}</ion-badge>
                                         </button>
                                         <ion-fab bottom #fab *ngIf="activity.is_system_feed !== true">
-                                            <button ion-fab mini><ion-icon class="icons-share"></ion-icon></button>
+                                            <button ion-fab mini [disabled]="this.userInfo.user_type !== usertype.RESIDENT">
+                                                <ion-icon class="icons-share"></ion-icon>
+                                            </button>
                                             <ion-fab-list side="top">
-                                                <button ion-fab *ngIf="activity.openInUrl !== ''" class="fb"><ion-icon class="icons-facebook" (tap)="shareOnFacebook(activity,fab)"></ion-icon></button>
-                                                <button ion-fab *ngIf="activity.openInUrl !== ''" ><ion-icon class="icons-twitter" (tap)="shareOnTwitter(activity,fab)"></ion-icon></button>
-                                                <button ion-fab class="su"><ion-icon class="icons-chat01" (tap)="shareUser(activity,fab)"></ion-icon></button>
-                                            </ion-fab-list> 
+                                                <button ion-fab *ngIf="activity.openInUrl !== ''" class="fb">
+                                                    <ion-icon class="icons-facebook" (tap)="shareOnFacebook(activity,fab)"></ion-icon>
+                                                </button>
+                                                <button ion-fab *ngIf="activity.openInUrl !== ''">
+                                                    <ion-icon class="icons-twitter" (tap)="shareOnTwitter(activity,fab)"></ion-icon>
+                                                </button>
+                                                <button ion-fab class="su">
+                                                    <ion-icon class="icons-chat01" (tap)="shareUser(activity,fab)"></ion-icon>
+                                                </button>
+                                            </ion-fab-list>
                                         </ion-fab>
                                     </ion-col>
                                 </ion-row>
@@ -373,7 +398,7 @@
                         <!-- Property manager connect template -->
                         <div *ngIf="activity.template === activityTemplates[10]" class="article-no-image">
                             <div list-row-head>
-                                <ion-avatar (tap)="navigateToProviderDetails(activity)">
+                                <ion-avatar (tap)="this.userInfo.user_type === usertype.RESIDENT && navigateToProviderDetails(activity)">
                                     <lazy-img *ngIf="activity.header.leftIconUrl" [inputSrc]="activity.header.leftIconUrl" alt=""></lazy-img>
                                 </ion-avatar>
                             </div>
@@ -389,17 +414,18 @@
                                         {{activity.timestampAgo}}
                                     </ion-col>
                                     <ion-col end>
-                                        <button ion-item detail-none icon-only (click)="navigateToAroundMe(activity)">
+                                        <button ion-item detail-none icon-only [disabled]="this.userInfo.user_type !== usertype.RESIDENT" (click)="navigateToAroundMe(activity)">
                                             <ion-icon class="icons-house"></ion-icon>
                                         </button>
-                                        <button ion-item detail-none icon-only (click)="callToPM(activity)">
+                                        <button ion-item detail-none icon-only [disabled]="this.userInfo.user_type !== usertype.RESIDENT" (click)="callToPM(activity)">
                                             <ion-icon class="icons-contact"></ion-icon>
                                         </button>
-                                        <button ion-item detail-none icon-only *ngIf="activity.isReading === undefined || (activity.isReading !== undefined && activity.isReading === false)"
+                                        <button ion-item detail-none icon-only [disabled]="this.userInfo.user_type !== usertype.RESIDENT" *ngIf="activity.isReading === undefined || (activity.isReading !== undefined && activity.isReading === false)"
                                             (click)="readFeed(activity,cardIndex)">
                                             <ion-icon class="icons-read"></ion-icon>
                                         </button>
-                                        <button ion-item detail-none icon-only *ngIf="activity.isReading === true" (click)="muteFeed(activity)">
+                                        <button ion-item detail-none icon-only [disabled]="this.userInfo.user_type !== usertype.RESIDENT" *ngIf="activity.isReading === true"
+                                            (click)="muteFeed(activity)">
                                             <ion-icon class="icons-mute"></ion-icon>
                                         </button>
                                     </ion-col>
@@ -411,7 +437,7 @@
                         <!-- Residency declined template -->
                         <div *ngIf="activity.template === activityTemplates[11]" class="article-no-image">
                             <div list-row-head>
-                                <ion-avatar (tap)="navigateToProviderDetails(activity)">
+                                <ion-avatar (tap)="this.userInfo.user_type === usertype.RESIDENT && navigateToProviderDetails(activity)">
                                     <lazy-img *ngIf="activity.header.leftIconUrl" [inputSrc]="activity.header.leftIconUrl" alt=""></lazy-img>
                                 </ion-avatar>
                             </div>
@@ -427,17 +453,18 @@
                                         {{activity.timestampAgo}}
                                     </ion-col>
                                     <ion-col end>
-                                        <button ion-item detail-none icon-only (click)="navigateToAroundMe(activity)">
+                                        <button ion-item detail-none icon-only [disabled]="this.userInfo.user_type !== usertype.RESIDENT" (click)="navigateToAroundMe(activity)">
                                             <ion-icon class="icons-around-me"></ion-icon>
                                         </button>
-                                        <button ion-item detail-none icon-only (click)="callToPM(activity)">
+                                        <button ion-item detail-none icon-only [disabled]="this.userInfo.user_type !== usertype.RESIDENT" (click)="callToPM(activity)">
                                             <ion-icon class="icons-contact"></ion-icon>
                                         </button>
-                                        <button ion-item detail-none icon-only *ngIf="activity.isReading === undefined || (activity.isReading !== undefined && activity.isReading === false)"
+                                        <button ion-item detail-none icon-only [disabled]="this.userInfo.user_type !== usertype.RESIDENT" *ngIf="activity.isReading === undefined || (activity.isReading !== undefined && activity.isReading === false)"
                                             (click)="readFeed(activity,cardIndex)">
                                             <ion-icon class="icons-read"></ion-icon>
                                         </button>
-                                        <button ion-item detail-none icon-only *ngIf="activity.isReading === true" (click)="muteFeed(activity)">
+                                        <button ion-item detail-none icon-only [disabled]="this.userInfo.user_type !== usertype.RESIDENT" *ngIf="activity.isReading === true"
+                                            (click)="muteFeed(activity)">
                                             <ion-icon class="icons-mute"></ion-icon>
                                         </button>
                                     </ion-col>
@@ -449,7 +476,7 @@
                         <!-- Residency Accept template -->
                         <div *ngIf="activity.template === activityTemplates[12]" class="article-no-image">
                             <div list-row-head>
-                                <ion-avatar (tap)="navigateToProviderDetails(activity)">
+                                <ion-avatar (tap)="this.userInfo.user_type === usertype.RESIDENT && navigateToProviderDetails(activity)">
                                     <lazy-img *ngIf="activity.header.leftIconUrl" [inputSrc]="activity.header.leftIconUrl" alt=""></lazy-img>
                                 </ion-avatar>
                             </div>
@@ -465,11 +492,12 @@
                                         {{activity.timestampAgo}}
                                     </ion-col>
                                     <ion-col end>
-                                        <button ion-item detail-none icon-only *ngIf="activity.isReading === undefined || (activity.isReading !== undefined && activity.isReading === false)"
+                                        <button ion-item detail-none icon-only [disabled]="this.userInfo.user_type !== usertype.RESIDENT" *ngIf="activity.isReading === undefined || (activity.isReading !== undefined && activity.isReading === false)"
                                             (click)="readFeed(activity,cardIndex)">
                                             <ion-icon class="icons-read"></ion-icon>
                                         </button>
-                                        <button ion-item detail-none icon-only *ngIf="activity.isReading === true" (click)="muteFeed(activity)">
+                                        <button ion-item detail-none icon-only [disabled]="this.userInfo.user_type !== usertype.RESIDENT" *ngIf="activity.isReading === true"
+                                            (click)="muteFeed(activity)">
                                             <ion-icon class="icons-mute"></ion-icon>
                                         </button>
                                     </ion-col>

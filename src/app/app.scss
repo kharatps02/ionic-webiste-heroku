@@ -23,7 +23,19 @@ html {
     font-size: 100%;
     -webkit-text-size-adjust: 100%;
 }
-
+.iphone5{
+    background: url(../assets/img/iphone5-bg.jpg) no-repeat;
+    margin: 20px auto 0;
+    width: 382px;
+    position: relative;
+    height: 798px;
+    ion-app{
+        width: 321px;
+        top: 138px;
+        left: 32px;
+        max-height: 550px;
+    }
+}
 $center: center;
 @font-face {
     font-family: "lato";
