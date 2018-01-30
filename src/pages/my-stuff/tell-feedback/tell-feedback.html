@@ -1,0 +1,15 @@
+<ion-header labelHeader>
+    <ion-navbar>
+        <ion-title>{{'YOUR_STUFF.TELL_FEEDBACK.TITLE' | translate}}</ion-title>
+        <ion-buttons end>
+            <button *ngIf="feedbackObj.message && feedbackObj.message.trim().length > 0" (click)="saveFeeedBack()" ion-button clear text-outline-btn>{{'YOUR_STUFF.TELL_FEEDBACK.SEND_BTN' | translate}}</button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-list description>
+        <ion-item>
+            <ion-textarea autocomplete="true" spellcheck="true" autocorrect="true" [(ngModel)]="feedbackObj.message" maxlength="500" placeholder="{{'YOUR_STUFF.TELL_FEEDBACK.PLACEHOLDER' | translate}}"></ion-textarea>
+        </ion-item>
+    </ion-list>
+</ion-content>

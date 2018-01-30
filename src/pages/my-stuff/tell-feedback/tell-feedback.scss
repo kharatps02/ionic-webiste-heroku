@@ -1,0 +1,39 @@
+page-tell-feedback {
+    .text-input::-webkit-input-placeholder { 
+        color: $silverShade6;
+    }
+    .text-input::-moz-placeholder {
+        color: $silverShade6;
+    }
+    .text-input:-ms-input-placeholder {
+        color: $silverShade6; 
+    }
+	ion-list[description]{
+        background: transparent;
+        width: 100%;
+        height: 100%;
+        box-shadow: none;
+        @include zeroMargin(0);
+        @include zeroPadding(1.125rem); 
+        ion-item.item-block{ 
+            //padding: 0;
+            border: 0;
+            height: 100%;
+            &:first-child, &:last-child{
+                border: none;
+            }
+            ion-textarea {
+                height: 100%;
+
+                textarea.text-input {
+                    @include typography(.75rem, $grey2, 400, null);
+                    @include zeroMargin(0);
+                    @include zeroPadding(0);
+                    overflow: hidden;
+                    height: 100%;
+                    width: 100%;                    
+                }
+            }
+        }
+    }       
+}

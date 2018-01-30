@@ -1,0 +1,96 @@
+<ion-header labelHeader>
+    <ion-navbar>
+        <ion-title>{{'YOUR_STUFF.PROFILE.EDIT.TITLE' | translate}}</ion-title>
+        <ion-buttons end>
+            <button (tap)="saveToBackend()" ion-button><ion-icon class="icons-correct"></ion-icon></button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content silvergrey-background>
+    <ion-list>
+        <ion-item class="list-grid-136">
+            <ion-label class="text14px-black">{{'YOUR_STUFF.PROFILE.EDIT.FIRST_NAME' | translate}}</ion-label>
+            <ion-input type="text" class="edit-text" name="profile.first_name" placeholder="{{'YOUR_STUFF.PROFILE.EDIT.FIRST_NAME' | translate}}"
+                [(ngModel)]="userObj.profile.first_name"></ion-input>
+        </ion-item>
+        <ion-item class="list-grid-136">
+            <ion-label class="text14px-black">{{'YOUR_STUFF.PROFILE.EDIT.MIDDLE_NAME' | translate}}</ion-label>
+            <ion-input type="text" class="edit-text" name="profile.middle_name" placeholder="{{'YOUR_STUFF.PROFILE.EDIT.MIDDLE_NAME' | translate}}"
+                [(ngModel)]="userObj.profile.middle_name"></ion-input>
+        </ion-item>
+
+        <ion-item class="list-grid-136">
+            <ion-label class="text14px-black">{{'YOUR_STUFF.PROFILE.EDIT.LAST_NAME' | translate}}</ion-label>
+            <ion-input type="text" class="edit-text" name="profile.last_name" placeholder="{{'YOUR_STUFF.PROFILE.EDIT.LAST_NAME' | translate}}"
+                [(ngModel)]="userObj.profile.last_name"></ion-input>
+        </ion-item>
+
+        <ion-item class="list-grid-136">
+            <ion-label class="text14px-black">{{'YOUR_STUFF.PROFILE.EDIT.PHONE_NUMBER' | translate}}</ion-label>
+            <ion-input type="tel" class="edit-text"  name="profile.phone_number" maxlength=14 placeholder="{{'YOUR_STUFF.PROFILE.EDIT.PHONE_NUMBER' | translate}}"
+               (ionChange)="formatPhone()" [(ngModel)]="phonenumber"></ion-input>
+        </ion-item>
+
+        <ion-item class="list-grid-136">
+            <ion-label class="text14px-black">{{'YOUR_STUFF.PROFILE.EDIT.ABOUT' | translate}}</ion-label>
+            <ion-input type="text" class="edit-text" name="profile.descreption" placeholder="{{'YOUR_STUFF.PROFILE.EDIT.ABOUT' | translate}}"
+                [(ngModel)]="userObj.profile.description"></ion-input>
+        </ion-item>
+
+        <ion-item class="list-grid-136 dob" (click)="dateSelection()">
+            <h2 class="text14px-black">{{'YOUR_STUFF.PROFILE.EDIT.DATE_OF_BIRTH' | translate}}</h2>
+            <p class="sendmsg">{{ userObj.profile.date_of_birth | localizedDate: 'MMMM dd, yyyy' }}</p>
+            <!--<ion-input type="text" class="edit-text" readonly   value=" ">  </ion-input>-->
+
+        </ion-item>
+
+        <ion-item class="list-grid-136">
+            <ion-label class="text14px-black">{{'YOUR_STUFF.PROFILE.EDIT.GENDER' | translate}}</ion-label>
+            <ion-select cancelText="{{'CONVERSATIONS.CANCEL' | translate}}" okText="{{'CONVERSATIONS.OK' | translate}}" class="edit-text"
+                [(ngModel)]="userObj.profile.gender">
+                <li *ngFor="let gen of userMasterData.gender | slice:1">
+                    <ion-option value="{{gen._id}}">{{gen.name}}</ion-option>
+                </li>
+            </ion-select>
+        </ion-item>
+        <ion-item class="list-grid-136" (click)="navigatTo('Address')">
+            <ion-label class="text14px-black flexLabel">{{'YOUR_STUFF.PROFILE.EDIT.HOME_ADDRESS' | translate}}
+
+            </ion-label>
+            <ion-note item-end *ngIf="userObj.profile.home_address.verification_status !== 'verified'">{{'YOUR_STUFF.PROFILE.EDIT.UNVERIFIED' | translate }}</ion-note>
+            <ion-note item-end *ngIf="userObj.profile.home_address.verification_status === 'verified'" [ngClass]="{'verified': userObj.profile.home_address.verification_status === 'verified'}">{{'YOUR_STUFF.PROFILE.EDIT.VERIFIED' | translate }}</ion-note>
+        </ion-item>
+        <ion-item class="list-grid-136">
+            <ion-label class="text14px-black">{{'YOUR_STUFF.PROFILE.EDIT.EDUCATION_LEVEL' | translate}}</ion-label>
+            <ion-select cancelText="{{'CONVERSATIONS.CANCEL' | translate}}" okText="{{'CONVERSATIONS.OK' | translate}}" class="edit-text"
+                [(ngModel)]="userObj.profile.education_level">
+                <li *ngFor="let education of userMasterData.education_level">
+                    <ion-option value="{{education._id}}">{{education.name}}</ion-option>
+                </li>
+            </ion-select>
+        </ion-item>
+        <ion-item class="list-grid-136">
+            <ion-label class="text14px-black">{{'YOUR_STUFF.PROFILE.EDIT.ANNUAL_INCOME' | translate}}</ion-label>
+            <ion-select cancelText="{{'CONVERSATIONS.CANCEL' | translate}}" okText="{{'CONVERSATIONS.OK' | translate}}" class="edit-text"
+                [(ngModel)]="userObj.financial_info.annual_income">
+                <li *ngFor="let income of userMasterData.annual_income">
+                    <ion-option *ngIf="income.min !==0 && income.max !== 999999999" value="{{income._id}}">${{income.min | number : fractionSize}}-{{income.max | number : fractionSize}}</ion-option>
+                    <ion-option *ngIf="income.min === 0" value="{{income._id}}"> {{'YOUR_STUFF.PROFILE.EDIT.UNDER' | translate}} ${{income.max | number : fractionSize}}</ion-option>
+                    <ion-option *ngIf="income.min === 50000" value="{{income._id}}">{{'YOUR_STUFF.PROFILE.EDIT.OVER' | translate}} ${{income.min | number : fractionSize}}</ion-option>
+                </li>
+            </ion-select>
+        </ion-item>
+        <ion-item class="list-grid-136">
+            <ion-label class="text14px-black">{{'YOUR_STUFF.PROFILE.EDIT.SERVICE_INTERESTS' | translate}}</ion-label>
+            <ion-select cancelText="{{'CONVERSATIONS.CANCEL' | translate}}" okText="{{'CONVERSATIONS.OK' | translate}}" class="edit-text" [(ngModel)]="userObj.service_interests" multiple="true">
+                <li *ngFor="let serviceinterest of userMasterData.service_interest">
+                    <ion-option value="{{serviceinterest._id}}">{{serviceinterest.name}}</ion-option>
+                </li>
+            </ion-select>
+        </ion-item>
+        <ion-item class="list-grid-136 verify" (click)="navigateToVerification()">
+            <h2 class="text14px-black">{{'YOUR_STUFF.PROFILE.EDIT.VERIFICATIONS.TITLE' | translate}}</h2>
+            <p class="sendmsg">{{'YOUR_STUFF.PROFILE.EDIT.VERIFICATIONS.FB_STATUS' | translate}}</p>
+        </ion-item>
+    </ion-list>
+</ion-content>

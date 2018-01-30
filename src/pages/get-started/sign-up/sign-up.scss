@@ -1,0 +1,102 @@
+page-sign-up {
+    ion-content {
+        .scroll-content {
+            padding-bottom: 0 !important;
+        }
+    }
+    .login-logo {
+        text-align: center;
+        @include zeroMargin(4rem 0 2.75rem 0);
+        img {
+            min-width: 60px;
+            max-width: 60px;
+            min-height: 68px;
+        }
+    }
+    h1 {
+        text-align: center;
+        @include zeroMargin(.25rem 0 .75rem 0);
+        @include typography(1.875rem, $white, 400, null);
+    }
+    ion-list.message-mob-bg {
+        box-shadow: $box-shadow;
+        width: 100%;
+        background: transparent;
+        @include zeroPadding(1rem 1rem 0 1rem);
+        @include zeroMargin(0 0 0 0);
+        ion-item.item-block,
+        .item-block.item-input.input-has-focus,
+        .item-block.item-input.ng-valid.input-has-value:not(.input-has-focus) {
+            &:first-child {
+                @include border(none);
+            }
+            &:last-child {
+                @include border(none);
+            }
+            .item-inner {
+                border-bottom: none;
+                box-shadow: none;
+            }
+        }
+        .item-block.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner,
+        .item-block.item-input.ng-invalid.ng-touched:not(.input-has-focus):last-child {
+            border: none;
+            box-shadow: none;
+        }
+        ion-item {
+            min-height: 3.75rem;
+            background: transparent;
+            .input-wrapper {
+                flex-direction: column;
+                ion-input,
+                ion-input.input-ios {
+                    margin-bottom: .5rem;
+                }
+                ion-label {
+                    order: 2;
+                    white-space: normal;
+                    width: 100%;
+                    max-width: 100%;
+                    text-align: center;
+                    @include typography(.875rem, #f36161, 400, null);
+                    @include zeroMargin(0 0 1rem 0);
+                }
+            }
+        }
+    }
+    .disclaimer-text {
+        @include zeroMargin(0.375rem auto 0);
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        ion-checkbox.checkbox {
+            @include zeroMargin(.125rem .939rem 0 0);
+            .checkbox-icon {
+                border: none;
+            }
+            .checkbox-checked {
+                background-color: $white;
+            }
+        }
+        ion-label {
+            @include zeroMargin(0);
+            white-space: normal;
+            text-align: left;
+            width: 14rem;
+            flex: inherit;
+            @include typography(.75rem, $white, 400, 1.125rem);
+            span {
+                color: $skyBlueShade5;
+            }
+        }
+    }
+    .error-label {
+        text-align: center;
+        @include typography(.875rem, #f36161, 400, null);
+        @include zeroMargin(1rem 0 0 0);
+    }
+    // [footer-full] ion-toolbar {
+    //     min-height: 2.75rem;
+    // }
+}

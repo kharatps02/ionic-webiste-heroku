@@ -1,0 +1,51 @@
+<ion-header labelHeader>
+    <ion-navbar>
+        <ion-title>{{'YOUR_STUFF.SETTINGS.TITLE' | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content silvergrey-background>
+    <ion-list>
+        <ion-item class="list-grid-136" toggle>
+            <ion-label class="text14px-black">{{'YOUR_STUFF.SETTINGS.SEND_PUSH_NOTIFICATIONS' | translate}}</ion-label>
+            <ion-toggle [checked]="userObj.notification_enabled" [(ngModel)]="userObj.notification_enabled" (ionChange)="changeNotitficationStatus()"></ion-toggle>
+        </ion-item>
+        <ion-item class="list-grid-136" toggle>
+                <ion-label class="text14px-black">{{'YOUR_STUFF.SETTINGS.LOW_DATA' | translate}}</ion-label>
+                <ion-toggle [checked]="userObj.low_data" [(ngModel)]="userObj.low_data" (ionChange)="changeLowDataSettings()"></ion-toggle>
+            </ion-item>
+        <button ion-item detail-none class="list-grid-136" *ngIf="!userObj.facebook" list-grid (click)="navigatTo('changePassword')">
+            <h2 class="text14px-black">{{'YOUR_STUFF.SETTINGS.CHANGE_PASSWORD.TITLE' | translate}}</h2>
+        </button>
+        <button ion-item detail-none class="list-grid-136" (click)="navigatTo('blockedUsers')">
+            <h2 class="text14px-black">{{'YOUR_STUFF.SETTINGS.BLOCKED_USERS' | translate}}</h2>
+        </button>
+        
+        <ion-item class="list-grid-136" toggle>
+            <ion-label class="text14px-black">{{'YOUR_STUFF.SETTINGS.SHOW_COACHMARKS' | translate}}</ion-label>
+           
+            <ion-toggle [checked]="userService.userObj.show_coach_marks && userService.userObj.show_coach_marks.all" [(ngModel)]="showCoachMarks" (ionChange)="changeCoachMarkStatus()"></ion-toggle>
+        </ion-item>
+        <!--<button ion-item detail-none list-grid (click)="navigatTo('aboutApp')" class="button">
+            <h2 title14px><span>{{'YOUR_STUFF.SETTINGS.ABOUT_APP' | translate}}</span></h2>
+        </button>-->
+        <ion-item class="list-grid-136">
+            <ion-label class="text14px-black">{{'YOUR_STUFF.PROFILE.EDIT.LANGUAGE' | translate}}</ion-label>
+            <ion-select cancelText="{{'CONVERSATIONS.CANCEL' | translate}}" okText="{{'CONVERSATIONS.OK' | translate}}" class="edit-text"
+                [(ngModel)]="currentLanguage" (ionChange) = "changeLanguage()">
+                <li *ngFor="let lang of availableLanguages">
+                    <ion-option value="{{lang.id}}">{{lang.name}}</ion-option>
+                </li>
+            </ion-select>
+        </ion-item>
+        <button ion-item detail-none class="list-grid-136" (click)="onLogout()">
+            <h2 class="text14px-black">{{'YOUR_STUFF.SETTINGS.LOG_OUT' | translate}}</h2>
+        </button>
+    </ion-list>
+</ion-content>
+
+<ion-footer footer-full>
+    <ion-toolbar>
+        <ion-button ion-button outline class="grey-outline-btn">{{'YOUR_STUFF.SETTINGS.VERSION' | translate}} - &nbsp; <span> {{appVersion}}</span></ion-button>
+    </ion-toolbar>
+</ion-footer>

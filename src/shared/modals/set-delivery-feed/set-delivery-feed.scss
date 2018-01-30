@@ -1,0 +1,36 @@
+set-delivery-feed{
+    .list-grid-136.item.item-block{
+        &:nth-child(1), &:nth-child(2){
+            flex-direction: row-reverse
+        }
+        
+    }
+    .item-radio-checked.item{ 
+        background: $silverShade9;
+        ion-label{
+            color: $black;
+        }
+    } 
+    .date-time{
+        [item-content]{
+            position: relative;
+            display: flex;
+            &:first-child{
+                @include margin(0 1.25rem 0 0);
+            }
+            .icon-24{
+                font-size: 1.125rem !important;
+                @include margin(0 12px 0 0 !important);
+            }
+            ion-datetime{
+                display: flex;
+                align-items: center;
+                @include typography(.875rem, $black, 400, null);
+                // input{
+                //     height: 1.125rem;
+                //     @include margin(0);
+                // }
+            }
+        }
+    }
+}

@@ -1,0 +1,94 @@
+page-request-login-error {
+    ion-header {
+        background-image: none;    
+        &::after {
+            height: 0 !important;
+        }
+        .toolbar-background {
+            @extend %toolbar-transparent;
+        }
+    }
+    ion-view {
+        @extend [flexbox];
+        flex-flow: wrap;
+        -ms-flex-flow: wrap;
+    }
+    ion-content {
+        .scroll-content{
+            padding-bottom: 0 !important;
+            overflow: hidden;
+        }
+        .message-mob-bg.card-md{
+            margin-top:3rem;
+        }
+        .message-mob-bg {
+            box-shadow: $box-shadow;    
+            width: 100%;
+            background: none;
+            @include zeroMargin(2.625rem 0 0 0);
+            .check-error-icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                @include zeroMargin(0 0 1.563rem 0);
+                ion-icon {
+                    @include border-radius(50%);
+                    @include typography(2.938rem, $white, null, null);
+                    background-color: $redShade2;        
+                    width: 6.750rem;
+                    height: 6.750rem;
+                    box-shadow: 2px 3px 8px 0px rgba(0, 0, 0, 0.1);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;      
+                }
+             }
+            ion-card-content {
+                text-align: $center;     
+                @include zeroPadding(0);
+                ion-card-title {
+                    @include typography(1.875rem, $white, 700, 2.125rem);
+                    @include zeroMargin(0);
+                    @include zeroPadding(0);
+                }
+                p {
+                    @include typography(.938rem, $white, 400, 1.25rem);
+                    @include zeroMargin(0 .75rem);    
+                }
+                .divider{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    @include zeroMargin(1.688rem 0 1.25rem 0);
+                    span{ 
+                        width: 3.75rem;
+                        height: .25rem;
+                        background-color: $redShade2;
+                    }
+                }
+            }
+        }
+        [toolbar-bg] {
+            background: transparent;
+            @include border(none);
+            @include zeroMargin(0);
+            overflow: initial;
+            @include zeroPadding(0 0 3.75rem 0);
+            width: 100%;
+            box-shadow: none;
+            @include border-radius(0);
+            align-self: flex-end;
+            button{
+                @include zeroMargin(0 0.375rem 0 0.25rem);
+                width: calc(100% - .625rem);
+            }
+        }
+    }
+
+    .fb-login{
+        .message-mob-bg.card-md,
+        .message-mob-bg{
+            margin-top:1rem;
+        }   
+    }
+}

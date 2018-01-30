@@ -1,0 +1,44 @@
+<ion-header labelHeader>
+    <ion-navbar>
+        <ion-title>{{'YOUR_STUFF.TITLE' | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content silvergrey-background>
+    <ion-list>
+        <ion-list-header profile-image>
+            <!--// TODO: Change request as per -->
+            <!--<img *ngIf="userObj.profile.profile_pic" src={{userObj.profile.profile_pic}} />
+            <img *ngIf="!userObj.profile.profile_pic" src="./assets/img/image-placeholder.jpg">
+            <div background-overlays></div>-->
+            <span *ngIf="!userObj.profile.first_name" class="image-caption">{{'YOUR_STUFF.HI' | translate}}<br>{{userObj.user_name}}!</span>
+            <span *ngIf="userObj.profile.first_name" class="image-caption">{{'YOUR_STUFF.HI' | translate}}<br>{{userObj.profile.first_name}} {{userObj.profile.last_name}}!</span>
+        </ion-list-header>
+
+        <button ion-item detail-none class="list-grid-120" (click)="navigatTo('profile')">
+            <h2><span class="text14px-black">{{'YOUR_STUFF.PROFILE.TITLE' | translate}}</span></h2>
+            <ion-icon item-right class="icons-user icon-24"></ion-icon>
+        </button>
+        <button ion-item detail-none class="list-grid-120" (click)="navigatTo('favorites')">
+            <h2><span class="text14px-black">{{'YOUR_STUFF.FAVORITES.TITLE' | translate}}</span></h2>
+            <ion-icon item-right class="icons-unlike icon-24"></ion-icon>
+        </button>
+        <button *ngIf="userObj.user_type === usertype.RESIDENT" ion-item detail-none class="list-grid-120" (click)="navigatTo('servicerequest')" >
+            <h2><span class="text14px-black">{{'SERVICE_REQUESTS.TITLE' | translate}}</span></h2>
+            <ion-icon item-right class="icons-service icon-24"></ion-icon>
+        </button>
+        <button ion-item detail-none class="list-grid-120" (click)="navigatTo('help')">
+            <h2><span class="text14px-black">{{'YOUR_STUFF.FAQ.TITLE' | translate}}</span></h2>
+            <ion-icon item-right class="icons-help icon-24"></ion-icon>
+        </button>
+        <button ion-item detail-none class="list-grid-120" (click)="navigatTo('feedback')">
+            <h2><span class="text14px-black">{{'YOUR_STUFF.FEEDBACK.TITLE' | translate}}</span></h2>
+            <ion-icon item-right class="icons-announcment icon-24"></ion-icon>
+        </button>
+        <button ion-item detail-none class="list-grid-120" (click)="navigatTo('settings')">
+            <h2><span class="text14px-black">{{'YOUR_STUFF.SETTINGS.TITLE' | translate}}</span></h2>
+            <ion-icon item-right class="icons-more icon-24"></ion-icon>
+        </button>
+
+    </ion-list>
+</ion-content>

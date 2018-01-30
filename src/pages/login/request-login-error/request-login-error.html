@@ -1,0 +1,21 @@
+<ion-header labelHeader *ngIf="status_code === 2">
+  <ion-navbar>
+    <ion-title></ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content grey-background [ngClass]="{'dark-grey-background fb-login': status_code === 2}" padding="true">
+    <ion-view>
+        <ion-card class="message-mob-bg">
+            <div class="check-error-icon"><ion-icon class="icons-alert"></ion-icon></div>  	
+            <ion-card-content>
+                <ion-card-title>{{'MISC.Oops' | translate}}</ion-card-title>
+                <p class="divider"><span></span></p>
+                <p>{{error_message}}</p>                
+            </ion-card-content>
+        </ion-card>
+        <ion-card toolbar-bg >
+            <button *ngIf="status_code === 1" ion-button block large round class="button-light-blue" (click)="fixThisIssue()">{{'BUTTON_LABEL.FIX_ERROR' | translate}}</button>
+            <button *ngIf="status_code === 2" ion-button block large round class="button-contrast-blue" (click)="loginWithFacebook()">{{'BUTTON_LABEL.LOGIN_FACEBOOK' | translate}}</button>
+        </ion-card>
+    </ion-view>
+</ion-content>

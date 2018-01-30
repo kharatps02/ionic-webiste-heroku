@@ -1,0 +1,133 @@
+page-request-login-link {
+    ion-header {
+        background-image: none;
+        &::after {
+            height: 0 !important;
+        }
+        .toolbar-background {
+            @extend %toolbar-transparent;
+        }
+    }
+    //  ion-content.content-md{
+    //     .scroll-content {
+    //         padding-top: 0 !important;
+    //     } 
+    //  }
+    ion-view {
+        @extend [flexbox];
+        flex-flow: wrap;
+        -ms-flex-flow: wrap;
+    }
+    ion-content {
+        .scroll-content {
+            padding: 0 16px;
+            //transition-delay: .4s;
+            //overflow: hidden;
+        }
+        ion-list[confirm-email] {
+            flex-flow: wrap;
+            -ms-flex-flow: wrap;
+            background: transparent;
+            box-shadow: $box-shadow;
+            @include zeroMargin(0);
+            @include zeroPadding(0);
+            width: 100%;
+            // height: 100%;
+            // .login-logo{
+            //   width: 20.9%; 
+            //   height: intrinsic;
+            //   display: inline-block;
+            //   @include zeroMargin(0 auto 2.5rem);
+            //   @include zeroPadding(0);
+            //     img {
+            //       max-width: 100%;
+            //     }
+            // }
+            h2 {
+                width: 100%;
+                //@include typography(1.875rem, $white, 700, 2rem);
+                @include zeroPadding(3.5rem 1rem 0 1rem);
+                @include zeroMargin(0);
+                span {
+                    width: 3.75rem;
+                    background: $silverShade8;
+                    height: .25rem;
+                    display: block;
+                    @include zeroMargin(1.688rem auto 1.25rem);
+                }
+            }
+            p {
+                @include typography(.938rem, $white, 400, 1.25rem);
+                margin-bottom: 1.625rem;
+                @include zeroPadding(0 1.6rem 0 1rem);
+            }
+            ion-label {
+                @include typography(.938rem, $white, 300, null);
+                @include zeroMargin(0);
+                text-align: left;
+                padding-bottom: .5rem;
+            }
+            ion-item {
+                //@include zeroPadding(0);
+                background: transparent;
+                min-height: inherit;
+                &:last-child {
+                    border: none !important;
+                    box-shadow: none !important;
+                }
+                .item-inner {
+                    //padding: 0 !important;
+                    border: none !important;
+                }
+            }
+            ion-input {
+                margin-bottom: 0.625rem;
+            }
+            [error-msg] {
+                white-space: normal;
+                width: 100%;
+                max-width: 100%;
+                text-align: center;
+                @include typography(.875rem, #f36161, 400, null);
+                @include zeroMargin(0);
+                @include zeroPadding(0);
+            }
+            button {
+                margin: 0 0 0 .188rem;
+                width: calc(100% - .5rem);
+            }
+            .item-block.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+                box-shadow: $box-shadow;
+            }
+            .item-block.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner {
+                box-shadow: $box-shadow;
+            }
+            .item-block.item-input.input-has-focus .item-inner {
+                box-shadow: $box-shadow;
+            }
+        }
+        [toolbar-bg] {
+            background: transparent;
+            @include border(none);
+            @include zeroMargin(0);
+            overflow: initial;
+            @include zeroPadding(4rem 0 2.5rem 0);
+            width: 100%;
+            box-shadow: none;
+            @include border-radius(0);
+            align-self: flex-end;
+        }
+    }
+    @media (max-height: 533px) {
+        ion-content {
+            ion-list[confirm-email] {
+                h2 {
+                    @include zeroPadding(1.75rem 1rem 0 1rem);
+                }
+            }
+            [toolbar-bg] {
+                @include zeroMargin(0 0 2rem 0);
+            }
+        }
+    }
+}

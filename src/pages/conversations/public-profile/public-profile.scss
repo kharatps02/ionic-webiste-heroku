@@ -1,0 +1,34 @@
+page-public-profile {
+
+    ion-title{
+         text-transform: capitalize;
+    }
+    ion-content {
+        .view-invite {
+            width: 100%;
+            background: $charcoalBlack;
+            @include zeroMargin(0);
+            @include border-radius(0);
+            padding: 1.25rem;
+            ion-avatar{
+                @extend ion-avatar.thumbnail-img-140;
+            }
+            // ion-card-header {
+            //     background: transparent;
+            //     
+            //     text-align: center;
+                // ion-img {
+                //     width: 140px;
+                //     height: 140px;
+                //     overflow: hidden;
+                //     background: $charcoalBlack;
+                //     @include zeroMargin(0 auto);
+                //     @include border-radius(50%);
+                //     display: flex;
+                // }
+            }
+        }
+        .text14px-black{
+            width: calc(100% - 20px);
+        }
+    }

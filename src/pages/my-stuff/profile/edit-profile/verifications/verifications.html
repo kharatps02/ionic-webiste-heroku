@@ -1,0 +1,17 @@
+<ion-header labelHeader>
+    <ion-navbar>
+        <ion-title>{{'YOUR_STUFF.PROFILE.EDIT.VERIFICATIONS.TITLE' | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content silvergrey-background>
+    <ion-list>
+        <button ion-item detail-none class="list-grid-136" *ngIf="userObj.facebook"  [ngClass]="{'verified': userObj.facebook}">
+            <h2 class="text14px-black">{{'YOUR_STUFF.PROFILE.EDIT.VERIFICATIONS.FACEBOOK_CONNECTED' | translate}}</h2>
+            <ion-icon item-right [ngClass]="{'icons-correct': userObj.facebook}"></ion-icon>
+        </button>
+        <button ion-item detail-none *ngIf="!userObj.facebook" class="list-grid-136">
+            <h2><span class="text14px-black">{{'YOUR_STUFF.PROFILE.EDIT.VERIFICATIONS.FB_NOT' | translate}} </span></h2>
+        </button>
+    </ion-list>
+</ion-content>

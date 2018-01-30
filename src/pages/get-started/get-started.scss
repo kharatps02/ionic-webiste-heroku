@@ -1,0 +1,86 @@
+page-get-started {
+    [grey-background] {
+        background: $black;
+    }
+    [rezility-logo] {
+        width: 47.5%;
+        display: flex;
+        flex-direction: column;
+        @include zeroMargin(0 auto 2.313rem);
+    }
+    .Be-home {
+        opacity: 1 !important;
+        .scroll-content {
+            overflow: hidden;
+        }
+        ion-card.card-ios {
+            // padding: 7.25rem 0 0 0;
+            padding: 4.875rem 0 0 0;
+        }
+        ion-card.card-md {
+            // padding: 8.5rem 0 0 0;
+            padding: 4.625rem 0 0 0;
+        }
+        ion-card {
+            background: transparent;
+            box-shadow: none;
+            text-align: $center;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            @include display-flex(flex);
+            justify-content: space-between;
+            flex-direction: column;
+            @include zeroMargin(0);
+            img {
+                width: auto;
+                display: initial;
+            }
+            // ion-card-header {
+            //     @include typography(2.250rem, $white, 700, 2.250rem);
+            //     @include zeroPadding(0);
+            //     margin: .875rem 0 1.375rem 0;
+            // }
+            ion-card-content {
+                @include typography(1.125rem, $white, 700, null);
+                @include zeroPadding(0 1.813rem 0 1.813rem);
+                line-height: 1.5rem;
+            }
+        }
+    }
+    .singup-logoin-buttons {
+        @include zeroPadding(0 1.25rem);
+        margin-bottom: 1.875rem;
+        text-align: $center;
+        overflow: initial;
+        align-items: initial;
+        .button-light-blue {
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            .button-inner {
+                margin: .063rem 0 0 0;
+            }
+        }
+        button.button-blue-link {
+            // @include typography(.938rem, $skyBlueShade5, 400, null);
+            // @include zeroMargin(0);
+            // @include zeroPadding(0);
+            // letter-spacing: 0.005rem;
+            // background: transparent;
+            // @include border(none);
+            // text-transform: inherit;
+            // height: inherit;
+            .button-inner {
+                @include zeroMargin(0);
+            }
+        }
+    }
+}
+ @media (max-height: 533px) {
+    [rezility-logo]{
+        @include zeroMargin(0 auto .75rem);
+    }
+ }

@@ -1,0 +1,27 @@
+<ion-header labelHeader>
+    <ion-navbar>
+        <ion-title>{{'LOGIN.FORGOT_PASSWORD' | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content class="dark-grey-background">
+    <!-- [keyboardScrollBottom] -->
+    <div>
+        <form [formGroup]="requestLogin" novalidate>
+            <ion-list confirm-email text-align-center>
+                <h2 class="text30px-bold-white">
+                    {{'LOGIN.REQUEST_LOG_IN_LINK' | translate}}
+                    <span></span>
+                </h2>
+                <p>{{'LOGIN.REQUEST_LOG_IN_LINK_MESSAGE' | translate}}</p>
+                <ion-item>
+                    <ion-input id="userEmail" class="input14px-black" formControlName="emailAddress" [(ngModel)]="emailAddress" type="email" placeholder="{{'LOGIN.EMAIL_ADDRESS' | translate}}"></ion-input>
+                </ion-item>
+                <ion-label error-msg *ngIf="!requestLogin.get('emailAddress').valid  && ((requestLogin.get('emailAddress').dirty && requestLogin.get('emailAddress').touched)|| isFormSubmmited)">
+                    {{'LOGIN.VALID_EMAIL' | translate}} </ion-label>
+                <ion-card toolbar-bg>
+                    <button ion-button block large round class="button-light-blue" (click)="onSendLoginLink()">{{'LOGIN.SEND_LOGIN_LINK' | translate}} </button>
+                </ion-card>
+            </ion-list>
+        </form>
+    </div>
+</ion-content>

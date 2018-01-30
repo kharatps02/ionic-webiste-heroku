@@ -1,0 +1,164 @@
+page-show-image {
+    // ion-toolbar[topHeader]{
+    //     ion-buttons{
+    //         ion-icon.icons-upload{
+    //             color: $skyBlue;
+    //         }
+    //     }
+    // }
+    
+	[photo-video]{
+		background: transparent;
+        width: 100%;        
+        box-shadow: none;
+        @include zeroMargin(0);
+        @include zeroPadding(0);
+ 
+        ion-grid {
+            @include zeroPadding(0px);
+            ion-row {  
+                ion-col {
+                    width: 100%;
+                    @include zeroPadding(5px);
+                    @include zeroMargin(0px);
+                    img {
+                        width: 100%;
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+	}
+
+    [footer-full] {
+        background: transparent;
+        min-height: 3rem;
+        //@include zeroPadding(0 0 0 .75rem);
+        @include display-flex(flex);
+        ion-toolbar {
+            .toolbar-background {
+                background: $silverShade9;
+                border-top: 1px solid $silverShade6;
+            }
+            .toolbar-content {
+                display: flex;
+            }
+        }
+        ion-list.chat-type-msg {
+            @include zeroMargin(0);
+            width: calc(100% - 17.75%);
+            ion-item.input-has-focus,
+            .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child {
+                &:last-child {
+                    box-shadow: none;
+                }
+            }
+            ion-item {
+                min-height: 2.25rem;
+                max-height: 5.125rem;
+                overflow: hidden;
+                background: transparent;
+                @include display-flex(flex);
+                @include zeroPadding(0.563rem 0 0.5rem 1.25rem);
+                @include border(none !important);
+                .item-inner{
+                    //@include zeroPadding(0);
+                    .input-wrapper{
+                        align-items: center;
+                        ion-textarea {
+                            background: $white;
+                            width: calc(100% - 17.75%);
+                            @include zeroMargin(0);
+                            @include border(1px solid $silverShade6);
+                            @include zeroPadding(.563rem .938rem .625rem .938rem);
+                            @include border-radius(.375rem);
+                            @include display-flex(flex);
+                            textarea.text-input {
+                                display: inline-block;
+                                width: 100%;
+                                @include zeroPadding(0);
+                                @include zeroMargin(0);
+                                @include border(none);
+                                height: 1rem;
+                                max-height: 2.812rem;
+                                resize: none;
+                                vertical-align: middle;
+                                @include typography(.75rem, $charcoalBlack, 400, null)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // .text-input::-webkit-input-placeholder { 
+        //     color: $charcoalBlack;
+        // }
+        // .text-input::-moz-placeholder {
+        //     color: $charcoalBlack;
+        // }
+        // .text-input:-ms-input-placeholder {
+        //     color: $charcoalBlack; 
+        // }
+        
+        button {
+            display: flex;
+            display: -webkit-flex;
+            justify-content: center;
+            -webkit-justify-content: center;
+            align-items: flex-end;
+            height: auto;
+            width: 17.75%;
+            @include zeroPadding(0);
+            @include zeroMargin(0);
+            pointer-events: inherit;
+            .button-inner {
+                align-items: flex-end;
+                ion-icon{
+                    font-size: 1.125rem;
+                    line-height: 1.125rem;
+                    color: $skyBlueShade5;
+                    @include zeroPadding(.675rem 0);
+                }
+                ion-icon.icons-upload{
+                    color: $skyBlueShade5;
+                }
+            } 
+        }
+    }
+    // [footer-full] {
+    //     background: $white;
+    //     min-height: 3.25rem;
+    //     ion-toolbar {
+    //         min-height: 3.25rem;
+    //         .toolbar-background {
+    //             @include border(none);
+    //             background: transparent;
+    //         }
+    //         .toolbar-content {
+    //             display: flex;
+    //             display: -webkit-flex;
+    //         }
+    //         ion-textarea {
+    //             @include zeroMargin(0 1.25rem);
+    //             background: $silverShade2; 
+    //             @include border-radius(.313rem);
+    //             @include display-flex(initial);
+    //             -webkit-flex: none;
+    //             flex: none;
+    //             width: calc(100% - 2.5rem);
+
+    //             textarea {
+    //                 display: inline-block;
+    //                 width: 100%;
+    //                 @include zeroPadding(.625rem .938rem .5rem .938rem);
+    //                 @include zeroMargin(0);
+    //                 @include border(none);                   
+    //                 height: 2.25rem;
+    //                 resize: none;
+    //                 vertical-align: middle;
+    //                 @include typography(.75rem, $charcoalBlack, 400, null)
+    //             }
+    //         }
+    //     }
+    // }
+}

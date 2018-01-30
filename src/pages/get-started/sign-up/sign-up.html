@@ -1,0 +1,47 @@
+<ion-header labelHeader>
+    <ion-navbar>
+        <ion-title>{{'SIGN_UP.TITLE' | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+<!--<ion-content >-->
+<!-- #ionContents [activationCodeKeyboard] -->
+<ion-content class="dark-grey-background">
+    <div>
+        <form [formGroup]="signupForm">
+            <ion-list class="message-mob-bg">
+                <ion-item>
+                    <ion-input type="text" autocomplete="off" spellcheck="false" autocorrect="off" class="input14px-black" [(ngModel)]="signUpModel.first_name" formControlName="firstName" placeholder="{{'SIGN_UP.FIRST_NAME' | translate}}"></ion-input>
+                    <ion-label *ngIf="!signupForm.get('firstName').valid  && (signupForm.get('firstName').dirty && signupForm.get('firstName').touched)">{{'SIGN_UP.ENTER_FN' | translate}}</ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-input type="text" autocomplete="false" spellcheck="false" autocorrect="false" class="input14px-black" [(ngModel)]="signUpModel.last_name" formControlName="lastName" placeholder="{{'SIGN_UP.LAST_NAME' | translate}}"></ion-input>
+                    <ion-label *ngIf="!signupForm.get('lastName').valid  && (signupForm.get('lastName').dirty && signupForm.get('lastName').touched)">{{'SIGN_UP.ENTER_LN' | translate}}</ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-input type="email" autocomplete="false" spellcheck="false" autocorrect="false" class="input14px-black" [(ngModel)]="signUpModel.email" formControlName="email" placeholder="{{'SIGN_UP.EMAIL' | translate}}"></ion-input>
+                    <ion-label *ngIf="!signupForm.get('email').valid  && (signupForm.get('email').dirty && signupForm.get('email').touched)">{{'SIGN_UP.ENTER_EMAIL' | translate}}</ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-input type="text" autocomplete="false" spellcheck="false" autocorrect="false" class="input14px-black" [(ngModel)]="signUpModel.zipcode" formControlName="zipcode" placeholder="{{'SIGN_UP.ZIP_CODE' | translate}}"></ion-input>
+                    <ion-label *ngIf="!signupForm.get('zipcode').valid  && (signupForm.get('zipcode').dirty && signupForm.get('zipcode').touched)">{{'SIGN_UP.ENTER_ZIP' | translate}}</ion-label>
+                </ion-item>
+            </ion-list>
+            <div class="disclaimer-text">
+                <ion-checkbox [(ngModel)]="signUpModel.is_terms_privacy_accepted" formControlName="privacyAccepted" (click)="privacyAccepted()"></ion-checkbox>
+
+                <ion-label *ngIf="this.userService.getCurrentLang() !== 'es'">
+                    {{'SIGN_UP.PRIVACY_MSG' | translate }} <span tappable (click)="openPrivacyNoticeUrl()">{{'SIGN_UP.PRIVACY_MSG1' | translate }}</span> {{'SIGN_UP.PRIVACY_MSG2' | translate}} <span tappable (click)="openTermsOfUseUrl()">{{'SIGN_UP.PRIVACY_MSG3' | translate}}</span>.
+                </ion-label>
+                <ion-label *ngIf="this.userService.getCurrentLang() === 'es'">
+                    {{'SIGN_UP.PRIVACY_MSG' | translate }} <span tappable (click)="openTermsOfUseUrl()">{{'SIGN_UP.PRIVACY_MSG1' | translate }}</span> {{'SIGN_UP.PRIVACY_MSG2' | translate}} <span tappable (click)="openPrivacyNoticeUrl()">{{'SIGN_UP.PRIVACY_MSG3' | translate}}</span>                    {{'SIGN_UP.PRIVACY_MSG5' | translate}}
+                </ion-label>
+            </div>
+            <p *ngIf="!signupForm.get('privacyAccepted').valid  && (signupForm.get('privacyAccepted').dirty)" class="error-label">{{'SIGN_UP.PRIVACY_MSG4' | translate }}</p>
+        </form>
+    </div>
+</ion-content>
+<ion-footer [keyboardAttach]="content" footer-full>
+    <ion-toolbar>
+        <ion-button ion-button block [ngClass]="{'button-disable': isSignupFormInValid}" class="button-square-blue" (click)="onContinue()">{{'BUTTON_LABEL.CONTINUE' | translate }}</ion-button>
+    </ion-toolbar>
+</ion-footer>

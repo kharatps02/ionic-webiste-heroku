@@ -1,0 +1,29 @@
+ <ion-header labelHeader>
+  <ion-toolbar topHeader>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="cropperReset()">
+        <ion-icon class='icons-reset'></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons padding-left padding-right end>
+      <button ion-button icon-only (click)="imageRotate()">
+        <ion-icon class='icons-refresh'></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons padding-left padding-right end>
+      <button ion-button icon-only (click)="cancel()">
+        <ion-icon class='icons-close'></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons padding-left padding-right end>
+      <button ion-button icon-only (click)="finish()">
+        <ion-icon class='icons-correct'></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="background">
+  <div>
+    <img [src]="imageBase64" (load)="cropperLoad()" #image>
+  </div>
+</ion-content>

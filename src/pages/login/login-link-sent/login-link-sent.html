@@ -1,0 +1,18 @@
+<ion-content grey-background padding="true">
+ <ion-view>
+     <ion-card class="message-mob-bg">
+        <div class="check-email-icon"><ion-icon class="icons-mail"></ion-icon></div>  	
+        <ion-card-content>
+            <ion-card-title>{{'LOGIN.LOGIN_LINK_SENT' | translate}}</ion-card-title>
+            <p class="divider"><span></span></p>
+            <p>{{'LOGIN.FORGOT_PASS_MESSAGE' | translate}}</p>
+        </ion-card-content>
+     </ion-card>
+         
+    <ion-card toolbar-bg >
+         <button ion-button block large round class="button-light-blue" (click)="onContinue()">{{'BUTTON_LABEL.CONTINUE' | translate}}</button>
+    </ion-card>
+   
+</ion-view>
+ 
+</ion-content> 

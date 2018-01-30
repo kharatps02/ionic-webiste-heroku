@@ -1,0 +1,18 @@
+<ion-content grey-background class="Be-home">
+    <ion-view flexbox>
+        <ion-card>
+            <div>
+                <p rezility-logo>
+                    <ion-img src="./assets/img/rezility-logo.png" alt=""></ion-img>
+                </p>
+                <ion-card-content>
+                    {{'SIGN_UP.MESSGAE_1' | translate}} <br> {{'SIGN_UP.MESSGAE_2' | translate}}
+                </ion-card-content>
+            </div>
+            <div class="singup-logoin-buttons">
+                <button (click)="onGetStarted()" ion-button block large round class="button-light-blue">{{'SIGN_UP.GET_STARTED' | translate}}</button>
+                <button ion-button class="button-blue-link" (click)="onLoginToRezility()"> {{'SIGN_UP.ALREADY_HAVE_ACCOUNT' | translate}}</button>
+            </div>
+        </ion-card>
+    </ion-view>
+</ion-content>

@@ -1,0 +1,20 @@
+page-verifications {
+    .list-grid-136.verified {
+        [title14px] span {
+            color: $black;
+        }
+        ion-icon {
+            color: $greenShade1;
+            font-size: 1.5rem;
+           @extend %vertical-center;
+        }
+    }
+    ion-icon {
+        @include zeroMargin(0);
+        color: $silverShade8;
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        min-height: initial;
+        display: flex;
+    }
+}

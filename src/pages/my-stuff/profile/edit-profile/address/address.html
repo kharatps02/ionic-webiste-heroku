@@ -1,0 +1,29 @@
+<ion-header labelHeader>
+    <ion-navbar>
+        <ion-title>{{'YOUR_STUFF.PROFILE.EDIT.ADDRESS.TITLE' | translate}}</ion-title>
+        <ion-buttons end>
+            <button (click)="saveToBackend()" ion-button><ion-icon class="icons-correct"></ion-icon></button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content silvergrey-background>
+    <ion-list>
+        <ion-item class="search-address list-grid-136">
+            <label class="text14px-black">{{'YOUR_STUFF.PROFILE.EDIT.ADDRESS.STREET_ADDRESS_1' | translate }}</label>
+            <ion-searchbar (ionInput)="autocompletePlacesSearch()" autocomplete="on" [(ngModel)]="query" placeholder="{{'YOUR_STUFF.PROFILE.EDIT.ADDRESS.SEARCH_LOCATION' | translate }}"></ion-searchbar>
+            <ion-list (pan)="hideKeyboard()" class="places-list" *ngIf="autocompletePlaces && autocompletePlaces.length > 0">
+                <button ion-item detail-none class="list-grid-120" *ngFor="let place of autocompletePlaces" (tap)="onPlaceSelect(place)">
+                    <h2 class="text12px-grey">{{ place.description }}</h2>
+                </button>
+            </ion-list>
+        </ion-item>
+        <ion-item class="list-grid-136" (pan)="hideAutoComplete()">
+            <ion-label class="text14px-black">{{'YOUR_STUFF.PROFILE.EDIT.ADDRESS.UNIT_NO' | translate}}</ion-label>
+            <ion-input type="text" class="edit-text" name="home_address.street_address2" (ionFocus)=hideAutoComplete() (ngModelChange)="detectChange($event)" [(ngModel)]="addressObj.profile.home_address.street_address2"></ion-input>
+        </ion-item>
+        <ion-item class="list-grid-136">
+            <ion-label class="text14px-black">{{'YOUR_STUFF.PROFILE.EDIT.ADDRESS.ZIP_CODE' | translate}}</ion-label>
+            <ion-input type="text" class="edit-text" name="home_address.zipcode" (ionFocus)=hideAutoComplete() (ngModelChange)="detectChange($event)" [(ngModel)]="addressObj.profile.home_address.zipcode"></ion-input>
+        </ion-item>
+    </ion-list>
+</ion-content>

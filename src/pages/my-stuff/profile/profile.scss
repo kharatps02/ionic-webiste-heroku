@@ -1,0 +1,57 @@
+page-profile {
+    ion-navbar{
+        ion-buttons[end]{
+            button{
+                // @include zeroMargin(-.25rem 0 0 0);
+                span{
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+    ion-card[profile-details]{
+    	@include zeroMargin(0);
+    	width: 100%;
+    	box-shadow: none;
+        @include border-radius(0); 
+        
+    	ion-card-header[profile-image]{
+            background: $grey2;
+    		@include zeroPadding(1.25rem 0); 
+            ion-avatar{
+                @extend ion-avatar.thumbnail-img-140;
+            }
+            
+            
+            .image-caption{
+                right: 1.25rem; 
+                height: 1.375rem;                
+                margin: 0;
+                ion-icon{
+                    @include typography(1.5rem, $white, null, 1.063rem);
+                }
+            }
+            
+    	}
+
+        ion-card-content[profile-info]{
+            @include zeroPadding(1rem 1.5rem 1.563rem 1.5rem);
+
+            ion-card-title{
+                @include zeroPadding(0);
+                @include zeroMargin(.188rem 0 .938rem 0);
+                @include typography(2.25rem, $charcoalBlack, 400, 2.25rem); 
+            }
+
+            .resident-detail{
+               @include zeroMargin(0 0 18px 0);
+               @include typography(.875rem, $grey2, 300, 1.5rem); 
+            }
+
+            p{
+               @include typography(.875rem, $grey2, 300, 1.5rem);
+               @include zeroMargin(0);   
+            }
+        }
+    }
+}

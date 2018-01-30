@@ -1,0 +1,42 @@
+<ion-header labelHeader>
+    <ion-navbar>
+        <ion-title>{{'ACTIVITY.CREATE_FEED.SET_DELIVERY' | translate}}</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="dismiss()">
+                <ion-icon class="icons-close"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content silvergrey-background>
+    <ion-list list radio-group [(ngModel)]="scheduledInfo.selectedScheduled">
+        <ion-item class="list-grid-136" list-row>
+            <ion-radio class="custom-ion-radio" left checked="true" value="now"></ion-radio>
+            <ion-label right-align class="text14px-black">{{'ACTIVITY.CREATE_FEED.RUN_PLACEMENT' | translate}}</ion-label>
+        </ion-item>
+        <ion-item list-row class="list-grid-136">
+            <ion-radio class="custom-ion-radio" left value="schedule"></ion-radio>
+            <ion-label align-right class="text14px-black">{{'ACTIVITY.CREATE_FEED.START_DATE' | translate}}</ion-label>
+        </ion-item>
+        <ion-item-divider *ngIf="scheduledInfo.selectedScheduled === 'schedule'">
+            {{'ACTIVITY.CREATE_FEED.START_DELIVERY' | translate}}
+        </ion-item-divider>
+        <ion-item class="list-grid-136 date-time" justify-content-between *ngIf="scheduledInfo.selectedScheduled === 'schedule'">
+            <div item-content>
+                <ion-icon class="icons-calendar icon-24"></ion-icon>
+                <!--<ion-input type="date"  name="datepicker"></ion-input>-->
+                <ion-datetime displayFormat="MMM DD, YYYY" [(ngModel)]="scheduledInfo.scheduledDate"></ion-datetime>
+            </div>
+            <div item-content>
+                <ion-icon class="icons-time icon-24"></ion-icon>
+                <ion-datetime displayFormat="hh:mm A" [(ngModel)]="scheduledInfo.scheduledTime"></ion-datetime>
+                <!--<ion-input type="time"  name="timepicker"></ion-input>-->
+            </div>
+        </ion-item>
+    </ion-list>
+</ion-content>
+<ion-footer footer-full>
+    <ion-toolbar>
+        <button ion-button block class="button-square-blue" (click)="submitCard()">{{'ACTIVITY.SUBMIT_CARD' | translate}}</button>
+    </ion-toolbar>
+</ion-footer>

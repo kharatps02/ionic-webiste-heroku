@@ -1,47 +1,38 @@
-<ion-header>
-	<ion-navbar>
-		<button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-		<ion-title>Login</ion-title>
-	</ion-navbar>
+<ion-header labelHeader *ngIf="isEmailExist=== true">
+    <ion-navbar>
+        <ion-title>{{'LOGIN.SIGN_IN' | translate}}</ion-title>
+    </ion-navbar>
 </ion-header>
-
-<ion-content>
-	<div class="logo">
-		<img src="assets/img/appicon.svg" alt="Ionic logo">
-	</div>
-
-	<form #loginForm="ngForm" novalidate>
-		<ion-list no-lines>
-			<ion-item>
-				<ion-label stacked color="primary">Username</ion-label>
-				<ion-input [(ngModel)]="login.username" name="username" type="text" #username="ngModel" spellcheck="false" autocapitalize="off"
-					required>
-				</ion-input>
-			</ion-item>
-			<p ion-text [hidden]="username.valid || submitted == false" color="danger" padding-left>
-				Username is required
-			</p>
-
-			<ion-item>
-				<ion-label stacked color="primary">Password</ion-label>
-				<ion-input [(ngModel)]="login.password" name="password" type="password" #password="ngModel" required>
-				</ion-input>
-			</ion-item>
-			<p ion-text [hidden]="password.valid || submitted == false" color="danger" padding-left>
-				Password is required
-			</p>
-		</ion-list>
-
-		<ion-row responsive-sm>
-			<ion-col>
-				<button ion-button (click)="onLogin(loginForm)" type="submit" block>Login</button>
-			</ion-col>
-			<ion-col>
-				<button ion-button (click)="onSignup()" color="light" block>Signup</button>
-			</ion-col>
-		</ion-row>
-	</form>
-
+<ion-content grey-background class="log-in" [ngClass]="{'dark-grey-background': isEmailExist=== true}">
+    <div class="wrapper">
+        <ion-list>
+            <p class="login-logo" *ngIf="isEmailExist=== false"><img src="./assets/img/rezility.png" alt=""/></p>
+            <h2 *ngIf="isEmailExist=== true">
+                {{'LOGIN.ACCOUNT_EXIST' | translate }}
+                <span></span>
+            </h2>
+            <form [formGroup]="loginForm" novalidate>
+                <ion-item>
+                    <ion-input formControlName="username" class="input14px-black" [(ngModel)]="user.email" name="email" type="email" novalidate placeholder="{{'LOGIN.EMAIL_ADDRESS' | translate}}" ngControl="email"></ion-input>
+                </ion-item>
+                <div class="pwd-field">
+                    <ion-item>
+                        <ion-input formControlName="password" *ngIf="!showPasswordIsChecked" class="input14px-black" [(ngModel)]="user.password" name="password" ngControl="password" type="password" placeholder="{{'LOGIN.PASSWORD' | translate }}"></ion-input>
+                        <ion-input formControlName="password" *ngIf="showPasswordIsChecked" class="input14px-black" [(ngModel)]="user.password" name="password" ngControl="password" type="text" placeholder="{{'LOGIN.PASSWORD' | translate }}"></ion-input>
+                    </ion-item>
+                    <ion-icon (click)="showPassword()" class="icons-preview" item-right></ion-icon>
+                </div>
+                <ion-label class="error-msg" *ngIf="submitted">{{invalidLoginError}}</ion-label>
+                <p><span class="button-blue-link" (click)="onRequestLoginLink()">{{'LOGIN.FORGOT_PASSWORD_BTN' | translate}} </span></p>
+                <div>
+                    <button ion-button block round class="button-light-blue" (click)="onLogin(user)">{{'LOGIN.LOGIN_BTN' | translate}} </button>
+                    <button ion-button block round class="button-contrast-blue" (click)="onFLogin()">{{'LOGIN.LOGIN_WITH_FB_BTN' | translate}} </button>
+                </div>
+            </form>
+        </ion-list>
+        <ion-card toolbar-bg *ngIf="isEmailExist=== false">
+            <p (click)="navigateToSignupLandingPage()">{{'LOGIN.CREATE_ACC' | translate}}</p>
+        </ion-card>
+    </div>
 </ion-content>
+<ion-nav *ngIf=isLoggedUser [root]="OwnerHubPage" #content swipeBackEnabled="true"></ion-nav>

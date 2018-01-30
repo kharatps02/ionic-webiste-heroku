@@ -1,0 +1,28 @@
+<ion-header labelHeader>
+    <ion-navbar>
+        <ion-title>{{'YOUR_STUFF.PROFILE.TITLE' | translate}}</ion-title>
+        <ion-buttons end>
+            <button ion-button clear text-outline-btn (click)="navigatToEditProfile()">{{'BUTTON_LABEL.EDIT' | translate}}</button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-card profile-details>
+        <ion-card-header profile-image>
+            <ion-avatar>
+                <img *ngIf="userObj.profile.profile_pic" src={{userObj.profile.profile_pic}} alt="" />
+                <img *ngIf="!userObj.profile.profile_pic" src="./assets/img/image-placeholder.jpg" alt="" />    
+            </ion-avatar>
+            <button ion-button clear icon-only class="image-caption" (click)="presentActionSheet()">
+				<ion-icon class="icons-camera"></ion-icon>
+			</button>
+        </ion-card-header> 
+
+        <ion-card-content profile-info>
+            <ion-card-title *ngIf="!userObj.profile.first_name">{{userObj.user_name}}<br></ion-card-title>
+            <ion-card-title *ngIf="userObj.profile.first_name">{{userObj.profile.first_name}} <br> {{userObj.profile.last_name}}<br></ion-card-title>
+            <p class="resident-detail">{{userObj.profile.description}} </p>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

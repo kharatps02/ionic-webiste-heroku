@@ -1,0 +1,73 @@
+page-address {
+    [labelHeader] {
+        ion-buttons[end] {
+            ion-icon {
+                font-size: 1.188rem;
+                color: $greenShade1;
+            }
+        }
+    }
+    ion-list {
+        overflow-x: hidden;
+        .search-address.item.item-block {
+            background: $white;
+            min-height: 4.25rem;
+            padding: 0 1.25rem 0 1.25rem;
+            ion-label {
+                display: flex;
+                flex-direction: column;
+                @include zeroPadding(0.875rem 0 0 0);
+            }
+            .searchbar.searchbar-left-aligned {
+                min-height: .813rem;
+                background: $white;
+                @include zeroPadding(0);
+                @include border(none);
+                .searchbar-search-icon {
+                    display: none;
+                }
+                input.searchbar-input {
+                    height: auto;
+                    width: calc(100% - 1.5rem);
+                    @include border-radius(0);
+                    @include zeroPadding(0 0 0.875rem 0);
+                    @include typography(0.75rem, $grey1, 400, inherit);
+                    box-shadow: none;
+                }
+                .searchbar-clear-icon {
+                    right: -0.25rem;
+                    top: -.5rem;
+                }
+            }
+            .places-list {
+                .list-grid-120 {
+                    @include zeroPadding(0);
+                    min-height: 3rem;
+                    .text12px-grey {
+                        @include typography(0.75rem, $grey1, 400, inherit);
+                    }
+                }
+            }
+        }
+    }
+    .list-grid-136 {
+        .item-inner {
+            align-self: inherit;
+        }
+        .input-wrapper {
+            display: block;
+            ion-label {
+                width: 100%;
+                max-width: 100%;
+                color: $black;
+            }
+            ion-input {
+                width: 100%;
+                input {
+                    width: 100%;
+                    @include zeroMargin(0.063rem 0 0 0);
+                }
+            }
+        }
+    }
+}

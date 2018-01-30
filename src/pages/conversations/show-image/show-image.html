@@ -1,0 +1,42 @@
+<ion-header labelHeader>
+    <ion-toolbar topHeader>
+        <ion-buttons start>
+            <button ion-button (click)="navigateToChatPage()">
+                <ion-icon class="icons-close"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content #content silver-shade6 scroll="false">
+    <ion-card photo-video>
+        <ion-grid>
+            <ion-row>
+                <ion-col *ngIf="enableZoom">
+                    <img src="{{image}}" alt="">
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+    <ion-card photo-video>
+        <ion-grid>
+            <ion-row>
+                <ion-col *ngIf="!enableZoom">
+                    <img src="{{image}}" alt="">
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+</ion-content>
+<ion-footer [keyboardAttach]="content" *ngIf="enableButton" footer-full>
+    <ion-toolbar>
+        <ion-list class="chat-type-msg" id="chat-text">
+            <ion-item>
+                <ion-textarea autoresize autocomplete="true" spellcheck="true" autocorrect="true" [(ngModel)]="messageModel" row="3" col="55" placeholder="{{ 'CONVERSATIONS.SHOW_IMG.CAPTION' | translate }}" name="messageModel"></ion-textarea>
+            </ion-item>
+        </ion-list>
+        <button ion-button clear icon-only *ngIf="enableButton" (click)="setAttachement()">
+            <ion-icon class="icons-upload"></ion-icon>
+        </button> 
+    </ion-toolbar>
+</ion-footer>

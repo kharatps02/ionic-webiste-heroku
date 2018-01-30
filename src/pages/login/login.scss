@@ -1,18 +1,170 @@
-// Styles for all of the user pages:
-// Login, Signup, Support
-
-page-user {
-  .logo {
-    padding: 20px 0;
-    min-height: 200px;
-    text-align: center;
-
-    img {
-      max-width: 150px;
+login {
+    .log-in {
+        .wrapper {
+            @extend [flexbox];
+            flex-flow: wrap;
+            -ms-flex-flow: wrap;
+            .login-logo {
+                width: 20.2%;
+                text-align: center;
+            }
+            //Only for iOS devices 
+            ion-list.list-ios {
+                .login-logo {
+                    @include zeroMargin(2.718rem auto 2.75rem);
+                }
+            }
+            //Only for android device to device change
+            ion-list.list-md {
+                .login-logo {
+                    @include zeroMargin(2.438rem auto 2.75rem);
+                }
+            }
+            // Common for all
+            ion-list {
+                @include zeroMargin(0);
+                @include zeroPadding(0rem 1rem 0 1rem);
+                width: 100%;
+                ion-item {
+                    background: transparent;
+                    min-height: 3rem;
+                    .item-inner {
+                        border: none !important;
+                    }
+                }
+                ion-label {
+                    @include zeroMargin(0);
+                }
+                ion-input,
+                ion-input.input-ios {
+                    margin-bottom: .75rem;
+                }
+                .pwd-field {
+                    position: relative;
+                    .icons-preview {
+                        position: absolute;
+                        right: .625rem;
+                        top: 25%;
+                        font-size: 1.5rem;
+                        margin: 0 10px 0 0;
+                        color: $silverShade8;
+                        min-height: 1.813rem;
+                    }
+                }
+                button.button-light-blue,
+                button.button-contrast-blue {
+                    @include zeroMargin(0 0.375rem 0.75rem 0.25rem);
+                    width: calc(100% - .625rem);
+                    -webkit-box-shadow: none;
+                    -moz-box-shadow: none;
+                    box-shadow: none;
+                }
+                /** Sign In CSS **/
+                h2 {
+                    width: 100%;
+                    @include typography(1.875rem, $white, 700, 2rem);
+                    @include zeroPadding(0);
+                    @include zeroMargin(2.25rem 0 0 0);
+                    text-align: center;
+                    span {
+                        width: 3.75rem;
+                        background: $silverShade8;
+                        height: .25rem;
+                        display: block;
+                        @include zeroMargin(1.5rem auto 2.375rem);
+                    }
+                }
+                /** Sign In CSS **/
+            }
+        }
+        .item-block.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+            box-shadow: $box-shadow;
+        }
+        .item-block.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner {
+            box-shadow: $box-shadow;
+        }
+        .item-block.item-input.input-has-focus .item-inner {
+            box-shadow: $box-shadow;
+        }
+        scroll-content {
+            display: flex !important;
+            flex-direction: column;
+            align-items: center;
+            background-color: #DEDEDE;
+        }
+        button {
+            span {
+                margin: .063rem 0 0 0;
+            }
+        }
+        p {
+            text-align: center;
+            @include zeroMargin(0rem 0 1.125rem 0);
+            span {
+                @include zeroMargin(.188rem 0 0 0);
+                vertical-align: top;
+                display: inline-block;
+                width: 55%;
+            }
+        }
+        .error-msg {
+            white-space: normal;
+            width: 100%;
+            max-width: 100%;
+            text-align: center;
+            @include typography(.875rem, #f36161, 400, null);
+            @include zeroMargin(0);
+        }
+        [toolbar-bg] {
+            width: 100%;
+            display: flex;
+            background: $black;
+            overflow: initial;
+            box-shadow: none;
+            align-items: flex-end;
+            min-height: 2.688rem;
+            @include zeroPadding(0);
+            @include border-radius(0);
+            @include border(none);
+            @include zeroMargin(0);
+            p {
+                width: 100%;
+                background: $grey6;
+                height: 2.688rem;
+                white-space: nowrap;
+                @include zeroMargin(0);
+                @extend %vertical-center;
+                @include typography(.75rem, $skyBlueShade5, 400, null);
+            }
+        }
     }
-  }
-
-  .list {
-    margin-bottom: 0;
-  }
+    @media (max-height: 533px) {
+        .log-in {
+            .wrapper {
+                ion-list {
+                    ion-list-header.item {
+                        @include zeroMargin(0px 0 1rem 0);
+                    }
+                    h2 {
+                        @include zeroMargin(1.4rem 0 0 0);
+                        span {
+                            @include zeroMargin(1.438rem auto 1.438rem);
+                        }
+                    }
+                }
+                p {
+                   // @include zeroMargin(0 0 1rem 0);
+                    .button-blue-link {
+                        @include zeroMargin(0 0 .75rem 0);
+                    }
+                }
+                ion-list.list-md {
+                    @include zeroPadding(0 1rem 0.938rem 1rem);
+                    .login-logo {
+                        @include zeroMargin(0.875rem auto 1rem);
+                    }
+                }
+            }
+        }
+    }
 }

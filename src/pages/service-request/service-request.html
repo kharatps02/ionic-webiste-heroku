@@ -1,0 +1,72 @@
+<ion-header labelHeader>
+    <ion-navbar topHeader>
+        <ion-title>{{'SERVICE_REQUESTS.TITLE' | translate}} </ion-title>
+    </ion-navbar>
+
+    <ion-segment class="segment-tab" [(ngModel)]="selectedTab">
+        <ion-segment-button value="active" class="segment-activated" [ngClass]="{'segment-activated': selectedTab == 'active'}">{{'SERVICE_REQUESTS.REQUEST_LIST.ACTIVE' | translate }}</ion-segment-button>
+        <ion-segment-button value="resolved" [ngClass]="{'segment-activated': selectedTab == 'resolved'}">{{'SERVICE_REQUESTS.REQUEST_LIST.RESOLVED' | translate }}</ion-segment-button>
+    </ion-segment>
+</ion-header>
+
+<ion-content [ngSwitch]="selectedTab" silvergrey-background>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="{{'MISC.PULL' | translate}}" refreshingSpinner="circles"
+            refreshingText="{{'MISC.REFRESH' | translate}}">
+        </ion-refresher-content>
+    </ion-refresher>
+
+    <ion-list *ngSwitchCase="'active'">
+        <div *ngIf="serviceRequests && serviceRequests.length === 0 && isServiceRequestAPICall && selectedProperty 
+                &&  !selectedProperty.is_advocate &&  (selectedProperty.allow_service_requests === undefined || selectedProperty.allow_service_requests == true) "
+            class="message-no-data-found">
+            <p class="no-records">{{'SERVICE_REQUESTS.REQUEST_LIST.ACTIVE_MSG' | translate }}</p>
+        </div>
+        <div *ngIf="(serviceRequests && serviceRequests.length === 0 && isServiceRequestAPICall 
+                    && (!selectedProperty || (selectedProperty && selectedProperty.is_advocate)))" class="message-no-data-found">
+            <p class="no-records">{{'SERVICE_REQUESTS.VERIFY_ADDRESS' | translate }}</p>
+        </div>
+        <div *ngIf="serviceRequests && serviceRequests.length === 0 && isServiceRequestAPICall && selectedProperty &&  selectedProperty.allow_service_requests === false"
+            class="message-no-data-found">
+            <p class="no-records">{{'SERVICE_REQUESTS.NO_SERVICE_REQUEST' | translate }}</p>
+        </div>
+        <div *ngFor="let request of serviceRequests">
+            <button *ngIf="request.status && request.status == 'active'" ion-item detail-none class="list-grid-136" (click)="viewRequestDetails(request)">
+                <h2>
+                    <span class="text14px-black">{{request.incident_number}}</span>
+                    <span class="date-time-view"> {{request.created_at | localizedDate: 'MM/dd/yyyy'}}</span>
+                </h2>
+                <p class="sendmsg">{{request.type}}</p>
+            </button>
+        </div>
+    </ion-list>
+    <ion-list *ngSwitchCase="'resolved'">
+        <div *ngIf="serviceRequests && serviceRequests.length === 0 && isServiceRequestAPICall && selectedProperty &&  !selectedProperty.is_advocate"
+            class="message-no-data-found">
+            <p class="no-records">{{'SERVICE_REQUESTS.REQUEST_LIST.RESOLVED_MSG' | translate }}</p>
+        </div>
+        <div *ngIf="(serviceRequests && serviceRequests.length === 0 && isServiceRequestAPICall 
+        && (!selectedProperty || (selectedProperty && selectedProperty.is_advocate)))" class="message-no-data-found">
+            <p class="no-records">{{'SERVICE_REQUESTS.VERIFY_ADDRESS' | translate }}</p>
+        </div>
+        <div *ngFor="let request of serviceRequests">
+            <button *ngIf="request.status && request.status != 'active'" ion-item detail-none class="list-grid-136" (click)="viewRequestDetails(request)">
+                <h2>
+                    <span class="text14px-black">{{request.incident_number}}</span>
+                    <span class="date-time-view">{{request.closed_date | localizedDate: 'MM/dd/yyyy'}}</span>
+                </h2>
+                <p class="sendmsg">{{request.type}}</p>
+            </button>
+        </div>
+    </ion-list>
+    <ion-infinite-scroll (ionInfinite)="loadMore($event)" [enabled]="infiniteScrollEnabled">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="{{'ERROR_MESSAGES.LOADING_MORE_DATA_TO_LOAD' | translate}}"></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>
+<ion-footer footer-full>
+    <!--*ngIf="selectedProperty" -->
+    <ion-toolbar>
+        <ion-button ion-button block [ngClass]="{'button-disable': !selectedProperty || (selectedProperty && (selectedProperty.is_advocate || selectedProperty.allow_service_requests === false))}"
+            class="button-square-blue" (click)="serviceRequest()">{{'SERVICE_REQUESTS.SETTINGS.NEWSERVICE' | translate }}</ion-button>
+    </ion-toolbar>
+</ion-footer>

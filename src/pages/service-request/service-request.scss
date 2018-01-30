@@ -1,0 +1,11 @@
+service-request {
+    ion-infinite-scroll-content {
+        min-height: 3rem;
+        .infinite-loading {
+            margin: 0 0 .5rem 0;
+        }
+        .infinite-loading-text {
+            @include typography(.875rem, $grey2, 400, null);
+        }
+    }
+}

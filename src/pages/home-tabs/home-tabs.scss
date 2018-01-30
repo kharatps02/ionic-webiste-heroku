@@ -1,0 +1,296 @@
+page-home-tabs {
+    /* Start Coach Mark */
+    .coach-noScroll ion-content .scroll-content {
+        overflow: hidden;
+    }
+    
+    
+    ion-fab {
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .9);
+        /* Start Common Coach Mark CSS */
+        button{
+            overflow: visible;
+            contain: inherit;
+        }
+        .coachmark-text{
+            @include typography(0.75rem, $white, 500, 1rem);
+            contain: inherit;
+            @include zeroMargin(0);
+            text-align: left;
+            text-transform: none;
+        }
+
+        .footer-guideline[disabled].button-ios {
+            height: 48px;
+        }
+        .footer-guideline[disabled].button-md {
+            height: 56px;
+        }
+        .footer-guideline[disabled],
+        .header-guideline-left[disabled],
+        .header-guideline-right[disabled],
+        .header-guideline-leftdown[disabled],
+        .header-guideline-bottom[disabled] {
+            background: transparent;
+            opacity: 1;
+            position: absolute;
+            @include zeroPadding(0);
+            @include zeroMargin(0);
+            @include border-radius(0);
+            height: auto;
+            box-shadow: none;
+            overflow: visible;
+            contain: inherit;
+        }
+        .footer-guideline[disabled].button-ios {
+            bottom: 0;
+        }
+        .footer-guideline[disabled] {
+            bottom: 1px;
+            width: 25%;
+            img {
+                width: 44px;
+                height: 44px;
+            }
+        }
+        button.fab {
+            box-shadow: none;
+        }
+        .fab.activated {
+            background: rgba($black, 0.85);
+            box-shadow: none;
+        }
+        .vertical-middle {
+            @extend %vertical-center;
+            height: 100%;
+            @include zeroMargin(0);
+            flex-direction: column;
+            >span {
+                text-align: center;
+                display: block;
+                width: 100%;
+                @include zeroMargin(0 0 1.875rem 0);
+                @include typography(1.125rem, $silverShade3, 700, 24px);
+                letter-spacing: 0.02rem;
+                white-space: normal;
+                @include zeroPadding(0 1rem);
+            }
+            .gotit {
+                width: 136px;
+                height: auto;
+                line-height: inherit;
+                text-transform: uppercase;
+                background: rgba($black, 0.85);
+                @include border-radius(1.75rem);
+                @include zeroPadding(.625rem 0);
+                contain: paint;
+                span {
+                    @include typography(.75rem, $skyBlueShade5, 700, null);
+                    letter-spacing: 0.04rem;
+                }
+                ion-icon {
+                    display: none;
+                }
+            }
+        }
+        /* End Common Coach Mark CSS */
+    }
+    /* Start Your Stuff Coach Mark */
+    .coach-yourstuff {
+        .footer-guideline {
+            left: 75%;
+            img {
+                width: 44px;
+                height: 44px;
+            }
+        }
+    }
+    /* End Your Stuff Coach Mark & Start Around You Coach Mark */
+    .coach-aroundyou {
+        .header-guideline-left.button-default-ios {
+            left: 6px;
+            top: 12px;
+        }
+        .header-guideline-left {
+            left: 5px;
+            top: 0;
+            img {
+                width: 126px;
+                height: 50px;
+            }
+            .save-location{
+                position: absolute;
+                left: 55px;
+                top: 19px;
+                width: 100%;
+                text-overflow: initial;
+                white-space: normal;
+            }
+        }
+        .header-guideline-leftdown.button-default-ios {
+            left: 16px;
+            top: 68px;
+        }
+        .header-guideline-leftdown {
+            left: 15px;
+            top: 59px;
+            img {
+                width: 134px;
+                height: 63px;
+            }
+            .pinned-location{
+                position: absolute;
+                left: 53px;
+                top: 6px;
+            }
+        }
+        .header-guideline-bottom.button-default-ios {
+            right: 28px;
+            bottom: 75px;
+        }
+        .header-guideline-bottom {
+            right: 28px;
+            bottom: 83px;
+            img {
+                width: 187px;
+                height: 74px;
+            }
+            .map-location{
+                right: 58px;
+                bottom: 8px;
+                text-align: right;
+                position: absolute;
+            }
+        }
+        .header-guideline-right.button-default-ios {
+            right: 5px;
+            top: 17px;
+        }
+        .header-guideline-right {
+            right: 5px;
+            top: 5px;
+            img {
+                width: 123px;
+                height: 62px;
+            }
+            .map-settings{
+                position: absolute;
+                right: 55px;
+                top: 14px;
+            }
+        }
+        .footer-guideline {
+            left: 50%;
+        }
+    }
+    /* End Around You Coach Mark & Start Conversation Coach Mark */
+    .coach-conversation {
+        .header-guideline-left.button-default-ios {
+            left: 5px;
+            top: 12px;
+        }
+        .header-guideline-left {
+            left: 5px;
+            top: 0;
+            contain: inherit;
+            img {
+                width: 160px;
+                height: 50px;
+            }
+            .start-conv{
+                position: absolute;
+                left: 55px;
+                top: 19px;
+                width: 135px;
+                text-overflow: inherit;
+            }
+        }
+        
+        .footer-guideline {
+            left: 25%;
+        }
+    }
+    /* End Conversation Coach Mark & Start Feed Coach Mark */
+    .coach-feed {
+        .footer-guideline {
+            left: 0;
+        }
+    }
+    /*  & End Coach Mark*/
+    ion-tabs[tabs] {
+        .tabbar {
+            background: $white;
+            border-top: 1px solid $silverShade6;
+            &::before {
+                background-image: none !important;
+            }
+        }
+    }
+    .tabs-ios[tabs] .tab-button {
+        height: 3rem;
+    }
+    .tabs-md[tabs] .tab-button {
+        height: 3.5rem;
+    }
+    [tabs] .tab-button {
+        color: $silverShade8;
+        min-height: inherit;
+    }
+    [tabs] .tab-button.icon-only {
+        @include zeroPadding(0);
+    }
+    [tabs] .tab-button-icon {
+        font-size: 1.5rem;
+        line-height: 2.444rem;
+        height: 1.875rem;
+        min-width: 100%;
+        max-width: 100%;
+        @extend %vertical-center;
+        @include display-flex(flex);
+        &:before {
+            line-height: 2.75rem;
+        }
+    }
+    [tabs] .tab-button[aria-selected=true] {
+        color: $skyBlueShade5;
+    }
+    [tabs] ion-badge.tab-badge {
+        background-color: $skyBlueShade5;
+        @include typography($baseFontSize, $white, 400, null);
+        @include border-radius(.625rem);
+    }
+    [tabs] ion-badge.tab-badge.badge-ios-blue,
+    [tabs] ion-badge.tab-badge.badge-md-blue {
+        background-color: $skyBlueShade5;
+        @include typography(1px, $skyBlueShade5, 400, null);
+        width: .625rem;
+        height: .625rem;
+        @include border-radius(.625rem);
+        @include zeroPadding(0);
+        @include zeroMargin(.313rem 0 0 0);
+    }
+    .tabbar.show-tabbar {
+        border-top: none;
+    }
+    [tabs] ion-icon[aria-label="icons conversion"]:after,
+    [tabs] ion-icon[aria-label="icons conversion-outline"]:after {}
+}
+
+// [silver-shade3] {
+//     background: $silverShade3;
+// }
+
+
+
+/* All Tabs CSS */
+
+[labelheader] ion-toolbar.toolbar {
+    padding: 0;
+    min-height: 2.5rem;
+}
+
+[labelheader] ion-toolbar ion-segment {
+    padding: 0;
+}

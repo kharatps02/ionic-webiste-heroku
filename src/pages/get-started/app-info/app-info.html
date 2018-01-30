@@ -1,0 +1,71 @@
+<ion-content grey-background>
+    <ion-slides [options]="runningSliderConfig" pager>
+        <ion-slide>
+            <ion-toolbar>
+                <ion-buttons start>
+                    <button ion-button clear text-outline-btn (click)="navigatetoBackPage()">
+                        <ion-icon class="icons-back-arrow"></ion-icon>
+                    </button>
+                </ion-buttons>
+                <ion-buttons end>
+                    <button ion-button clear text-outline-btn (click)="skipSlides()">{{'GET_STARTED.ONBOARDING.SKIP' | translate}}</button>
+                </ion-buttons>
+            </ion-toolbar>
+            <img src="./assets/img/onboarding-feed.png" alt="">
+            <div class="circle-icon-108 feed">
+                <ion-icon class="icons-feed"></ion-icon>
+            </div>
+            <div class="caption">
+                <h2 class="text30px-bold-white">{{'GET_STARTED.ONBOARDING.FEED_TITLE' | translate}}</h2>
+                <p class="text15px-normal-white">{{'GET_STARTED.ONBOARDING.APP_INFO_MESSAGE' | translate}}</p>
+            </div>
+        </ion-slide>
+
+        <ion-slide>
+            <ion-toolbar>
+                <ion-buttons end>
+                    <button ion-button clear text-outline-btn (click)="skipSlides()">{{'GET_STARTED.ONBOARDING.SKIP' | translate}}</button>
+                </ion-buttons>
+            </ion-toolbar>
+            <img src="./assets/img/onboarding-conversation.png" alt="">
+            <div class="circle-icon-108 conversations">
+                <ion-icon class="icons-conversion"></ion-icon>
+            </div>
+            <div class="caption">
+                <h2 class="text30px-bold-white">{{'GET_STARTED.ONBOARDING.CONV_TITLE' | translate}}</h2>
+                <p class="text15px-normal-white">{{'GET_STARTED.ONBOARDING.CONV_DESC' | translate }}</p>
+            </div>
+        </ion-slide>
+
+        <ion-slide>
+            <ion-toolbar>
+                <ion-buttons end>
+                    <button ion-button clear text-outline-btn (click)="skipSlides()">{{'GET_STARTED.ONBOARDING.SKIP' | translate}}</button>
+                </ion-buttons>
+            </ion-toolbar>
+            <img src="./assets/img/onboarding-aroundyou.png" alt="">
+            <div class="circle-icon-108 around-you">
+                <ion-icon class="icons-around-me"></ion-icon>
+            </div>
+            <div class="caption">
+                <h2 class="text30px-bold-white">{{'GET_STARTED.ONBOARDING.AROUND_TITLE' | translate}}</h2>
+                <p class="text15px-normal-white">{{'GET_STARTED.ONBOARDING.AROUND_DESC' | translate}}</p>
+            </div>
+        </ion-slide>
+        <ion-slide class="scrollable-height">
+            <div class="get-started">
+                <div class="caption privacy-msg">
+                    <div class="circle-icon-108 privacy-logo">
+                        <ion-icon class="icons-privacy"></ion-icon>
+                    </div>
+                    <h2 class="text30px-bold-white">{{'GET_STARTED.ONBOARDING.PRIVACY' | translate}}<span splitter></span></h2>
+                    <p class="text15px-normal-white">{{'GET_STARTED.ONBOARDING.PRIVACY_DESC' | translate}}</p>
+                </div>
+                <div class="action-grid">
+                    <button ion-button block round class="button-light-blue" (click)="navigatetoNextPage()">{{'GET_STARTED.TITLE' | translate}}</button>
+                    <p><button ion-button class="button-blue-link" (click)="alreadyHaveAccount()" >{{'GET_STARTED.ONBOARDING.ALREADY_ACC' | translate}}</button></p>
+                </div>
+            </div>
+        </ion-slide>
+    </ion-slides>
+</ion-content>

@@ -1,0 +1,58 @@
+<ion-header labelHeader incident-header>
+    <ion-toolbar topHeader>
+        <ion-buttons start>
+            <button ion-button (click)="closeServiceRequest()">
+               <ion-icon class="icons-close-big"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>{{'SERVICE_REQUESTS.SETTINGS.TITLE' | translate}} </ion-title>
+        <ion-buttons end sendbtn>
+            <button *ngIf="selectedTab == 'photos'" (click)="createNewServiceRequest()" ion-button>
+                <ion-icons class="icons-upload"></ion-icons>
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
+    <ion-segment incident-tab [(ngModel)]="selectedTab">
+        <ion-segment-button value="types" class="segment-activated" [ngClass]="{'segment-activated': selectedTab == 'types', 'green-bar': serviceRequestObj.type}" (click)="onTabSelect(0)">
+            {{'SERVICE_REQUESTS.TYPE' | translate}} <span></span>
+        </ion-segment-button>
+        <ion-segment-button value="description" [ngClass]="{'segment-activated': selectedTab == 'description' ,  'green-bar': serviceRequestObj.description && serviceRequestObj.description.trim().length > 0}" [disabled]="!serviceRequestObj.type" (click)="onTabSelect(1)">
+            {{'SERVICE_REQUESTS.DESCRIPTION' | translate}} <span></span>
+        </ion-segment-button>
+        <ion-segment-button value="photos" [ngClass]="{'segment-activated': selectedTab == 'photos', 'green-bar': serviceRequestObj.photos.length > 0}" [disabled]="!(serviceRequestObj.description && serviceRequestObj.description.trim().length > 0)" (click)="onTabSelect(2)">
+            {{'SERVICE_REQUESTS.PHOTOS' | translate}} <span></span>
+        </ion-segment-button>
+    </ion-segment>
+</ion-header>
+
+<ion-content [ngSwitch]="selectedTab" incident-report silvergrey-background>
+    <ion-list radio-group [(ngModel)]="serviceRequestObj.type" list-items *ngSwitchCase="'types'">
+        <ion-item list-grid class="list-grid-120" *ngFor="let requestType of serviceRequestTypes">
+            <ion-label title14px>{{requestType.name}}</ion-label>
+            <ion-radio [value]="requestType._id" [class]="serviceRequestTypeClassMap[requestType._id]" name="convType"></ion-radio>
+        </ion-item>
+
+    </ion-list>
+    <ion-item description *ngSwitchCase="'description'">
+        <ion-textarea [(ngModel)]="serviceRequestObj.description" rows="8" autocomplete="true" spellcheck="true" autocorrect="true" maxlength="500" subtitle12px placeholder="{{'SERVICE_REQUESTS.DESCRIPTION_HINT' | translate}}"></ion-textarea>
+    </ion-item>
+    <ion-card photos *ngSwitchCase="'photos'">
+        <p *ngIf="!serviceRequestObj.photos[0]">
+            {{'SERVICE_REQUESTS.PHOTOS_HINT' | translate}}
+        </p>
+        <ion-grid>
+            <ion-row>
+                <ion-col width-12 *ngIf="serviceRequestObj.photos[0]"><img [src]="serviceRequestObj.photos[0]" /><ion-icons class="icons-close" (click)="removePhoto(0)"></ion-icons></ion-col>
+                <ion-col *ngIf="serviceRequestObj.photos[1]"><img [src]="serviceRequestObj.photos[1]" /><ion-icons class="icons-close" (click)="removePhoto(1)"></ion-icons></ion-col>
+                <ion-col *ngIf="serviceRequestObj.photos[2]"><img [src]="serviceRequestObj.photos[2]" /><ion-icons class="icons-close" (click)="removePhoto(2)"></ion-icons></ion-col>
+                <ion-col *ngIf="serviceRequestObj.photos[3]"><img [src]="serviceRequestObj.photos[3]" /><ion-icons class="icons-close" (click)="removePhoto(3)"></ion-icons></ion-col>
+                <ion-col *ngIf="serviceRequestObj.photos[4]"><img [src]="serviceRequestObj.photos[4]" /><ion-icons class="icons-close" (click)="removePhoto(4)"></ion-icons></ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+</ion-content>
+<ion-footer [keyboardAttach]="content">
+    <ion-button *ngIf="selectedTab == 'types'" ion-button block class="button-light-blue" [ngClass]="{'button-disable': !serviceRequestObj.type}" (click)="onTabSelect(1)">{{'SERVICE_REQUESTS.NEXT' | translate}}</ion-button>
+    <ion-button *ngIf="selectedTab == 'description'" ion-button block class="button-light-blue" [ngClass]="{'button-disable': !(serviceRequestObj.description && serviceRequestObj.description.trim().length > 0)}" (click)="onTabSelect(2)">{{'SERVICE_REQUESTS.NEXT' | translate}}</ion-button>
+    <ion-button *ngIf="selectedTab == 'photos'" ion-button block class="button-light-blue" [ngClass]="{'button-disable': (serviceRequestObj.photos.length >= 5)}" (click)="presentActionSheet()">{{'SERVICE_REQUESTS.ADD_PHOTOS' | translate}}</ion-button>
+</ion-footer>

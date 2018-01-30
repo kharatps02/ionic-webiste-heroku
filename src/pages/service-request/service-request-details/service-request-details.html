@@ -1,0 +1,70 @@
+<ion-header labelHeader>
+    <ion-navbar topHeader>
+        <ion-title *ngIf="serviceRequestDetails.incident_number">{{serviceRequestDetails.incident_number}}</ion-title>
+    </ion-navbar>
+    <!-- If any content/variable is coming from server then please remove that content/variable from en/es/ko.json -->
+    <ion-segment class="segment-tab" [(ngModel)]="selectedTab">
+        <ion-segment-button value="details" class="segment-activated" [ngClass]="{'segment-activated': selectedTab == 'details'}" (click)="onDetailsClick()">{{'SERVICE_REQUESTS.DETAILS.DETAILS' | translate}}</ion-segment-button>
+        <ion-segment-button value="conversation" [ngClass]="{'segment-activated': selectedTab == 'conversation'}" (click)="onConversationClick()">{{'SERVICE_REQUESTS.DETAILS.CONVERSATION' | translate}}</ion-segment-button>
+    </ion-segment>
+</ion-header>
+
+<ion-content [ngSwitch]="selectedTab">
+    <div *ngSwitchCase="'details'">
+        <ion-slides pager *ngIf="serviceRequestDetails.photos && serviceRequestDetails.photos.length>0">
+            <ion-slide *ngFor=" let photo of serviceRequestDetails.photos">
+                <img [src]="photo" alt="" />
+            </ion-slide>
+        </ion-slides>
+        <ion-card>
+            <ion-label class="active-status">{{'SERVICE_REQUESTS.DETAILS.STATUS' | translate}} {{serviceRequestDetails.status_translated}}</ion-label>
+            <ion-card-header flexbox-between>
+                <div *ngIf="serviceRequestDetails.address">
+                    <p>{{serviceRequestDetails.address}}</p>
+                </div>
+                <ion-icon name="" class="icon-24" [ngClass]="serviceRequestService.serviceRequestTypeClassMap[serviceRequestDetails.type_id]"></ion-icon>
+            </ion-card-header>
+            <ion-card-content *ngIf="serviceRequestDetails.description">{{serviceRequestDetails.description}}</ion-card-content>
+        </ion-card>
+        <ion-infinite-scroll (ionInfinite)="loadMore($event)" [enabled]="infiniteScrollEnabled">
+            <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="{{'ERROR_MESSAGES.LOADING_MORE_DATA_TO_LOAD' | translate}}"></ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+    </div>
+    <div #content class="conv-comment" *ngSwitchCase="'conversation'">
+        <ion-list *ngFor="let message of messages" class="conversation-chat" [ngClass]="{'chat-img-text': message.image && message.content !== 'image'}">
+            <ion-item *ngIf="!message.content_type_id  || message.content_type_id === messageContentType.SERVICE_REQUEST" [ngClass]="{'chat-property-img': message.image && message.content !== 'image', 'no-img-text': message.content === 'image'}">
+                <ion-avatar item-left>
+                    <lazy-img *ngIf="message.profile_pic" [inputSrc]="message.profile_pic" alt=""></lazy-img>
+                    <lazy-img *ngIf="!message.profile_pic" [inputSrc]="placeholderIamges.PROFILE_PIC" alt=""></lazy-img>
+                </ion-avatar>
+                <h4>                                        
+                    <span *ngIf="message.user_name">{{message.user_name}}</span>
+                    <ion-note class="datetime">{{ message.timetoken | localizedDate: 'MM/dd/yy hh:mm a'}}</ion-note>
+                </h4>
+
+                <div *ngIf="message.image">
+                    <lazy-img name="image" [inputSrc]="message.image"  alt=""></lazy-img>
+                    <!-- (tap)="presentShowImageModal(message.image, false)" -->
+                </div>
+                <h3 *ngIf="message.content">{{message.content}}</h3>
+            </ion-item>
+        </ion-list>
+    </div>
+</ion-content>
+<ion-footer class="conv-comment-footer" [keyboardAttach]="content" footer-full id="chat-box-footer" *ngIf="selectedTab == 'conversation'">
+    <ion-toolbar>
+        <button ion-button icon-only clear (click)="showActionSheet()">
+            <ion-icon class="icons-attachement"></ion-icon>
+        </button>
+        <ion-list class="chat-type-msg" id="chat-text">
+            <ion-item>
+                <ion-textarea autoresize autocomplete="true" spellcheck="true" autocorrect="true" [(ngModel)]="messageModel" col="55" placeholder="{{'PLACEORDER.MESSAGE' | translate}}"
+                    name="writeMessage"></ion-textarea>
+            </ion-item>
+        </ion-list>
+        <button ion-button icon-only clear [ngClass]="{'active-btn': !(messageModel && !pictureModel && messageModel.trim().length > 0)}"
+            (click)="sendMessage();">
+        <ion-icon class="icons-upload"></ion-icon>
+    </button>
+    </ion-toolbar>
+</ion-footer>

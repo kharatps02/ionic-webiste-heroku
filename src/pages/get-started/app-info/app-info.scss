@@ -1,0 +1,169 @@
+app-info {
+    ion-content {
+        &:first-child {
+            .scroll-content {
+                @include zeroPadding(0 !important);
+            }
+        }
+        .scroll-content {
+            overflow: initial;
+            bottom: 0;
+            @include zeroPadding(0);
+            background: $black;
+        }
+    }
+    ion-slides {
+        .swiper-container-horizontal>.swiper-pagination {
+            bottom: 1rem;
+        }
+        .swiper-slide {
+            margin-top: 0;
+            border: none;
+            .slide-zoom {
+                height: 100%;
+            }
+            img {
+                width: auto;
+                height: auto;
+                max-height: none;
+                @include zeroMargin(-.5rem 0 0 0);
+            }
+            .caption {
+                @include zeroPadding(1.625rem 0 0 0);
+                h2 {
+                    margin-bottom: .563rem;
+                }
+                p {
+                    @include zeroMargin(0 1.125rem);
+                }
+            }
+            .caption.privacy-msg {
+                @include zeroPadding(1.25rem 0 0 0);
+                h2 {
+                    line-height: 2rem;
+                }
+                p {
+                    @include zeroMargin(1.25rem 0 1.688rem 0);
+                    text-align: center;
+                }
+            }
+        }
+        .swiper-container {
+            overflow: initial;
+        }
+        .feed,
+        .conversations,
+        .around-you {
+            @include zeroMargin(-4.5rem auto 0);
+        }
+        .feed {
+            background: $lightYellow;
+        }
+        .conversations {
+            background: $wineShade2;
+        }
+        .around-you {
+            background: $sunsetOrange;
+        }
+        .privacy-logo {
+            background: $skyBlueShade6;
+            @include zeroMargin(.313rem auto 1.563rem);
+        }
+        .scrollable-height{
+            height: calc(100vh - 36px);
+            overflow: auto;
+        }
+        .get-started {
+            display: flex;
+            flex-direction: column;
+            // justify-content: space-between;
+            // height: 100%;
+            @include zeroPadding(0 1.25rem);
+            p {
+                @include zeroMargin(1.313rem 0 2.688rem 0);
+                display: flex;
+                justify-content: center;
+            }
+            [splitter] {
+                width: 3.75rem;
+                background: $skyBlueShade6;
+                height: .25rem;
+                display: block;
+                @include zeroMargin(1.437rem auto 0);
+            }
+        }
+        ion-toolbar.toolbar {
+            position: absolute;
+            min-height: inherit;
+            top: 1.125rem;
+            @include zeroPadding(0);
+            .toolbar-background {
+                @extend %toolbar-transparent;
+            }
+            ion-buttons.bar-buttons-ios {
+                padding: .5rem .75rem;
+            }
+            ion-buttons {
+                padding: .5rem .75rem;
+                display: flex;
+            }
+            ion-buttons[start] {
+                margin-left: .5rem;
+            }
+            ion-buttons[end] {
+                margin-right: .5rem;
+            }
+            [text-outline-btn] {
+                text-transform: uppercase;
+                height: auto;
+                font-weight: 700;
+                @include zeroPadding(0);
+                @include zeroMargin(0);
+                ion-icon {
+                    color: $white;
+                }
+            }
+        }
+    }
+    @media (max-height: 533px) {
+        ion-slides {
+            .swiper-slide {
+                .caption {
+                    @include zeroPadding(.625rem 0 0 0);
+                }
+            }
+            .swiper-container-horizontal>.swiper-pagination {
+                bottom: .5rem;
+            }
+            .get-started {
+                .privacy-logo {
+                    @include zeroMargin(.313rem auto 1rem);
+                }
+                .caption.privacy-msg {
+                    h2 {
+                        font-size: 1.75rem;
+                        span {
+                            @include zeroMargin(1rem auto 0);
+                        }
+                    }
+                }
+                p {
+                    @include zeroMargin(1rem 0 0 0);
+                }
+                button.button-blue-link {
+                    @include zeroMargin(0);
+                }
+                .action-grid {
+                    min-height: 132px;
+                }
+            }
+            .swiper-slide {
+                .caption.privacy-msg {
+                    p {
+                        @include zeroMargin(0.938rem 0 1rem 0);
+                    }
+                }
+            }
+        }
+    }
+}

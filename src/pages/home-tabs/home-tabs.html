@@ -1,0 +1,82 @@
+<ion-tabs tabs selectedIndex=0 (ionChange)="onTabClick($event)" #rezTabs>
+    <ion-tab id="1" [root]="ActivityTab" tabIcon='icons-feed' tabBadgeStyle="blue" tabBadge={{pubNubService.feedBadgeCount}} [ngClass]="{'coach-noScroll':userService.userObj.show_coach_marks && userService.userObj.show_coach_marks.feed && selectedIndex === 0}"></ion-tab>
+    <ion-tab id="2" [root]="ConversationTab" tabIcon='icons-conversion' tabBadge={{pubNubService.globalBadgeCount}} [ngClass]="{'coach-noScroll':userService.userObj.show_coach_marks && userService.userObj.show_coach_marks.conversation && selectedIndex === 1}"></ion-tab>
+    <!--<ion-tab id="6" [root]="ServiceRequestTab" tabIcon='icons-service'></ion-tab>-->
+    <!--<ion-fab bottom center>
+        <button ion-fab mini><ion-icon class="icons-service" name="add"></ion-icon></button>
+    </ion-fab>-->
+    <ion-tab [root]="AroundmeTab" tabIcon='icons-around-me' [ngClass]="{'coach-noScroll':userService.userObj.show_coach_marks && userService.userObj.show_coach_marks.around_me && selectedIndex === 2}"></ion-tab>
+    <ion-tab [root]="MyStuffTab" tabIcon='icons-my-stuff' [ngClass]="{'coach-noScroll':userService.userObj.show_coach_marks && userService.userObj.show_coach_marks.profile && selectedIndex === 3}"></ion-tab>
+
+</ion-tabs>
+<!-- Coach Mark Feed -->
+<ion-fab *ngIf="userService.userObj.show_coach_marks && userService.userObj.show_coach_marks.feed && selectedIndex === 0 " class="coach-feed">
+    <ion-label class="vertical-middle">
+        <span>{{'COACH_MARK.FEED_MSG_1' | translate }} <br>{{'COACH_MARK.FEED_MSG_2' | translate }}</span>
+        <button ion-fab class="gotit" (click)="setCoachMarks('feed')">{{'COACH_MARK.GOT_IT' | translate }}</button>
+    </ion-label>
+    <button ion-button disabled class="footer-guideline">
+        <img src="./assets/img/coachmark-feed.png" alt="">
+    </button>
+</ion-fab>
+<!-- End Coach Mark Feed -->
+
+
+<!-- Coach Mark Conversation -->
+<ion-fab *ngIf="userService.userObj.show_coach_marks && userService.userObj.show_coach_marks.conversation && selectedIndex === 1 " class="coach-conversation">
+    <button ion-button disabled class="header-guideline-left">
+        <img src="./assets/img/coachmark-conversation-add.png" alt="">
+        <ion-label class="coachmark-text start-conv">{{'COACH_MARK.START_CONVERSATION' | translate }}</ion-label>
+    </button>
+    <ion-label class="vertical-middle">
+        <span>{{'COACH_MARK.CONV_MSG_1' | translate}} <br> {{'COACH_MARK.CONV_MSG_2' | translate}}</span>
+        <button ion-fab class="gotit" (click)="setCoachMarks('conversation')">{{'COACH_MARK.GOT_IT' | translate }}</button>
+    </ion-label>
+    <button ion-button disabled class="footer-guideline">
+        <img src="./assets/img/coachmark-conversation.png" alt="">
+    </button>
+</ion-fab>
+<!-- End Coach Mark Conversation -->
+
+
+<!-- Coach Mark Around You -->
+<ion-fab *ngIf="userService.userObj.show_coach_marks && userService.userObj.show_coach_marks.around_me && selectedIndex === 2" class="coach-aroundyou">
+    <button ion-button disabled class="header-guideline-right">
+        <img src="./assets/img/coachmark-aroundyou-setting.png" alt="">
+        <ion-label class="coachmark-text map-settings">{{'COACH_MARK.MAP_SETTINGS' | translate}}</ion-label>
+    </button>
+    <button ion-button disabled class="header-guideline-leftdown">
+        <img src="./assets/img/coachmark-aroundyou-savedlocation.png" alt="">
+        <ion-label class="coachmark-text pinned-location">{{'COACH_MARK.YOUR_PINNED' | translate }} <br>{{'COACH_MARK.LOCATION' | translate }}</ion-label>
+    </button>
+    <button ion-button disabled class="header-guideline-left">
+        <img src="./assets/img/coachmark-aroundyou-save.png" alt="">
+        <ion-label class="coachmark-text save-location">{{'COACH_MARK.SAVE_LOCATION' | translate }}</ion-label>
+    </button>
+    <ion-label class="vertical-middle">
+        <span>{{'COACH_MARK.AROUND_PLACE01' | translate}} <br> {{'COACH_MARK.AROUND_PLACE02' | translate}}</span>
+        <button ion-fab class="gotit" (click)="setCoachMarks('around_me')">{{'COACH_MARK.GOT_IT' | translate }}</button>
+    </ion-label>
+    <button ion-button disabled class="header-guideline-bottom">
+        <img src="./assets/img/coachmark-aroundyou-map.png" alt="">
+        <ion-label class="coachmark-text map-location">{{'COACH_MARK.CENTER_MAP' | translate}} <br>{{'COACH_MARK.YOUR_LOCATION' | translate}}</ion-label>
+    </button>
+
+    <button ion-button disabled class="footer-guideline">
+        <img src="./assets/img/coachmark-aroundyou.png" alt="">
+    </button>
+</ion-fab>
+<!-- End Coach Mark Around You -->
+
+
+<!-- Coach Mark Your Stuff-->
+<ion-fab *ngIf="userService.userObj.show_coach_marks && userService.userObj.show_coach_marks.profile && selectedIndex === 3 " class="coach-yourstuff">
+    <ion-label class="vertical-middle">
+        <span>{{'COACH_MARK.STUFF_MSG_1' | translate }} <br>{{'COACH_MARK.STUFF_MSG_2' | translate }}</span>
+        <button ion-fab class="gotit" (click)="setCoachMarks('profile')">{{'COACH_MARK.GOT_IT' | translate }}</button>
+    </ion-label>
+    <button ion-button disabled class="footer-guideline">
+        <img src="./assets/img/coachmark-yourstuff.png" alt="">
+    </button>
+</ion-fab>
+<!-- End Coach Mark -->

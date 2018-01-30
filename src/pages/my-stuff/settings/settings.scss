@@ -1,0 +1,50 @@
+page-settings {
+    .list-grid-136.item.item-block{
+        .item-inner{
+            .input-wrapper{
+                flex-direction: column;
+                ion-label {
+                    width: 100%;
+                    max-width: 100%;
+                    color: inherit;
+                    display: flex;
+                    align-items: center;
+                }
+                ion-select.select {
+                    width: 100%;
+                    max-width: 100%;
+                }
+                .datetime-text, .select-text{
+                    @include typography(0.75rem, $grey1, 400, 0.875rem);
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
+            } 
+        } 
+    } 
+	ion-footer {
+        // background-color: transparent;
+        ion-toolbar.toolbar-ios, ion-toolbar.toolbar-md, ion-toolbar .toolbar-content{
+            background: $silverShade6;
+            // min-height: inherit;
+            // @include zeroPadding(0);
+            // @include border(0);
+        }
+        ion-toolbar.toolbar-ios{
+            height: 50px;
+        }
+        ion-toolbar.toolbar-md{
+            height: 58px;
+        }        
+        ion-button.grey-outline-btn {
+            display: block;
+            height: 2rem;
+            @include border-radius(0);
+            @include border(0);
+            @include typography(.563rem, $grey2, 400, null);
+            @include zeroPadding(0);
+            @include zeroMargin(0px 2.5rem 1.875rem);
+            text-transform: uppercase;
+        }
+    }
+}

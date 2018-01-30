@@ -1,0 +1,66 @@
+@import "../../../assets/stylesheet/conversation.scss";
+service-request-details{
+    ion-slides{
+        background: $darkBlack;
+        .swiper-wrapper{
+            align-items: center;
+        }
+        ion-slide.swiper-slide{
+            img{
+                width: 100%;
+                vertical-align: top;
+                min-height: 241px;
+                max-height: 311px;
+                object-fit: cover;
+            }
+        }
+        .swiper-container-horizontal>.swiper-pagination {
+            bottom: .625rem;
+            .swiper-pagination-bullet {
+                background: rgba($white, 0.5);
+                border: 1px solid transparent;
+            }
+            .swiper-pagination-bullet-active.swiper-pagination-bullet-active {
+                background: rgba($white, 1);
+                border: 1px solid transparent;
+            }
+        }
+    }
+    ion-card.card{
+        width: 100%;
+        box-shadow: none;
+        @include zeroMargin(0);
+        .active-status{
+            letter-spacing: .04rem;
+            background: $greenShade1;
+            height: 2.375rem;
+            text-transform: uppercase;
+            @extend %vertical-center; 
+            @include zeroMargin(0);
+            @include typography(.625rem, $white, 700, null);
+        }
+        ion-card-header{
+            @include zeroPadding(.938rem 1.25rem);
+            background: $silverShade9;
+            div{
+                width: calc(100% - 2rem);
+            }
+            p{
+                word-wrap: break-word;
+                white-space: normal;
+                text-transform: uppercase;
+                @include zeroMargin(0);
+                @include typography(.813rem, $charcoalBlack, 300, null);
+            }
+            ion-icon{
+                margin-left: auto;
+            }
+        }
+        ion-card-content.card-content{
+            white-space: pre-line;
+            @include zeroPadding(1rem 1.25rem);
+            @include typography(.875rem, $charcoalBlack, 300, null);
+        }
+
+    }
+}

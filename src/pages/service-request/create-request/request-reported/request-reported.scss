@@ -1,0 +1,31 @@
+@import "../../../../assets/stylesheet/_confirmation-page";
+page-request-reported {
+    .scroll-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .confirmation-msg {
+        .confirmation-icon {
+            background: $wineShade2;
+            @include zeroMargin(6.75rem auto 1.5rem auto);
+        }
+        [splitter] {
+            background: $wineShade2;
+        }
+    }
+    .action-grid{
+        @include zeroPadding(0 0 2.5rem 0);
+    }
+
+    @media (max-height: 533px) {
+        .confirmation-msg {
+            .confirmation-icon {
+                @include zeroMargin(4.75rem auto 1.5rem auto);
+            }
+        }
+        .button-light-blue {
+            @include zeroMargin(2rem 0 0 0);
+        }
+    }
+}
