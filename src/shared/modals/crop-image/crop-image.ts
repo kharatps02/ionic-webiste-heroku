@@ -38,6 +38,8 @@ export class CropImageModal {
       cropBoxMovable: true,
       cropBoxResizable: true,
       scalable: false,
+      minCropBoxWidth :this.width,
+      minCropBoxHeight: this.height,
       crop: (e: Cropper.CropperCropEvent) => {}
     });
   }

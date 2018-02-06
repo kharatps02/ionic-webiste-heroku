@@ -19,7 +19,7 @@ export class CreateFeedPage {
     private selectedBranch: IBranch;
     private selectedBranchId: string;
     private selectedSegment: string;
-    private selectedTemplate: string = CONSTANTS.TEMPLATE.PLACEMENT;
+    private selectedTemplate: string;
 
     constructor(private activityService: ActivityService, public navCtrl: NavController, private navParams: NavParams, private userService: UserService,
         private events: Events,
@@ -30,6 +30,7 @@ export class CreateFeedPage {
 
     ionViewDidEnter() {
         this.branches = this.userService.userObj.branches;
+        this.selectedTemplate = this.userService.userObj.feed_templates[0];
         //this.loadUserSegments();
     }
 
@@ -65,5 +66,26 @@ export class CreateFeedPage {
     onTemplateSelect(template){
         this.selectedTemplate = template;
     }
+
+    refreshTarget(): void {
+        // let refreshTargetObj = { created_by: this.userId, branch_id: this.userService.selectedBranch._id, segment_type: CONSTANTS.SEGMENT_TYPE.NORMAL };
+        // if (this.audienceDetail.segment_category !== CONSTANTS.SEGMENT_CATEGORY.SERVICE_AREA) {
+        //   let housingProviderObj = this.getHousingProviderRequestJSON();
+        //   Object.assign(refreshTargetObj, housingProviderObj);
+        // } else {
+        //   Object.assign(refreshTargetObj, this.audienceDetail);
+        // }
+        // this.activityFeedService.refreshTarget(refreshTargetObj).subscribe((response: any) => {
+        //   if (response.status !== CONSTANTS.RESPONSE_STATUS.ERROR) {
+        //     this.targetCount = response.targets;
+        //     this.setTargetPercentage(response.total_users);
+        //   } else {
+        //     this.notificationService.showToast(CONSTANTS.RESPONSE_STATUS.ERROR, CONSTANTS.ERROR_MESSAGES.SOMETHING_WENT_WRONG);
+        //     this.targetCount = '0';
+        //     this.setTargetPercentage(0);
+        //   }
+        // });
+      }
+    
 
 }

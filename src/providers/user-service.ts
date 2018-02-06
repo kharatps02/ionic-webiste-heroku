@@ -582,6 +582,7 @@ export interface IUser {
     low_data?: boolean;
     device_lang?: string;
     branches?: Array<IBranch>;
+    feed_templates?:Array<string>
 }
 
 export interface IBranch {

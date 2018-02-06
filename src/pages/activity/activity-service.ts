@@ -58,6 +58,12 @@ export class ActivityService {
         return this.httpService.post(url, data).map((res: any) => res.json());
     }
 
+    refreshTarget(data) {
+        Object.assign(data, { is_only_target_needed: true })
+        let url = ENVIRONMENT.APP_BASE_URL + '/api/usersegments';
+        return this.httpService.post(url, data).map((res: any) => res.json());
+    }
+
 }
 
 export interface IPageState {
@@ -118,6 +124,7 @@ export interface IActivityFeed {
     is_system_feed?: boolean;
     lowData?: boolean;
     isReading?: boolean;
+    service_request_id? : string;
 }
 
 export interface IActivityFeedOption {

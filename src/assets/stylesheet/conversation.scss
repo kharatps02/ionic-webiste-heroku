@@ -116,8 +116,8 @@ page-chat-box,
                         border-radius: 4px;
                         @include zeroMargin(.563rem 0 0 0);
                         width: 100%;
-                        min-height: 8rem;
-                        max-height: 12rem;
+                        min-height: 180px;
+                        max-height: 250px;
                         object-fit: cover;
                     }
                 }

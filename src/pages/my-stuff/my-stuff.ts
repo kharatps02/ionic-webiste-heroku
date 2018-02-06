@@ -135,7 +135,7 @@ export class MyStuff implements OnDestroy {
         this.navCtrl.push(Profile, { userData: this.userObj });
         break;
         case 'servicerequest':
-        this.navCtrl.push(ServiceRequest, { userData: this.userObj });
+        this.navCtrl.push(ServiceRequest);
         break;
       case 'feedback':
         this.navCtrl.push(TellFeedback, { userData: this.userObj })

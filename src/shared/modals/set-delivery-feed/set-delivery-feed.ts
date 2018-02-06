@@ -45,38 +45,34 @@ export class SetDeliveryFeedModal {
             selectedDate.setSeconds(selectedTime.getSeconds());
             selectedDate.setMilliseconds(selectedTime.getMilliseconds());
 
-
-            if (currentDate.getDate() === selectedDate.getDate()) {
-                if (currentDate.getTime() > selectedDate.getTime()) {
-                    this.loaderService.showToaster(this.translateService.instant('ERROR_MESSAGES.INVALID_TIME'));
-                    return;
-                }
-            } else if (currentDate.getTime() >= selectedDate.getTime()) {
+            if (currentDate > selectedDate) {
                 this.loaderService.showToaster(this.translateService.instant('ERROR_MESSAGES.INVALID_DATE'));
-                return;
+                return false;
             }
             this.deliveryDate = selectedDate;
         } else {
             this.deliveryDate = undefined;
         }
+        return true;
     }
 
     submitCard() {
-        this.validate();
-        let that = this;
-        that.loaderService.createLoader(this.translateService.instant('ERROR_MESSAGES.PLEASE_WAIT'));
-        if (that.feedType === CONSTANTS.TEMPLATE.PLACEMENT) {
-            that.placementFeedRequest.scheduled_date = that.deliveryDate;
-            that.activityService.createFeed(that.placementFeedRequest).subscribe((response: any) => {
-                that.loaderService.dismissLoader();
-                that.viewCtrl.dismiss();
-            });
-        } else {
-            that.pollFeedRequest.scheduled_date = that.deliveryDate;
-            that.activityService.createPollFeed(this.pollFeedRequest).subscribe((response: any) => {
-                that.loaderService.dismissLoader();
-                that.viewCtrl.dismiss();
-            });
+        if (this.validate()) {
+            let that = this;
+            that.loaderService.createLoader(this.translateService.instant('ERROR_MESSAGES.PLEASE_WAIT'));
+            if (that.feedType === CONSTANTS.TEMPLATE.PLACEMENT) {
+                that.placementFeedRequest.scheduled_date = that.deliveryDate;
+                that.activityService.createFeed(that.placementFeedRequest).subscribe((response: any) => {
+                    that.loaderService.dismissLoader();
+                    that.viewCtrl.dismiss();
+                });
+            } else {
+                that.pollFeedRequest.scheduled_date = that.deliveryDate;
+                that.activityService.createPollFeed(this.pollFeedRequest).subscribe((response: any) => {
+                    that.loaderService.dismissLoader();
+                    that.viewCtrl.dismiss();
+                });
+            }
         }
     }
 }

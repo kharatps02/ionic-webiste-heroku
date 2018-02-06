@@ -137,13 +137,16 @@
                     @include zeroPadding(0);
                     ion-avatar.bg-image-168 {
                         width: 100%;
-                        min-height: calc((100vw - 8px) / 1.85);
+                        //min-height: calc((100vw - 8px) / 1.85);
+                        min-height: 168px;
                         max-height: 240px;
                         border-bottom: $silverShade6 solid 1px;
                         @extend %vertical-center;
                         img {
                             width: 100%;
-                            height: calc((100vw - 8px) / 1.85);
+                            min-height: 168px;
+                            max-height: 240px;
+                            // height: calc((100vw - 8px) / 1.85);
                             object-fit: cover;
                         }
                     }

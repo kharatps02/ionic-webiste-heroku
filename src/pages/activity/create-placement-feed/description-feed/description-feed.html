@@ -11,14 +11,14 @@
 <ion-content>
     <ion-list>
         <ion-item class="list-grid-136">
-            <ion-label class="text14px-black">{{'ACTIVITY.CREATE_FEED.HEADER' | translate}}<cite class="has-error">*</cite>
+            <ion-label class="text14px-black">{{'ACTIVITY.CREATE_FEED.HEADLINEDESC' | translate}}<cite class="has-error">*</cite>
                 <span>
                     <cite *ngIf="placementInfo.title.length <= 0">100&nbsp;</cite>
                     <cite *ngIf="placementInfo.title.length > 0">{{100 - placementInfo.title.length}}&nbsp;</cite>
                     {{'ACTIVITY.CREATE_FEED.TOTAL_CHARACTER' | translate}}
                 </span>
             </ion-label>
-            <ion-input class="feed-text" max="100" type="text" [(ngModel)]="placementInfo.title" value=""></ion-input>
+            <ion-input class="feed-text" maxlength="100" type="text" [(ngModel)]="placementInfo.title" value=""></ion-input>
         </ion-item>
         <ion-item class="list-grid-136">
             <ion-label class="text14px-black">{{'ACTIVITY.CREATE_FEED.DESCRIPTION' | translate}} <cite class="has-error">*</cite>
@@ -28,12 +28,12 @@
                     {{'ACTIVITY.CREATE_FEED.TOTAL_CHARACTER' | translate}}
                 </span>
             </ion-label>
-            <ion-textarea class="feed-text" max="500" value="" [(ngModel)]="placementInfo.description"></ion-textarea>
+            <ion-textarea class="feed-text" maxlength="500" value="" [(ngModel)]="placementInfo.description"></ion-textarea>
         </ion-item>
         <ion-item class="list-grid-136">
             <ion-label class="text14px-black">{{'ACTIVITY.CREATE_FEED.MORE_INFO' | translate}}</ion-label>
             <ion-icon class="icons-read-more"></ion-icon>
-            <ion-input class="feed-text" max="100" type="text" [(ngModel)]="placementInfo.url" value=""></ion-input>
+            <ion-input class="feed-text" maxlength="100" type="text" [(ngModel)]="placementInfo.url" value=""></ion-input>
         </ion-item>
         <ion-item-divider></ion-item-divider>
         <ion-item class="list-grid-136 allow-check">

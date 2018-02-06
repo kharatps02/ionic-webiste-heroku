@@ -325,3 +325,7 @@ ion-icon[aria-label="icons service-outline"]:before{
 .icons-time:before{
     content: "\4d"
 }
+.icons-grid:before,
+ion-icon[aria-label="icons grid"]:before {
+  content: "\e002";
+}

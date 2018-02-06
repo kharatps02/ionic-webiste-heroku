@@ -1,6 +1,6 @@
 <ion-header labelHeader>
     <ion-toolbar topHeader *ngIf="!isFavorites">
-   <ion-buttons start *ngIf="(this.userInfo.user_type === usertype.HOUSING_PROVIDER || this.userInfo.user_type === usertype.SERVICE_PROVIDER)">
+   <ion-buttons start *ngIf="(this.userInfo.user_type === usertype.HOUSING_PROVIDER || this.userInfo.user_type === usertype.SERVICE_PROVIDER) && this.userInfo.feed_templates.length > 0">
             <button ion-button (click)="navigateToCreateFeedPage()">
                 <ion-icon class="icons-plus"></ion-icon>
             </button>
@@ -33,13 +33,13 @@
                 <ion-card class="card-panel">
                     <ion-item selected-row list-row [ngClass]="{'selected-row':expandFeedCollection[activity._id] === true}">
                         <div class="alerts article-no-image" *ngIf="activity.template === activityTemplates[0] || activity.template === activityTemplates[7]"
-                            (click)="activity.template === activityTemplates[7] ">
+                           >
                             <div list-row-head>
                                 <ion-avatar item-left>
                                     <ion-icon [ngClass]="{'icons-news-alert': activity.template === activityTemplates[0],  'icons-report': activity.template === activityTemplates[7]}"></ion-icon>
                                 </ion-avatar>
                             </div>
-                            <ion-col list-expand-details>
+                            <ion-col list-expand-details  (click)="manageServiceRequest(activity)">
                                 <h4 *ngIf="activity.header.title" class="">{{activity.header.title}}</h4>
                             </ion-col>
                             <div list-row-footer class="action-bar">

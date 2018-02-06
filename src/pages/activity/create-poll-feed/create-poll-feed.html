@@ -22,11 +22,11 @@
                             <label class="custom-types">
                                 <cite title-info left-align>{{pollOption}}</cite>
                                 <div class="custom-radio" *ngIf="pollInfo.is_multiselect === false">
-                                    <input type="radio">
+                                    <input type="radio" disabled="true">
                                     <span></span>
                                 </div>
                                 <div class="custom-checkbox" *ngIf="pollInfo.is_multiselect === true">
-                                    <input type="checkbox">
+                                    <input type="checkbox" disabled="true">
                                     <span></span>
                                 </div>
                             </label>
@@ -36,7 +36,7 @@
                     <div list-row-footer class="action-bar">
                         <ion-row>
                             <ion-col start class="text10px-normal-blue">
-                                <span>{{'ACTIVITY.CREATE_FEED.SUBMIT' | translate}}</span>
+                                <span>{{'ACTIVITY.CREATE_FEED.SUBMIT_ANSWER' | translate}}</span>
                             </ion-col>
                             <ion-col end>
                                 <button ion-item detail-none icon-only>

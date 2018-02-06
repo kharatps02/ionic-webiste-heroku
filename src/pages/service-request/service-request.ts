@@ -7,6 +7,7 @@ import { LoaderService } from '../../providers/loader-service';
 import { CONSTANTS } from '../../shared/config';
 import { CreateRequest } from './create-request/create-request';
 import { ServiceRequestDetails } from './service-request-details/service-request-details';
+import { IPinLocation } from '../aroundme/aroundme-service';
 
 @Component({
   selector: 'service-request',
@@ -136,5 +137,19 @@ export class ServiceRequest {
     this.navCtrl.push(ServiceRequestDetails, { _id: request._id });
   }
 
+  navigateToAroundYou(){
+    if(this.userService.userObj.profile.home_address.street_address1.length > 0){      
+      let data: IPinLocation = { };
+        data.address = this.userService.userObj.profile.home_address.street_address1;
+        data.position = {lat: 0, lng:0};
+        if(this.userService.userObj.profile.home_address.lat){
+          data.position.lat =  parseFloat(this.userService.userObj.profile.home_address.lat);
+          data.position.lng =  parseFloat(this.userService.userObj.profile.home_address.long);
+        }        
+        this.events.publish(CONSTANTS.APP_EVENTS.ARROUND_YOU_ACTIONS, CONSTANTS.ARROUND_YOU_ACTIONS.SELECT_SAVED_PIN,data);
+    }
+    this.navCtrl.pop();
+    this.navCtrl.parent.select(2);
+  }
 
 }

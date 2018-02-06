@@ -66,7 +66,9 @@
 <ion-footer footer-full>
     <!--*ngIf="selectedProperty" -->
     <ion-toolbar>
-        <ion-button ion-button block [ngClass]="{'button-disable': !selectedProperty || (selectedProperty && (selectedProperty.is_advocate || selectedProperty.allow_service_requests === false))}"
-            class="button-square-blue" (click)="serviceRequest()">{{'SERVICE_REQUESTS.SETTINGS.NEWSERVICE' | translate }}</ion-button>
+        <button ion-button block class="button-square-blue" *ngIf= "selectedProperty  && (!selectedProperty.is_advocate || selectedProperty.allow_service_requests === true)" 
+        (click)="serviceRequest()">{{'SERVICE_REQUESTS.SETTINGS.NEWSERVICE' | translate }}</button>
+        <button ion-button block class="button-square-blue" *ngIf= "!selectedProperty || (selectedProperty && (selectedProperty.is_advocate || selectedProperty.allow_service_requests === false))"
+        (click)="navigateToAroundYou()">{{'AROUND_ME.HOUSING_UNIT.VERIFY-BTN' | translate }}</button>
     </ion-toolbar>
 </ion-footer>

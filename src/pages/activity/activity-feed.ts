@@ -17,6 +17,8 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 import { ProviderDetails } from "../aroundme/provider-details/provider-details";
 import { ContactListPage } from "./contact-list/contact-list";
 import { CreateFeedPage } from './create-feed/create-feed';
+import { ServiceRequest } from '../service-request/service-request';
+import { ServiceRequestDetails } from '../service-request/service-request-details/service-request-details';
 
 declare let cordova;
 
@@ -61,7 +63,7 @@ export class ActivityPage implements OnDestroy {
         };
         this.userInfo = userService.getUser();
         this.zone = new NgZone({ enableLongStackTrace: false });
-        this.activityTemplates = ['Alert', 'Advertisement', 'Crime Alert', 'Article/Blog/Info', 'System Announcement', 'Property Manager Announcement', 'Poll', 'Incident', "Profile", "Placement", "Residency Connect", "Residency Deny", "Residency Accept","Explor Rezility"];
+        this.activityTemplates = ['Alert', 'Advertisement', 'Crime Alert', 'Article/Blog/Info', 'System Announcement', 'Property Manager Announcement', 'Poll', 'Incident', "Profile", "Placement", "Residency Connect", "Residency Deny", "Residency Accept", "Explor Rezility"];
         this.isCordovaPlatform = this.platform.is('cordova');
         this.isFavorites = this.navParams.get('favorites');
         if (!this.isFavorites) {
@@ -649,7 +651,17 @@ export class ActivityPage implements OnDestroy {
         this.navCtrl.push(ContactListPage, { rezfeed_id: activity.rezfeed_id, feed_title: activity.header.title });
     }
 
-    navigateToCreateFeedPage(){
+    navigateToCreateFeedPage() {
         this.navCtrl.push(CreateFeedPage);
+    }
+
+    manageServiceRequest(activity: IActivityFeed) {
+        if (activity.template === this.activityTemplates[7]) {
+            if (activity.service_request_id) {
+                this.navCtrl.push(ServiceRequestDetails, { _id: activity.service_request_id });
+            } else {
+                this.navCtrl.push(ServiceRequest);
+            }
+        }
     }
 }

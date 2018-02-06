@@ -57,8 +57,8 @@ export class CreatePlacementFeedPage {
         let that = this;
         let uploadOptions: IUploadOptions = {
             sourceType: that.camera.PictureSourceType.CAMERA, bucketSource: "feeds", cropImage: true,
-            targetHeight: imageCategory === CONSTANTS.FEED_IMAGE_TYPES.LOGO ? 210 : 588,
-            targetWidth: imageCategory === CONSTANTS.FEED_IMAGE_TYPES.LOGO ? 210 : 1092,
+            targetHeight: imageCategory === CONSTANTS.FEED_IMAGE_TYPES.LOGO ? 100 : 168,
+            targetWidth: imageCategory === CONSTANTS.FEED_IMAGE_TYPES.LOGO ? 100 : 312,
             organizationId: this.selectedBranch.organization_id,
             branchId: this.selectedBranch._id,
             imageCategory: imageCategory
@@ -91,7 +91,7 @@ export class CreatePlacementFeedPage {
                     text: this.translateService.instant("CONVERSATIONS.NEW_MSG.LIB_PHOTO"),
                     role: 'Load',
                     cssClass: 'take-photo',
-                    icon: 'icons-camera',
+                    icon: 'icons-grid',
                     handler: () => {
                         this.showImageGallery(imageCategory);
                     }
