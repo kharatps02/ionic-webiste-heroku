@@ -16,12 +16,18 @@
 
         <ion-item class="list-grid-136">
             <ion-label class="text14px-black">{{'ACTIVITY.CREATE_FEED.SELECT_SEGMENT' | translate}}</ion-label>
-            <ion-select [(ngModel)]="selectedSegment"   [disabled] = "userSegments === undefined" cancelText="{{'CONVERSATIONS.CANCEL' | translate}}" okText="{{'CONVERSATIONS.OK' | translate}}" class="edit-text">
-                <li *ngFor="let userSegment of userSegments">
-                    <ion-option value="{{userSegment._id}}">{{userSegment.name}}</ion-option>
-                </li>
-            </ion-select>
+            <!--<ion-select [(ngModel)]="selectedSegment" [disabled] = "userSegments === undefined" cancelText="{{'CONVERSATIONS.CANCEL' | translate}}" okText="{{'CONVERSATIONS.OK' | translate}}" class="edit-text">
+                <div *ngFor="let userSegment of userSegments">
+                    <ion-option value="{{userSegment._id}}" class="list-view__child" [ngClass]="{'list-view__parent': userSegment.parent_feed_id === null && userSegment.parent_feed_id === undefined}">
+                        {{userSegment.name}}
+                    </ion-option>
+                </div>
+            </ion-select>-->
+            <div item-content class="segment" (click)="onSegmentList()">{{selectedSegmentName}} <span></span></div>
         </ion-item>
+        <!--<ion-item>
+            <button ion-button (click)="newButton()">{{selectedSegment}}</button>
+        </ion-item>-->
     </ion-list>
     <ion-label class="text14px-black template-label">{{'ACTIVITY.CREATE_FEED.SELECT_TEMPLATE' | translate}} </ion-label>
     <ion-slides class="templates" [options]="runningSliderConfig" radio-group [(ngModel)]="selectedTemplate" pager>

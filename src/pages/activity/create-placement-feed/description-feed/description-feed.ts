@@ -32,6 +32,8 @@ export class DescriptionFeedPage {
 
     dismiss() {
         if (this.validateData()) {
+            this.placementInfo.description = this.placementInfo.description.trim();
+            this.placementInfo.title = this.placementInfo.title.trim();
             this.viewCtrl.dismiss(this.placementInfo);
         } else {
             console.log("Please enter valid URL");

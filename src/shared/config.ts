@@ -190,7 +190,7 @@ export let CONSTANTS = {
     NOTIFICATION_COLOR: 'black',
     PRIVACY_NOTICE_URL: "https://rezility.com/privacy-notice/",
     TERM_OF_USE_URL: "https://rezility.com/terms-of-use/",
-    FAQ_URL: "https://rezility.com/faqs/",
+    FAQ_URL: "https://rezility.com/about-us/faq/",
     CRYPTO_SALT: "#R@z!L!tY",
     USER_TYPE: {
         RESIDENT: 'resident',

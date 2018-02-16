@@ -19,6 +19,7 @@ export class Settings {
   public showCoachMarks: boolean = false;
   public availableLanguages: Array<ILanguages>;
   public currentLanguage;
+  public usertype = CONSTANTS.USER_TYPE;
   public LANGUAGEMAP = {
     'en': [{ "name": "English", "id": "en" },
       { "name": "Spanish", "id": "es" },

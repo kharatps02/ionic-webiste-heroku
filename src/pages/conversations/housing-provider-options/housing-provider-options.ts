@@ -84,14 +84,27 @@ export class HousingProviderOptions {
   sendMessageOnPubnub(type) {
     let messageStr = '';
     //TODO - Temporary fix for getting address for housing provider. 
-    this.selectedUser['home_address'] = this.selectedUser.latestMessage.substring(24);
+    let addressStr = this.selectedUser['home_address'] = this.selectedUser.latestMessage.substring(24);
     if (type === 'accept') {
-      messageStr = this.selectedUser['home_address'] + ' ' + CONSTANTS.MESSAGES.ACCEPTED_POSTFIX;
+      messageStr = CONSTANTS.MESSAGES.ACCEPTED_POSTFIX;
     } else if (type === 'deny') {
-      messageStr = CONSTANTS.MESSAGES.DENY_PREFIX + ' ' + this.selectedUser['home_address'];
+      messageStr = CONSTANTS.MESSAGES.DENY_PREFIX;
     }
-    //  this.selectedUser['home_address'] + ' has been verified. You are connected to ' + this.selectedUser.first_name + ' ' + this.selectedUser.last_name + '.';
+
+    if (messageStr && messageStr.length === 0) { return; }
     this.pubNubService.getSupportedLanguageMsg(messageStr).subscribe((msgContent) => {
+
+      // Concat original address and translated message for all supported languages (REZ-2392)
+      for (const langKey in msgContent) {
+        if (msgContent.hasOwnProperty(langKey)) {
+          if (type === 'accept') {
+            msgContent[langKey] = addressStr + ' ' + msgContent[langKey];
+          } else {
+            msgContent[langKey] = msgContent[langKey] + ' ' + addressStr;
+          }
+        }
+      }
+
       let coreMessageObj: IMessage = {
         content: msgContent,
         sender_uuid: this.userData.user_id,

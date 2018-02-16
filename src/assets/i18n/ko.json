@@ -470,7 +470,10 @@
         "VERIFICATION_CANCEL_MESSAGE": "거주자가 승인 요청을 취소했습니다.",
         "ERROR_TITLE": "오류",
         "TWITTER_ERROR": "트위터 앱을 찾을 수 없습니다.",
-        "PHONE_VALIDATION": "유효한 전화 번호를 입력하세요."                
+        "PHONE_VALIDATION": "유효한 전화 번호를 입력하세요.",
+        "INVALID_DATE": "Enter a valid date",
+        "INVALID_TIME": "Please select a valid current or future date.",
+        "NO_SEGMENTS": "No Segments Found"                
     },
     "DAYS_IN_SHORT": {
         "SUNDAY": "일",

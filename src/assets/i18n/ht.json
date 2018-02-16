@@ -470,7 +470,10 @@
         "VERIFICATION_CANCEL_MESSAGE": "Rezidan te anile demann verifikasyon li.",
         "ERROR_TITLE": "Erè",
         "TWITTER_ERROR": "Nou pa jwenn aplikasyon Twitter a.",
-        "PHONE_VALIDATION": "Tanpri antre yon nimewo telefòn ki valab."                
+        "PHONE_VALIDATION": "Tanpri antre yon nimewo telefòn ki valab.",
+        "INVALID_DATE": "Enter a valid date",
+        "INVALID_TIME": "Please select a valid current or future date.",
+        "NO_SEGMENTS": "No Segments Found"                
     },
     "DAYS_IN_SHORT": {
         "SUNDAY": "Solèy",

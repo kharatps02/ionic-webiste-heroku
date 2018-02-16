@@ -46,7 +46,7 @@ export class SetDeliveryFeedModal {
             selectedDate.setMilliseconds(selectedTime.getMilliseconds());
 
             if (currentDate > selectedDate) {
-                this.loaderService.showToaster(this.translateService.instant('ERROR_MESSAGES.INVALID_DATE'));
+                this.loaderService.showToaster(this.translateService.instant('ERROR_MESSAGES.INVALID_TIME'));
                 return false;
             }
             this.deliveryDate = selectedDate;
@@ -58,19 +58,21 @@ export class SetDeliveryFeedModal {
 
     submitCard() {
         if (this.validate()) {
-            let that = this;
+            let that = this;            
             that.loaderService.createLoader(this.translateService.instant('ERROR_MESSAGES.PLEASE_WAIT'));
             if (that.feedType === CONSTANTS.TEMPLATE.PLACEMENT) {
                 that.placementFeedRequest.scheduled_date = that.deliveryDate;
                 that.activityService.createFeed(that.placementFeedRequest).subscribe((response: any) => {
                     that.loaderService.dismissLoader();
-                    that.viewCtrl.dismiss();
+                    this.scheduledInfo.isSubmit = true;
+                    that.viewCtrl.dismiss(this.scheduledInfo);
                 });
             } else {
                 that.pollFeedRequest.scheduled_date = that.deliveryDate;
                 that.activityService.createPollFeed(this.pollFeedRequest).subscribe((response: any) => {
+                    this.scheduledInfo.isSubmit = true;
                     that.loaderService.dismissLoader();
-                    that.viewCtrl.dismiss();
+                    that.viewCtrl.dismiss(this.scheduledInfo);
                 });
             }
         }

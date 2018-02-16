@@ -470,7 +470,10 @@
         "VERIFICATION_CANCEL_MESSAGE": "居民已取消验证请求。",
         "ERROR_TITLE": "错误",
         "TWITTER_ERROR": "没有找到Twitter应用程序。",
-        "PHONE_VALIDATION": "请输入一个有效的电话号码。"                
+        "PHONE_VALIDATION": "请输入一个有效的电话号码。",
+        "INVALID_DATE": "Enter a valid date",
+        "INVALID_TIME": "Please select a valid current or future date.",
+        "NO_SEGMENTS": "No Segments Found"                
     },
     "DAYS_IN_SHORT": {
         "SUNDAY": "周日",

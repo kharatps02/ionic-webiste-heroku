@@ -470,7 +470,10 @@
         "VERIFICATION_CANCEL_MESSAGE": "O residente cancelou o seu pedido de confirmação.",
         "ERROR_TITLE": "Erro",
         "TWITTER_ERROR": "Aplicação Twitter não encontrada.",
-        "PHONE_VALIDATION": "Por favor insira um número de telefone válido."        
+        "PHONE_VALIDATION": "Por favor insira um número de telefone válido.",
+        "INVALID_DATE": "Enter a valid date",
+        "INVALID_TIME": "Please select a valid current or future date.",
+        "NO_SEGMENTS": "No Segments Found"        
     },
     "DAYS_IN_SHORT": {
         "SUNDAY": "dom",

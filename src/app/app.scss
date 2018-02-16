@@ -24,36 +24,36 @@ html {
     -webkit-text-size-adjust: 100%;
 }
 
-// .desktop-app-view{
-//     background: url("../assets/img/rezility-desktop-bg.jpg") 0 28px no-repeat;
-//     background-size: cover;
-//     height: 100vh;
-//     header{
-//         background: #fff;
-//         padding: 12px 0 12px;
-//         box-shadow: 0 0 7px rgba(0, 0, 0, 0.1) !important;
-//     }
-//     .container{
-//         width: 80%;
-//         max-width: 1080px;
-//         margin: 0 auto;
-//     }
-//     section{
-//         padding: 28px 0 0 0;
-//     }
-//     .mobile-app{
-//         width: 336px;
-//         height: 584px;
-//         border: 8px solid #282828;
-//         background: #fff;
-//         position: relative;
-//         margin-left: auto;
-//         ion-app{
-//             width: 100%;
-//             height: 100%;
-//        }
-//     }     
-// }
+.desktop-app-view{
+    background: url("../assets/img/rezility-desktop-bg.jpg") 0 28px no-repeat;
+    background-size: cover;
+    height: 100vh;
+    header{
+        background: #fff;
+        padding: 5px 0 5px;
+        box-shadow: 0 0 7px rgba(0, 0, 0, 0.1) !important;
+    }
+    .container{
+        width: 80%;
+        max-width: 1080px;
+        margin: 0 auto;
+    }
+    section{
+        padding: 5px 0 0 0;
+    }
+    .mobile-app{
+        width: 336px;
+        height: 584px;
+        border: 8px solid #282828;
+        background: #fff;
+        position: relative;
+        margin-left: auto;
+        ion-app{
+            width: 100%;
+            height: 100%;
+       }
+    }     
+}
 
 $center: center;
 @font-face {
@@ -180,9 +180,11 @@ ion-loading .loading-spinner+.loading-content {
 .bold {
     font-weight: $fontWeight700;
 }
-ion-button.button{
+
+ion-button.button {
     white-space: normal;
-} 
+}
+
 .button-light-blue {
     @include typography(.75rem,
     $white,
@@ -486,7 +488,7 @@ ion-header {
     // float: right;
 }
 
-.custom-ion-radio.radio{
+.custom-ion-radio.radio {
     width: 1.25rem;
     min-width: 1.25rem;
     height: 1.25rem;
@@ -494,11 +496,11 @@ ion-header {
     border-radius: 1.25rem;
     background: $white;
     @include margin(0);
-    .radio-icon{
+    .radio-icon {
         border: none;
     }
-    .radio-icon.radio-checked{
-        .radio-inner{
+    .radio-icon.radio-checked {
+        .radio-inner {
             border: none;
             width: .625rem;
             height: .625rem;
@@ -508,12 +510,11 @@ ion-header {
             top: .25rem;
         }
     }
-
 }
-.custom-ion-radio.radio[left]{
+
+.custom-ion-radio.radio[left] {
     @include margin(0 .625rem 0 0);
 }
-
 
 [custom-checkbox] span,
 .custom-checkbox span {
@@ -623,6 +624,7 @@ ion-toolbar[topHeader] ion-buttons {
 
 
 /* Start Form Field border removed */
+
 ion-list.list {
     ion-item.item-block,
     .item-block.item-input.input-has-focus,
@@ -641,9 +643,13 @@ ion-list.list {
         box-shadow: none;
     }
 }
+
+
 /* End Form Field border removed */
 
-/* Start Common Action Sheet */ 
+
+/* Start Common Action Sheet */
+
 ion-action-sheet.photo-sheet {
     ion-backdrop {
         opacity: 0.85 !important;
@@ -662,7 +668,10 @@ ion-action-sheet.photo-sheet {
         border-top: 1px solid $silverShade6;
         border-bottom: none;
         @include border-radius(0);
-        @include typography(.875rem, $black, 400, null);
+        @include typography(.875rem,
+        $black,
+        400,
+        null);
         min-height: 3.75rem;
         @include zeroMargin(0 !important);
         span {
@@ -680,6 +689,8 @@ ion-action-sheet.photo-sheet {
         }
     }
 }
+
+
 /* End Common Action Sheet */
 
 .md ion-menu>.menu-inner>.toolbar.statusbar-padding:first-child,
@@ -1227,7 +1238,8 @@ ion-segment.segment-tab {
             line-height: 1.125rem;
         }
     }
-    ion-segment-button.segment-button.segment-activated, ion-segment-button.segment-button.activated {
+    ion-segment-button.segment-button.segment-activated,
+    ion-segment-button.segment-button.activated {
         background: transparent;
         color: $skyBlueShade5;
         border-top: 1px solid $silverShade6;
@@ -1621,8 +1633,11 @@ ion-list.list {
             line-height: 0.875rem;
             margin: 0;
         }
-        .feed-text.input{
-            @include typography(0.875rem, $charcoalBlack, 300,  null);
+        .feed-text.input {
+            @include typography(0.875rem,
+            $charcoalBlack,
+            300,
+            null);
             line-height: 0.875rem;
             margin: 0;
         }
@@ -1849,6 +1864,9 @@ ion-alert {
                 $black,
                 400,
                 null);
+                overflow: auto;
+                white-space: normal;
+                text-overflow: initial;
             }
         }
         .alert-radio {
@@ -1995,6 +2013,50 @@ ion-picker-cmp.picker-md {
                 border-bottom: 1px solid $silverShade6;
                 transform: translate3d(0px, 0px, 0px) scale(1) !important;
             }
+        }
+    }
+}
+
+button[id^="parent-"],
+button[id^="child-"] {
+    .alert-radio-label {
+        @include padding(0 8px 0 0 !important);
+        flex-direction: row;
+        display: flex;
+        align-items: center;
+        white-space: normal;
+        word-wrap: break-word;
+        word-break: break-all;
+        //width: calc(100% - 28px);
+        &:before {
+            flex: 0 0 24px;
+            max-width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            text-transform: uppercase;
+            border: 1px solid #ccc;
+            padding: 1px 0 0 0;
+            @extend %vertical-center;
+            @include typography(.875rem, $white, 400, null);
+            @include margin(0 6px 0 0px);
+        }
+    }
+}
+
+button[id^="parent-"] {
+    .alert-radio-label {
+        &:before {
+            content: "P";
+            background: $skyBlueShade5;
+        }
+    }
+}
+
+button[id^="child-"] {
+    .alert-radio-label {
+        &:before {
+            content: "C";
+            background: #AACD59;
         }
     }
 }

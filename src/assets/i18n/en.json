@@ -472,7 +472,9 @@
         "TWITTER_ERROR": "Twitter application not found.",
         "PHONE_VALIDATION": "Please enter a valid phone number.",
         "INVALID_DATE": "Enter a valid date",
-        "INVALID_TIME": "Please select a valid current or future date."       
+        "INVALID_TIME": "Please select a valid current or future date.",
+        "NO_SEGMENTS": "No Segments Found"
+      
     },
     "DAYS_IN_SHORT": {
         "SUNDAY": "Sun",

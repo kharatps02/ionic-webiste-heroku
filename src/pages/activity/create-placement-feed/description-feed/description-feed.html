@@ -21,7 +21,7 @@
             <ion-input class="feed-text" maxlength="100" type="text" [(ngModel)]="placementInfo.title" value=""></ion-input>
         </ion-item>
         <ion-item class="list-grid-136">
-            <ion-label class="text14px-black">{{'ACTIVITY.CREATE_FEED.DESCRIPTION' | translate}} <cite class="has-error">*</cite>
+            <ion-label class="text14px-black">{{'ACTIVITY.CREATE_FEED.SUMMARY' | translate}} <cite class="has-error">*</cite>
                 <span>
                     <cite *ngIf="placementInfo.description.length <= 0">500&nbsp;</cite>
                     <cite *ngIf="placementInfo.description.length > 0">{{500 - placementInfo.description.length}}&nbsp;</cite>

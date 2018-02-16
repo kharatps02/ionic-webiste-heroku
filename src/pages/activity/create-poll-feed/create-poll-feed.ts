@@ -57,8 +57,9 @@ export class CreatePollFeedPage {
 
     setDelivery() {
         let params: ICreatePollFeed = this.pollInfo;
+        this.pollInfo.is_edit_feed = false;
         params.branch_id = this.selectedBranch;
-       // params.scheduled_date = undefined;
+        // params.scheduled_date = undefined;
         params.organization_id = this.selectedBranch.organization_id;
         params.feed_owner_id = this.userService.userObj.user_id;
         params.sender_ref_id = this.userService.userObj.user_id;
@@ -66,7 +67,7 @@ export class CreatePollFeedPage {
         params.is_campaign_feed = false;
         params.count_answer_option = this.pollInfo.answer_options.length;
 
-        this.scheduledInfo = {}
+        this.scheduledInfo = { isSubmit: false }
         if (this.pollInfo.scheduled_date !== undefined) {
             this.scheduledInfo.scheduledDate = this.pollInfo.scheduled_date;
             this.scheduledInfo.selectedScheduled = "schedule";
@@ -79,10 +80,10 @@ export class CreatePollFeedPage {
             scheduledInfo: this.scheduledInfo, pollFeedRequest: params, feedType: this.pollInfo.template
         });
         setDeliveryModal.onDidDismiss(data => {
-            if (!data) {
+            if (data && data.isSubmit) {
                 const startIndex = this.navCtrl.getActive().index - 1;
                 this.navCtrl.remove(startIndex, 2);
-            } else {
+            } else if (data) {
                 this.scheduledInfo.selectedScheduled = data.selectedScheduled;
                 this.pollInfo.scheduled_date = data.scheduledDate;
             }

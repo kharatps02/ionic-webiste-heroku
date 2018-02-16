@@ -97,21 +97,22 @@ export class VerifyAddress implements OnInit {
                         resident_profile_pic: that.userData.profile.profile_pic,
                         is_advocate: this.isAdvocate,
                         verification_address: this.providerDetails.location.street_address1 + ' . Unit: ' + this.unit,
-                        location_id : providerDetails._id
+                        location_id: providerDetails._id
                   };
                   that.chatService.createOrEditConversation(groupObject, false).subscribe((result) => {
                         if (result.status === CONSTANTS.RESPONSE_STATUS.SUCCESS) {
-                              let title;
+                              let messagePrefixStr;
                               if (this.isAdvocate) {
-                                    title = CONSTANTS.MESSAGES.ADVOCATE_VERIFICATION_PREFIX;
+                                    messagePrefixStr = CONSTANTS.MESSAGES.ADVOCATE_VERIFICATION_PREFIX;
                               } else {
-                                    title = CONSTANTS.MESSAGES.VERIFICATION_PREFIX;
+                                    messagePrefixStr = CONSTANTS.MESSAGES.VERIFICATION_PREFIX;
                               }
-                              let messageStr = title + that.providerDetails.location.street_address1;
+                              let addressStr = that.providerDetails.location.street_address1;
                               if (that.unit.trim().length > 0) {
-                                    messageStr += ' . Unit: ' + that.unit;
+                                    addressStr += ' . Unit: ' + that.unit;
                               }
-                              that.providerService.sendInvitationMessageToAdmin(groupObject, messageStr, title);
+
+                              that.providerService.sendInvitationMessageToAdmin(groupObject, messagePrefixStr, addressStr);
                               if (groupObject.members && groupObject.members.length > 0) {
                                     that.pubNubService.setUserStateGroup(groupObject.members, CONSTANTS.USER_STATES.VERIFICATION_REQUEST,
                                           groupObject.shared_channel, groupObject.name);

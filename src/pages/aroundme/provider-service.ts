@@ -54,8 +54,16 @@ export class ProviderService {
         let url: string = ENVIRONMENT.APP_BASE_URL + '/api/servicelocations/updatepeopleliveinproperty';
         return this.http.post(url, params).map((res: any) => res.json());
     }
-    sendInvitationMessageToAdmin(groupObject, messageStr: string, title: string) {
-        this.pubNubService.getSupportedLanguageMsg(messageStr).subscribe((msgContent) => {
+    sendInvitationMessageToAdmin(groupObject, messagePrefixStr: string, addressStr: string) {
+        this.pubNubService.getSupportedLanguageMsg(messagePrefixStr).subscribe((msgContent) => {
+
+            // Concat original address and translated message for all supported languages (REZ-2392)
+            for (const langKey in msgContent) {
+                if (msgContent.hasOwnProperty(langKey)) {
+                    msgContent[langKey] += addressStr;
+                }
+            }
+
             let coreMessageObj: IMessage = {
                 content: msgContent,
                 sender_uuid: groupObject.user_id,
@@ -111,7 +119,7 @@ export interface IConnectPMRequest extends IBasePropertyRequest {
     first_name: string;
     last_name: string;
     is_advocate: boolean;
-  
+
 }
 
 export interface IGetNearByPropertiesRequest {

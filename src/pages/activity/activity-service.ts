@@ -194,6 +194,10 @@ export interface IUserSegment {
     targets?: string;
     segment_category ?: string;
     parent_feed_id?: string;
+    type?: string;
+    label?: string;
+    id?: string;
+    value?: any;
 }
 
 export interface IFeedTemplate {
@@ -231,7 +235,8 @@ export interface IFeedTemplate {
     poll?: IPollInfo
     profile_attributes?: string,
     is_allow_conversation?: boolean,
-    scheduled_date?: Date
+    scheduled_date?: Date,
+    is_edit_feed?: boolean
 }
 
 export interface ICreateFeed extends IFeedTemplate {
@@ -267,13 +272,19 @@ export interface IPollInfo {
     is_multiselect?: boolean
     count_answer_option?: number
     user_segment?: string,
-    template?: string
-    scheduled_date?: Date
-
+    template?: string,
+    scheduled_date?: Date,
+    is_edit_feed?: boolean
 }
 
 export interface IScheduledInfo {
     selectedScheduled?: string,
     scheduledDate?: any,
-    scheduledTime?: any
+    scheduledTime?: any,
+    isSubmit:boolean
 }
+// export interface IUserSegmentAlert extends IUserSegment {
+//     label?: string;
+//     id?: string;
+//     value?: any;
+// }

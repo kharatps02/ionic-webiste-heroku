@@ -323,7 +323,9 @@ export class AroundmePage implements OnDestroy {
         "Legal Services": './assets/img/pin-legal-services.png',
         Housing: './assets/img/pin-housing-sp.png',
         service_provider: './assets/img/service_provider.png',
-        housing_provider: './assets/img/housing_provider.png'
+        housing_provider: './assets/img/housing_provider.png',
+        'Community Engagement': './assets/img/pin_community-engagement.png',
+        'Senior Service': './assets/img/pin_senior-service.png'
       };
 
       places.map((place) => {

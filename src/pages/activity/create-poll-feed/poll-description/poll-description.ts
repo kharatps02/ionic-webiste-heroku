@@ -44,12 +44,15 @@ export class PollDescriptionPage {
         } else {
             this.pollInfo.is_multiselect = true;
         }
+        this.pollInfo.question = this.pollInfo.question.trim();        
         this.viewCtrl.dismiss(this.pollInfo);
     }
 
     onAddOptions() {
+        if(this.pollAnswerOption.trim().length > 0){
         this.pollInfo.answer_options.push(this.pollAnswerOption);
         this.pollAnswerOption = '';
+        }
     }
     removeOption(indexNumber: any) {
         this.pollInfo.answer_options.splice(indexNumber, 1);

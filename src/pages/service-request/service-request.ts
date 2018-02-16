@@ -22,6 +22,7 @@ export class ServiceRequest {
   public residentProperties: Array<IResidentProperty>;
   public selectedProperty: IResidentProperty = null;
   public isServiceRequestAPICall: boolean = false;
+  private showToolbar: boolean = false;
   @ViewChild(Content) content: Content;
   constructor(public navCtrl: NavController, private serviceRequestService: ServiceRequestService, private events: Events,
     private translateService: TranslateService, private userService: UserService, private loaderService: LoaderService, ) {
@@ -84,15 +85,15 @@ export class ServiceRequest {
         callback(true);
       }
     }
-    
+
   }
 
   loadServiceRequestCallback(): void {
-        let that = this;
-        setTimeout(() => {
-            that.isServiceRequestAPICall = true;
-        }, 500);
-    }
+    let that = this;
+    setTimeout(() => {
+      that.isServiceRequestAPICall = true;
+    }, 500);
+  }
 
   doRefresh(refresher): void {
     this.isServiceRequestAPICall = false;
@@ -104,7 +105,7 @@ export class ServiceRequest {
       this.loadServiceRequestCallback();
     });
   }
-  
+
   loadMore(infiniteScroll): void {
     this.loadServiceRequestList(true, (isMoreDataNotFound) => {
       infiniteScroll.complete();
@@ -114,7 +115,7 @@ export class ServiceRequest {
     });
   }
 
-  initResidentProperties() {    
+  initResidentProperties() {
     let that = this;
     that.serviceRequestService.checkForResidences({ user_id: that.userInfo.user_id }).subscribe((response) => {
       //console.log('In initResidentProperties response', response);
@@ -122,10 +123,16 @@ export class ServiceRequest {
         that.residentProperties = response.resident_properties || [];
         if (that.residentProperties && that.residentProperties.length > 0) {
           // TODO, Have to show popup modal to select properties for reporting request
-          that.selectedProperty = that.residentProperties[0];
+          that.selectedProperty = that.residentProperties.filter((property) => {
+            return property.is_advocate === false;
+          })[0];
+          if (!that.selectedProperty) {
+            that.selectedProperty = that.residentProperties[0];
+          }
         }
-      }      
-    })
+      }
+      this.showToolbar = true;
+    });
   }
 
   serviceRequest() {
@@ -137,16 +144,16 @@ export class ServiceRequest {
     this.navCtrl.push(ServiceRequestDetails, { _id: request._id });
   }
 
-  navigateToAroundYou(){
-    if(this.userService.userObj.profile.home_address.street_address1.length > 0){      
-      let data: IPinLocation = { };
-        data.address = this.userService.userObj.profile.home_address.street_address1;
-        data.position = {lat: 0, lng:0};
-        if(this.userService.userObj.profile.home_address.lat){
-          data.position.lat =  parseFloat(this.userService.userObj.profile.home_address.lat);
-          data.position.lng =  parseFloat(this.userService.userObj.profile.home_address.long);
-        }        
-        this.events.publish(CONSTANTS.APP_EVENTS.ARROUND_YOU_ACTIONS, CONSTANTS.ARROUND_YOU_ACTIONS.SELECT_SAVED_PIN,data);
+  navigateToAroundYou() {
+    if (this.userService.userObj.profile.home_address.street_address1.length > 0) {
+      let data: IPinLocation = {};
+      data.address = this.userService.userObj.profile.home_address.street_address1;
+      data.position = { lat: 0, lng: 0 };
+      if (this.userService.userObj.profile.home_address.lat) {
+        data.position.lat = parseFloat(this.userService.userObj.profile.home_address.lat);
+        data.position.lng = parseFloat(this.userService.userObj.profile.home_address.long);
+      }
+      this.events.publish(CONSTANTS.APP_EVENTS.ARROUND_YOU_ACTIONS, CONSTANTS.ARROUND_YOU_ACTIONS.SELECT_SAVED_PIN, data);
     }
     this.navCtrl.pop();
     this.navCtrl.parent.select(2);

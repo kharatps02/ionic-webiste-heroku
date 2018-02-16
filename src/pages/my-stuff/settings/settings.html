@@ -31,7 +31,7 @@
         </button>-->
         <ion-item class="list-grid-136">
             <ion-label class="text14px-black">{{'YOUR_STUFF.PROFILE.EDIT.LANGUAGE' | translate}}</ion-label>
-            <ion-select cancelText="{{'CONVERSATIONS.CANCEL' | translate}}" okText="{{'CONVERSATIONS.OK' | translate}}" class="edit-text"
+            <ion-select [disabled]="(userService.userObj.user_type === usertype.HOUSING_PROVIDER || userService.userObj.user_type === usertype.SERVICE_PROVIDER)" cancelText="{{'CONVERSATIONS.CANCEL' | translate}}" okText="{{'CONVERSATIONS.OK' | translate}}" class="edit-text"
                 [(ngModel)]="currentLanguage" (ionChange) = "changeLanguage()">
                 <li *ngFor="let lang of availableLanguages">
                     <ion-option value="{{lang.id}}">{{lang.name}}</ion-option>

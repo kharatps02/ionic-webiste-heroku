@@ -1,11 +1,10 @@
 import { Component } from "@angular/core";
-import { NavController, NavParams, Events } from "ionic-angular";
+import { NavController, NavParams, Events, AlertController } from "ionic-angular";
 import { UserService, IBranch } from "../../../providers/user-service";
 import { TranslateService } from "@ngx-translate/core";
 import { LoaderService } from "../../../providers/loader-service";
 import { ActivityService, IGetUserSegmentRequest, IUserSegment } from "../activity-service";
 import { CreatePlacementFeedPage } from "../create-placement-feed/create-placement-feed";
-import { DescriptionFeedPage } from './../create-placement-feed/description-feed/description-feed';
 import { CreatePollFeedPage } from "../create-poll-feed/create-poll-feed";
 import { CONSTANTS } from "../../../shared/config";
 @Component({
@@ -19,11 +18,11 @@ export class CreateFeedPage {
     private selectedBranch: IBranch;
     private selectedBranchId: string;
     private selectedSegment: string;
+    private selectedSegmentName: string;
     private selectedTemplate: string;
-
     constructor(private activityService: ActivityService, public navCtrl: NavController, private navParams: NavParams, private userService: UserService,
         private events: Events,
-        private translateService: TranslateService,
+        private translateService: TranslateService, private alertCtrl: AlertController,
         public loaderService: LoaderService) {
 
     }
@@ -31,11 +30,12 @@ export class CreateFeedPage {
     ionViewDidEnter() {
         this.branches = this.userService.userObj.branches;
         this.selectedTemplate = this.userService.userObj.feed_templates[0];
-        //this.loadUserSegments();
     }
 
     loadUserSegments() {
         let that = this;
+        this.selectedSegment = undefined;
+        this.selectedSegmentName = '';
         that.loaderService.createLoader(that.translateService.instant('ERROR_MESSAGES.PLEASE_WAIT'));
         let userSegments: Array<IUserSegment> = [];
         let request: IGetUserSegmentRequest = {
@@ -50,21 +50,72 @@ export class CreateFeedPage {
                     userSegments.push({ _id: userSegment._id, name: userSegment.name, segment_category: userSegment.segment_category, parent_feed_id: userSegment.parent_feed_id });
                 });
                 that.userSegments = userSegments;
+                console.log(that.userSegments);
             }
             that.loaderService.dismissLoader();
         });
     }
     navigateToSetFeed() {
-        console.log(this.selectedTemplate);
-        if(this.selectedTemplate === CONSTANTS.TEMPLATE.PLACEMENT){
+        console.log(this.selectedTemplate, this.selectedSegment);
+        if (this.selectedTemplate === CONSTANTS.TEMPLATE.PLACEMENT) {
             this.navCtrl.push(CreatePlacementFeedPage, { selectedBranch: this.selectedBranch, selectedSegment: this.selectedSegment, selectedTemplate: this.selectedTemplate, organisationId: this.selectedBranch.organization_id });
-        }else{
+        } else {
             console.log(this.selectedTemplate);
             this.navCtrl.push(CreatePollFeedPage, { selectedBranch: this.selectedBranch, selectedSegment: this.selectedSegment, selectedTemplate: this.selectedTemplate, organisationId: this.selectedBranch.organization_id });
         }
     }
-    onTemplateSelect(template){
+    onTemplateSelect(template) {
         this.selectedTemplate = template;
+    }
+
+    onSegmentList() {
+        for (let i = 0; i < this.userSegments.length; i++) {
+            //console.log(this.userSegments[i]);
+            this.userSegments[i].type = "radio",
+                this.userSegments[i].label = this.userSegments[i].name;
+            this.userSegments[i].value = this.userSegments[i]._id + "_" + this.userSegments[i].name;
+            if (!this.userSegments[i].parent_feed_id) {
+                this.userSegments[i].id = "parent-" + i;
+            } else {
+                this.userSegments[i].id = "child-" + i;
+            }
+        }
+        //console.log(this.userSegments);
+        if (this.userSegments.length > 0) {
+            let alert = this.alertCtrl.create({
+                title: 'Select Segment',
+                inputs: this.userSegments,
+                buttons: [
+                    {
+                        text: this.translateService.instant('CONVERSATIONS.CANCEL'),
+                        role: 'cancel',
+                        handler: data => {
+                            console.log('Cancel clicked');
+                        }
+                    },
+                    {
+                        text: this.translateService.instant('CONVERSATIONS.OK'),
+                        handler: data => {
+                            let segmentData = data.split('_');
+                            this.selectedSegment = segmentData[0];
+                            this.selectedSegmentName = segmentData[1];
+                        }
+                    }
+                ]
+            });
+            alert.present();
+        } else {
+            let alert = this.alertCtrl.create({
+                title: this.translateService.instant('ERROR_MESSAGES.NO_SEGMENTS'),               
+                buttons: [{
+                  text: this.translateService.instant('MISC.DISMISS')
+                }],
+                cssClass: 'alert-single'
+              });
+            alert.present();
+        }
+
+
     }
 
     refreshTarget(): void {
@@ -85,7 +136,7 @@ export class CreateFeedPage {
         //     this.setTargetPercentage(0);
         //   }
         // });
-      }
-    
+    }
+
 
 }

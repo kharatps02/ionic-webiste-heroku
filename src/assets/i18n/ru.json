@@ -470,7 +470,10 @@
         "VERIFICATION_CANCEL_MESSAGE": "Резидент отменил свой запрос на подтверждение.",
         "ERROR_TITLE": "Ошибка",
         "TWITTER_ERROR": "Приложение Twitter не найдено.",
-        "PHONE_VALIDATION": "Пожалуйста, введите действующий телефонный номер."                
+        "PHONE_VALIDATION": "Пожалуйста, введите действующий телефонный номер.",
+        "INVALID_DATE": "Enter a valid date",
+        "INVALID_TIME": "Please select a valid current or future date.",
+        "NO_SEGMENTS": "No Segments Found"                
     },
     "DAYS_IN_SHORT": {
         "SUNDAY": "Вс",

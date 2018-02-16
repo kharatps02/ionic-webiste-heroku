@@ -138,11 +138,13 @@ export class CreatePlacementFeedPage {
         });
         descriptionModal.onDidDismiss(data => {
             //console.log(data);
-            this.feedInfo.header.title = data.title;
-            this.feedInfo.body.headLineText = data.title;
-            this.feedInfo.body.detailText = data.description;
-            this.feedInfo.openInUrl = data.url;
-            this.feedInfo.is_allow_conversation = data.allowConversation;
+            if (data !== null) {
+                this.feedInfo.header.title = data.title;
+                this.feedInfo.body.headLineText = data.title;
+                this.feedInfo.body.detailText = data.description;
+                this.feedInfo.openInUrl = data.url;
+                this.feedInfo.is_allow_conversation = data.allowConversation;
+            }
         });
         descriptionModal.present();
     }
@@ -186,6 +188,7 @@ export class CreatePlacementFeedPage {
 
     setDelivery() {
         let params: ICreateFeed = this.feedInfo;
+        this.feedInfo.is_edit_feed = false;
         params.branch_id = this.selectedBranch;
         //params.scheduled_date = undefined;
         params.organization_id = this.selectedBranch.organization_id;
@@ -194,7 +197,7 @@ export class CreatePlacementFeedPage {
         params.created_by = this.userService.userObj.user_id;
         params.is_campaign_feed = false;
 
-        this.scheduledInfo = {}
+        this.scheduledInfo = { isSubmit: false }
         if (this.feedInfo.scheduled_date !== undefined) {
             this.scheduledInfo.scheduledDate = this.feedInfo.scheduled_date;
             this.scheduledInfo.selectedScheduled = "schedule";
@@ -207,10 +210,10 @@ export class CreatePlacementFeedPage {
             scheduledInfo: this.scheduledInfo, placementFeedRequest: params, feedType: this.feedInfo.template
         });
         setDeliveryModal.onDidDismiss(data => {
-            if (!data) {
+            if (data && data.isSubmit) {
                 const startIndex = this.navCtrl.getActive().index - 1;
                 this.navCtrl.remove(startIndex, 2);
-            } else {
+            } else if (data) {
                 this.scheduledInfo.selectedScheduled = data.selectedScheduled;
                 this.feedInfo.scheduled_date = data.scheduledDate;
             }
