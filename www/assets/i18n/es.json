@@ -1,0 +1,527 @@
+{
+    "GET_STARTED": {
+        "TITLE": "REGISTRARSE EN REZILITY",
+        "ONBOARDING": {
+            "SKIP": "OMITIR",
+            "FEED_TITLE": "Tu Actividad",
+            "CONV_TITLE": "Tus Conversaciones",
+            "AROUND_TITLE": "Cerca tuyo",
+            "APP_INFO_MESSAGE": "Información y oportunidades personalizadas que te ayudarán a mejorar tu vida.",
+            "FEED_IMG": "Alimentar",
+            "CONV_IMG": "Conversacion",
+            "AROUND_IMG": "Cerca tuyo",
+            "CONV_DESC": "Habla con personas que pueden conectarte con oportunidades sobre los temas que te importan.",
+            "AROUND_DESC": "Encuentra personas, descubre lugares y lo qué pasa a tu alrededor, ya sea cerca de tu hogar, del trabajo o en tu comunidad.",
+            "PRIVACY": "Nos tomamos muy en serio la privacidad de las personas.",
+            "PRIVACY_DESC": "Sobre la marcha, te pediremos que utilices tus datos para controlar la información que recibes.  Nos comprometemos a mantener tus datos seguros y cuidar de ellos como si fueran nuestros.",
+            "ALREADY_ACC": "Ya tengo una cuenta."
+        }
+    },
+    "LOGIN": {
+        "SIGN_IN": "Iniciar sesión",
+        "LOGIN_BTN": "INICIAR SESIÓN EN REZILITY",
+        "LOGIN_WITH_FB_BTN": "INICIAR SESIÓN CON FACEBOOK.",
+        "FORGOT_PASSWORD_BTN": "Olvidé mi contraseña.",
+        "FORGOT_PASSWORD": "Olvidé mi contraseña",
+        "REQUEST_LOG_IN_LINK": "Solicitar una contraseña nueva.",
+        "REQUEST_LOG_IN_LINK_MESSAGE": "Las contraseñas son un problema.  Especialmente en el teléfono.  Lo sabemos.  Solo ingresa la dirección de correo electrónico de tu cuenta y te enviaremos una contraseña nueva.",
+        "EMAIL_ADDRESS": "Dirección de Correo electrónico",
+        "SEND_LOGIN_LINK": "ENVIAR NUEVA CONTRASEÑA",
+        "FORGOT_PASS_MESSAGE": "Enviamos una contraseña nueva a tu correo electrónico.  Copia la contraseña, vuelve a esta pantalla, toca Continuar y pega la contraseña para iniciar sesión en Rezility.",
+        "LOGIN_LINK_SENT": "Revisa tu correo.",
+        "ACCOUNT_EXIST": "Esta cuenta ya existe en Rezility.",
+        "CREATE_ACC": "Crear una cuenta nueva.",
+        "VALID_EMAIL": "Ingrese una dirección de correo electrónico válida",
+        "PASSWORD": "Contraseña",
+        "CONTINUE_SAVE": "¿Seguir sin guardar los cambios?"
+    },
+    "SIGN_UP": {
+        "TITLE": "Registrarse",
+        "FIRST_NAME": "Nombre",
+        "LAST_NAME": "Apellido",
+        "ENTER_FN": "Ingresar Nombre.",
+        "ENTER_LN": "Ingresar Apellido.",
+        "EMAIL": "Dirección de Correo electrónico",
+        "ZIP_CODE": "Código Postal",
+        "ENTER_EMAIL": "Ingrese una dirección de correo electrónico válida",
+        "ENTER_ZIP": "Ingresar un código postal válido.",
+        "PRIVACY_MSG": "He leído, entendido y acepto los",
+        "PRIVACY_MSG1": "Aviso de privacidad",
+        "PRIVACY_MSG2": "y",
+        "PRIVACY_MSG3": "Términos de uso",
+        "PRIVACY_MSG5": "de Rezility.",
+        "PRIVACY_MSG4": "Acepte los Términos de uso y el Aviso de privacidad.",
+        "GET_STARTED": "¿CÓMO TE PUEDE AYUDAR REZILITY?",
+        "MESSGAE_1": "Con un futuro mejor para",
+        "MESSGAE_2": "nosotros y los demás, en las comunidades donde trabajamos y vivimos.",
+        "WELCOME": "Bienvenidos",
+        "WELCOME_1": "a Rezility.",
+        "ALREADY_HAVE_ACCOUNT": "Ya tengo una cuenta.",
+        "CHOOSE_PASSWORD": "ELEGIR CONTRASEÑA",
+        "MESSAGE": "Para completar el registro, elige una contraseña o inicia sesión con tu cuenta de Facebook.",
+        "CREATE_PASSWORD": {
+            "TITLE": " Crear contraseña",
+            "LOGIN_INTO_BEHOME": "INICIAR SESIÓN EN REZILITY",
+            "PASSWORD_STRENGTH_LEVEL1": "Necesitarás una contraseña.",
+            "PASSWORD_STRENGTH_LEVEL2": "Y una buena. Con al menos 8 caracteres con mayúsculas y números.",
+            "PASSWORD_STRENGTH_LEVEL3": "¡Esta sirve!",
+            "PASSWORD_STRENGTH_LEVEL4": "No importa si la olvidas. Podemos enviarte un enlace que te ayudará a entrar."
+        },
+        "SELECT_PASSWORD": {
+            "COMPLETE_SIGN": "Completar Registro"
+        }
+    },
+    "COACH_MARK": {
+        "FEED_MSG_1": "Revisa con frecuencia",
+        "FEED_MSG_2": "tu actividad para obtener información y nuevas oportunidades.",
+        "GOT_IT": "ENTENDIDO",
+        "FEED_COACH": "Alimentar",
+        "CONV_MSG_1": "Estas son",
+        "CONV_MSG_2": "tus conversaciones.",
+        "CONV_COACH": "Conversacion",
+        "AROUND_PLACE01": "Descubre lugares y servicios",
+        "AROUND_PLACE02": "en tu sector.",
+        "AROUND_COACH": "Cerca tuyo",
+        "STUFF_COACH": "Tus cosas",
+        "STUFF_MSG_1": "Administra tu",
+        "STUFF_MSG_2": "perfil y la configuración.",
+        "START_CONVERSATION": "Iniciar una conversación",
+        "MAP_SETTINGS": "Configuración del mapa",
+        "YOUR_PINNED": "Tus Direcciones",
+        "LOCATION": "Seleccionadas",
+        "SAVE_LOCATION": "Guardar dirección",
+        "CENTER_MAP": "Mueve el mapa a tu",
+        "YOUR_LOCATION": "dirección actual"
+    },
+    "ACTIVITY": {
+        "TITLE": "Tu Actividad",
+        "COMMING_SOON": "Próximamente....",
+        "START_CONVERSATION": "Iniciar una conversación",
+        "READ_THIS_ARTICLE": "MÁS INFORMACIÓN",
+        "CONNECT": "CONECTARSE AHORA",
+        "NEW_ADDRESS": "INGRESAR NUEVA DIRECCIÓN",
+        "CALL": "LLAMAR",
+        "CREATE": "Crear feed",
+        "SUBMIT_CARD": "Enviar tarjeta",
+        "DEFINE_AUDIENCE": "Define Audience",
+        "BUILD_PLACEMENT": "Build Placement",
+        "BUILD_POLL": "Build Poll",
+        "CREATE_FEED": { 
+            "HEADLINE": "Headline...",
+            "HEADLINEDESC": "Headline",
+            "SUMMARY": "Summary...",
+            "NOW": "Now",
+            "PLACEMENT_HEADER": "Placement Details",
+            "POLL_HEADER": "Construct Poll",
+            "SELECT_IMAGE": "Select a image",
+            "IMAGE_LIBRARY":"Image Library",
+            "HEADER": "Header",
+            "TOTAL_CHARACTER": "characters remaining",
+            "DESCRIPTION": "Description",
+            "MORE_INFO": "More Info",
+            "ALLOW": "Allow User To Initiate A Private Conversation",
+            "BRANCHES": "Select Location",
+            "SELECT_SEGMENT":"Select Segment",
+            "SELECT_TEMPLATE":"Select a Template",
+            "QUESTION": "Question",
+            "RESPONSE_TYPE": "Response Type",
+            "SINGLE_SELECTION": "Single Selection",
+            "MULTI_SELECTION": "Multiple Selection",
+            "OPTIONS": "Options",
+            "ENTER_QUESTION": "Enter a Question",
+            "SUBMIT": "Submit",
+            "SUBMIT_ANSWER": "SUBMIT YOUR ANSWER",
+            "SET_DELIVERY": "Set Delivery",
+            "RESET_DELIVERY": "Re-set Delivery",
+            "RUN_PLACEMENT": "Run my placement now",
+            "START_DATE": "Set start date",
+            "START_DELIVERY": "Start Delivery on"
+        }
+    },
+    "CONVERSATIONS": {
+        "TITLE": "Tus Conversaciones",
+        "IS_TYPING": "está escribiendo…",
+        "INVITE_CONNECT": "Invitación a conectarse",
+        "ARCHIVE": "Archivar",
+        "LEAVE": "Salir",
+        "DELETE": "Borrar",
+        "WELCOME": "Bienvenido a",
+        "YOUR_CONVERSATION": "Tus Conversaciones.",
+        "LEAVE_GROUP": "¿Estás seguro de que deseas abandonar este grupo?",
+        "DELETE_GROUP": "¿Estás seguro de que deseas eliminar esta conversación?",
+        "OK": "CONFIRMAR",
+        "CANCEL": "CANCELAR",
+        "NEW_MSG": {
+            "TITLE": "Nuevo Mensaje",
+            "TO": "A",
+            "YOUR_CONNECTION": "TUS CONEXIONES",
+            "OTHERS": "OTRAS EN REZILITY",
+            "CREATE_GROUP": "Crear nuevo grupo",
+            "INVITATION": "Invitación Enviada",
+            "INVITE_CONNECT": "Invitación a conectarse",
+            "NOT_CONNECT": "Sin conexión",
+            "TAKE_PHOTO": "Tomar una foto",
+            "ATTACH_PHOTO": "Adjuntar una foto",
+            "LIB_PHOTO": "Seleccionar de la biblioteca"
+        },
+        "SHOW_IMG": {
+            "CAPTION": "Descripción"
+        },
+        "SETTING": {
+            "TITLE": "Configuración de la conversación",
+            "SEND_PUSH_NOTIFICATION": "Silenciar conversación",
+            "PARTICIPANT": "PARTICIPANTES",
+            "ARCHIVE": "Archivar Conversación",
+            "ADD_PEOPLE": "AGREGAR PERSONAS",
+            "EDIT_GROUP": "Editar Grupo",
+            "ACTIVE_NOW": "Activar Ahora"
+        },
+        "GROUP_CHAT": {
+            "TITLE": "TUS CONEXIONES",
+            "CREATE_TITLE": "Nueva Conversación en Grupo",
+            "EDIT_TITLE": "Editar Conversación en Grupo",
+            "ADDPEOPLE_TITLE": "AGREGAR PERSONAS",
+            "GROUP_NAME": "Nombre del Grupo",
+            "SEARCH_PEOPLE": "Buscar Personas",
+            "GROUP_TITLE": "Título del Grupo"
+        },
+        "PUBLIC_PROFILE": {
+            "INVITE": "Invitar",
+            "CANCEL_INVITE": "Cancelar Invitación",
+            "ACCEPT_CONNECT": "Aceptar y conectarse",
+            "IGNORE": "Ignorar",
+            "PRIVATE_MSG": "Mensaje privado",
+            "REMOVE_GRP": "Eliminar del grupo",
+            "LEAVE_GRP": "Abandonar grupo",
+            "BLOCK": "Bloquear",
+            "UNBLOCK": "Desbloquear",
+            "APPROVE_CONNECT": "Aprobar y conectar",
+            "DENY": "Negar"
+        }
+    },
+    "AROUND_ME": {
+        "TITLE": "Cerca tuyo",
+        "PINNED_LOCATION": "Dirección Seleccionada",
+        "YOUR_PINNED_LOCATION_BTN": "Tus Direcciones Seleccionadas",
+        "DROP_PIN_BTN": "Quitar Selección",
+        "EDIT_LOCATION_TITLE": "Editar Dirección Guardada",
+        "SEARCH_LOCATION": "Buscar Dirección",
+        "YOUR_PINNED_LOCATION": {
+            "TITLE": "Direcciones guardadas",
+            "EDIT_BUTTON": "Editar",
+            "DELETE_BUTTON": "Borrar"
+        },
+        "SET_PIN_LOCATION": {
+            "TITLE": "Quitar Selección",
+            "LOCATION": "Nombre de la dirección"
+        },
+        "MAP_OVERLAYS": {
+            "TITLE": "¿Qué deseas ver?",
+            "CLEAR_BTN": "Limpiar",
+            "PROVIDER_SECTION": "PROVEEDORES DE VIVIENDAS",
+            "SERVICE_INTEREST": "PROVEEDORES DE SERVICIO",
+            "GOOGLE_PLACES": "LUGARES DE INTERÉS"
+        },
+        "LIST_VIEW": {
+            "PROPERTY": "PROVEEDORES DE VIVIENDAS",
+            "SERVICE_PROPVIDER": "PROVEEDORES DE SERVICIO"
+        },
+        "PROVIDER_DETAILS": {
+            "SERVICES": "SERVICIOS",
+            "ADDRESS": "Dirección",
+            "HOURS": "HORAS",
+            "FOLLOW": "SEGUIR",
+            "UNFOLLOW": "DEJAR DE SEGUIR",
+            "DONT_LIVE": "NO VIVO AQUÍ",
+            "LIVE": "VIVO AQUÍ",
+            "TITLE_VERIFIED": "Vives aquí",
+            "TITLE_RESIDENT_ADVOCATE": "Abogado residente",
+            "TITLE_UNVERIFIED": "Se encuentra pendiente la verificación de dirección",
+            "FOLLOW_BTN": "SEGUIR",
+            "UNFOLLOW_BTN": "NO SEGUIR",
+            "RESIDENT_ADVOCATE": "CUIDO A ALGUIEN QUE VIVE AQUÍ"
+        },
+        "NO_PINNED_MESSAGE": "Comencemos seleccionando unos pocos lugares.",
+        "WORKING_STATUS": {
+            "OPEN_NOW": "ABIERTO AHORA",
+            "CLOSED": "CERRADO AHORA"
+        },
+        "DISCONTINUED_PROPERTY": {
+            "CONFIRMATION_MSG": "¿Estás seguro?",
+            "SEND_BUTTON": "SÍ. DESCONÉCTEME.",
+            "CANCEL_BTN_LINK": "No quiero que me desconecten.",
+            "MSG": "Al confirmar que no vives aquí, no recibirás más información del proveedor de vivienda a través de la aplicación Rezility."
+        },
+        "HOUSING_TYPES": {
+            "TITLE": "Cuál edificio"
+        },
+        "HOUSING_UNIT": {
+            "TITLE": "¿En qué unidad?",
+            "VERIFY-BTN": "VERIFICAR DOMICILIO",
+            "MSG": "Necesitamos saber esto para verificar tu identidad y responder a las llamadas de servicio. Nos comprometemos a mantener tus datos seguros y cuidar de ellos como si fueran nuestros.",
+            "Unit": "Unidad #"
+        },
+        "PENDING_CONFIRMATION": {
+            "CONFIRMATION_MSG": "¡Entendido!",
+            "SEND_BUTTON": "CONTINUAR",
+            "MSG": "Se envió tu dirección al proveedor de vivienda para su verificación.  Una vez verificada, podrás recibir la información relacionada con la propiedad, las actualizaciones y las noticias de tu proveedor de vivienda."
+        },
+        "VERIFY_ADDRESS": {
+            "TITLE": "Verificar el domicilio",
+            "VERIFY_BUTTON": "Verificar el domicilio",
+            "APARTMENT_UNIT": "N° de Apartamento o Unidad",
+            "ADDRESS": "Dirección",
+            "PROVIDER": "Proveedor"
+        },
+        "ADDRESS_TYPE": {
+            "HOME": "Inicio",
+            "WORK": "Trabajo",
+            "OTHER": "Otros"
+        }
+    },
+    "YOUR_STUFF": {
+        "TITLE": "Tus Cosas",
+        "HI": "Hola",
+        "PROFILE": {
+            "TITLE": "Perfil",
+            "EDIT": {
+                "TITLE": "Editar el perfil",
+                "FIRST_NAME": "Nombre",
+                "LAST_NAME": "Apellido",
+                "MIDDLE_NAME": "Segundo nombre",
+                "PHONE_NUMBER": "Número de teléfono",
+                "ABOUT": "Acerca de",
+                "DATE_OF_BIRTH": "Fecha de Nacimiento",
+                "AGE": "Años",
+                "GENDER": "Sexo",
+                "UNDER": "Debajo",
+                "OVER": "Encima",
+                "VERIFIED": "VERIFICADO",
+                "UNVERIFIED": "SIN VERIFICAR",
+                "HOME_ADDRESS": "Domicilio",
+                "ADDRESS": {
+                    "TITLE": "Dirección",
+                    "STREET_ADDRESS_1": "Dirección",
+                    "UNIT_NO": "Unidad #",
+                    "CITY": "Ciudad",
+                    "STATE": "Estado",
+                    "ZIP_CODE": "Código Postal",
+                    "SEARCH_LOCATION": "Buscar Dirección"
+                },
+                "LANGUAGE": "Idioma",
+                "EDUCATION_LEVEL": "Nivel de Educación",
+                "ANNUAL_INCOME": "Ingreso Anual",
+                "SERVICE_INTERESTS": "Áreas de Interés",
+                "VERIFICATIONS": {
+                    "TITLE": "Verificaciones",
+                    "FACEBOOK_CONNECTED": "Conectado a Facebook",
+                    "FB_STATUS": "Estado de Facebook.",
+                    "FB_NOT": "No Conectado a Facebook"
+                }
+            },
+            "MESSAGES": {
+                "DOB_ERROR": "La Fecha de Nacimiento no puede ser una fecha futura."
+            }
+        },
+        "SETTINGS": {
+            "TITLE": "Configuración",
+            "PINNED_LOCATIONS": "Direcciones seleccionadas",
+            "SEND_PUSH_NOTIFICATIONS": "Enviar notificaciones de inserción",
+            "LOW_DATA": "Bajo uso de datos",
+            "CHANGE_PASSWORD": {
+                "TITLE": "Cambiar contraseña",
+                "NEW_PASSWORD": "Contraseña nueva",
+                "REPEAT_PASSWORD": "Repetir contraseña"
+            },
+            "BLOCKED_USERS": "Usuarios bloqueados",
+            "SHOW_COACHMARKS": "Mostrar notas de apoyo",
+            "ABOUT_APP": "Acerca de la aplicación",
+            "LOG_OUT": "Cerrar sesión",
+            "DEACTIVE_YOUR_ACCOUNT": " DESACTIVAR CUENTA",
+            "VERSION": " VERSIÓN DE REZILITY "
+        },
+        "FAQ": {
+            "TITLE": "Preguntas Frecuentes"
+        },
+        "FEEDBACK": {
+            "TITLE": "Cuéntanos Tus Comentarios"
+        },
+        "TELL_FEEDBACK": {
+            "TITLE": "Cuéntanos Tus Comentarios",
+            "SEND_BTN": "Enviar",
+            "PLACEHOLDER": "¿Alguna pregunta/Deseas compartir tus comentarios? Envíalo aquí."
+        },
+        "FAVORITES": {
+            "TITLE": "Favoritos"
+        }
+    },
+    "SERVICE_REQUESTS": {
+        "TITLE": "Solicitudes de servicio",
+        "TYPE": "TIPO",
+        "DESCRIPTION": "DESCRIPCIÓN",
+        "DESCRIPTION_HINT": "Describa el problema ... (Máximo 500 caracteres)",
+        "PHOTOS": "FOTOS",
+        "PHOTOS_HINT": "Las fotos son opcionales.",
+        "NEXT": "SIGUIENTE",
+        "ADD_PHOTOS": "AGREGAR FOTOS",
+        "SETTINGS": {
+            "TITLE": "NUEVA SOLICITUD DE SERVICIO",
+            "PARTICIPANT": "Participantes",
+            "NEWSERVICE": "CREAR NUEVA SOLICITUD DE SERVICIO"
+        },
+        "DETAILS": {
+            "METAID": "#123-456-789",
+            "DETAILS": "DETALLES",
+            "CONVERSATION": "Conversaciones",
+            "STATUS": "ESTADO",
+            "ACTIVE": "ACTIVO"
+        },
+        "REQUEST_LIST": {
+            "ACTIVE": "ACTIVO",
+            "RESOLVED": "RESUELTO",
+            "CANCELLED":"CANCELADO",
+            "ACTIVE_MSG": "No ha creado una solicitud de servicio. Una vez que haya creado una solicitud de servicio, la solicitud de servicio aparecerá en su lista de solicitud de servicio.",
+            "RESOLVED_MSG": "Actualmente no hay solicitudes de servicio resueltas."
+        },
+        "REFERENCE_NUMBER": "A este incidente se le ha asignado el número de referencia",
+        "PROBLEMREPORTED": "Problema informado",
+        "NO_SERVICE_REQUEST": "Esta propiedad no admite solicitudes de servicio.",        
+        "VERIFY_ADDRESS": "Verifique su dirección para crear solicitudes de servicio.",
+        "SERVICE_REQUEST_CREATED": "Solicitud de servicio ha sido creado."
+    },
+    "BUTTON_LABEL": {
+        "SEND": "Enviar",
+        "SAVE": "Guardar",
+        "EDIT": "Editar",
+        "CANCEL": "CANCELAR",
+        "BACK": "Atrás",
+        "CLEAR": "Limpiar",
+        "CONTINUE": "CONTINUAR",
+        "SKIP_THIS": "Omitir esto",
+        "FIX_ERROR": "CORREGIR ESTE ERROR",
+        "LOGIN_FACEBOOK": "INICIAR SESIÓN CON FACEBOOK."
+    },
+    "PLACEORDER": {
+        "SEARCH": "Ingresar nombre o correo electrónico",
+        "TITLE": "Nueva Conversación",
+        "MESSAGE": "Escribe un mensaje"
+    },
+    "ERROR_MESSAGES": {
+        "NO_DATA_FOUND": "No se encontraron datos",
+        "LOADING_MORE_DATA_TO_LOAD": "Cargando más datos...",
+        "NO_CONVERSATION": "Haga clic en el icono + en la parte superior izquierda",
+        "NO_CONVERSATION_1": "y luego escriba un nombre en el cuadro de búsqueda para comenzar a conectarse con otros",
+        "NO_CONVERSATION_2": "usuarios de Rezility.",
+        "EMPTY_BLOCKED_LIST": "Actualmente no está bloqueando usuarios. Una vez que haya bloqueado a un usuario, este aparecerá en su lista de usuarios bloqueados.",
+        "SOMETHING_WENT_WRONG": "¡Algo salió mal! Vuelve a intentarlo después de algún tiempo.",
+        "APP_VERSION_UPDATED": "Parece que has actualizado la aplicación. Vuelve a iniciar sesión.",
+        "NO_MORE_DATA_TO_LOAD": "No hay más datos que cargar",
+        "SAVE_DATA_DONE": "Se guardaron con éxito los datos",
+        "PROFILE_SAVE_DONE": "Se guardó con éxito el perfil",
+        "POLL_SAVE_DONE": "Se guardó con éxito la encuesta",
+        "SETTINGS_UPDATED": "Configuración actualizada correctamente",
+        "LOGGED_USER": "Ya has iniciado sesión en Rezility.",
+        "DEVICE_REGISTRATION_FAILED": "Se produjo un error en el registro del dispositivo. Vuelve a intentarlo después de algún tiempo.",
+        "LOCATION_NOT_FOUND": "No se ha podido encontrar la dirección actual. Vuelve a intentarlo más tarde.",
+        "ADDRESS_NOT_FOUND": "No se encontró la dirección.",
+        "SELECT_LOCATION": "Seleccione una dirección válida en el Mapa.",
+        "LOCATION_NAME_BLANK": "Establezca un nombre de dirección válido.",
+        "INVALID_USERNAME_PASSWORD": "Dirección de Correo electrónico o contraseña no válidos",
+        "ADMIN_BLOCK": "No puede bloquear al administrador de rezility.",
+        "UNINVITED_MESSAGE": "Invite al usuario a conectarse.",
+        "INVALID_UNIT_MESSAGE": "Seleccione un número de unidad válido.",
+        "ZIP_CODE_VALID": "Ingrese un Código postal válido (por ejemplo, 10461 o 10461-1235)",
+        "NO_NETWORK": "Revisa tu conexión a internet.",
+        "NO_NETWORK_TITLE": "Sin conexión a Internet",
+        "NO_NETWORK_MSG": "Revisa tu conexión a internet.",
+        "INVITATION_ACCEPTED_PREFIX": "Ahora estás conectado a ",
+        "SENT_INVITE_NOT_POSTFIX": "te ha invitado a conectarte.",
+        "BLOCK_SUCCESS": "Se ha bloqueado correctamente al usuario.",
+        "UNBLOCK_SUCCESS": "Se ha desbloqueado correctamente al usuario.",
+        "BLOCKED_USER_POSTFIX": "está bloqueado.",
+        "GRP_SEND_ERROR_MSG": "No puede enviar mensajes a este grupo porque ya no pertenece a él.",
+        "GRP_EDIT_ERROR_MSG": "No puede editar este grupo porque ya no pertenece a él.",
+        "GRP_JOINED": "Bienvenido al grupo",
+        "GRP_REMOVED": "Ya no perteneces al grupo.",
+        "PLEASE_WAIT": "Espere un momento…",
+        "REPORTING": "Creación de informes...",
+        "UPLOADING": "Cargando...",
+        "LOGGING_OUT": "Cerrando sesión...",
+        "UPDATE_SUCCESSFUL": "Contraseña actualizada correctamente",
+        "PASSWORD_BLANK": "La contraseña no puede estar en blanco",
+        "PASSWORD_MISMATCH": "Las contraseñas no coinciden",
+        "PASSWORD_FORMAT": "La contraseña debe tener al menos 8 caracteres con mayúsculas y números.",
+        "NAME_VALIDATION": "El Nombre y el Apellido no pueden estar en blanco",
+        "CANCEL_BTN": "NO, GRACIAS.",
+        "OK_BTN": "ACTUALIZAR",
+        "VERIFY_ADDRESS_SUCCESS": "La verificación de residencia fue exitosa.",
+        "VERIFY_ADDRESS_DENY": "Se denegó la verificación de residencia.",
+        "ADDED_GROUP": "Se le ha agregado al grupo.",
+        "NO_LONGER_PARTICIPANT": "Ya no pertenece al grupo.",
+        "INVITED_YOU": "te ha invitado a conectarte.",
+        "NETWORK": "La red no está conectada",
+        "INVITATION_INVITED_POSTFIX": "todavía tiene que aceptar su invitación para conectarse.",
+        "VERIFICATION_PREFIX": "Verificación solicitada: ",
+        "ADVOCATE_VERIFICATION_PREFIX": "Se solicita abogado residente: ",
+        "ACCEPTED_POSTFIX": "Ha sido verificado. Estás conectado. ",
+        "DENY_PREFIX": "Verificación denegada: ",
+        "VERIFICATION_MESSAGE": "Ha recibido una solicitud de verificación.",
+        "NO_FAVORITE_FOUND": "Una vez que hayas favorecido un feed, el feed aparecerá en tu lista de favoritos.",
+        "VERIFICATION_CANCEL_MESSAGE": "El residente ha cancelado su solicitud de verificación.",
+        "ERROR_TITLE": "Error",
+        "TWITTER_ERROR": "Aplicación de Twitter no encontrada.",
+        "PHONE_VALIDATION": "Por favor ingrese un número de teléfono válido.",        
+        "INVALID_DATE": "Enter a valid date",
+        "INVALID_TIME": "Please select a valid current or future date.",
+        "NO_SEGMENTS": "No Segments Found"
+    },
+    "DAYS_IN_SHORT": {
+        "SUNDAY": "Dom",
+        "MONDAY": "Lun",
+        "TUESDAY": "Mar",
+        "WEDNESDAY": "Mié",
+        "THURSDAY": "Jue",
+        "FRIDAY": "Vie",
+        "SATURDAY": "Sáb"
+    },
+    "MONTHS_IN_SHORT": {
+        "JAN": "Ene",
+        "FEB": "Feb",
+        "MAR": "Mar",
+        "APR": "Abr",
+        "MAY": "May",
+        "JUN": "Jun",
+        "JUL": "Jul",
+        "AUG": "Ago",
+        "SEP": "Sep",
+        "OCT": "Oct",
+        "NOV": "Nov",
+        "DEC": "Dic"
+    },
+    "MISC": {
+        "Rezility": "Rezility",
+        "IMAGE": "Imagen",
+        "PROFILE_IMAGE": "Imagen de perfil",
+        "Oops": "¡Vaya!",
+        "REFRESH": "Actualizando...",
+        "PULL": "Tire para actualizar",
+        "OK": "CONFIRMAR",
+        "DISMISS": "Rechazar"
+    },
+    "TIMESTAMP": {
+        "DAY_AGO": "1 hace día",
+        "AM": "AM",
+        "PM": "PM"
+    },
+    "WELCOME_FEED": {
+        "YOUR_FEED": "Tu\nActividad",
+        "YOUR_CONV": "Tus\nConversaciones",
+        "AROUND_YOU": "Cerca\ntuyo",
+        "YOUR_STUFF": "Tus\ncosas"
+    },
+    "CREATE_FEED":{
+        "TITLE":"Please add title to the feed.",
+        "DESCRIPTION":"Please add description to the feed.",
+        "LOGO":"Please add/select a logo."
+    }
+}

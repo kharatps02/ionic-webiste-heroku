@@ -1,0 +1,127 @@
+page-group-chat, page-contact-list {
+    ion-header[labelheader] {
+        ion-navbar {
+            ion-buttons[end] {
+                ion-icon {
+                    font-size: 1.188rem;
+                    color: $greenShade1;
+                }
+            }
+        }
+        ion-toolbar.toolbar {
+            .toolbar-background {
+                @extend %toolbar-transparent;
+                background: $white;
+            }
+            .group-title {
+                @include zeroPadding(0.75rem 1.25rem 0.688rem 1.25rem);
+                border-bottom: 1px solid $silverShade6;
+                @extend %vertical-center;
+                .icons-chat01 {
+                    width: 1.375rem;
+                    font-size: 1.25rem;
+                    display: flex;
+                    align-items: center;
+                }
+                ion-input {
+                    width: calc(100% - 2rem);
+                    @include zeroPadding(0 0 0 1rem);
+                }
+            }
+            [search-box].only-search {
+                height: auto;
+                ion-searchbar {
+                    @include zeroMargin(0 0 0.063rem 2.375rem);
+                }
+            }
+            [search-box] {
+                display: flex;
+                width: 100%;
+                max-height: 6.313rem;
+                overflow: auto;
+                border-bottom: 1px solid $silverShade6;
+                @include zeroPadding(.375rem 1.25rem);
+                .contact-chip {
+                    width: 100%;
+                    display: inline-block;
+                    ion-icon {
+                        display: inline-block;
+                        width: 2.25rem;
+                        vertical-align: top;
+                        color: $black;
+                        font-size: 1.125rem;
+                    }
+                }
+                .icons-search {
+                    position: absolute;
+                    @include zeroPadding(0.375rem 0 0 0);
+                }
+                ion-chip {
+                    font-size: .625rem;
+                    display: inline-block;
+                    align-items: center;
+                    width: 100%;
+                    @include zeroMargin(0);
+                    span {
+                        float: left;
+                        color: $white;
+                        max-width: 100px;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        vertical-align: sub;
+                        @include zeroPadding(.375rem 0);
+                    }
+                    .select-contact {
+                        &:first-child {
+                            @include zeroMargin(3px 2px 3px 2.25rem);
+                        }
+                        min-width: 50px;
+                        display: inline-block;
+                        align-items: center;
+                        background: $skyBlueShade5;
+                        vertical-align: top;
+                        @include border-radius(16px);
+                        @include zeroPadding(0 .375rem 0 .5rem);
+                        @include zeroMargin(3px 2px 3px 0);
+                        span {
+                            text-transform: capitalize;
+                        }
+                        ion-icon {
+                            color: $white;
+                            font-size: .875rem;
+                            line-height: .75rem;
+                            width: initial;
+                            height: initial;
+                        }
+                    }
+                    .button {
+                        padding: 0;
+                        width: 1rem;
+                        height: 1.5rem;
+                        float: right;
+                    }
+                }
+            }
+            ion-searchbar.searchbar {
+                @include zeroPadding(0);
+                @include zeroMargin(.125rem 0);
+                vertical-align: middle;
+                width: 7rem;
+                display: inline-block;
+                
+                .searchbar-input {
+                    height: 1.625rem;
+                    //line-height: 1.625rem;
+                    background: $white;
+                    padding: .25rem 0 .375rem 0 !important;
+                }
+            }
+            .searchbar-has-value.searchbar-has-focus {
+                .searchbar-clear-icon {
+                    display: none;
+                }
+            }
+        }
+    }
+}

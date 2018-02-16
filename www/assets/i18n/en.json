@@ -1,0 +1,528 @@
+{ 
+    "GET_STARTED": {
+        "TITLE": "Sign Up for Rezility",
+        "ONBOARDING": {
+            "SKIP": "Skip",
+            "FEED_TITLE": "Your Feed",
+            "CONV_TITLE": "Your Conversations",
+            "AROUND_TITLE": "Around You",
+            "APP_INFO_MESSAGE": "Personalized opportunities and information to help make your life better.",
+            "FEED_IMG": "Onboarding Feed",
+            "CONV_IMG": "Onboarding Conversation",
+            "AROUND_IMG": "Onboarding Aroundyou",
+            "CONV_DESC": "Talk to people who can connect you to opportunities about the things that are important to you.",
+            "AROUND_DESC": "Discover people, places and what's happening around you — whether at home, at work or in your community.",
+            "PRIVACY": "We take your privacy very seriously.",
+            "PRIVACY_DESC": "Along the way, we're going to ask you for and use some of your data to put you in control of the info you receive. We promise to keep your data secure and care for it like our own.",
+            "ALREADY_ACC": "I already have an account."
+        }
+    },
+    "LOGIN": {
+        "SIGN_IN": "Sign In",
+        "LOGIN_BTN": "LOG IN TO REZILITY",
+        "LOGIN_WITH_FB_BTN": "Log in with Facebook",
+        "FORGOT_PASSWORD_BTN": "I forgot my password.",
+        "FORGOT_PASSWORD": "Forgot my password",
+        "REQUEST_LOG_IN_LINK": "Request a new password.",
+        "REQUEST_LOG_IN_LINK_MESSAGE": "Passwords are a hassle. Especially on your phone. We get it. Just enter the email address for your account and we'll send you a new password.",
+        "EMAIL_ADDRESS": "Email Address",
+        "SEND_LOGIN_LINK": "SEND NEW PASSWORD",
+        "FORGOT_PASS_MESSAGE": "We sent a new password to your email. Copy the password, return to this screen, tap Continue and paste the password to log in to Rezility.",
+        "LOGIN_LINK_SENT": "Check your email.",
+        "ACCOUNT_EXIST": "This account already exists in Rezility.",
+        "CREATE_ACC": "Create a new account.",
+        "VALID_EMAIL": "Please enter a valid email.",
+        "PASSWORD": "Password",
+        "CONTINUE_SAVE": "Continue without saving your changes ?"
+    },
+    "SIGN_UP": {
+        "TITLE": "Sign Up",
+        "FIRST_NAME": "First Name",
+        "LAST_NAME": "Last Name",
+        "ENTER_FN": "Please enter first name.",
+        "ENTER_LN": "Please enter last name.",
+        "EMAIL": "Email Address",
+        "ZIP_CODE": "Zip Code",
+        "ENTER_EMAIL": "Please enter a valid email.",
+        "ENTER_ZIP": "Please enter a valid ZIP code.",
+        "PRIVACY_MSG": "I have read, understood and accept the Rezility",
+        "PRIVACY_MSG1": "Privacy Notice",
+        "PRIVACY_MSG2": "and",
+        "PRIVACY_MSG3": "Terms of Use",
+        "PRIVACY_MSG5": "de Rezility.",
+        "PRIVACY_MSG4": "Please accept the Privacy Notice and Terms of Use.",
+        "GET_STARTED": "HOW CAN REZILITY HELP YOU?",
+        "MESSGAE_1": "Better futures for ourselves",
+        "MESSGAE_2": "and others - in the communities where we work & live.",
+        "WELCOME": "Welcome",
+        "WELCOME_1": "to Rezility",
+        "ALREADY_HAVE_ACCOUNT": "I already have an account.",
+        "CHOOSE_PASSWORD": "Choose a Password",
+        "MESSAGE": "To complete your sign up, either choose a password or log in with your Facebook account.",
+        "CREATE_PASSWORD": {
+            "TITLE": " Create a password",
+            "LOGIN_INTO_BEHOME": "LOG IN TO REZILITY",
+            "PASSWORD_STRENGTH_LEVEL1": "You'll need a password.",
+            "PASSWORD_STRENGTH_LEVEL2": "A good one too. At least 8 characters with capital letters and numbers and all that.",
+            "PASSWORD_STRENGTH_LEVEL3": "This one works!",
+            "PASSWORD_STRENGTH_LEVEL4": "But don't worry if you forget it. We can send you a link that'll get you right back in."
+        },
+        "SELECT_PASSWORD": {
+            "COMPLETE_SIGN": "Complete Sign Up"
+        }
+    },
+    "COACH_MARK": {
+        "FEED_MSG_1": "Check your feed often",
+        "FEED_MSG_2": "for new opportunities & info.",
+        "GOT_IT": "Got it",
+        "FEED_COACH": "Feed",
+        "CONV_MSG_1": "These are",
+        "CONV_MSG_2": "your conversations.",
+        "CONV_COACH": "Conversation",
+        "AROUND_PLACE01": "Discover places and services",
+        "AROUND_PLACE02": "around you.",
+        "AROUND_COACH": "Around you",
+        "STUFF_COACH": "Your stuff",
+        "STUFF_MSG_1": "Manage your",
+        "STUFF_MSG_2": "profile and settings.",
+        "START_CONVERSATION": "Start a conversation",
+        "MAP_SETTINGS": "Map settings",
+        "YOUR_PINNED": "Your pinned",
+        "LOCATION": "locations",
+        "SAVE_LOCATION": "Save location",
+        "CENTER_MAP": "Center the map",
+        "YOUR_LOCATION": "on your current location"
+    },
+    "ACTIVITY": {
+        "TITLE": "Your Feed",
+        "COMMING_SOON": "Coming soon ....",
+        "START_CONVERSATION": "Start Conversation",
+        "READ_THIS_ARTICLE": "More Info",
+        "CONNECT": "Connect Now",
+        "NEW_ADDRESS": "Enter New Address",
+        "CALL": "Call",
+        "CREATE": "Create Feed",
+        "SUBMIT_CARD": "Submit Card",
+        "DEFINE_AUDIENCE": "Define Audience",
+        "BUILD_PLACEMENT": "Build Placement",
+        "BUILD_POLL": "Build Poll",
+        "CREATE_FEED": { 
+            "HEADLINE": "Headline...",
+            "HEADLINEDESC": "Headline",
+            "SUMMARY": "Summary...",
+            "NOW": "Now",
+            "PLACEMENT_HEADER": "Placement Details",
+            "POLL_HEADER": "Construct Poll",
+            "SELECT_IMAGE": "Select a image",
+            "IMAGE_LIBRARY":"Image Library",
+            "HEADER": "Header",
+            "TOTAL_CHARACTER": "characters remaining",
+            "DESCRIPTION": "Description",
+            "MORE_INFO": "More Info",
+            "ALLOW": "Allow User To Initiate A Private Conversation",
+            "BRANCHES": "Select Location",
+            "SELECT_SEGMENT":"Select Segment",
+            "SELECT_TEMPLATE":"Select a Template",
+            "QUESTION": "Question",
+            "RESPONSE_TYPE": "Response Type",
+            "SINGLE_SELECTION": "Single Selection",
+            "MULTI_SELECTION": "Multiple Selection",
+            "OPTIONS": "Options",
+            "ENTER_QUESTION": "Enter a Question",
+            "SUBMIT": "Submit",
+            "SUBMIT_ANSWER": "SUBMIT YOUR ANSWER",
+            "SET_DELIVERY": "Set Delivery",
+            "RESET_DELIVERY": "Re-set Delivery",
+            "RUN_PLACEMENT": "Run my placement now",
+            "START_DATE": "Set start date",
+            "START_DELIVERY": "Start Delivery on"
+        }
+    },
+    "CONVERSATIONS": {
+        "TITLE": "Your Conversations",
+        "IS_TYPING": "is typing...",
+        "INVITE_CONNECT": "Invitation to connect",
+        "ARCHIVE": "Archive",
+        "LEAVE": "Leave",
+        "DELETE": "Delete",
+        "WELCOME": "Welcome to",
+        "YOUR_CONVERSATION": "Your Conversations.",
+        "LEAVE_GROUP": "Are you sure you want to leave this group ?",
+        "DELETE_GROUP": "Are you sure you want to delete this conversation ?",
+        "OK": "OK",
+        "CANCEL": "Cancel",
+        "NEW_MSG": {
+            "TITLE": "New Message",
+            "TO": "To",
+            "YOUR_CONNECTION": "Your Connections",
+            "OTHERS": "Others on Rezility",
+            "CREATE_GROUP": "Create new group",
+            "INVITATION": "Invitation Sent",
+            "INVITE_CONNECT": "Invitation to connect",
+            "NOT_CONNECT": "Not connected",
+            "TAKE_PHOTO": "Take a photo",
+            "ATTACH_PHOTO": "Attach a photo",
+            "LIB_PHOTO": "Select from Library"
+        },
+        "SHOW_IMG": {
+            "CAPTION": "Caption"
+        },
+        "SETTING": {
+            "TITLE": "Conversation Settings",
+            "SEND_PUSH_NOTIFICATION": "Mute this conversation",
+            "PARTICIPANT": "Participants",
+            "ARCHIVE": "Archive Conversation",
+            "ADD_PEOPLE": "Add People",
+            "EDIT_GROUP": "Edit Group",
+            "ACTIVE_NOW": "Active Now"
+        },
+        "GROUP_CHAT": {
+            "TITLE": "YOUR CONNECTIONS",
+            "CREATE_TITLE": "New Group Conversation",
+            "EDIT_TITLE": "Edit Group Conversation",
+            "ADDPEOPLE_TITLE": "Add People",
+            "GROUP_NAME": "Group Name",
+            "SEARCH_PEOPLE": "Search People",
+            "GROUP_TITLE": "Group Title"
+        },
+        "PUBLIC_PROFILE": {
+            "INVITE": "Invite",
+            "CANCEL_INVITE": "Cancel Invite",
+            "ACCEPT_CONNECT": "Accept & connect",
+            "IGNORE": "Ignore",
+            "PRIVATE_MSG": "Private message",
+            "REMOVE_GRP": "Remove from group",
+            "LEAVE_GRP": "Leave this group",
+            "BLOCK": "Block",
+            "UNBLOCK": "Unblock",
+            "APPROVE_CONNECT": "Approve & connect",
+            "DENY": "Deny"
+        }
+    },
+    "AROUND_ME": {
+        "TITLE": "Around You",
+        "PINNED_LOCATION": "Pinned Location",
+        "YOUR_PINNED_LOCATION_BTN": "Your Pinned Locations",
+        "DROP_PIN_BTN": "Drop Pin",
+        "EDIT_LOCATION_TITLE": "Edit Saved Location",
+        "SEARCH_LOCATION": "Search Location",
+        "YOUR_PINNED_LOCATION": {
+            "TITLE": "Saved Locations",
+            "EDIT_BUTTON": "Edit",
+            "DELETE_BUTTON": "Delete"
+        },
+        "SET_PIN_LOCATION": {
+            "TITLE": "Drop Pin",
+            "LOCATION": "Name of Location"
+        },
+        "MAP_OVERLAYS": {
+            "TITLE": "What do you want to see?",
+            "CLEAR_BTN": "Clear",
+            "PROVIDER_SECTION": "HOUSING PROVIDERS",
+            "SERVICE_INTEREST": "SERVICE PROVIDERS",
+            "GOOGLE_PLACES": "PLACES OF INTEREST"
+        },
+        "LIST_VIEW": {
+            "PROPERTY": "HOUSING PROVIDERS",
+            "SERVICE_PROPVIDER": "SERVICE PROVIDERS"
+        },
+        "PROVIDER_DETAILS": {
+            "SERVICES": "Services",
+            "ADDRESS": "Address",
+            "HOURS": "Hours",
+            "FOLLOW": "FOLLOW",
+            "UNFOLLOW": "UNFOLLOW",
+            "DONT_LIVE": "I Don't live here",
+            "LIVE": "I live here",
+            "TITLE_VERIFIED": "You live here",
+            "TITLE_RESIDENT_ADVOCATE": "Resident Advocate",
+            "TITLE_UNVERIFIED": "Address verification pending",
+            "FOLLOW_BTN": "FOLLOW",
+            "UNFOLLOW_BTN": "UNFOLLOW",
+            "RESIDENT_ADVOCATE": "I look after someone who lives here"
+        },
+        "NO_PINNED_MESSAGE": "Let's get started by pinning few locations.",
+        "WORKING_STATUS": {
+            "OPEN_NOW": "Open Now",
+            "CLOSED": "Closed Now"
+        },
+        "DISCONTINUED_PROPERTY": {
+            "CONFIRMATION_MSG": "Are you sure?",
+            "SEND_BUTTON": "Yes. Please Disconnect Me.",
+            "CANCEL_BTN_LINK": "I do not want to be disconnected.",
+            "MSG": "By saying that you don't live here, you won't receive any further info from your housing provider through the Rezility app."
+        },
+        "HOUSING_TYPES": {
+            "TITLE": "Which Building"
+        },
+        "HOUSING_UNIT": {
+            "TITLE": "In which unit?",
+            "VERIFY-BTN": "Verify Home Address",
+            "MSG": "We need to know this in order to respond to verify your identity and respond to service calls. We promise to keep your data secure and care for it like our own.",
+            "Unit": "Unit #"
+        },
+        "PENDING_CONFIRMATION": {
+            "CONFIRMATION_MSG": "Got it!",
+            "SEND_BUTTON": "Continue",
+            "MSG": "Your address has been submitted to your housing provider for verification.  Once verified, you’ll be all set to receive property-related info, updates and news from your housing provider."
+        },
+        "VERIFY_ADDRESS": {
+            "TITLE": "Verify your home address",
+            "VERIFY_BUTTON": "Verify Home Address",
+            "APARTMENT_UNIT": "Apartment or Unit #",
+            "ADDRESS": "Address",
+            "PROVIDER": "Provider"
+        },
+        "ADDRESS_TYPE": {
+            "HOME": "Home",
+            "WORK": "Work",
+            "OTHER": "Other"
+        }
+    },
+    "YOUR_STUFF": {
+        "TITLE": "Your Stuff",
+        "HI": "Hi",
+        "PROFILE": {
+            "TITLE": "Profile",
+            "EDIT": {
+                "TITLE": "Edit your profile",
+                "FIRST_NAME": "First Name",
+                "LAST_NAME": "Last Name",
+                "MIDDLE_NAME": "Middle Name",
+                "PHONE_NUMBER": "Phone Number",
+                "ABOUT": "About",
+                "DATE_OF_BIRTH": "Date of Birth",
+                "AGE": "Age",
+                "GENDER": "Gender",
+                "UNDER": "Under",
+                "OVER": "Over",
+                "VERIFIED": "Verified",
+                "UNVERIFIED": "Unverified",
+                "HOME_ADDRESS": "Home Address",
+                "ADDRESS": {
+                    "TITLE": "Address",
+                    "STREET_ADDRESS_1": "Street Address",
+                    "UNIT_NO": "Unit #",
+                    "CITY": "City",
+                    "STATE": "State",
+                    "ZIP_CODE": "ZIP Code",
+                    "SEARCH_LOCATION": "Search Location"
+                },
+                "LANGUAGE": "Language",
+                "EDUCATION_LEVEL": "Education Level",
+                "ANNUAL_INCOME": "Annual Income",
+                "SERVICE_INTERESTS": "Service Interests",
+                "VERIFICATIONS": {
+                    "TITLE": "Verifications",
+                    "FACEBOOK_CONNECTED": "Facebook Connected",
+                    "FB_STATUS": "Facebook Status.",
+                    "FB_NOT": "Facebook not connected"
+                }
+            },
+            "MESSAGES": {
+                "DOB_ERROR": "Date of Birth cannot be future date."
+            }
+        },
+        "SETTINGS": {
+            "TITLE": "Settings",
+            "PINNED_LOCATIONS": "Pinned locations",
+            "SEND_PUSH_NOTIFICATIONS": "Send push notifications",
+            "LOW_DATA": "Low Data Usage",
+            "CHANGE_PASSWORD": {
+                "TITLE": "Change password",
+                "NEW_PASSWORD": "New Password",
+                "REPEAT_PASSWORD": "Repeat Password"
+            },
+            "BLOCKED_USERS": "Blocked users",
+            "SHOW_COACHMARKS": "Show coach marks",
+            "ABOUT_APP": "About the app",
+            "LOG_OUT": "Logout",
+            "DEACTIVE_YOUR_ACCOUNT": " Deactivate your Account",
+            "VERSION": " Rezility Version"
+        },
+        "FAQ": {
+            "TITLE": "Frequently Asked Questions"
+        },
+        "FEEDBACK": {
+            "TITLE": "Tell Us Your Feedback"
+        },
+        "TELL_FEEDBACK": {
+            "TITLE": "Tell Us Your Feedback",
+            "SEND_BTN": "Send",
+            "PLACEHOLDER": "Have a question / Want to share feedback ? Please submit it here"
+        },
+        "FAVORITES": {
+            "TITLE": "Favorites"
+        }
+    },
+    "SERVICE_REQUESTS": {
+        "TITLE": "Service Requests",
+        "TYPE": "TYPE",
+        "DESCRIPTION": "DESCRIPTION",
+        "DESCRIPTION_HINT": "Describe the problem...(Max 500 characters)",
+        "PHOTOS": "PHOTOS",
+        "PHOTOS_HINT": "Photos are optional.",
+        "NEXT": "NEXT",
+        "ADD_PHOTOS": "ADD PHOTOS",        
+        "SETTINGS": {
+            "TITLE": "New Service Request",
+            "PARTICIPANT": "Participants",
+            "NEWSERVICE": "CREATE NEW SERVICE REQUEST"
+        },
+        "DETAILS": {
+            "METAID": "#123-456-789",
+            "DETAILS": "DETAILS",
+            "CONVERSATION": "CONVERSATION",
+            "STATUS": "STATUS:",
+            "ACTIVE": "ACTIVE"
+        },
+        "REQUEST_LIST": {
+            "ACTIVE": "ACTIVE",
+            "RESOLVED": "RESOLVED",
+            "CANCELLED":"CANCELLED",
+            "ACTIVE_MSG": "You haven't created a service request. Once you've created a service request, the service request will appear on your service request list.",
+            "RESOLVED_MSG": "There are currently no resolved service requests."
+        },               
+        "REFERENCE_NUMBER": "This incident has been assigned reference number",
+        "PROBLEMREPORTED": "Problem Reported",
+        "NO_SERVICE_REQUEST": "This property doesn't support service requests.",
+        "VERIFY_ADDRESS": "Please verify your address to create service requests.",
+        "SERVICE_REQUEST_CREATED": "Service request has been created."
+    },
+    "BUTTON_LABEL": {
+        "SEND": "Send",
+        "SAVE": "Save",
+        "EDIT": "Edit",
+        "CANCEL": "Cancel",
+        "BACK": "Back",
+        "CLEAR": "Clear",
+        "CONTINUE": "Continue",
+        "SKIP_THIS": "Skip This",
+        "FIX_ERROR": "Fix this Error",
+        "LOGIN_FACEBOOK": "Log In with Facebook"
+    },
+    "PLACEORDER": {
+        "SEARCH": "Enter name or email",
+        "TITLE": "New Conversation",
+        "MESSAGE": "Write message"
+    },
+    "ERROR_MESSAGES": {
+        "NO_DATA_FOUND": "No data found",
+        "LOADING_MORE_DATA_TO_LOAD": "Loading more data...",
+        "NO_CONVERSATION": "Click the + icon at the top left",
+        "NO_CONVERSATION_1": "and then type a name in the search box to start connecting with other",
+        "NO_CONVERSATION_2": "Rezility users.",
+        "EMPTY_BLOCKED_LIST": "You aren’t currently blocking any users. Once you’ve blocked a user, the user will appear on your blocked user list.",
+        "SOMETHING_WENT_WRONG": "Something went wrong! Please try again after sometime",
+        "APP_VERSION_UPDATED": "Looks like you have updated your app, please login again",
+        "NO_MORE_DATA_TO_LOAD": "No more data to load",
+        "SAVE_DATA_DONE": "Data Saved Successfully",
+        "PROFILE_SAVE_DONE": "Profile saved successfully",
+        "POLL_SAVE_DONE": "Poll saved successfully",
+        "SETTINGS_UPDATED": "Settings updated successfully",
+        "LOGGED_USER": "You are already logged in to Rezility",
+        "DEVICE_REGISTRATION_FAILED": "Device registration falied,please try after some time",
+        "LOCATION_NOT_FOUND": "Unable to find your current location. Please try again later.",
+        "ADDRESS_NOT_FOUND": "Address not found.",
+        "SELECT_LOCATION": "Please select a valid location on Map.",
+        "LOCATION_NAME_BLANK": "Please set a valid location name.",
+        "INVALID_USERNAME_PASSWORD": "Invalid Email Address or Password.",
+        "ADMIN_BLOCK": "You cannot block rezility admin.",
+        "UNINVITED_MESSAGE": "Please invite user to connect.",
+        "INVALID_UNIT_MESSAGE": "Please select a valid unit number.",
+        "ZIP_CODE_VALID": "Enter Valid Zip code(eg. 10461 or 10461-1235)",
+        "NO_NETWORK": "Please check your internet connection.",
+        "NO_NETWORK_TITLE": "No Internet Connection",
+        "NO_NETWORK_MSG": "Please check your internet connection.",
+        "INVITATION_ACCEPTED_PREFIX": "You're now connected to ",
+        "SENT_INVITE_NOT_POSTFIX": "has invited you to connect.",
+        "BLOCK_SUCCESS": "User has been blocked successfully.",
+        "UNBLOCK_SUCCESS": "User has been unblocked successfully.",
+        "BLOCKED_USER_POSTFIX": "is blocked.",
+        "GRP_SEND_ERROR_MSG": "You cannot send messages to this group because you are no longer a participant",
+        "GRP_EDIT_ERROR_MSG": "You cannot edit this group because you are no longer a participant",
+        "GRP_JOINED": "Welcome to the group",
+        "GRP_REMOVED": "You are no longer a participant",
+        "PLEASE_WAIT": "Please wait ...",
+        "REPORTING": "Reporting...",
+        "UPLOADING": "Uploading...",
+        "LOGGING_OUT": "Logging Out...",
+        "UPDATE_SUCCESSFUL": "Password Updated Successfully",
+        "PASSWORD_BLANK": "Password cannot be blank",
+        "PASSWORD_MISMATCH": "Passwords does not Match",
+        "PASSWORD_FORMAT": "Password should be atleast 8 characters with capital letters and numbers",
+        "NAME_VALIDATION": "First Name and Last Name cannot be blank",
+        "CANCEL_BTN": "NO, THANKS",
+        "OK_BTN": "UPDATE",
+        "VERIFY_ADDRESS_SUCCESS": "Residency verification is successful.",
+        "VERIFY_ADDRESS_DENY": "Residency verification was denied.",
+        "ADDED_GROUP": "You have been added to the group",
+        "NO_LONGER_PARTICIPANT": "You are no longer a participant of group",
+        "INVITED_YOU": "has invited you to connect.",
+        "NETWORK": "Network not Connected",
+        "INVITATION_INVITED_POSTFIX": "has yet to accept your invitation to connect.",
+        "VERIFICATION_PREFIX": "Verification Requested: ",
+        "ADVOCATE_VERIFICATION_PREFIX": "Resident Advocate Requested: ",
+        "ACCEPTED_POSTFIX": "has been verified. You are connected. ",
+        "DENY_PREFIX": "Verification Denied: ",
+        "VERIFICATION_MESSAGE": "You have received a verification request.",
+        "NO_FAVORITE_FOUND": "Once you’ve favorited a feed, the feed will appear on your favorite feed list.",
+        "VERIFICATION_CANCEL_MESSAGE": "Resident has cancelled his verification request.",
+        "ERROR_TITLE": "Error",
+        "TWITTER_ERROR": "Twitter application not found.",
+        "PHONE_VALIDATION": "Please enter a valid phone number.",
+        "INVALID_DATE": "Enter a valid date",
+        "INVALID_TIME": "Please select a valid current or future date.",
+        "NO_SEGMENTS": "No Segments Found"
+      
+    },
+    "DAYS_IN_SHORT": {
+        "SUNDAY": "Sun",
+        "MONDAY": "Mon",
+        "TUESDAY": "Tues",
+        "WEDNESDAY": "Wed",
+        "THURSDAY": "Thu",
+        "FRIDAY": "Fri",
+        "SATURDAY": "Sat"
+    },
+    "MONTHS_IN_SHORT": {
+        "JAN": "Jan",
+        "FEB": "Feb",
+        "MAR": "Mar",
+        "APR": "Apr",
+        "MAY": "May",
+        "JUN": "Jun",
+        "JUL": "Jul",
+        "AUG": "Aug",
+        "SEP": "Sep",
+        "OCT": "Oct",
+        "NOV": "Nov",
+        "DEC": "Dec"
+    },
+    "MISC": {
+        "Rezility": "Rezility",
+        "IMAGE": "Image",
+        "PROFILE_IMAGE": "Profile Image",
+        "Oops": "Oops!",
+        "REFRESH": "Refreshing...",
+        "PULL": "Pull to refresh",
+        "OK": "OK",
+        "DISMISS": "Dismiss"
+    },
+    "TIMESTAMP": {
+        "DAY_AGO": "1 DAY AGO",
+        "AM": "AM",
+        "PM": "PM"
+    },
+    "WELCOME_FEED": {
+        "YOUR_FEED": "Your\nFeed",
+        "YOUR_CONV": "Your\nConversations",
+        "AROUND_YOU": "Around\nYou",
+        "YOUR_STUFF": "Your\nStuff"
+    },
+    "CREATE_FEED":{
+        "TITLE":"Please add title to the feed.",
+        "DESCRIPTION":"Please add description to the feed.",
+        "LOGO":"Please add/select a logo."
+    }
+}

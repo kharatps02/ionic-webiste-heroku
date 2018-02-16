@@ -1,0 +1,69 @@
+/*Reusable Class Mixin */
+@mixin typography($fontSize, $color, $weight, $lineHeight) {
+    font-size: $fontSize;
+    color: $color;
+    font-weight: $weight;
+    line-height: $lineHeight;
+}
+
+[flexbox] {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    height: 100%
+}
+
+[flexbox-between] {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+}
+
+[bottom-flex] {
+    flex: 1;
+    display: flex;
+    display: -webkit-flex;
+    align-items: flex-end;
+    -webkit-align-items: flex-end;
+    padding: 0 1.25rem;
+}
+// .bold {
+//     font-weight: $fontWeight500 !important;
+// }
+[grey-background] {
+    background: $black;
+}
+@mixin zeroPadding($zeroPadding) {
+    padding: $zeroPadding;
+}
+
+@mixin zeroMargin($zeroMargin) {
+    margin: $zeroMargin;
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin border($borderType) {
+    border: $borderType;
+}
+
+@mixin display-flex($flex) {
+    -webkit-display: $flex;
+    -moz-display: $flex;
+    -ms-display: $flex;
+    display: $flex;
+}
+@mixin headerStyle($fontSize, $color, $background, $height, $weight) {
+    font-size: $fontSize;
+    color: $color;
+    background: $black;
+    font-weight: $weight;
+    height: $height;
+}

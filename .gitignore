@@ -27,7 +27,7 @@ platforms/
 plugins/
 #plugins/android.json
 #plugins/ios.json
-www/
+#www/
 beta/
 $RECYCLE.BIN/
 
