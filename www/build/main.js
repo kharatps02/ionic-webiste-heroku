@@ -6455,12 +6455,12 @@ NewMessage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ENVIRONMENT; });
 var ENVIRONMENT = {
-    APP_BASE_URL: 'https://rezility-qa.herokuapp.com',
-    APP_VERSION: '1.7.2 ',
-    APP_VERSION_DISPLAY: '1.7.2 (QA-127)',
+    APP_BASE_URL: 'https://rezility-api-uat.herokuapp.com',
+    APP_VERSION: '1.7.2',
+    APP_VERSION_DISPLAY: '1.7.2 (UAT-127)',
     PUBNUB_KEYS: {
-        PUBLISH_KEY: 'pub-c-be48fa19-969b-4619-82c7-f1c3e40eaef3',
-        SUBSCRIBE_KEY: 'sub-c-45fc1ec6-357e-11e7-887b-02ee2ddab7fe'
+        PUBLISH_KEY: 'pub-c-b7a78aea-92b8-45c8-856c-bd85feaf25a4',
+        SUBSCRIBE_KEY: 'sub-c-3b9bb1f2-42c7-11e7-b847-0619f8945a4f'
     },
     GOOGLE_ANALYTICS_TRACKING_ID: 'UA-98874270-1',
 };
