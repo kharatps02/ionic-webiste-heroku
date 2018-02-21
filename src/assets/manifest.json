@@ -1,7 +1,7 @@
 {
   "name": "Rezility",
   "short_name": "Rezility",
-  "start_url": "index.html",
+  "start_url": "../index.html",
   "display": "standalone",
   "icons": [{
     "src": "./img/rezility.png",
