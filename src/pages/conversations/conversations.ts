@@ -201,7 +201,7 @@ export class Conversations extends BaseConversations implements OnDestroy {
         //   conversation.isTyping = presenceObj.state.isTyping;
         //   // // console.log("Typing status changed ", conversation.isTyping);
         // }
-        if (presenceObj.uuid === conversation.user_id && presenceObj.actualChannel === conversation.user_id + "present-pnpres") {
+        if (presenceObj.uuid === conversation.user_id && presenceObj.actualChannel === conversation.user_id + CONSTANTS.PRESENCE_POSTFIX) {
           if (presenceObj.action == "join") {
             conversation.presence = "online";
           }

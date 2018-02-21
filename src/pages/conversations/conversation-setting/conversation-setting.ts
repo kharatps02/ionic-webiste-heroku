@@ -123,7 +123,7 @@ export class ConversationSetting {
       // console.log('In subscribePresenceEvent[ action - ' + presenceObj.action + ']', presenceObj);
       if (that.selectedUser.members && that.selectedUser.members.length > 0) {
         that.selectedUser.members.forEach((member) => {
-          if (presence.uuid === member.user_id && presence.actualChannel === member.user_id + "present-pnpres") {
+          if (presence.uuid === member.user_id && presence.actualChannel === member.user_id + CONSTANTS.PRESENCE_POSTFIX) {
             if (presence.action == "join") {
               member.presence = "online";
             }

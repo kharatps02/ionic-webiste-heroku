@@ -134,6 +134,11 @@ export class ChatService {
         return returnLang;
     }
 
+    getSharedChannelDetails(params: { user_id: string, shared_channel: string }): Observable<any> {
+        let url = ENVIRONMENT.APP_BASE_URL + '/api/chat/getuserconversationdata';
+        return this.http.post(url, params).map((res: any) => res.json())
+    }
+
 }
 
 export interface IMessage {

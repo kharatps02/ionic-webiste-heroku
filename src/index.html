@@ -11,20 +11,20 @@
     <link rel="manifest" href="assets/manifest.json">
     <meta name="theme-color" content="#4e8ef7">
     <link href="build/main.css" rel="stylesheet">
-    <!-- <script>
+    <script>
         if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('service-worker.js')
         .then(() => console.log('service worker installed'))
         .catch(err => console.log('Error', err));
         }
-    </script> -->
+    </script>
 </head>
 
 <body>
     <!-- Ionic's root component and where the app will load -->
    
     <!--Uncomment this for running desktop version -->
-    <article class="desktop-app-view">
+    <!-- <article class="desktop-app-view">
         <header>
             <nav class="container">
                 <img src="../assets/img/rezility-logo.jpg"  width="160px" alt="Rezility"/>
@@ -35,10 +35,10 @@
                 <ion-app></ion-app>
             </div>
         </section>
-    </article>
+    </article> -->
     
     <!--Comment this for running desktop version -->
-    <!-- <ion-app></ion-app> -->
+    <ion-app></ion-app>
 
     <script src="assets/pubnub.4.2.5.js"></script>
     <!-- cordova.js required for cordova apps -->

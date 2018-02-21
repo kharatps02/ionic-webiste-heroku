@@ -278,15 +278,25 @@ export class PublicProfile {
     });
   }
 
+
   onMessageClick() {
     let that = this;
     if (this.selectedUser.connection_status === CONSTANTS.CONNECTION_STATUS.CONNECTED || this.selectedUser.connection_status === CONSTANTS.CONNECTION_STATUS.CONNECTED_BLOCKED) {
-      this.selectedUser.type = CONSTANTS.CONVERSATION_TYPE.SINGLE;
-      this.selectedUser.receiver_id = this.selectedUser.user_id;
-      this.loaderService.createLoader(this.translateService.instant('ERROR_MESSAGES.PLEASE_WAIT'));
-      that.navCtrl.remove(1, that.navCtrl.length() - 1, { animate: false, progressAnimation: false }).then(() => {
-        that.navCtrl.push(ChatBox, { user: that.selectedUser }).then(() => {
-          that.loaderService.dismissLoader();
+      let params: any = {
+        user_id: this.selectedUser.user_id,
+        shared_channel: this.selectedUser.shared_channel
+      };
+      this.loaderService.createLoader(that.translateService.instant('ERROR_MESSAGES.PLEASE_WAIT'));
+      this.chatService.getSharedChannelDetails(params).subscribe((result) => {
+        if (result.status === CONSTANTS.RESPONSE_STATUS.SUCCESS) {
+          that.selectedUser.joining_time_token = result.chat[0].joining_time_token
+        }
+        that.selectedUser.type = CONSTANTS.CONVERSATION_TYPE.SINGLE;
+        that.selectedUser.receiver_id = that.selectedUser.user_id;
+        that.navCtrl.remove(1, that.navCtrl.length() - 1, { animate: false, progressAnimation: false }).then(() => {
+          that.navCtrl.push(ChatBox, { user: that.selectedUser }).then(() => {
+            that.loaderService.dismissLoader();
+          });
         });
       });
     } else {

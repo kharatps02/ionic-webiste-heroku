@@ -86,7 +86,7 @@ export class NewMessage {
       } else {
         //Set user online status.
         this.connectedUsersList.map((user, index) => {
-          if (presence.uuid === user.user_id && presence.actualChannel === user.user_id + "present-pnpres") {
+          if (presence.uuid === user.user_id && presence.actualChannel === user.user_id + CONSTANTS.PRESENCE_POSTFIX) {
             if (presence.action == "join") {
               user.presence = "online";
             }

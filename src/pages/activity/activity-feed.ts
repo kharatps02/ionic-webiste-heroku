@@ -405,7 +405,8 @@ export class ActivityPage implements OnDestroy {
                             presence: '',
                             timetoken: null,
                             joining_time_token: null,
-                            user_type: userObj.user_type
+                            user_type: userObj.user_type,
+                           profile_pic: userObj.profile_pic
                         };
                         if (!response.shared_channel) {
                             this.pubNubService.getTimeToken((pubnubtimestoken) => {

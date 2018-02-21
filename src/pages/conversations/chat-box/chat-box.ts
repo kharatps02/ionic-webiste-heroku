@@ -199,7 +199,7 @@ export class ChatBox extends BaseChatBox {
                     this.selectedUser.isTyping = presence.state.isTyping;
                     // console.log("Typing status changed ", this.selectedUser.isTyping);
                 }
-                if (presence.uuid === this.selectedUser.user_id && presence.actualChannel === this.selectedUser.user_id + "present-pnpres") {
+                if (presence.uuid === this.selectedUser.user_id && presence.actualChannel === this.selectedUser.user_id + CONSTANTS.PRESENCE_POSTFIX) {
                     if (presence.action == "join") {
                         this.selectedUser.presence = "online";
                     }

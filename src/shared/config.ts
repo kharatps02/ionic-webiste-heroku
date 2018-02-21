@@ -246,5 +246,6 @@ export let CONSTANTS = {
     DELIVERY_TYPE: {
         NOW: "now",
         SCHEDULE: "schedule"
-    }
+    },
+    PRESENCE_POSTFIX:"_present-pnpres"
 };
