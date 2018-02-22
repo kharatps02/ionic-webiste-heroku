@@ -7,7 +7,7 @@
   </script>
     <meta charset="UTF-8">
     <title>Rezility App</title>
-    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <link rel="icon" type="image/x-icon" href="assets/img/rezility.png">
@@ -16,16 +16,21 @@
     <link href="build/main.css" rel="stylesheet">
     <script>
         if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('service-worker.js')
-        .then(() => console.log('service worker installed'))
-        .catch(err => console.log('Error', err));
+            navigator.serviceWorker.register('service-worker.js')
+                .then(() => console.log('service worker installed'))
+                .catch(err => console.log('Error', err));
         }
     </script>
+    <noscript>
+        <h3 style="color: #673ab7; font-family: Helvetica; margin: 2rem;">
+            Sorry, but app is not available without javascript
+        </h3>
+    </noscript>
 </head>
 
 <body>
     <!-- Ionic's root component and where the app will load -->
-   
+
     <!--Uncomment this for running desktop version -->
     <!-- <article class="desktop-app-view">
         <header>
@@ -39,7 +44,7 @@
             </div>
         </section>
     </article> -->
-    
+
     <!--Comment this for running desktop version -->
     <ion-app></ion-app>
 
